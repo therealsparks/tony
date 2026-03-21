@@ -158,9 +158,9 @@
   </div>
 
   <div class="stats">
-    <div class="stat-pill"><span class="dot dot-green"></span> 5 Live Skills</div>
-    <div class="stat-pill"><span class="dot dot-gray"></span> 3 Coming Soon</div>
-    <div class="stat-pill">3 Categories</div>
+    <div class="stat-pill"><span class="dot dot-green"></span> 9 Live Skills</div>
+    <div class="stat-pill"><span class="dot dot-gray"></span> 1 Coming Soon</div>
+    <div class="stat-pill">4 Categories</div>
   </div>
 
   <!-- ── DROPBOX ── -->
@@ -193,7 +193,7 @@
       <div class="skill-item">
         <span class="skill-status live">Live</span>
         <div class="skill-title">Create New Project — Client Area</div>
-        <div class="skill-desc">Creates a full folder structure under /Client with Client, Art, Art/Client Reference, Renders, and Scripts subfolders. Sends a confirmation with a Dropbox link.</div>
+        <div class="skill-desc">Creates a full folder structure under /Client with 7 standard subfolders: Client, Art, Client Reference, Project Files, Renders, Scripts, Uploads. Sends a confirmation with a Dropbox link.</div>
         <div class="skill-example">
           <span>Subject:</span> New Project Acme Corp - Brand Video 2026
         </div>
@@ -202,9 +202,95 @@
       <div class="skill-item">
         <span class="skill-status live">Live</span>
         <div class="skill-title">Create New Project — Prospects Area</div>
-        <div class="skill-desc">Creates the same folder structure under /Client/Z_Proposals and Prospects. Use for leads and proposals not yet active clients.</div>
+        <div class="skill-desc">Creates the same folder structure under /Client/Z_Proposals and Prospects. Use for leads and proposals not yet signed.</div>
         <div class="skill-example">
           <span>Subject:</span> New Prospect Project Acme Corp - Explainer Video
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <span class="skill-status live">Live</span>
+        <div class="skill-title">CC/BCC Passive Scan</div>
+        <div class="skill-desc">CC or BCC tony@austinvisuals.com on any client email. Tony scans the thread for attachments and links, files them to the correct project folder, and replies with a confirmation + Dropbox link. Deduplication prevents re-filing files from prior emails in the same thread.</div>
+        <div class="skill-example">
+          <span>Action:</span> CC tony@austinvisuals.com on your reply to a client<br>
+          <span>Tony will:</span> File attachments, catalog links, confirm location
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <span class="skill-status live">Live</span>
+        <div class="skill-title">List Folders</div>
+        <div class="skill-desc">Ask Tony to list all available project folders. Useful when you need to find the exact folder name for an upload or assignment.</div>
+        <div class="skill-example">
+          <span>Subject:</span> List client folders<br>
+          <span>Subject:</span> List prospect folders
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── PROJECT REGISTRY ── -->
+  <div class="category" onclick="toggle(this)">
+    <div class="cat-header">
+      <div class="cat-icon">📋</div>
+      <div class="cat-info">
+        <div class="cat-title">Project Registry</div>
+        <div class="cat-desc">Log updates, check status, assign team members, set due dates</div>
+      </div>
+      <div class="cat-right">
+        <span class="cat-count">5 skills</span>
+        <span class="cat-badge badge-live">Live</span>
+        <span class="cat-chevron">▼</span>
+      </div>
+    </div>
+    <div class="skill-list">
+
+      <div class="skill-item">
+        <span class="skill-status live">Live</span>
+        <div class="skill-title">Log a Status Update</div>
+        <div class="skill-desc">Post a project update. Tony logs it with your name and timestamp, then notifies Matt and Nancy. You can edit or delete your own update by replying.</div>
+        <div class="skill-example">
+          <span>Subject:</span> Status update [Project Name]<br>
+          <span>Body:</span> Completed storyboard today. Starting keyframes Monday.
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <span class="skill-status live">Live</span>
+        <div class="skill-title">Check Project Status</div>
+        <div class="skill-desc">Get a full status report — assigned staff, due date, Dropbox link, and recent updates. Only works if you're assigned to the project (or you're Matt/Nancy).</div>
+        <div class="skill-example">
+          <span>Subject:</span> Status check [Project Name]
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <span class="skill-status live">Live</span>
+        <div class="skill-title">Assign Staff to Project</div>
+        <div class="skill-desc">Matt or Nancy only. Assigns a team member to a project so they can post updates and check status.</div>
+        <div class="skill-example">
+          <span>Subject:</span> Assign Peter to [Project Name]
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <span class="skill-status live">Live</span>
+        <div class="skill-title">Set Due Date</div>
+        <div class="skill-desc">Matt or Nancy only. Sets the due date for a project.</div>
+        <div class="skill-example">
+          <span>Subject:</span> Set due date [Project Name] April 30
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <span class="skill-status live">Live</span>
+        <div class="skill-title">Request Project Access</div>
+        <div class="skill-desc">If you're not assigned to a project, Tony will ask if you want to request access. Matt or Nancy can approve by replying "Approve [Name] for [Project]".</div>
+        <div class="skill-example">
+          <span>Subject:</span> Status check [Project Name]<br>
+          <span>Tony replies:</span> "Not assigned — would you like to request access?"
         </div>
       </div>
 
@@ -259,7 +345,7 @@
         <div class="cat-desc">Skills currently in development</div>
       </div>
       <div class="cat-right">
-        <span class="cat-count">3 skills</span>
+        <span class="cat-count">1 skill</span>
         <span class="cat-badge badge-coming">Soon</span>
         <span class="cat-chevron">▼</span>
       </div>
@@ -270,18 +356,6 @@
         <span class="skill-status coming">Soon</span>
         <div class="skill-title">Weekly Intel Brief</div>
         <div class="skill-desc">Government contract RFPs, competitor activity, trending keywords, and freshly funded companies — delivered every Monday morning.</div>
-      </div>
-
-      <div class="skill-item">
-        <span class="skill-status coming">Soon</span>
-        <div class="skill-title">Project Status Check</div>
-        <div class="skill-desc">Email Tony asking for a status on any project and get back a summary of what's in Dropbox, last updated, and what's missing.</div>
-      </div>
-
-      <div class="skill-item">
-        <span class="skill-status coming">Soon</span>
-        <div class="skill-title">Lead Outreach Draft</div>
-        <div class="skill-desc">Give Tony a company name and Tony will research them and draft a personalized cold outreach email for Matt's review.</div>
       </div>
 
     </div>
@@ -295,7 +369,7 @@
   </div>
 
   <div class="footer">
-    ⚡ Tony · Austin Visuals AI Assistant · Updated March 21, 2026 · 5 skills live
+    ⚡ Tony · Austin Visuals AI Assistant · Updated March 21, 2026 · 9 skills live
   </div>
 
 </div>
