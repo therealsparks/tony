@@ -88,8 +88,7 @@
   </div>
 
   <div id="project-list"><div class="empty">Loading...</div></div>
-  <div class="footer">
-    <div style="margin-top:12px;"><a href="#" onclick="translatePage()" style="font-size:11px;color:#aeaeb2;text-decoration:none;opacity:0.6;">🌐 Dich sang tieng Viet</a></div>⚡ Tony for Austin Visuals · Updated daily from project registry</div>
+  <div class="footer">⚡ Tony for Austin Visuals · Updated daily from project registry</div>
 </div>
 
 <script>
@@ -136,9 +135,12 @@ function renderProjects(projects) {
     const lastUpdate = getLastUpdate(p);
     const daysSinceUpdate = lastUpdate ? daysSince(lastUpdate.timestamp) : null;
     const pct = p.progress_pct || 0;
+    const pctColor = pct >= 75 ? '#34c759' : pct >= 40 ? '#ff9f0a' : '#aeaeb2';
     const assigned = (p.assigned || []).map(e => e.split('@')[0]).join(', ') || 'Unassigned';
     const due = p.due_date && p.due_date !== 'Not set' ? p.due_date : 'No due date';
     const updates = (p.updates || []).slice().reverse().slice(0, 3);
+    const statusSummary = p.status_summary || '';
+    const nextSteps = p.next_steps || '';
 
     return `
     <div class="project-card" data-status="${status}">
@@ -149,14 +151,11 @@ function renderProjects(projects) {
           <div class="card-meta">
             <span>👤 ${assigned}</span>
             <span>📅 ${due}</span>
-            ${daysSinceUpdate !== null ? `<span>${daysSinceUpdate}d since update</span>` : ''}
+            ${statusSummary ? `<span style="color:#555;font-style:italic;">${statusSummary.substring(0,60)}${statusSummary.length>60?'…':''}</span>` : ''}
           </div>
         </div>
         <div class="card-right">
-          ${pct > 0 ? `
-            <div class="progress-wrap"><div class="progress-bar" style="width:${pct}%"></div></div>
-            <span class="pct-label">${pct}%</span>
-          ` : ''}
+          <span style="font-size:12px;font-weight:700;color:${pctColor};min-width:32px;text-align:right;">${pct}%</span>
           <span class="chevron">▼</span>
         </div>
       </div>
@@ -164,9 +163,17 @@ function renderProjects(projects) {
         <div class="detail-grid">
           <div class="detail-item"><label>Artists</label><span>${assigned}</span></div>
           <div class="detail-item"><label>Due Date</label><span>${due}</span></div>
-          <div class="detail-item"><label>Status</label><span>${status.charAt(0).toUpperCase()+status.slice(1)}</span></div>
+          <div class="detail-item"><label>Progress</label><span style="color:${pctColor};font-weight:700;">${pct}%</span></div>
           ${p.dropbox_link ? `<div class="detail-item"><label>Dropbox</label><a href="${p.dropbox_link}" target="_blank">View folder →</a></div>` : ''}
         </div>
+        ${statusSummary ? `
+          <div class="updates-title" style="margin-top:10px;">Status</div>
+          <div style="background:#f5f5f7;border-radius:8px;padding:10px 12px;font-size:13px;color:#3a3a3c;line-height:1.5;margin-bottom:10px;">${statusSummary}</div>
+        ` : ''}
+        ${nextSteps ? `
+          <div class="updates-title">Next Steps</div>
+          <div style="background:#eff6ff;border-radius:8px;padding:10px 12px;font-size:13px;color:#1d4ed8;line-height:1.5;margin-bottom:10px;">${nextSteps}</div>
+        ` : ''}
         <div class="updates-title">Recent Updates</div>
         ${updates.length ? updates.map(u => `
           <div class="update-entry">
@@ -197,12 +204,5 @@ fetch('projects.json?v=' + Date.now())
   })
   .catch(() => { document.getElementById('project-list').innerHTML = '<div class="empty">Could not load project data.</div>'; });
 </script>
-
-  <script>
-  function translatePage() {
-    window.location.href = "https://translate.google.com/translate?hl=vi&sl=en&tl=vi&u=" + encodeURIComponent(window.location.href);
-    return false;
-  }
-  </script>
 </body>
 </html>
