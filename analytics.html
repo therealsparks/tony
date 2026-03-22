@@ -47,11 +47,16 @@
     .page-views { min-width: 0; width: auto; font-size: 12px; flex-shrink: 0; }
     /* Name takes all remaining space */
     .trow-name { flex: 1; min-width: 0; font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    /* Page rows */
-    .page-row-header { overflow: hidden; }
-    .page-row-header > div:first-child { flex: 1; min-width: 0; overflow: hidden; }
-    .page-row-header > div:first-child > div:first-child { font-size: 12px; }
-    .page-row-header > div:first-child > div:last-child { font-size: 9px; }
+    /* Page rows — constrain width, truncate URLs */
+    .page-row-header { overflow: hidden; max-width: 100%; }
+    .page-row-header > div:first-child { flex: 1; min-width: 0; overflow: hidden; max-width: 100%; }
+    .page-row-header > div:first-child > div:first-child { font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .page-row-header > div:first-child > div:last-child { font-size: 9px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    /* URL in expanded detail — fade out right edge */
+    .page-url-text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; display: block; }
+    /* Force card to never exceed viewport */
+    .card { max-width: 100%; overflow: hidden; }
+    .wrap { max-width: 100%; overflow: hidden; }
     /* Cards padding */
     .card { padding: 14px 14px; }
     /* Src dot stays */
