@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-22 09:25 UTC",
+  "updated": "2026-03-22 09:44 UTC",
   "projects": [
     {
       "name": "1915 Films - Stephen Lawrence VFX",
@@ -126,14 +126,114 @@
       ]
     },
     {
-      "name": "Biosqueeze Project 5 - Underground Mining",
+      "name": "Biosqueeze Project 1",
+      "created_at": "2026-03-22",
+      "due_date": "Not set",
+      "status": "collect",
+      "nda": null,
+      "flags": [],
+      "assigned": [
+        "peter@austinvisuals.com"
+      ],
+      "dropbox_link": "https://www.dropbox.com/scl/fo/bwdw55lq61hsx66t3raxs/AMJO4C_ojebvJ9SprGidbug?rlkey=zvivdydapihbftl7hot5c48xx&dl=0",
+      "progress_pct": 100,
+      "status_summary": "100% complete \u2014 Biosqueeze Project 1 delivered. Needs file collection.",
+      "next_steps": "Collect final project files from Peter. Send Google review survey.",
+      "updates": [
+        {
+          "author": "matt@austinvisuals.com",
+          "author_name": "Matt",
+          "timestamp": "2026-03-22 09:00 UTC",
+          "text": "Biosqueeze Project 1 complete. All invoices paid. Awaiting file collection.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": []
+    },
+    {
+      "name": "Biosqueeze Project 2",
+      "created_at": "2026-03-22",
+      "due_date": "Not set",
+      "status": "collect",
+      "nda": null,
+      "flags": [],
+      "assigned": [
+        "peter@austinvisuals.com"
+      ],
+      "dropbox_link": "https://www.dropbox.com/scl/fo/m58iq5kry7opgm0j7i5jf/AHkkYZdZz98_2vJ6jOV4w34?rlkey=amhxqvigpugy5fqa7x0yy3289&dl=0",
+      "progress_pct": 100,
+      "status_summary": "100% complete \u2014 Biosqueeze Project 2 delivered. Needs file collection.",
+      "next_steps": "Collect final project files from Peter. Send Google review survey.",
+      "updates": [
+        {
+          "author": "matt@austinvisuals.com",
+          "author_name": "Matt",
+          "timestamp": "2026-03-22 09:00 UTC",
+          "text": "Biosqueeze Project 2 complete. All invoices paid. Awaiting file collection.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": []
+    },
+    {
+      "name": "Biosqueeze Project 3",
+      "created_at": "2026-03-22",
+      "due_date": "Not set",
+      "status": "collect",
+      "nda": null,
+      "flags": [],
+      "assigned": [
+        "peter@austinvisuals.com"
+      ],
+      "dropbox_link": "https://www.dropbox.com/scl/fo/qqngn6o0cutpeky3qiwv0/AOoqk20iWVlFDfg7Gc2LW1w?rlkey=usgv2172k0jo5w4sjnbc8yviz&dl=0",
+      "progress_pct": 100,
+      "status_summary": "100% complete \u2014 Biosqueeze Project 3 delivered. Needs file collection.",
+      "next_steps": "Collect final project files from Peter. Send Google review survey.",
+      "updates": [
+        {
+          "author": "matt@austinvisuals.com",
+          "author_name": "Matt",
+          "timestamp": "2026-03-22 09:00 UTC",
+          "text": "Biosqueeze Project 3 complete. All invoices paid. Awaiting file collection.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": []
+    },
+    {
+      "name": "Biosqueeze Project 4 - Mining",
+      "created_at": "2026-03-22",
+      "due_date": "Not set",
+      "status": "collect",
+      "nda": null,
+      "flags": [],
+      "assigned": [
+        "peter@austinvisuals.com"
+      ],
+      "dropbox_link": "https://www.dropbox.com/scl/fo/cyb9clfy1viiv7go0kwre/AJCg6Nc1Uw-miEqacKSu62E?rlkey=bj1dvq9xj26z9js2wd1p4dqz7&dl=0",
+      "progress_pct": 100,
+      "status_summary": "100% complete \u2014 Biosqueeze Project 4 - Mining delivered. Needs file collection.",
+      "next_steps": "Collect final project files from Peter. Send Google review survey.",
+      "updates": [
+        {
+          "author": "matt@austinvisuals.com",
+          "author_name": "Matt",
+          "timestamp": "2026-03-22 09:00 UTC",
+          "text": "Biosqueeze Project 4 - Mining complete. All invoices paid. Awaiting file collection.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": []
+    },
+    {
+      "name": "Biosqueeze Project 5 - Underground Mine",
       "created_at": "2026-03-21",
       "due_date": "Not set",
       "status": "collect",
       "assigned": [
         "peter@austinvisuals.com"
       ],
-      "dropbox_link": null,
+      "dropbox_link": "https://www.dropbox.com/scl/fo/aal3b2k4ol6fb8hbasjnr/AEoKBYVmp5zhqTi-2iw8j6g?rlkey=0lw6r5enls4u88o769l85vcm4&dl=0",
       "updates": [
         {
           "author": "nancy@austinvisuals.com",
@@ -152,8 +252,8 @@
       ],
       "pending_requests": [],
       "progress_pct": 100,
-      "status_summary": "100% complete \u2014 Underground Mining animation delivered. Awaiting final collection: artist files and Google review survey.",
-      "next_steps": "Meeting Monday/Tuesday with Hayden Binde at Biosqueeze. Collect final project files from Peter. Send Google review survey to client."
+      "status_summary": "100% complete \u2014 Biosqueeze Project 5 - Underground Mine delivered. Needs file collection from Peter and Google review survey.",
+      "next_steps": "Collect final project files from Peter. Send Google review survey to Biosqueeze (Hayden Binde)."
     },
     {
       "name": "Biosqueeze Project 6 - Airport Construction",
@@ -165,10 +265,10 @@
       "assigned": [
         "peter@austinvisuals.com"
       ],
-      "dropbox_link": null,
+      "dropbox_link": "https://www.dropbox.com/scl/fo/0z6ingrdpnd8dntmtvn3c/ACVzBGpRhM5bsys3VxZOERg?rlkey=3g8nkuf7ls1rpvt4w6sq561pz&dl=0",
       "progress_pct": 100,
-      "status_summary": "100% complete \u2014 Airport Construction animation delivered. All invoices paid.",
-      "next_steps": "Collect final project files from Peter. Send Google review survey to Biosqueeze.",
+      "status_summary": "100% complete \u2014 Biosqueeze Project 6 - Airport Construction delivered. Needs file collection from Peter and Google review survey.",
+      "next_steps": "Collect final project files from Peter. Send Google review survey to Biosqueeze (Hayden Binde).",
       "updates": [
         {
           "author": "matt@austinvisuals.com",
