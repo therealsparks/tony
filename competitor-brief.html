@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Competitor Brief — Austin Visuals</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+    background: #f5f5f7;
+    color: #1d1d1f;
+    -webkit-font-smoothing: antialiased;
+    padding: 32px 20px 48px;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+
+  .back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: #0071e3; text-decoration: none; margin-bottom: 24px; }
+  .back:hover { text-decoration: underline; }
+
+  .header { margin-bottom: 28px; }
+  .header-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6e73; margin-bottom: 6px; }
+  .header h1 { font-size: 30px; font-weight: 800; letter-spacing: -0.8px; color: #1d1d1f; }
+  .updated { font-size: 12px; color: #aeaeb2; margin-top: 6px; }
+
+  .competitor-card {
+    background: #fff;
+    border-radius: 16px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 2px 12px rgba(0,0,0,0.04);
+    overflow: hidden;
+  }
+  .comp-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .comp-header:hover { background: #fafafa; }
+  .comp-name { font-size: 15px; font-weight: 700; color: #1d1d1f; }
+  .comp-site { font-size: 12px; color: #aeaeb2; margin-top: 2px; }
+  .comp-count {
+    font-size: 11px; font-weight: 700; background: #f2f2f7;
+    color: #6e6e73; border-radius: 99px; padding: 3px 10px;
+  }
+  .comp-count.has-posts { background: #e8f8f0; color: #1a7a46; }
+  .chevron { font-size: 12px; color: #aeaeb2; margin-left: 8px; transition: transform 0.15s; }
+  .competitor-card.open .chevron { transform: rotate(180deg); }
+
+  .post-list { display: none; border-top: 1px solid #f2f2f7; }
+  .competitor-card.open .post-list { display: block; }
+
+  .post-item {
+    padding: 13px 20px;
+    border-bottom: 1px solid #f7f7f7;
+  }
+  .post-item:last-child { border-bottom: none; }
+  .post-title { font-size: 13px; font-weight: 600; color: #1d1d1f; margin-bottom: 4px; }
+  .post-title a { color: #1d1d1f; text-decoration: none; }
+  .post-title a:hover { color: #0071e3; }
+  .post-date { font-size: 11px; color: #aeaeb2; margin-bottom: 4px; }
+  .post-desc { font-size: 12px; color: #6e6e73; line-height: 1.5; }
+  .no-posts { padding: 14px 20px; font-size: 13px; color: #aeaeb2; font-style: italic; }
+
+  .loading { text-align: center; padding: 40px; color: #aeaeb2; font-size: 14px; }
+  .footer { text-align: center; font-size: 11px; color: #aeaeb2; margin-top: 20px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← Back to Tony</a>
+
+  <div class="header">
+    <div class="header-eyebrow">⚡ Austin Visuals Intelligence</div>
+    <h1>Competitor Brief</h1>
+    <div class="updated" id="updated">Loading...</div>
+  </div>
+
+  <div id="feed-container">
+    <div class="loading">Loading competitor feed...</div>
+  </div>
+
+  <div class="footer">Updated daily · Sources: public RSS feeds · ⚡ Tony</div>
+</div>
+
+<script>
+function toggle(el) {
+  el.classList.toggle('open');
+}
+
+// Load competitor-brief.json
+fetch('competitor-brief.json?v=' + Date.now())
+  .then(r => r.json())
+  .then(data => {
+    document.getElementById('updated').textContent = 'Last updated: ' + data.updated;
+    const container = document.getElementById('feed-container');
+    container.innerHTML = '';
+
+    data.competitors.forEach(comp => {
+      const postCount = comp.posts.length;
+      const card = document.createElement('div');
+      card.className = 'competitor-card' + (postCount > 0 ? ' open' : '');
+
+      const postsHtml = postCount > 0
+        ? comp.posts.map(p => `
+            <div class="post-item">
+              <div class="post-date">${p.date || ''}</div>
+              <div class="post-title"><a href="${p.link}" target="_blank" rel="noopener">${p.title}</a></div>
+              ${p.desc ? `<div class="post-desc">${p.desc}</div>` : ''}
+            </div>`).join('')
+        : '<div class="no-posts">No recent posts found.</div>';
+
+      card.innerHTML = `
+        <div class="comp-header" onclick="toggle(this.parentElement)">
+          <div>
+            <div class="comp-name">${comp.name}</div>
+            <div class="comp-site">${comp.website}</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;">
+            <span class="comp-count ${postCount > 0 ? 'has-posts' : ''}">${postCount} post${postCount !== 1 ? 's' : ''}</span>
+            <span class="chevron">▼</span>
+          </div>
+        </div>
+        <div class="post-list">${postsHtml}</div>`;
+
+      container.appendChild(card);
+    });
+  })
+  .catch(err => {
+    document.getElementById('feed-container').innerHTML =
+      '<div class="loading">Could not load feed data. ' + err.message + '</div>';
+  });
+</script>
+</body>
+</html>
