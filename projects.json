@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-22 09:44 UTC",
+  "updated": "2026-03-22 22:13 UTC",
   "projects": [
     {
       "name": "1915 Films - Stephen Lawrence VFX",
@@ -325,6 +325,33 @@
       "progress_pct": 50,
       "status_summary": "In production \u2014 Tom assigned. Client-provided script. Target delivery 4/4/25.",
       "next_steps": "Tom to complete animation. Deliver by April 4. Request Google review from Paul Phelps."
+    },
+    {
+      "name": "Chris Carpenter VFX - Infinity Shot",
+      "created_at": "2026-03-22",
+      "due_date": "Not set",
+      "status": "active",
+      "flags": [
+        "not_started"
+      ],
+      "nda": null,
+      "assigned": [
+        "peter@austinvisuals.com"
+      ],
+      "dropbox_link": "https://www.dropbox.com/scl/fo/jooqkugk3e2z94ah8s253/ANcpgQuRRIRqb38-_rm1S1w?rlkey=4y84zzx4dvlmmvbv7a0m8wta1&dl=0",
+      "progress_pct": 60,
+      "status_summary": "Active \u2014 Fully paid. Waiting for client to send VFX source files to complete the infinity shot. Peter assigned as lead artist.",
+      "next_steps": "Wait for Chris Carpenter to deliver the VFX source files. Once received, Peter to complete the infinity shot VFX.",
+      "updates": [
+        {
+          "author": "matt@austinvisuals.com",
+          "author_name": "Matt",
+          "timestamp": "2026-03-22 22:00 UTC",
+          "text": "Chris Carpenter VFX - Infinity Shot. Fully paid \u2014 all invoices cleared. One VFX shot remaining. Waiting on client to send source files. Peter is assigned. No more billing needed.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": []
     },
     {
       "name": "Daisy Dennerline - DCD Films Documentary",
