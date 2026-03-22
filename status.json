@@ -1,6 +1,6 @@
 {
   "status": "online",
-  "last_seen": "2026-03-22T20:24:32Z",
+  "last_seen": "2026-03-22T21:23:41Z",
   "message": "All systems running normally.",
   "checks": {
     "email_handler": "ok",
