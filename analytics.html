@@ -35,10 +35,19 @@
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   @media (max-width: 640px) {
     .two-col { grid-template-columns: 1fr; }
-    .stats-row { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: 1fr 1fr; }
     .page-detail-grid { grid-template-columns: 1fr 1fr; }
     body { padding: 16px 12px 40px; }
     h1 { font-size: 22px; }
+    /* Hide progress bars on mobile — just show name + number */
+    .trow-bar-wrap { display: none; }
+    .page-bar-wrap { display: none; }
+    /* Ensure rows don't overflow */
+    .trow { flex-wrap: nowrap; overflow: hidden; }
+    .trow-name { min-width: 0; }
+    /* Page rows */
+    .page-row-header { flex-wrap: nowrap; overflow: hidden; }
+    .page-views { flex-shrink: 0; }
   }
 
   /* Page rows */
