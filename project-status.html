@@ -177,7 +177,7 @@ function renderProjects(projects) {
       <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
         <div class="status-dot ${dotClass(status)}"></div>
         <div class="card-main">
-          <div class="card-name">${p.name} ${statusBadge(status)}</div>
+          <div class="card-name">${p.name} ${statusBadge(status)}${(p.flags||[]).includes('not_started') ? ' <span class="badge" style="background:#f2f2f7;color:#6e6e73;">Not Started</span>' : ''}${(p.flags||[]).includes('hold') ? ' <span class="badge" style="background:#fff8e6;color:#9a6800;">Hold</span>' : ''}</div>
           <div class="card-meta">
             <span>👤 ${assigned}</span>
             <span>📅 ${due}</span>
@@ -220,6 +220,11 @@ function filter(type, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   if (type === 'all') { renderProjects(allProjects); return; }
+  // Flag-based filters
+  if (type === 'not_started' || type === 'hold') {
+    renderProjects(allProjects.filter(p => (p.flags||[]).includes(type)));
+    return;
+  }
   renderProjects(allProjects.filter(p => getStatus(p) === type));
 }
 
