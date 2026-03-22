@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-22 05:05 UTC",
+  "updated": "2026-03-22 05:11 UTC",
   "projects": [
     {
       "name": "Alchatek - Video AI RFP",
@@ -201,7 +201,7 @@
     {
       "name": "Gaurdian Decommissioning",
       "created_at": "2026-03-21",
-      "due_date": "Not set",
+      "due_date": "2026-04-18",
       "status": "active",
       "assigned": [
         "peter@austinvisuals.com"
@@ -214,12 +214,19 @@
           "timestamp": "2026-03-21 00:00 UTC",
           "text": "Active project. Peter assigned. Reference photos filed.",
           "flagged": false
+        },
+        {
+          "author": "matt@austinvisuals.com",
+          "author_name": "Matt",
+          "timestamp": "2026-03-22 05:10 UTC",
+          "text": "Project started March 16 (verbal approval March 13). 27 storyboards created \u2014 multiple versions per board. Craig at Gaurdian provided round 1 comments. Round 2 expected Monday. Peter takes over Monday to finalize boards. Goal to start animation by end of March. Hard due date April 18, target delivery April 15.",
+          "flagged": false
         }
       ],
       "pending_requests": [],
-      "progress_pct": 35,
-      "status_summary": "Active \u2014 Peter on production. Reference photos received and filed.",
-      "next_steps": "Peter to continue animation. Check milestone billing schedule."
+      "progress_pct": 15,
+      "status_summary": "15% \u2014 Storyboards in review. 27 boards created, one round of client comments received from Craig. Peter starts animation work Monday.",
+      "next_steps": "Round 2 of storyboard comments expected Monday. Peter adjusts boards early this week. Goal: finalize all boards by end of this week. Start animation week of March 30. Bill client milestone when animation phase begins."
     },
     {
       "name": "Landon Lockwood - Ptolemaic Alexandria Animation",
