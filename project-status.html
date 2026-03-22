@@ -65,6 +65,8 @@
   .badge-pending { background: #fff8e6; color: #9a6800; }
   .badge-prospect { background: #eff6ff; color: #1d4ed8; }
   .badge-stale { background: #ffeeed; color: #b91c1c; }
+  .badge-nda { background: #f3e8ff; color: #7c3aed; }
+  .badge-nda-pending { background: #fef9c3; color: #92400e; }
 
   .empty { text-align: center; padding: 40px; color: #aeaeb2; font-size: 14px; }
   .footer { text-align: center; font-size: 11px; color: #aeaeb2; margin-top: 20px; }
@@ -160,7 +162,7 @@ function renderProjects(projects) {
       <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
         <div class="status-dot ${dotClass(status)}"></div>
         <div class="card-main">
-          <div class="card-name">${p.name} ${statusBadge(status)}</div>
+          <div class="card-name">${p.name} ${statusBadge(status)}${p.nda === 'signed' ? ' <span class="badge badge-nda">NDA Signed</span>' : p.nda === 'pending' ? ' <span class="badge badge-nda-pending">NDA Pending</span>' : ''}</div>
           <div class="card-meta">
             <span>👤 ${assigned}</span>
             <span>📅 ${due}</span>
