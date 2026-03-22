@@ -152,7 +152,13 @@
 <div class="wrap">
 
   <div class="header">
-    <div class="header-eyebrow">⚡ Austin Visuals</div>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+      <div class="header-eyebrow">⚡ Austin Visuals</div>
+      <a href="status-page.html" id="status-widget" style="display:inline-flex;align-items:center;gap:7px;background:#fff;border-radius:99px;padding:6px 14px;font-size:12px;font-weight:700;color:#1d1d1f;text-decoration:none;box-shadow:0 1px 4px rgba(0,0,0,0.08);">
+        <span id="status-dot-small" style="width:8px;height:8px;border-radius:50%;background:#aeaeb2;display:inline-block;"></span>
+        <span id="status-text-small">Checking...</span>
+      </a>
+    </div>
     <h1>Tony — What I Can Do</h1>
     <p>Click any category to see the full list of commands. Updated as new skills are confirmed working.</p>
   </div>
@@ -452,6 +458,29 @@
     window.location.href = 'https://translate.google.com/translate?hl=vi&sl=en&tl=vi&u=' + encodeURIComponent(current);
     return false;
   }
+  // Status widget
+  fetch('status.json?v=' + Date.now())
+    .then(r => r.json())
+    .then(data => {
+      const minsAgo = Math.floor((Date.now() - new Date(data.last_seen).getTime()) / 60000);
+      const dot = document.getElementById('status-dot-small');
+      const txt = document.getElementById('status-text-small');
+      if (minsAgo > 30) {
+        dot.style.background = '#ff3b30';
+        txt.textContent = 'Offline';
+      } else if (minsAgo > 15) {
+        dot.style.background = '#ff9f0a';
+        txt.textContent = 'Delayed';
+      } else {
+        dot.style.background = '#34c759';
+        dot.style.boxShadow = '0 0 5px rgba(52,199,89,0.6)';
+        txt.textContent = 'Online';
+      }
+    })
+    .catch(() => {
+      document.getElementById('status-dot-small').style.background = '#ff3b30';
+      document.getElementById('status-text-small').textContent = 'Offline';
+    });
 </script>
 </body>
 </html>
