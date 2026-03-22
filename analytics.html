@@ -168,8 +168,8 @@ fetch('analytics.json?v='+Date.now())
       <div class="page-row">
         <div class="page-row-header" onclick="togglePage(this)">
           <div style="flex:1;overflow:hidden;">
-            <div class="page-title">${p.title}</div>
-            <div style="font-size:10px;color:#aeaeb2;margin-top:1px;">${pageType}</div>
+            <div class="page-title">${pageType} — <span style="font-weight:600;color:#3a3a3c;">${p.path === '/' ? 'austinvisuals.com/' : p.path}</span></div>
+            <div style="font-size:10px;color:#aeaeb2;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${p.title}</div>
           </div>
           <div class="page-bar-wrap"><div class="page-bar" style="width:${Math.round(p.views/maxV*100)}%"></div></div>
           <div class="page-views">${p.views}</div>
