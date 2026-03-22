@@ -1,0 +1,292 @@
+{
+  "updated": "2026-03-22 03:33 UTC",
+  "projects": [
+    {
+      "name": "Alchatek - Video AI RFP",
+      "created_at": "2026-03-21",
+      "due_date": "Not set",
+      "status": "prospect",
+      "assigned": [],
+      "dropbox_link": null,
+      "updates": [
+        {
+          "author": "nancy@austinvisuals.com",
+          "author_name": "Nancy",
+          "timestamp": "2026-03-21 00:00 UTC",
+          "text": "Video AI RFP response 3-5. Kreg Thornley contact at Alchatek.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": [],
+      "progress_pct": 0
+    },
+    {
+      "name": "Biosqueeze - Fines Migration",
+      "created_at": "2026-03-21",
+      "due_date": "Not set",
+      "status": "pending",
+      "assigned": [],
+      "dropbox_link": null,
+      "updates": [
+        {
+          "author": "nancy@austinvisuals.com",
+          "author_name": "Nancy",
+          "timestamp": "2026-03-21 00:00 UTC",
+          "text": "#9 in Biosqueeze series. Not yet started.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": [],
+      "progress_pct": 0
+    },
+    {
+      "name": "Biosqueeze - Mechanical Integrity",
+      "created_at": "2026-03-21",
+      "due_date": "Not set",
+      "status": "pending",
+      "assigned": [
+        "peter@austinvisuals.com"
+      ],
+      "dropbox_link": null,
+      "updates": [
+        {
+          "author": "nancy@austinvisuals.com",
+          "author_name": "Nancy",
+          "timestamp": "2026-03-21 00:00 UTC",
+          "text": "#7 in Biosqueeze series. Pending start.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": [],
+      "progress_pct": 0
+    },
+    {
+      "name": "Biosqueeze - Water Shutoff",
+      "created_at": "2026-03-21",
+      "due_date": "Not set",
+      "status": "pending",
+      "assigned": [],
+      "dropbox_link": null,
+      "updates": [
+        {
+          "author": "nancy@austinvisuals.com",
+          "author_name": "Nancy",
+          "timestamp": "2026-03-21 00:00 UTC",
+          "text": "#8 in Biosqueeze series. Not yet started.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": [],
+      "progress_pct": 0
+    },
+    {
+      "name": "Biosqueeze Project 5 - Underground Mining",
+      "created_at": "2026-03-21",
+      "due_date": "Not set",
+      "status": "active",
+      "assigned": [
+        "peter@austinvisuals.com"
+      ],
+      "dropbox_link": null,
+      "updates": [
+        {
+          "author": "nancy@austinvisuals.com",
+          "author_name": "Nancy",
+          "timestamp": "2026-03-21 00:00 UTC",
+          "text": "Peter assigned. Active production.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": [],
+      "progress_pct": 0
+    },
+    {
+      "name": "C-Vision Horse Race Party Video",
+      "created_at": "2026-03-21",
+      "due_date": "Not set",
+      "status": "active",
+      "assigned": [
+        "adam@austinvisuals.com"
+      ],
+      "dropbox_link": null,
+      "updates": [
+        {
+          "author": "nancy@austinvisuals.com",
+          "author_name": "Nancy",
+          "timestamp": "2026-03-21 00:00 UTC",
+          "text": "In production \u2014 Adam assigned. Script and production in progress.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": [],
+      "progress_pct": 0
+    },
+    {
+      "name": "Chicago Oculofacial Plastic Surgery",
+      "created_at": "2026-03-21",
+      "due_date": "2025-04-04",
+      "status": "active",
+      "assigned": [
+        "tom@austinvisuals.com"
+      ],
+      "dropbox_link": null,
+      "updates": [
+        {
+          "author": "nancy@austinvisuals.com",
+          "author_name": "Nancy",
+          "timestamp": "2026-03-21 00:00 UTC",
+          "text": "Tom assigned. Target completion 4/4/25. Client-provided script. Second video for this client \u2014 first got 660k YouTube views.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": [],
+      "progress_pct": 0
+    },
+    {
+      "name": "Daisy Dennerline - DCD Films Documentary",
+      "created_at": "2026-03-21",
+      "due_date": "Not set",
+      "status": "prospect",
+      "assigned": [],
+      "dropbox_link": null,
+      "updates": [
+        {
+          "author": "nancy@austinvisuals.com",
+          "author_name": "Nancy",
+          "timestamp": "2026-03-21 00:00 UTC",
+          "text": "Documentary director. NDA needed. Trying to set meeting.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": [],
+      "progress_pct": 0
+    },
+    {
+      "name": "Epiroc Safety Training",
+      "created_at": "2026-03-21",
+      "due_date": "Not set",
+      "status": "prospect",
+      "assigned": [],
+      "dropbox_link": null,
+      "updates": [
+        {
+          "author": "nancy@austinvisuals.com",
+          "author_name": "Nancy",
+          "timestamp": "2026-03-21 00:00 UTC",
+          "text": "Thomas Hill + Bridget Esquivel contacts. 31 training videos discussed. Matt visited 12/30. Texted 3/5.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": [],
+      "progress_pct": 0
+    },
+    {
+      "name": "Gaurdian Decommissioning",
+      "created_at": "2026-03-21",
+      "due_date": "Not set",
+      "status": "active",
+      "assigned": [
+        "peter@austinvisuals.com"
+      ],
+      "dropbox_link": "https://www.dropbox.com/scl/fo/rvns03p10z630gopvg4b2/AJ73EjPEeCNNbG9Jo7UUuZg?rlkey=w20jqjafi5jhgd24jd9mlpbur",
+      "updates": [
+        {
+          "author": "nancy@austinvisuals.com",
+          "author_name": "Nancy",
+          "timestamp": "2026-03-21 00:00 UTC",
+          "text": "Active project. Peter assigned. Reference photos filed.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": [],
+      "progress_pct": 0
+    },
+    {
+      "name": "Landon Lockwood - Ptolemaic Alexandria Animation",
+      "created_at": "2026-03-21",
+      "due_date": "Not set",
+      "status": "prospect",
+      "assigned": [],
+      "dropbox_link": "https://www.dropbox.com/scl/fo/8vf4god3va08iuc26ecnx/AF-uwhoeqIU85wzxeGUbuIU?rlkey=hzhmzcdmphuplvczj8k6x6ywh",
+      "updates": [
+        {
+          "author": "nancy@austinvisuals.com",
+          "author_name": "Nancy",
+          "timestamp": "2026-03-21 00:00 UTC",
+          "text": "No proposal yet. Signed NDA. Matt conversing with Landon. Call scheduled Tuesday.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": [],
+      "progress_pct": 0
+    },
+    {
+      "name": "PJA Engineers",
+      "created_at": "2026-03-21",
+      "due_date": "Not set",
+      "status": "active",
+      "assigned": [
+        "tom@austinvisuals.com"
+      ],
+      "dropbox_link": null,
+      "updates": [
+        {
+          "author": "nancy@austinvisuals.com",
+          "author_name": "Nancy",
+          "timestamp": "2026-03-21 00:00 UTC",
+          "text": "Tom assigned. Deposit paid 3/17. In production.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": [],
+      "progress_pct": 0
+    },
+    {
+      "name": "Test Animation Client - Brand Video",
+      "created_at": "2026-03-21",
+      "due_date": "Not set",
+      "assigned": [
+        "peter@austinvisuals.com"
+      ],
+      "updates": [
+        {
+          "author": "peter@austinvisuals.com",
+          "author_name": "Peter",
+          "timestamp": "2026-03-21 16:14 UTC",
+          "text": "Completed storyboard today. Starting keyframes tomorrow.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": [
+        "david@austinvisuals.com"
+      ]
+    },
+    {
+      "name": "Test Animation Client - Brand Video",
+      "created_at": "2026-03-21",
+      "due_date": "Not set",
+      "assigned": [],
+      "updates": [],
+      "pending_requests": []
+    },
+    {
+      "name": "TXIPC",
+      "created_at": "2026-03-21",
+      "due_date": "Not set",
+      "status": "prospect",
+      "assigned": [],
+      "dropbox_link": null,
+      "updates": [
+        {
+          "author": "nancy@austinvisuals.com",
+          "author_name": "Nancy",
+          "timestamp": "2026-03-21 00:00 UTC",
+          "text": "Series animation. Working on $150,000 for 20 minutes. Call in one month.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": [],
+      "progress_pct": 0
+    }
+  ]
+}
