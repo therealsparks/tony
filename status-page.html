@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tony System Status</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif; background: #f5f5f7; color: #1d1d1f; -webkit-font-smoothing: antialiased; padding: 32px 20px 60px; }
+  .wrap { max-width: 600px; margin: 0 auto; }
+  .back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: #0071e3; text-decoration: none; margin-bottom: 24px; }
+
+  .status-hero { background: #fff; border-radius: 20px; padding: 32px; text-align: center; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .status-dot-big { width: 48px; height: 48px; border-radius: 50%; margin: 0 auto 16px; }
+  .status-label { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
+  .status-sublabel { font-size: 14px; color: #6e6e73; }
+  .last-seen { font-size: 12px; color: #aeaeb2; margin-top: 8px; }
+
+  .dot-online { background: #34c759; box-shadow: 0 0 16px rgba(52,199,89,0.4); }
+  .dot-offline { background: #ff3b30; box-shadow: 0 0 16px rgba(255,59,48,0.4); }
+  .dot-degraded { background: #ff9f0a; box-shadow: 0 0 16px rgba(255,159,10,0.4); }
+
+  .checks-card { background: #fff; border-radius: 16px; padding: 20px 22px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .checks-title { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #aeaeb2; margin-bottom: 14px; }
+  .check-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #f7f7f7; }
+  .check-row:last-child { border-bottom: none; }
+  .check-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .check-name { font-size: 14px; font-weight: 500; flex: 1; }
+  .check-status { font-size: 12px; font-weight: 600; color: #6e6e73; }
+
+  .report-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .report-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+  .report-body { font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 16px; }
+  .report-btn { display: inline-block; background: #1d1d1f; color: #fff; border-radius: 10px; padding: 12px 22px; font-size: 14px; font-weight: 700; text-decoration: none; }
+  .report-btn:hover { opacity: 0.85; }
+
+  .footer { text-align: center; font-size: 11px; color: #aeaeb2; margin-top: 20px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← Back to Tony</a>
+
+  <div class="status-hero" id="status-hero">
+    <div class="status-dot-big" id="status-dot"></div>
+    <div class="status-label" id="status-label">Checking...</div>
+    <div class="status-sublabel" id="status-sublabel"></div>
+    <div class="last-seen" id="last-seen"></div>
+  </div>
+
+  <div class="checks-card">
+    <div class="checks-title">System Components</div>
+    <div id="checks-list">
+      <div class="check-row"><div class="check-dot" style="background:#aeaeb2"></div><div class="check-name">Loading...</div></div>
+    </div>
+  </div>
+
+  <div class="report-card">
+    <div class="report-title">Something not working?</div>
+    <div class="report-body">
+      If Tony isn't responding to your emails or a skill isn't working as expected, email Matt directly with details about what you tried and what happened.<br><br>
+      <strong>Include in your email:</strong><br>
+      • What skill or command you used<br>
+      • The exact subject line you sent<br>
+      • What you expected vs. what happened<br>
+      • Any error message or response you received
+    </div>
+    <a href="mailto:matt@austinvisuals.com?subject=Tony%20Issue%20Report&body=Hi%20Matt%2C%0A%0ASkill%20I%20was%20trying%3A%0A%0AWhat%20I%20did%3A%0A%0AWhat%20happened%3A%0A%0AError%20or%20response%3A%0A" class="report-btn">📧 Report an Issue to Matt</a>
+  </div>
+
+  <div class="footer">⚡ Tony · Austin Visuals AI Assistant · Status page</div>
+</div>
+
+<script>
+const CHECK_LABELS = {
+  email_handler: 'Email Upload & Routing',
+  dropbox: 'Dropbox File Operations',
+  analytics: 'Analytics Dashboard',
+  competitor_brief: 'Daily Intel Brief',
+};
+
+function minutesAgo(isoDate) {
+  const d = new Date(isoDate);
+  const mins = Math.floor((Date.now() - d.getTime()) / 60000);
+  if (mins < 1) return 'just now';
+  if (mins === 1) return '1 minute ago';
+  if (mins < 60) return `${mins} minutes ago`;
+  const hrs = Math.floor(mins / 60);
+  if (hrs === 1) return '1 hour ago';
+  if (hrs < 24) return `${hrs} hours ago`;
+  return `${Math.floor(hrs/24)} days ago`;
+}
+
+fetch('status.json?v=' + Date.now())
+  .then(r => r.json())
+  .then(data => {
+    const lastSeen = new Date(data.last_seen);
+    const minsAgo = Math.floor((Date.now() - lastSeen.getTime()) / 60000);
+
+    // Determine status — stale after 30 min = offline
+    let status = data.status;
+    if (minsAgo > 30 && status === 'online') status = 'offline';
+    else if (minsAgo > 15 && status === 'online') status = 'degraded';
+
+    const dot = document.getElementById('status-dot');
+    const label = document.getElementById('status-label');
+    const sub = document.getElementById('status-sublabel');
+    const ls = document.getElementById('last-seen');
+
+    if (status === 'online') {
+      dot.className = 'status-dot-big dot-online';
+      label.textContent = 'Tony is Online';
+      label.style.color = '#1a7a46';
+      sub.textContent = 'All systems running normally.';
+    } else if (status === 'degraded') {
+      dot.className = 'status-dot-big dot-degraded';
+      label.textContent = 'Running — Last Check Delayed';
+      label.style.color = '#9a6800';
+      sub.textContent = 'Tony may be slow or temporarily unavailable.';
+    } else {
+      dot.className = 'status-dot-big dot-offline';
+      label.textContent = 'Tony is Offline';
+      label.style.color = '#b91c1c';
+      sub.textContent = 'The system is not responding. Matt may need to restart it.';
+    }
+
+    ls.textContent = `Last check-in: ${minutesAgo(data.last_seen)}`;
+
+    // Checks
+    const checks = data.checks || {};
+    document.getElementById('checks-list').innerHTML = Object.entries(checks).map(([key, val]) => `
+      <div class="check-row">
+        <div class="check-dot" style="background:${val==='ok'?'#34c759':val==='warn'?'#ff9f0a':'#ff3b30'}"></div>
+        <div class="check-name">${CHECK_LABELS[key] || key}</div>
+        <div class="check-status">${val === 'ok' ? 'Operational' : val === 'warn' ? 'Degraded' : 'Down'}</div>
+      </div>`).join('');
+  })
+  .catch(() => {
+    document.getElementById('status-dot').className = 'status-dot-big dot-offline';
+    document.getElementById('status-label').textContent = 'Status Unknown';
+    document.getElementById('status-label').style.color = '#b91c1c';
+    document.getElementById('status-sublabel').textContent = 'Could not reach status file.';
+    document.getElementById('checks-list').innerHTML = '<div class="check-row"><div class="check-dot" style="background:#aeaeb2"></div><div class="check-name">Unable to load</div></div>';
+  });
+</script>
+</body>
+</html>
