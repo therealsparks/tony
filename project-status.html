@@ -67,6 +67,8 @@
   .badge-stale { background: #ffeeed; color: #b91c1c; }
   .badge-nda { background: #f3e8ff; color: #7c3aed; }
   .badge-nda-pending { background: #fef9c3; color: #92400e; }
+  .dot-collect { background: #8e8e93; }
+  .badge-collect { background: #f2f2f7; color: #3a3a3c; }
 
   .empty { text-align: center; padding: 40px; color: #aeaeb2; font-size: 14px; }
   .footer { text-align: center; font-size: 11px; color: #aeaeb2; margin-top: 20px; }
@@ -87,6 +89,7 @@
     <button class="filter-btn" onclick="filter('pending', this)">Pending</button>
     <button class="filter-btn" onclick="filter('prospect', this)">Prospects</button>
     <button class="filter-btn" onclick="filter('stale', this)">Stale (7d+)</button>
+    <button class="filter-btn" onclick="filter('collect', this)">Collect / Archive</button>
   </div>
 
   <div id="project-list"><div class="empty">Loading...</div></div>
@@ -121,7 +124,18 @@ function getLastUpdate(project) {
   return updates[updates.length - 1];
 }
 
+function statusBadge(status) {
+  const map = {active:'badge-active',pending:'badge-pending',prospect:'badge-prospect',stale:'badge-stale',collect:'badge-collect'};
+  const labels = {active:'Active',pending:'Pending',prospect:'Prospect',stale:'Stale',collect:'Collect / Archive'};
+  return `<span class="badge ${map[status]||'badge-pending'}">${labels[status]||status}</span>`;
+}
+
+function dotClass(status) {
+  return {active:'dot-active',pending:'dot-pending',prospect:'dot-prospect',stale:'dot-stale',collect:'dot-collect'}[status]||'dot-pending';
+}
+
 function getStatus(project) {
+  if (project.status === 'collect') return 'collect';
   const base = project.status || 'active';
   const lastUpdate = getLastUpdate(project);
   if (lastUpdate) {
@@ -129,16 +143,6 @@ function getStatus(project) {
     if (days !== null && days >= 7 && base === 'active') return 'stale';
   }
   return base;
-}
-
-function statusBadge(status) {
-  const map = {active:'badge-active',pending:'badge-pending',prospect:'badge-prospect',stale:'badge-stale'};
-  const labels = {active:'Active',pending:'Pending',prospect:'Prospect',stale:'Stale'};
-  return `<span class="badge ${map[status]||'badge-pending'}">${labels[status]||status}</span>`;
-}
-
-function dotClass(status) {
-  return {active:'dot-active',pending:'dot-pending',prospect:'dot-prospect',stale:'dot-stale'}[status]||'dot-pending';
 }
 
 function renderProjects(projects) {
@@ -214,7 +218,7 @@ fetch('projects.json?v=' + Date.now())
     document.getElementById('updated').textContent = 'Last updated: ' + data.updated;
     allProjects = data.projects || [];
     // Sort: stale first, then active, then pending, then prospect
-    const order = {stale:0,active:1,pending:2,prospect:3};
+    const order = {stale:0,active:1,pending:2,prospect:3,collect:4};
     allProjects.sort((a,b) => (order[getStatus(a)]||9) - (order[getStatus(b)]||9));
     renderProjects(allProjects);
   })
