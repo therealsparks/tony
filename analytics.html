@@ -39,15 +39,21 @@
     .page-detail-grid { grid-template-columns: 1fr 1fr; }
     body { padding: 16px 12px 40px; }
     h1 { font-size: 22px; }
-    /* Hide progress bars on mobile — just show name + number */
-    .trow-bar-wrap { display: none; }
-    .page-bar-wrap { display: none; }
-    /* Ensure rows don't overflow */
-    .trow { flex-wrap: nowrap; overflow: hidden; }
-    .trow-name { min-width: 0; }
-    /* Page rows */
-    .page-row-header { flex-wrap: nowrap; overflow: hidden; }
-    .page-views { flex-shrink: 0; }
+    /* Make bars fluid width so rows fit in screen */
+    .trow-bar-wrap { width: 40px; flex-shrink: 1; min-width: 20px; }
+    .page-bar-wrap { width: 40px; flex-shrink: 1; min-width: 20px; }
+    /* Tighten number column */
+    .trow-val { min-width: 28px; font-size: 11px; }
+    .page-views { min-width: 28px; font-size: 11px; }
+    /* Prevent any overflow */
+    .trow { overflow: hidden; }
+    .trow-name { min-width: 0; font-size: 12px; }
+    .page-row-header { overflow: hidden; }
+    /* Slightly smaller page title on mobile */
+    .page-row-header div > div:first-child { font-size: 12px; }
+    .page-row-header div > div:last-child { font-size: 9px; }
+    /* Cards full width */
+    .card { padding: 14px 14px; }
   }
 
   /* Page rows */
