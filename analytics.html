@@ -33,6 +33,13 @@
   .card { background: #fff; border-radius: 16px; padding: 18px 20px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
   .card-title { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #6e6e73; margin-bottom: 12px; }
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 640px) {
+    .two-col { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: 1fr; }
+    .page-detail-grid { grid-template-columns: 1fr 1fr; }
+    body { padding: 16px 12px 40px; }
+    h1 { font-size: 22px; }
+  }
 
   /* Page rows */
   .page-row { border-bottom: 1px solid #f7f7f7; cursor: pointer; }
