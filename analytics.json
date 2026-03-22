@@ -1,0 +1,303 @@
+{
+  "updated": "2026-03-22 13:48 UTC",
+  "property": "Austin Visuals \u2014 Matt",
+  "overview": {
+    "sessions_7d": 637,
+    "sessions_prev_7d": 548,
+    "users_7d": 562,
+    "views_7d": 870,
+    "bounce_rate": 49.6,
+    "avg_session_sec": 114
+  },
+  "trend_30d": [
+    {
+      "date": "02/20",
+      "sessions": 209,
+      "views": 242
+    },
+    {
+      "date": "02/21",
+      "sessions": 155,
+      "views": 179
+    },
+    {
+      "date": "02/22",
+      "sessions": 156,
+      "views": 175
+    },
+    {
+      "date": "02/23",
+      "sessions": 232,
+      "views": 285
+    },
+    {
+      "date": "02/24",
+      "sessions": 196,
+      "views": 250
+    },
+    {
+      "date": "02/25",
+      "sessions": 160,
+      "views": 199
+    },
+    {
+      "date": "02/26",
+      "sessions": 117,
+      "views": 146
+    },
+    {
+      "date": "02/27",
+      "sessions": 153,
+      "views": 181
+    },
+    {
+      "date": "02/28",
+      "sessions": 109,
+      "views": 120
+    },
+    {
+      "date": "03/01",
+      "sessions": 68,
+      "views": 72
+    },
+    {
+      "date": "03/02",
+      "sessions": 94,
+      "views": 160
+    },
+    {
+      "date": "03/03",
+      "sessions": 102,
+      "views": 137
+    },
+    {
+      "date": "03/04",
+      "sessions": 105,
+      "views": 206
+    },
+    {
+      "date": "03/05",
+      "sessions": 78,
+      "views": 97
+    },
+    {
+      "date": "03/06",
+      "sessions": 88,
+      "views": 107
+    },
+    {
+      "date": "03/07",
+      "sessions": 74,
+      "views": 140
+    },
+    {
+      "date": "03/08",
+      "sessions": 57,
+      "views": 73
+    },
+    {
+      "date": "03/09",
+      "sessions": 96,
+      "views": 127
+    },
+    {
+      "date": "03/10",
+      "sessions": 100,
+      "views": 132
+    },
+    {
+      "date": "03/11",
+      "sessions": 102,
+      "views": 161
+    },
+    {
+      "date": "03/12",
+      "sessions": 116,
+      "views": 146
+    },
+    {
+      "date": "03/13",
+      "sessions": 79,
+      "views": 118
+    },
+    {
+      "date": "03/14",
+      "sessions": 88,
+      "views": 113
+    },
+    {
+      "date": "03/15",
+      "sessions": 54,
+      "views": 66
+    },
+    {
+      "date": "03/16",
+      "sessions": 96,
+      "views": 110
+    },
+    {
+      "date": "03/17",
+      "sessions": 100,
+      "views": 136
+    },
+    {
+      "date": "03/18",
+      "sessions": 87,
+      "views": 101
+    },
+    {
+      "date": "03/19",
+      "sessions": 72,
+      "views": 235
+    },
+    {
+      "date": "03/20",
+      "sessions": 76,
+      "views": 121
+    },
+    {
+      "date": "03/21",
+      "sessions": 62,
+      "views": 78
+    }
+  ],
+  "top_pages": [
+    {
+      "title": "Full-Service 3D Animation Studio | 2D & 3D Animation Service",
+      "path": "/",
+      "views": 999,
+      "users": 777
+    },
+    {
+      "title": "Work samples | Animated Explainer Videos",
+      "path": "/videos/",
+      "views": 226,
+      "users": 153
+    },
+    {
+      "title": "Key Differences Between Animated and Cartoon",
+      "path": "/animated-and-cartoon/",
+      "views": 145,
+      "users": 121
+    },
+    {
+      "title": "Explore Animation Jobs in Austin Texas | Austin Visuals",
+      "path": "/animation-and-marketing-jobs-in-austin/",
+      "views": 127,
+      "users": 100
+    },
+    {
+      "title": "Contact Austin Visuals | Production Company Commercials",
+      "path": "/contact-austin-visuals/",
+      "views": 104,
+      "users": 88
+    },
+    {
+      "title": "Learn About Austin Visuals, Our Story | Austin Visuals",
+      "path": "/about-austin-visuals/",
+      "views": 60,
+      "users": 48
+    },
+    {
+      "title": "3D Animation Services for Business | Animation Company",
+      "path": "/3d-animation-services/",
+      "views": 44,
+      "users": 39
+    },
+    {
+      "title": "Austin Visuals 3D Animation Video Post Production Studio \u2013 3",
+      "path": "/",
+      "views": 38,
+      "users": 1
+    },
+    {
+      "title": "How to Create Animated NFT Art ? | Austin Visuals",
+      "path": "/how-to-create-animated-nft-art/",
+      "views": 38,
+      "users": 37
+    },
+    {
+      "title": "Understanding Anime Production Cost",
+      "path": "/anime-production-cost/",
+      "views": 34,
+      "users": 32
+    }
+  ],
+  "traffic_sources": [
+    {
+      "channel": "Direct",
+      "sessions": 1557
+    },
+    {
+      "channel": "Organic Search",
+      "sessions": 1270
+    },
+    {
+      "channel": "Paid Search",
+      "sessions": 150
+    },
+    {
+      "channel": "Referral",
+      "sessions": 131
+    },
+    {
+      "channel": "Organic Social",
+      "sessions": 114
+    },
+    {
+      "channel": "Unassigned",
+      "sessions": 50
+    },
+    {
+      "channel": "Organic Video",
+      "sessions": 8
+    }
+  ],
+  "top_cities": [
+    {
+      "city": "Austin",
+      "region": "Texas",
+      "sessions": 85
+    },
+    {
+      "city": "Dallas",
+      "region": "Texas",
+      "sessions": 81
+    },
+    {
+      "city": "New York",
+      "region": "New York",
+      "sessions": 73
+    },
+    {
+      "city": "Bayingolin Mongol Autonomous Prefecture",
+      "region": "Xinjiang",
+      "sessions": 57
+    },
+    {
+      "city": "Hoa Binh",
+      "region": "Hoa Binh",
+      "sessions": 57
+    },
+    {
+      "city": "Houston",
+      "region": "Texas",
+      "sessions": 51
+    },
+    {
+      "city": "Shanghai",
+      "region": "Shanghai",
+      "sessions": 51
+    },
+    {
+      "city": "Los Angeles",
+      "region": "California",
+      "sessions": 40
+    },
+    {
+      "city": "Ashburn",
+      "region": "Virginia",
+      "sessions": 38
+    }
+  ]
+}
