@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-22 03:51 UTC",
+  "updated": "2026-03-22 04:44 UTC",
   "projects": [
     {
       "name": "Alchatek - Video AI RFP",
@@ -18,7 +18,9 @@
         }
       ],
       "pending_requests": [],
-      "progress_pct": 0
+      "progress_pct": 0,
+      "status_summary": "Prospect \u2014 Video AI RFP response due 3-5.",
+      "next_steps": "Send RFP response to Kreg Thornley at Alchatek by March 5."
     },
     {
       "name": "Biosqueeze - Fines Migration",
@@ -37,7 +39,9 @@
         }
       ],
       "pending_requests": [],
-      "progress_pct": 0
+      "progress_pct": 0,
+      "status_summary": "Not started \u2014 #9 in Biosqueeze series.",
+      "next_steps": "Queue after Water Shutoff. Confirm scope with Biosqueeze."
     },
     {
       "name": "Biosqueeze - Mechanical Integrity",
@@ -58,7 +62,9 @@
         }
       ],
       "pending_requests": [],
-      "progress_pct": 0
+      "progress_pct": 0,
+      "status_summary": "Pending start \u2014 #7 in Biosqueeze series.",
+      "next_steps": "Await green light from Hayden Binde. Assign artist when ready."
     },
     {
       "name": "Biosqueeze - Water Shutoff",
@@ -77,7 +83,9 @@
         }
       ],
       "pending_requests": [],
-      "progress_pct": 0
+      "progress_pct": 0,
+      "status_summary": "Not started \u2014 #8 in Biosqueeze series.",
+      "next_steps": "Queue after Mechanical Integrity. Confirm scope with Biosqueeze."
     },
     {
       "name": "Biosqueeze Project 5 - Underground Mining",
@@ -98,7 +106,9 @@
         }
       ],
       "pending_requests": [],
-      "progress_pct": 0
+      "progress_pct": 45,
+      "status_summary": "Active \u2014 Peter on Underground Mining animation for Biosqueeze.",
+      "next_steps": "Peter to upload renders. Final invoice pending on completion."
     },
     {
       "name": "C-Vision Horse Race Party Video",
@@ -119,7 +129,9 @@
         }
       ],
       "pending_requests": [],
-      "progress_pct": 0
+      "progress_pct": 40,
+      "status_summary": "In production \u2014 Adam working on horse race party video.",
+      "next_steps": "Continue production. Confirm delivery timeline with client Rachel Botting."
     },
     {
       "name": "Chicago Oculofacial Plastic Surgery",
@@ -140,7 +152,9 @@
         }
       ],
       "pending_requests": [],
-      "progress_pct": 0
+      "progress_pct": 50,
+      "status_summary": "In production \u2014 Tom assigned. Client-provided script. Target delivery 4/4/25.",
+      "next_steps": "Tom to complete animation. Deliver by April 4. Request Google review from Paul Phelps."
     },
     {
       "name": "Daisy Dennerline - DCD Films Documentary",
@@ -159,7 +173,9 @@
         }
       ],
       "pending_requests": [],
-      "progress_pct": 0
+      "progress_pct": 0,
+      "status_summary": "Prospect \u2014 documentary director, NDA needed, trying to set meeting.",
+      "next_steps": "Get NDA signed. Set discovery meeting with Daisy Dennerline."
     },
     {
       "name": "Epiroc Safety Training",
@@ -178,7 +194,9 @@
         }
       ],
       "pending_requests": [],
-      "progress_pct": 0
+      "progress_pct": 0,
+      "status_summary": "Prospect \u2014 31 training videos discussed. Matt visited site 12/30.",
+      "next_steps": "Follow up with Thomas Hill and Bridget Esquivel. Send proposal."
     },
     {
       "name": "Gaurdian Decommissioning",
@@ -199,7 +217,9 @@
         }
       ],
       "pending_requests": [],
-      "progress_pct": 0
+      "progress_pct": 35,
+      "status_summary": "Active \u2014 Peter on production. Reference photos received and filed.",
+      "next_steps": "Peter to continue animation. Check milestone billing schedule."
     },
     {
       "name": "Landon Lockwood - Ptolemaic Alexandria Animation",
@@ -218,7 +238,9 @@
         }
       ],
       "pending_requests": [],
-      "progress_pct": 0
+      "progress_pct": 0,
+      "status_summary": "Prospect \u2014 NDA signed. No proposal yet. Call scheduled Tuesday.",
+      "next_steps": "Tuesday call with Landon. Discuss scope and send proposal after."
     },
     {
       "name": "PJA Engineers",
@@ -239,7 +261,9 @@
         }
       ],
       "pending_requests": [],
-      "progress_pct": 0
+      "progress_pct": 30,
+      "status_summary": "Active \u2014 Tom assigned. Deposit paid 3/17. Production underway.",
+      "next_steps": "Tom to continue work. 2nd payment milestone coming up."
     },
     {
       "name": "TXIPC",
@@ -258,7 +282,9 @@
         }
       ],
       "pending_requests": [],
-      "progress_pct": 0
+      "progress_pct": 0,
+      "status_summary": "Prospect \u2014 large series animation, $150K for 20 mins. Call in one month.",
+      "next_steps": "Schedule follow-up call in one month. Prepare series proposal."
     }
   ]
 }
