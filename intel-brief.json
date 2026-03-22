@@ -1,11 +1,18 @@
 {
-  "updated": "2026-03-22 02:30 UTC",
+  "updated": "2026-03-22 02:40 UTC",
   "sections": [
     {
       "id": "gov",
-      "title": "Government & Regulatory",
+      "title": "Government & Defense",
       "icon": "\ud83c\udfdb\ufe0f",
       "items": [
+        {
+          "title": "Energy Department sets up $293M funding opportunity for Genesis Mission teams",
+          "link": "https://fedscoop.com/energy-department-funding-genesis-mission-teams/",
+          "desc": "National Labs, other federal agencies, academic institutions and private-sector companies can submit collaborative applications to address the challenges identified by DOE. The post Energy Department sets up $293M funding opportunity for Genesis Miss",
+          "date": "Wed, 18 Mar 2026",
+          "source": "FedScoop"
+        },
         {
           "title": "Why Texas\u2019 Population Boom Is Reshaping Local Mobility",
           "link": "https://feeds.texastribune.org/link/16799/17302823/why-texas-population-boom-is-reshaping-local-mobility",
@@ -49,39 +56,60 @@
       "icon": "\u26a1",
       "items": [
         {
-          "title": "Skanska scores $165M Texas A&M biology building",
-          "link": "https://www.constructiondive.com/news/skanska-texas-biology-building-higher-education-construction/815348/",
-          "desc": "The Stockholm-based builder will begin construction on the 185,000-square-foot facility next year for the college, a repeat client.",
+          "title": "Australia Weighs LNG Windfall Tax",
+          "link": "https://www.rigzone.com/news/wire/australia_weighs_lng_windfall_tax-21-mar-2026-183263-article/?rss=true",
+          "desc": "Prime Minister Anthony Albanese has asked Australia's Treasury to look into imposing a windfall tax on the country's vast liquefied natural gas industry.",
+          "date": "Sat, 21 Mar 2026",
+          "source": "Rigzone"
+        },
+        {
+          "title": "Texas Leads Nation in Oil, Gas Jobs",
+          "link": "https://www.rigzone.com/news/texas_leads_nation_in_oil_gas_jobs-20-mar-2026-183264-article/?rss=true",
+          "desc": "Texas 'led the nation' in oil and gas jobs last year with 476,777 people employed in the industry, according to TIPRO's latest state of energy report.",
           "date": "Fri, 20 Mar 2026",
-          "source": "Construction Dive"
+          "source": "Rigzone"
         },
         {
-          "title": "Urban rail transit construction in the US trails population growth",
-          "link": "https://www.constructiondive.com/news/urban-rail-transit-construction/815299/",
-          "desc": "Cities are opting for less costly bus rapid transit projects over subways and light rail.",
+          "title": "California's Gas Watchdog Warns of Gouging",
+          "link": "https://www.rigzone.com/news/wire/californias_gas_watchdog_warns_of_gouging-20-mar-2026-183260-article/?rss=true",
+          "desc": "California's energy regulator is keeping a close watch on the state's gasoline market for potential price gouging.",
           "date": "Fri, 20 Mar 2026",
-          "source": "Construction Dive"
+          "source": "Rigzone"
         },
         {
-          "title": "Construction prices spiked at \u2018staggering\u2019 rate to begin 2026",
-          "link": "https://www.constructiondive.com/news/staggering-construction-prices-february-2026/815257/",
-          "desc": "The latest data &mdash; prior to the war in Iran &mdash; shows prices rose on an annualized basis of 12.6% through February.&nbsp;",
+          "title": "Nuclear Sprint: DOE and Industry Race to Meet Trump\u2019s Target",
+          "link": "https://www.powermag.com/nuclear-sprint-doe-and-industry-race-to-meet-trumps-target/",
+          "desc": "The Senate Committee on Energy and Natural Resources convened March 19 for a full committee hearing to examine the Department of Energy\u2019s (DOE\u2019s) implementation of President Trump\u2019s May 2025 nuclear energy executive orders. Three witnesses\u2014DOE Assist",
           "date": "Thu, 19 Mar 2026",
-          "source": "Construction Dive"
+          "source": "Power Magazine"
         },
         {
-          "title": "Fed holds rates steady, flags uncertainty as oil price soars amid war",
-          "link": "https://www.constructiondive.com/news/fed-holds-rates-steady-flags-uncertainty-as-oil-price-soars-amid-war/815162/",
-          "desc": "The Fed faces a policy dilemma as the Iran war spurs a jump in energy prices, threatening to increase inflation, slow economic growth and push up unemployment.",
+          "title": "Cuba Begins Testing First Battery Energy Storage System to Boost Grid Stability",
+          "link": "https://www.powermag.com/cuba-begins-testing-first-battery-energy-storage-system-to-boost-grid-stability/",
+          "desc": "As part of the country\u2019s strategic program to strengthen the stability of the national grid, Cuba has begun load testing of the first unit of a battery energy storage system (BESS) at the El Cotorro substation in Havana. This is the first of four sys",
           "date": "Thu, 19 Mar 2026",
-          "source": "Construction Dive"
+          "source": "Power Magazine"
         },
         {
-          "title": "4 bonus depreciation tax tips for construction firms",
-          "link": "https://www.constructiondive.com/news/bonus-depreciation-tax-tips-construction/815140/",
-          "desc": "With IRS staff under pressure, developing internal processes and documenting fixed assets can avoid extended reviews and additional information requests, writes a construction accountant.",
+          "title": "DOE Has Issued More Than 40 Section 202(c) Emergency Orders Since May 2025. Here\u2019s an Updated Log.",
+          "link": "https://www.powermag.com/doe-has-issued-more-than-40-section-202c-emergency-orders-since-may-2025-heres-an-updated-log/",
+          "desc": "Since May 2025, the U.S. Department of Energy (DOE) has issued more than 40 emergency orders and extensions under Section 202(c) of the Federal Power Act\u2014more than in any comparable period in the past two decades. The orders have fallen into two broa",
           "date": "Thu, 19 Mar 2026",
-          "source": "Construction Dive"
+          "source": "Power Magazine"
+        },
+        {
+          "title": "Google Signs Deal for Demand Response Capacity for Data Centers",
+          "link": "https://www.powermag.com/google-signs-deal-for-demand-response-capacity-for-data-centers/",
+          "desc": "Tech giant Google has announced what the company calls \"A new milestone for smart, affordable electricity growth.\" Here's the text of a blog post from Michael Terrell, Head of Advanced Energy for the company. The post Google Signs Deal for Demand Res",
+          "date": "Thu, 19 Mar 2026",
+          "source": "Power Magazine"
+        },
+        {
+          "title": "South Korean Groups Backing New 1.25-GW Coal-Fired Power Plant in Alaska",
+          "link": "https://www.powermag.com/south-korean-groups-backing-new-1-25-gw-coal-fired-power-plant-in-alaska/",
+          "desc": "A fact sheet published by the U.S. Dept. of the Interior notes a $1-billion agreement between Hyundai Heavy Industries Power Systems and developers of the proposed 1.25-GW Terra Energy Center, a new 1.25-GW coal-fired power plant in Alaska. Officials",
+          "date": "Thu, 19 Mar 2026",
+          "source": "Power Magazine"
         }
       ]
     },
@@ -89,13 +117,29 @@
       "id": "medical",
       "title": "Medical & Science",
       "icon": "\ud83d\udd2c",
-      "items": []
+      "items": [
+        {
+          "title": "JenaValve snags FDA approval in aortic regurgitation",
+          "link": "https://www.medtechdive.com/news/jenavalve-fda-approval-aortic-regurgitation/815120/",
+          "desc": "The approval comes two months after Edwards Lifesciences scuttled plans to buy JenaValve for $945 million amid opposition from the Federal Trade Commission.",
+          "date": "Wed, 18 Mar 2026",
+          "source": "MedTech Dive"
+        }
+      ]
     },
     {
       "id": "legal_tech",
-      "title": "Legal & Technology",
+      "title": "Legal & Courts",
       "icon": "\u2696\ufe0f",
-      "items": []
+      "items": [
+        {
+          "title": "Energy Department sets up $293M funding opportunity for Genesis Mission teams",
+          "link": "https://fedscoop.com/energy-department-funding-genesis-mission-teams/",
+          "desc": "National Labs, other federal agencies, academic institutions and private-sector companies can submit collaborative applications to address the challenges identified by DOE. The post Energy Department sets up $293M funding opportunity for Genesis Miss",
+          "date": "Wed, 18 Mar 2026",
+          "source": "FedScoop"
+        }
+      ]
     },
     {
       "id": "animation",
@@ -164,7 +208,64 @@
       "id": "texas_biz",
       "title": "Texas Business",
       "icon": "\ud83e\udd20",
-      "items": []
+      "items": [
+        {
+          "title": "Texas Weekly Deal Highlights",
+          "link": "https://www.texasceomagazine.com/p/texas-weekly-deal-highlights-bb5",
+          "desc": "March 15, 2026",
+          "date": "Mon, 16 Mar 2026",
+          "source": "Texas CEO Magazine"
+        },
+        {
+          "title": "Why Texas\u2019 Population Boom Is Reshaping Local Mobility",
+          "link": "https://feeds.texastribune.org/link/16799/17302823/why-texas-population-boom-is-reshaping-local-mobility",
+          "desc": "Rapid growth across Texas is changing how families move, settle, and build community.",
+          "date": "Fri, 20 Mar 2026",
+          "source": "Texas Tribune"
+        },
+        {
+          "title": "University of North Texas to cut more than 70 programs and minors to trim $45 million deficit",
+          "link": "https://feeds.texastribune.org/link/16799/17302824/university-north-texas-deficit-program-cuts",
+          "desc": "Degrees in linguistics and Latin American and women\u2019s and gender studies will be phased out. LGBTQ, Mexican American, Africana and Asian studies are among 25 undergrad minors that will also be cut.",
+          "date": "Fri, 20 Mar 2026",
+          "source": "Texas Tribune"
+        },
+        {
+          "title": "Texas has taken over issuing permits to store carbon underground. Here\u2019s what to know.",
+          "link": "https://feeds.texastribune.org/link/16799/17302537/texas-carbon-storage-permits-class-6-epa-primacy",
+          "desc": "The move of authority to the Texas Railroad Commission from the federal government now makes it easier for energy companies to apply for permits to store carbon underground.",
+          "date": "Fri, 20 Mar 2026",
+          "source": "Texas Tribune"
+        },
+        {
+          "title": "Texas inmate seeks to stop looming execution after codefendant confesses to double murders",
+          "link": "https://feeds.texastribune.org/link/16799/17302353/texas-execution-james-broadnax-codefendant-confession",
+          "desc": "In his appeal, James Broadnax, who also wants a new trial, included a signed confession by his cousin saying he committed the 2008 Garland murders.",
+          "date": "Thu, 19 Mar 2026",
+          "source": "Texas Tribune"
+        },
+        {
+          "title": "Texas accepts some Islamic schools into voucher program after lawsuits",
+          "link": "https://feeds.texastribune.org/link/16799/17288140/texas-lawsuit-school-vouchers-muslim-parent",
+          "desc": "Federal lawsuits by parents and schools argued Texas officials engaged in religious discrimination by preventing Islamic private schools from accessing state voucher money.",
+          "date": "Mon, 02 Mar 2026",
+          "source": "Texas Tribune"
+        },
+        {
+          "title": "Skanska scores $165M Texas A&M biology building",
+          "link": "https://www.constructiondive.com/news/skanska-texas-biology-building-higher-education-construction/815348/",
+          "desc": "The Stockholm-based builder will begin construction on the 185,000-square-foot facility next year for the college, a repeat client.",
+          "date": "Fri, 20 Mar 2026",
+          "source": "Construction Dive"
+        },
+        {
+          "title": "Urban rail transit construction in the US trails population growth",
+          "link": "https://www.constructiondive.com/news/urban-rail-transit-construction/815299/",
+          "desc": "Cities are opting for less costly bus rapid transit projects over subways and light rail.",
+          "date": "Fri, 20 Mar 2026",
+          "source": "Construction Dive"
+        }
+      ]
     }
   ]
 }
