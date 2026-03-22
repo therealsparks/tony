@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-22 05:01 UTC",
+  "updated": "2026-03-22 05:05 UTC",
   "projects": [
     {
       "name": "Alchatek - Video AI RFP",
@@ -113,7 +113,7 @@
     {
       "name": "C-Vision Horse Race Party Video",
       "created_at": "2026-03-21",
-      "due_date": "Not set",
+      "due_date": "2026-04-18",
       "status": "active",
       "assigned": [
         "adam@austinvisuals.com"
@@ -129,9 +129,9 @@
         }
       ],
       "pending_requests": [],
-      "progress_pct": 40,
-      "status_summary": "In production \u2014 Adam working on horse race party video.",
-      "next_steps": "Continue production. Confirm delivery timeline with client Rachel Botting."
+      "progress_pct": 0,
+      "status_summary": "Not started \u2014 Dropbox created and shared with client Rachel. Kickoff call with Adam, Nancy, and Rachel scheduled Monday or Tuesday.",
+      "next_steps": "Complete kickoff call. Adam to begin production after kickoff. Target delivery April 18."
     },
     {
       "name": "Chicago Oculofacial Plastic Surgery",
