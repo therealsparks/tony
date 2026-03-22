@@ -405,6 +405,9 @@
 
   <div class="footer">
     ⚡ Tony · Austin Visuals AI Assistant · Updated March 21, 2026 · 12 skills live
+    <div style="margin-top:12px;">
+      <a href="#" onclick="translatePage()" style="font-size:11px;color:#aeaeb2;text-decoration:none;opacity:0.6;">🌐 Dịch sang tiếng Việt</a>
+    </div>
   </div>
 
 </div>
@@ -412,6 +415,11 @@
 <script>
   function toggle(el) {
     el.classList.toggle('open');
+  }
+  function translatePage() {
+    const current = window.location.href;
+    window.location.href = 'https://translate.google.com/translate?hl=vi&sl=en&tl=vi&u=' + encodeURIComponent(current);
+    return false;
   }
 </script>
 </body>
