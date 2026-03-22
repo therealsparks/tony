@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-22 03:33 UTC",
+  "updated": "2026-03-22 03:51 UTC",
   "projects": [
     {
       "name": "Alchatek - Video AI RFP",
@@ -240,34 +240,6 @@
       ],
       "pending_requests": [],
       "progress_pct": 0
-    },
-    {
-      "name": "Test Animation Client - Brand Video",
-      "created_at": "2026-03-21",
-      "due_date": "Not set",
-      "assigned": [
-        "peter@austinvisuals.com"
-      ],
-      "updates": [
-        {
-          "author": "peter@austinvisuals.com",
-          "author_name": "Peter",
-          "timestamp": "2026-03-21 16:14 UTC",
-          "text": "Completed storyboard today. Starting keyframes tomorrow.",
-          "flagged": false
-        }
-      ],
-      "pending_requests": [
-        "david@austinvisuals.com"
-      ]
-    },
-    {
-      "name": "Test Animation Client - Brand Video",
-      "created_at": "2026-03-21",
-      "due_date": "Not set",
-      "assigned": [],
-      "updates": [],
-      "pending_requests": []
     },
     {
       "name": "TXIPC",
