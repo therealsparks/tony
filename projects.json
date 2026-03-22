@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-22 05:11 UTC",
+  "updated": "2026-03-22 05:14 UTC",
   "projects": [
     {
       "name": "Alchatek - Video AI RFP",
@@ -242,12 +242,20 @@
           "timestamp": "2026-03-21 00:00 UTC",
           "text": "No proposal yet. Signed NDA. Matt conversing with Landon. Call scheduled Tuesday.",
           "flagged": false
+        },
+        {
+          "author": "matt@austinvisuals.com",
+          "author_name": "Matt",
+          "timestamp": "2026-03-22 05:14 UTC",
+          "text": "NDA signed. Meeting Tuesday March 24 at 2PM Central. Attendees: Matt Winters, Adam Grewal, and Landon Lockwood. Ptolemaic Alexandria animation project \u2014 ancient city visualization.",
+          "flagged": false
         }
       ],
       "pending_requests": [],
       "progress_pct": 0,
-      "status_summary": "Prospect \u2014 NDA signed. No proposal yet. Call scheduled Tuesday.",
-      "next_steps": "Tuesday call with Landon. Discuss scope and send proposal after."
+      "status_summary": "Prospect \u2014 NDA signed. Discovery meeting Tuesday March 24 at 2PM Central with Matt, Adam Grewal, and Landon Lockwood.",
+      "next_steps": "Tuesday 2PM CT meeting with Matt, Adam Grewal, and Landon. Discuss scope, project direction, and next steps. Proposal to follow after.",
+      "nda": "signed"
     },
     {
       "name": "PJA Engineers",
