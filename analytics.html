@@ -10,55 +10,59 @@
   body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif; background: #f5f5f7; color: #1d1d1f; -webkit-font-smoothing: antialiased; padding: 28px 16px 60px; }
   .wrap { max-width: 860px; margin: 0 auto; }
   .back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: #0071e3; text-decoration: none; margin-bottom: 20px; }
-  .header { margin-bottom: 20px; }
+  .header { margin-bottom: 16px; }
   .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6e73; margin-bottom: 5px; }
   h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.6px; }
   .updated { font-size: 11px; color: #aeaeb2; margin-top: 4px; }
+
+  /* Suggestions at top — blue card */
+  .suggestions-card { background: linear-gradient(135deg, #0071e3, #34aadc); border-radius: 16px; padding: 20px 22px; margin-bottom: 14px; color: #fff; }
+  .suggestions-title { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.75; margin-bottom: 12px; }
+  .suggestion { display: flex; gap: 12px; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.15); }
+  .suggestion:last-child { border-bottom: none; padding-bottom: 0; }
+  .sug-num { font-size: 13px; font-weight: 800; min-width: 20px; opacity: 0.7; flex-shrink: 0; }
+  .sug-text { font-size: 13px; line-height: 1.5; opacity: 0.92; }
+
   .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
   .stat-card { background: #fff; border-radius: 14px; padding: 16px 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
   .stat-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #aeaeb2; margin-bottom: 5px; }
   .stat-value { font-size: 26px; font-weight: 800; letter-spacing: -1px; color: #1d1d1f; }
   .stat-delta { font-size: 11px; font-weight: 600; margin-top: 2px; }
   .delta-up { color: #1a7a46; } .delta-down { color: #b91c1c; } .delta-flat { color: #aeaeb2; }
+
   .card { background: #fff; border-radius: 16px; padding: 18px 20px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
   .card-title { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #6e6e73; margin-bottom: 12px; }
-  .chart-wrap { position: relative; }
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
-  /* Page rows — clickable to expand */
+
+  /* Page rows */
   .page-row { border-bottom: 1px solid #f7f7f7; cursor: pointer; }
   .page-row:last-child { border-bottom: none; }
   .page-row-header { display: flex; align-items: center; gap: 10px; padding: 10px 0; }
-  .page-row-header:hover { background: #fafafa; }
-  .page-title { font-size: 13px; font-weight: 600; color: #1d1d1f; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .page-bar-wrap { width: 80px; background: #f2f2f7; border-radius: 99px; height: 4px; flex-shrink: 0; }
+  .page-row-header:hover { background: #fafafa; border-radius: 6px; }
+  .page-bar-wrap { width: 60px; background: #f2f2f7; border-radius: 99px; height: 4px; flex-shrink: 0; }
   .page-bar { height: 4px; border-radius: 99px; background: #0071e3; }
   .page-views { font-size: 12px; font-weight: 700; color: #6e6e73; min-width: 36px; text-align: right; flex-shrink: 0; }
   .page-chevron { font-size: 10px; color: #aeaeb2; flex-shrink: 0; transition: transform 0.15s; }
   .page-row.open .page-chevron { transform: rotate(180deg); }
-  .page-detail { display: none; padding: 8px 0 12px 0; background: #fafafa; border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; }
+  .page-detail { display: none; background: #f7f8fa; border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; }
   .page-row.open .page-detail { display: block; }
-  .page-detail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 8px; }
+  .page-detail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px; }
   .page-detail-item label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #aeaeb2; display: block; margin-bottom: 2px; }
   .page-detail-item span { font-size: 13px; font-weight: 700; color: #1d1d1f; }
-  .page-link { font-size: 11px; color: #0071e3; }
+  .page-url-text { font-size: 11px; color: #aeaeb2; word-break: break-all; margin-bottom: 6px; }
+  .page-link { font-size: 11px; color: #0071e3; font-weight: 600; }
+
   /* Simple rows */
   .trow { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #f7f7f7; }
   .trow:last-child { border-bottom: none; }
   .trow-name { font-size: 13px; font-weight: 500; color: #1d1d1f; flex: 1; }
-  .trow-bar-wrap { width: 80px; background: #f2f2f7; border-radius: 99px; height: 4px; flex-shrink: 0; }
+  .trow-bar-wrap { width: 70px; background: #f2f2f7; border-radius: 99px; height: 4px; flex-shrink: 0; }
   .trow-bar { height: 4px; border-radius: 99px; }
   .trow-val { font-size: 12px; font-weight: 700; color: #6e6e73; min-width: 36px; text-align: right; flex-shrink: 0; }
-  /* Suggestions */
-  .suggestion { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid #f7f7f7; }
-  .suggestion:last-child { border-bottom: none; }
-  .sug-num { font-size: 14px; font-weight: 800; color: #0071e3; min-width: 24px; flex-shrink: 0; }
-  .sug-text { font-size: 13px; color: #3a3a3c; line-height: 1.55; }
-  /* Device badges */
-  .dev-badge { display: inline-block; padding: 4px 12px; border-radius: 99px; font-size: 12px; font-weight: 700; margin-right: 8px; }
+  .src-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
   .loading { text-align: center; padding: 30px; color: #aeaeb2; font-size: 13px; }
   .footer { text-align: center; font-size: 11px; color: #aeaeb2; margin-top: 20px; }
-  .src-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 </style>
 </head>
 <body>
@@ -70,16 +74,25 @@
     <div class="updated" id="updated">Loading...</div>
   </div>
 
-  <div class="stats-row" id="stats-row"><div class="stat-card" style="grid-column:span 3"><div class="loading">Loading...</div></div></div>
-
-  <div class="card">
-    <div class="card-title">Sessions — Last 30 Days</div>
-    <div class="chart-wrap" style="height:140px;"><canvas id="trend-chart"></canvas></div>
+  <!-- Suggestions FIRST -->
+  <div class="suggestions-card">
+    <div class="suggestions-title">🎯 Action Items — Goal: More Calls & Contact Form Fills</div>
+    <div id="suggestions"><div style="color:rgba(255,255,255,0.6);font-size:13px;">Loading...</div></div>
   </div>
 
+  <!-- Stats -->
+  <div class="stats-row" id="stats-row"><div class="stat-card" style="grid-column:span 3"><div class="loading">Loading...</div></div></div>
+
+  <!-- Trend -->
+  <div class="card">
+    <div class="card-title">Sessions — Last 30 Days</div>
+    <div style="position:relative;height:140px;"><canvas id="trend-chart"></canvas></div>
+  </div>
+
+  <!-- Top pages + sources -->
   <div class="two-col">
     <div class="card">
-      <div class="card-title">Top Pages (30d) — click to expand</div>
+      <div class="card-title">Top Pages (30d) — tap to expand</div>
       <div id="top-pages"><div class="loading">...</div></div>
     </div>
     <div>
@@ -94,20 +107,18 @@
     </div>
   </div>
 
+  <!-- Time of day + cities -->
   <div class="two-col">
     <div class="card">
-      <div class="card-title">Time of Day (Sessions)</div>
-      <div class="chart-wrap" style="height:120px;"><canvas id="hour-chart"></canvas></div>
+      <div class="card-title">Best Time of Day to Run Ads</div>
+      <div style="font-size:11px;color:#aeaeb2;margin-bottom:10px;">Sessions by hour (local time · last 30 days)</div>
+      <div style="position:relative;height:140px;"><canvas id="hour-chart"></canvas></div>
+      <div id="peak-note" style="font-size:12px;color:#555;margin-top:10px;"></div>
     </div>
     <div class="card">
       <div class="card-title">Top Cities</div>
       <div id="cities"><div class="loading">...</div></div>
     </div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">🎯 Actionable Suggestions — Goal: More Calls & Contact Forms</div>
-    <div id="suggestions"><div class="loading">...</div></div>
   </div>
 
   <div class="footer">
@@ -118,7 +129,7 @@
 
 <script>
 const SRC_COLORS = {'Organic Search':'#0071e3','Direct':'#34c759','Referral':'#ff9f0a','Organic Social':'#af52de','Paid Search':'#ff3b30','Email':'#5ac8fa','Unassigned':'#aeaeb2'};
-const DEV_COLORS = {mobile:'#0071e3', desktop:'#34c759', tablet:'#ff9f0a'};
+const DEV_COLORS = {mobile:'#0071e3',desktop:'#34c759',tablet:'#ff9f0a'};
 
 function delta(now, prev) {
   if (!prev) return '';
@@ -128,6 +139,7 @@ function delta(now, prev) {
   return `<div class="stat-delta delta-flat">Same as prior week</div>`;
 }
 function fmtDur(s) { const m=Math.floor(s/60); return `${m}m ${Math.round(s%60)}s`; }
+function fmtHour(h) { if(h===0)return '12am'; if(h<12)return `${h}am`; if(h===12)return '12pm'; return `${h-12}pm`; }
 function togglePage(el) { el.closest('.page-row').classList.toggle('open'); }
 
 fetch('analytics.json?v='+Date.now())
@@ -136,39 +148,40 @@ fetch('analytics.json?v='+Date.now())
     document.getElementById('updated').textContent = 'Last updated: '+data.updated+' · 30-day window unless noted';
     const ov = data.overview;
 
+    // Suggestions
+    document.getElementById('suggestions').innerHTML = (data.suggestions||[]).map((s,i)=>`
+      <div class="suggestion"><div class="sug-num">${i+1}</div><div class="sug-text">${s}</div></div>`).join('');
+
     // Stats
     document.getElementById('stats-row').innerHTML = `
       <div class="stat-card"><div class="stat-label">Sessions (7d)</div><div class="stat-value">${ov.sessions_7d.toLocaleString()}</div>${delta(ov.sessions_7d,ov.sessions_prev_7d)}</div>
       <div class="stat-card"><div class="stat-label">Page Views (7d)</div><div class="stat-value">${ov.views_7d.toLocaleString()}</div><div class="stat-delta delta-flat">${ov.users_7d.toLocaleString()} users</div></div>
       <div class="stat-card"><div class="stat-label">Avg Session</div><div class="stat-value">${fmtDur(ov.avg_session_sec)}</div><div class="stat-delta delta-flat">Bounce: ${ov.bounce_rate}%</div></div>`;
 
-    // Trend
+    // Trend chart
     new Chart(document.getElementById('trend-chart'), {
       type:'line',
       data:{ labels:data.trend_30d.map(d=>d.date), datasets:[{data:data.trend_30d.map(d=>d.sessions),borderColor:'#0071e3',backgroundColor:'rgba(0,113,227,0.08)',borderWidth:2,pointRadius:0,fill:true,tension:0.4}] },
-      options:{ responsive:true,maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ x:{grid:{display:false},ticks:{maxTicksLimit:8,font:{size:10}}}, y:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{font:{size:10}}} } }
+      options:{ responsive:true,maintainAspectRatio:false, plugins:{legend:{display:false},tooltip:{callbacks:{title:t=>'Date: '+t[0].label,label:t=>'Sessions: '+t.raw}}}, scales:{ x:{grid:{display:false},ticks:{maxTicksLimit:8,font:{size:10}}}, y:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{font:{size:10}}} } }
     });
 
-    // Top pages with expand
+    // Top pages
     const maxV = Math.max(...data.top_pages.map(p=>p.views));
     document.getElementById('top-pages').innerHTML = data.top_pages.map(p=>{
-      // Infer page type from URL
-      const path = p.path || '';
-      let pageType = '';
-      if (path === '/' || path === '') pageType = 'Homepage';
-      else if (path.includes('portfolio') || path.includes('video') || path.includes('samples')) pageType = 'Portfolio';
-      else if (path.includes('contact')) pageType = 'Contact';
-      else if (path.includes('about')) pageType = 'About';
-      else if (path.includes('service') || path.includes('animation')) pageType = 'Services';
-      else if (path.includes('blog') || path.includes('cost') || path.includes('how-to') || path.includes('difference')) pageType = 'Blog';
-      else if (path.includes('client')) pageType = 'Clients';
-      else pageType = 'Page';
-
+      const path = p.path||'';
+      let pageType = 'Page';
+      if(path==='/'||path==='')pageType='Homepage';
+      else if(path.includes('portfolio')||path.includes('video')||path.includes('samples'))pageType='Portfolio';
+      else if(path.includes('contact'))pageType='Contact';
+      else if(path.includes('about'))pageType='About';
+      else if(path.includes('service')||path.includes('animation')&&!path.includes('blog'))pageType='Services';
+      else if(path.includes('blog')||path.includes('cost')||path.includes('how-to')||path.includes('difference')||path.includes('nft')||path.includes('anime')||path.includes('cartoon')||path.includes('jobs'))pageType='Blog';
+      else if(path.includes('client'))pageType='Clients';
       return `
       <div class="page-row">
         <div class="page-row-header" onclick="togglePage(this)">
           <div style="flex:1;overflow:hidden;">
-            <div class="page-title">${pageType} — <span style="font-weight:600;color:#3a3a3c;">${p.path === '/' ? 'austinvisuals.com/' : p.path}</span></div>
+            <div style="font-size:13px;font-weight:700;color:#1d1d1f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${pageType} — ${path==='/'?'austinvisuals.com/':path}</div>
             <div style="font-size:10px;color:#aeaeb2;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${p.title}</div>
           </div>
           <div class="page-bar-wrap"><div class="page-bar" style="width:${Math.round(p.views/maxV*100)}%"></div></div>
@@ -181,9 +194,9 @@ fetch('analytics.json?v='+Date.now())
             <div class="page-detail-item"><label>Users</label><span>${p.users}</span></div>
             <div class="page-detail-item"><label>New Users</label><span>${p.new_users}</span></div>
             <div class="page-detail-item"><label>Avg Time</label><span>${fmtDur(p.duration_sec)}</span></div>
-            <div class="page-detail-item"><label>Bounce Rate</label><span>${p.bounce}%</span></div>
+            <div class="page-detail-item"><label>Bounce</label><span>${p.bounce}%</span></div>
           </div>
-          <div style="font-size:11px;color:#aeaeb2;margin-bottom:6px;word-break:break-all;">${p.url}</div>
+          <div class="page-url-text">${p.url}</div>
           <a href="${p.url}" target="_blank" class="page-link">Open page →</a>
         </div>
       </div>`;}).join('');
@@ -205,16 +218,53 @@ fetch('analytics.json?v='+Date.now())
         <div class="src-dot" style="background:${DEV_COLORS[d.device]||'#aeaeb2'}"></div>
         <div class="trow-name" style="text-transform:capitalize;">${d.device}</div>
         <div class="trow-val">${Math.round(d.sessions/totalDev*100)}%</div>
-        <div class="trow-val">${d.sessions}</div>
+        <div class="trow-val" style="color:#1d1d1f;">${d.sessions}</div>
       </div>`).join('');
 
-    // Hour of day chart
-    const hours = data.hours_of_day;
+    // Hour of day chart — with proper labels
+    const hours = data.hours_of_day || new Array(24).fill(0);
+    const peakHour = hours.indexOf(Math.max(...hours));
+    const hourLabels = [...Array(24).keys()].map(h => fmtHour(h));
+
     new Chart(document.getElementById('hour-chart'), {
       type:'bar',
-      data:{ labels:[...Array(24).keys()].map(h=>`${h}h`), datasets:[{data:hours,backgroundColor:'rgba(0,113,227,0.6)',borderRadius:3}] },
-      options:{ responsive:true,maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ x:{grid:{display:false},ticks:{maxTicksLimit:8,font:{size:9}}}, y:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{font:{size:9}}} } }
+      data:{
+        labels: hourLabels,
+        datasets:[{
+          data: hours,
+          backgroundColor: hours.map((v,i) => i===peakHour ? '#0071e3' : 'rgba(0,113,227,0.25)'),
+          borderRadius: 3
+        }]
+      },
+      options:{
+        responsive:true, maintainAspectRatio:false,
+        plugins:{
+          legend:{display:false},
+          tooltip:{callbacks:{
+            title: t => `${fmtHour(parseInt(t[0].label))} — ${fmtHour(parseInt(t[0].label)+1)}`,
+            label: t => `${t.raw} sessions`
+          }}
+        },
+        scales:{
+          x:{
+            grid:{display:false},
+            ticks:{
+              maxTicksLimit:8,
+              font:{size:9},
+              callback: (val, idx) => [0,6,9,12,15,18,21].includes(idx) ? fmtHour(idx) : ''
+            }
+          },
+          y:{
+            grid:{color:'rgba(0,0,0,0.04)'},
+            ticks:{font:{size:9}}
+          }
+        }
+      }
     });
+
+    // Peak note
+    document.getElementById('peak-note').innerHTML =
+      `<strong>Peak:</strong> ${fmtHour(peakHour)}–${fmtHour(peakHour+1)} · Consider scheduling ads or social posts 1-2 hrs before peak to catch active visitors.`;
 
     // Cities
     const maxC = Math.max(...data.top_cities.map(c=>c.sessions));
@@ -224,17 +274,10 @@ fetch('analytics.json?v='+Date.now())
         <div class="trow-bar-wrap"><div class="trow-bar" style="width:${Math.round(c.sessions/maxC*100)}%;background:#0071e3;"></div></div>
         <div class="trow-val">${c.sessions}</div>
       </div>`).join('');
-
-    // Suggestions
-    document.getElementById('suggestions').innerHTML = (data.suggestions||[]).map((s,i)=>`
-      <div class="suggestion">
-        <div class="sug-num">${i+1}</div>
-        <div class="sug-text">${s}</div>
-      </div>`).join('');
   })
   .catch(()=>{ document.getElementById('stats-row').innerHTML='<div class="stat-card" style="grid-column:span 3"><div class="loading">Could not load data.</div></div>'; });
 
-function translatePage() { window.location.href='https://translate.google.com/translate?hl=vi&sl=en&tl=vi&u='+encodeURIComponent(window.location.href); return false; }
+function translatePage(){ window.location.href='https://translate.google.com/translate?hl=vi&sl=en&tl=vi&u='+encodeURIComponent(window.location.href); return false; }
 </script>
 </body>
 </html>
