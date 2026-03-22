@@ -151,10 +151,26 @@ fetch('analytics.json?v='+Date.now())
 
     // Top pages with expand
     const maxV = Math.max(...data.top_pages.map(p=>p.views));
-    document.getElementById('top-pages').innerHTML = data.top_pages.map(p=>`
+    document.getElementById('top-pages').innerHTML = data.top_pages.map(p=>{
+      // Infer page type from URL
+      const path = p.path || '';
+      let pageType = '';
+      if (path === '/' || path === '') pageType = 'Homepage';
+      else if (path.includes('portfolio') || path.includes('video') || path.includes('samples')) pageType = 'Portfolio';
+      else if (path.includes('contact')) pageType = 'Contact';
+      else if (path.includes('about')) pageType = 'About';
+      else if (path.includes('service') || path.includes('animation')) pageType = 'Services';
+      else if (path.includes('blog') || path.includes('cost') || path.includes('how-to') || path.includes('difference')) pageType = 'Blog';
+      else if (path.includes('client')) pageType = 'Clients';
+      else pageType = 'Page';
+
+      return `
       <div class="page-row">
         <div class="page-row-header" onclick="togglePage(this)">
-          <div class="page-title" title="${p.url}">${p.title}</div>
+          <div style="flex:1;overflow:hidden;">
+            <div class="page-title">${p.title}</div>
+            <div style="font-size:10px;color:#aeaeb2;margin-top:1px;">${pageType}</div>
+          </div>
           <div class="page-bar-wrap"><div class="page-bar" style="width:${Math.round(p.views/maxV*100)}%"></div></div>
           <div class="page-views">${p.views}</div>
           <div class="page-chevron">▼</div>
@@ -167,9 +183,10 @@ fetch('analytics.json?v='+Date.now())
             <div class="page-detail-item"><label>Avg Time</label><span>${fmtDur(p.duration_sec)}</span></div>
             <div class="page-detail-item"><label>Bounce Rate</label><span>${p.bounce}%</span></div>
           </div>
-          <a href="${p.url}" target="_blank" class="page-link">Open page: ${p.path} →</a>
+          <div style="font-size:11px;color:#aeaeb2;margin-bottom:6px;word-break:break-all;">${p.url}</div>
+          <a href="${p.url}" target="_blank" class="page-link">Open page →</a>
         </div>
-      </div>`).join('');
+      </div>`;}).join('');
 
     // Sources
     const maxS = Math.max(...data.traffic_sources.map(s=>s.sessions));
