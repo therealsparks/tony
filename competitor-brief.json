@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-22 02:08 UTC",
+  "updated": "2026-03-22 02:14 UTC",
   "competitors": [
     {
       "name": "Explainify",
@@ -27,9 +27,28 @@
       "error": null
     },
     {
-      "name": "Demo Duck",
-      "website": "demoduck.com",
-      "posts": [],
+      "name": "Vidico",
+      "website": "vidico.com",
+      "posts": [
+        {
+          "title": "Online Advertising Costs in 2026: Complete Guide for Businesses",
+          "link": "https://vidico.com/news/online-advertising-costs/",
+          "desc": "If you&#8217;re running a business today, online advertising is likely a key part of your marketing strategy. But figuring out how much online advertising costs can feel overwhelming. There are so many options\u2014from Google Ads to social media advertising\u2014and prices\u2026 The post Online Advertising Costs ",
+          "date": "Sat, 21 Mar 2026"
+        },
+        {
+          "title": "30+ Instagram Reels Statistics, Data, & Trends (2026)",
+          "link": "https://vidico.com/news/instagram-reels-statistics/",
+          "desc": "Instagram Reels isn\u2019t just another trend\u2014it\u2019s the most powerful engagement engine in 2026, with 3 billion monthly active users and over 200 billion Reels played daily across Meta\u2019s platforms. For brands, this isn\u2019t an option\u2014it\u2019s a battleground. But while the\u2026 The post 30+ Instagram Reels Statistics",
+          "date": "Sat, 21 Mar 2026"
+        },
+        {
+          "title": "10 Best Short Video Content Ideas To Inspire Your Next Campaign (2026)",
+          "link": "https://vidico.com/news/short-form-content-ideas/",
+          "desc": "Short-form videos are taking over social media. With viewers scrolling quickly and competition everywhere, your videos need to grab attention fast and deliver value quickly. Many brands struggle to come up with fresh video ideas that work well in short\u2026 The post 10 Best Short Video Content Ideas To ",
+          "date": "Sat, 21 Mar 2026"
+        }
+      ],
       "error": null
     },
     {
@@ -96,9 +115,28 @@
       "error": null
     },
     {
-      "name": "Switch Video",
-      "website": "switchvideo.com",
-      "posts": [],
+      "name": "Lemonlight",
+      "website": "lemonlight.com",
+      "posts": [
+        {
+          "title": "What\u2019s Actually Inside a Video Production Quote? Line Items Explained",
+          "link": "https://www.lemonlight.com/blog/whats-actually-inside-a-video-production-quote-line-items-explained/",
+          "desc": "Key Takeaways Most brand managers receive video production quotes filled with confusing line items they can&#8217;t fully decode. Those puzzling entries like &#8220;Gaffer Day Rate&#8221; and &#8220;Color Correction Package&#8221; leave you wondering what you&#8217;re actually paying for. The realit",
+          "date": "Sat, 14 Mar 2026"
+        },
+        {
+          "title": "Video Style Guide: How to Match Your Brand Goals with the Perfect Video Format",
+          "link": "https://www.lemonlight.com/blog/video-style-guide-how-to-match-your-brand-goals-with-the-perfect-video-format/",
+          "desc": "Key Takeaways When a brand uses the same animated explainer for both brand awareness campaigns and product conversion pages, they&#8217;re missing the mark entirely. Research from Google shows that matching video styles to specific objectives drives measurably better results. The right approach conn",
+          "date": "Sat, 14 Mar 2026"
+        },
+        {
+          "title": "From Concept to Final Delivery: The Video Production Process Explained",
+          "link": "https://www.lemonlight.com/blog/from-concept-to-final-delivery-the-video-production-process-explained/",
+          "desc": "Key Takeaways What is the Video Production Process? No matter how complex your campaign feels, the production journey always rolls up into three stages: pre-production, production, and post-production. Universities, agencies, and in-house teams all use this same framework because it mirrors how work",
+          "date": "Fri, 13 Mar 2026"
+        }
+      ],
       "error": null
     },
     {
