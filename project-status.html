@@ -100,6 +100,19 @@ function daysSince(isoDate) {
   return Math.floor((Date.now() - d.getTime()) / 86400000);
 }
 
+function toCentral(isoDate) {
+  if (!isoDate) return '';
+  try {
+    const d = new Date(isoDate.replace(' UTC','Z'));
+    return d.toLocaleString('en-US', {
+      timeZone: 'America/Chicago',
+      month: 'short', day: 'numeric', year: 'numeric',
+      hour: 'numeric', minute: '2-digit',
+      timeZoneName: 'short'
+    });
+  } catch(e) { return isoDate; }
+}
+
 function getLastUpdate(project) {
   const updates = project.updates || [];
   if (!updates.length) return null;
@@ -177,7 +190,7 @@ function renderProjects(projects) {
         <div class="updates-title">Recent Updates</div>
         ${updates.length ? updates.map(u => `
           <div class="update-entry">
-            <div class="update-meta">${u.author_name || u.author} · ${u.timestamp}</div>
+            <div class="update-meta">${u.author_name || u.author} · ${toCentral(u.timestamp)}</div>
             <div class="update-text">${u.text}</div>
           </div>`).join('') : '<div class="no-updates">No updates logged yet.</div>'}
       </div>
