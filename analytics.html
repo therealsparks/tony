@@ -7,52 +7,58 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
-    background: #f5f5f7; color: #1d1d1f;
-    -webkit-font-smoothing: antialiased;
-    padding: 32px 20px 60px;
-  }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif; background: #f5f5f7; color: #1d1d1f; -webkit-font-smoothing: antialiased; padding: 28px 16px 60px; }
   .wrap { max-width: 860px; margin: 0 auto; }
-  .back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: #0071e3; text-decoration: none; margin-bottom: 24px; }
-  .header { margin-bottom: 24px; }
-  .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6e73; margin-bottom: 6px; }
-  h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.8px; }
-  .updated { font-size: 12px; color: #aeaeb2; margin-top: 5px; }
-
-  /* Stat pills row */
-  .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
-  .stat-card { background: #fff; border-radius: 14px; padding: 18px 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-  .stat-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #aeaeb2; margin-bottom: 6px; }
-  .stat-value { font-size: 28px; font-weight: 800; letter-spacing: -1px; color: #1d1d1f; }
-  .stat-delta { font-size: 12px; font-weight: 600; margin-top: 3px; }
-  .delta-up { color: #1a7a46; }
-  .delta-down { color: #b91c1c; }
-  .delta-flat { color: #aeaeb2; }
-
-  /* Cards */
-  .card { background: #fff; border-radius: 16px; padding: 20px 22px; margin-bottom: 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-  .card-title { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #6e6e73; margin-bottom: 14px; }
-
-  /* Chart */
-  .chart-wrap { height: 160px; }
-
-  /* Table rows */
-  .trow { display: flex; align-items: center; gap: 12px; padding: 9px 0; border-bottom: 1px solid #f7f7f7; }
+  .back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: #0071e3; text-decoration: none; margin-bottom: 20px; }
+  .header { margin-bottom: 20px; }
+  .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6e73; margin-bottom: 5px; }
+  h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.6px; }
+  .updated { font-size: 11px; color: #aeaeb2; margin-top: 4px; }
+  .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
+  .stat-card { background: #fff; border-radius: 14px; padding: 16px 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .stat-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #aeaeb2; margin-bottom: 5px; }
+  .stat-value { font-size: 26px; font-weight: 800; letter-spacing: -1px; color: #1d1d1f; }
+  .stat-delta { font-size: 11px; font-weight: 600; margin-top: 2px; }
+  .delta-up { color: #1a7a46; } .delta-down { color: #b91c1c; } .delta-flat { color: #aeaeb2; }
+  .card { background: #fff; border-radius: 16px; padding: 18px 20px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .card-title { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #6e6e73; margin-bottom: 12px; }
+  .chart-wrap { position: relative; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  /* Page rows — clickable to expand */
+  .page-row { border-bottom: 1px solid #f7f7f7; cursor: pointer; }
+  .page-row:last-child { border-bottom: none; }
+  .page-row-header { display: flex; align-items: center; gap: 10px; padding: 10px 0; }
+  .page-row-header:hover { background: #fafafa; }
+  .page-title { font-size: 13px; font-weight: 600; color: #1d1d1f; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .page-bar-wrap { width: 80px; background: #f2f2f7; border-radius: 99px; height: 4px; flex-shrink: 0; }
+  .page-bar { height: 4px; border-radius: 99px; background: #0071e3; }
+  .page-views { font-size: 12px; font-weight: 700; color: #6e6e73; min-width: 36px; text-align: right; flex-shrink: 0; }
+  .page-chevron { font-size: 10px; color: #aeaeb2; flex-shrink: 0; transition: transform 0.15s; }
+  .page-row.open .page-chevron { transform: rotate(180deg); }
+  .page-detail { display: none; padding: 8px 0 12px 0; background: #fafafa; border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; }
+  .page-row.open .page-detail { display: block; }
+  .page-detail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 8px; }
+  .page-detail-item label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #aeaeb2; display: block; margin-bottom: 2px; }
+  .page-detail-item span { font-size: 13px; font-weight: 700; color: #1d1d1f; }
+  .page-link { font-size: 11px; color: #0071e3; }
+  /* Simple rows */
+  .trow { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #f7f7f7; }
   .trow:last-child { border-bottom: none; }
-  .trow-name { font-size: 13px; font-weight: 500; color: #1d1d1f; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .trow-bar-wrap { width: 100px; background: #f2f2f7; border-radius: 99px; height: 5px; flex-shrink: 0; }
-  .trow-bar { height: 5px; border-radius: 99px; background: #0071e3; }
-  .trow-val { font-size: 12px; font-weight: 700; color: #6e6e73; min-width: 40px; text-align: right; flex-shrink: 0; }
-
-  /* Two col */
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-
-  /* Source colors */
-  .src-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-
+  .trow-name { font-size: 13px; font-weight: 500; color: #1d1d1f; flex: 1; }
+  .trow-bar-wrap { width: 80px; background: #f2f2f7; border-radius: 99px; height: 4px; flex-shrink: 0; }
+  .trow-bar { height: 4px; border-radius: 99px; }
+  .trow-val { font-size: 12px; font-weight: 700; color: #6e6e73; min-width: 36px; text-align: right; flex-shrink: 0; }
+  /* Suggestions */
+  .suggestion { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid #f7f7f7; }
+  .suggestion:last-child { border-bottom: none; }
+  .sug-num { font-size: 14px; font-weight: 800; color: #0071e3; min-width: 24px; flex-shrink: 0; }
+  .sug-text { font-size: 13px; color: #3a3a3c; line-height: 1.55; }
+  /* Device badges */
+  .dev-badge { display: inline-block; padding: 4px 12px; border-radius: 99px; font-size: 12px; font-weight: 700; margin-right: 8px; }
+  .loading { text-align: center; padding: 30px; color: #aeaeb2; font-size: 13px; }
   .footer { text-align: center; font-size: 11px; color: #aeaeb2; margin-top: 20px; }
-  .loading { text-align: center; padding: 40px; color: #aeaeb2; }
+  .src-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 </style>
 </head>
 <body>
@@ -64,153 +70,154 @@
     <div class="updated" id="updated">Loading...</div>
   </div>
 
-  <div class="stats-row" id="stats-row">
-    <div class="stat-card"><div class="loading">...</div></div>
-    <div class="stat-card"><div class="loading">...</div></div>
-    <div class="stat-card"><div class="loading">...</div></div>
-  </div>
+  <div class="stats-row" id="stats-row"><div class="stat-card" style="grid-column:span 3"><div class="loading">Loading...</div></div></div>
 
   <div class="card">
-    <div class="card-title">Visitors — Last 30 Days</div>
-    <div class="chart-wrap"><canvas id="trend-chart"></canvas></div>
+    <div class="card-title">Sessions — Last 30 Days</div>
+    <div class="chart-wrap" style="height:140px;"><canvas id="trend-chart"></canvas></div>
   </div>
 
   <div class="two-col">
     <div class="card">
-      <div class="card-title">Top Pages</div>
+      <div class="card-title">Top Pages (30d) — click to expand</div>
       <div id="top-pages"><div class="loading">...</div></div>
     </div>
+    <div>
+      <div class="card" style="margin-bottom:12px;">
+        <div class="card-title">Traffic Sources</div>
+        <div id="sources"><div class="loading">...</div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Devices</div>
+        <div id="devices"><div class="loading">...</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="two-col">
     <div class="card">
-      <div class="card-title">Traffic Sources</div>
-      <div id="sources"><div class="loading">...</div></div>
+      <div class="card-title">Time of Day (Sessions)</div>
+      <div class="chart-wrap" style="height:120px;"><canvas id="hour-chart"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Top Cities</div>
+      <div id="cities"><div class="loading">...</div></div>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-title">Top Cities</div>
-    <div id="cities"><div class="loading">...</div></div>
+    <div class="card-title">🎯 Actionable Suggestions — Goal: More Calls & Contact Forms</div>
+    <div id="suggestions"><div class="loading">...</div></div>
   </div>
 
   <div class="footer">
-    ⚡ Tony · Austin Visuals Analytics · Data from Google Analytics 4
-    <div style="margin-top:10px;"><a href="#" onclick="translatePage()" style="font-size:11px;color:#aeaeb2;text-decoration:none;opacity:0.6;">🌐 Dich sang tieng Viet</a></div>
+    ⚡ Tony · Austin Visuals Analytics · Google Analytics 4 · Updated daily
+    <div style="margin-top:8px;"><a href="#" onclick="translatePage()" style="font-size:11px;color:#aeaeb2;text-decoration:none;opacity:0.6;">🌐 Dich sang tieng Viet</a></div>
   </div>
 </div>
 
 <script>
-const SRC_COLORS = {
-  'Organic Search': '#0071e3',
-  'Direct': '#34c759',
-  'Referral': '#ff9f0a',
-  'Organic Social': '#af52de',
-  'Paid Search': '#ff3b30',
-  'Email': '#5ac8fa',
-  'Unassigned': '#aeaeb2',
-};
+const SRC_COLORS = {'Organic Search':'#0071e3','Direct':'#34c759','Referral':'#ff9f0a','Organic Social':'#af52de','Paid Search':'#ff3b30','Email':'#5ac8fa','Unassigned':'#aeaeb2'};
+const DEV_COLORS = {mobile:'#0071e3', desktop:'#34c759', tablet:'#ff9f0a'};
 
 function delta(now, prev) {
   if (!prev) return '';
-  const pct = Math.round(((now - prev) / prev) * 100);
-  if (pct > 0) return `<span class="stat-delta delta-up">↑ ${pct}% vs prior week</span>`;
-  if (pct < 0) return `<span class="stat-delta delta-down">↓ ${Math.abs(pct)}% vs prior week</span>`;
-  return `<span class="stat-delta delta-flat">→ same as prior week</span>`;
+  const pct = Math.round(((now-prev)/prev)*100);
+  if (pct > 0) return `<div class="stat-delta delta-up">↑ ${pct}% vs prior 7d</div>`;
+  if (pct < 0) return `<div class="stat-delta delta-down">↓ ${Math.abs(pct)}% vs prior 7d</div>`;
+  return `<div class="stat-delta delta-flat">Same as prior week</div>`;
 }
+function fmtDur(s) { const m=Math.floor(s/60); return `${m}m ${Math.round(s%60)}s`; }
+function togglePage(el) { el.closest('.page-row').classList.toggle('open'); }
 
-function fmtDuration(secs) {
-  const m = Math.floor(secs / 60);
-  const s = Math.round(secs % 60);
-  return `${m}m ${s}s`;
-}
-
-fetch('analytics.json?v=' + Date.now())
-  .then(r => r.json())
+fetch('analytics.json?v='+Date.now())
+  .then(r=>r.json())
   .then(data => {
-    document.getElementById('updated').textContent = 'Last updated: ' + data.updated + ' · Last 7 days unless noted';
-
+    document.getElementById('updated').textContent = 'Last updated: '+data.updated+' · 30-day window unless noted';
     const ov = data.overview;
 
-    // Stats row
+    // Stats
     document.getElementById('stats-row').innerHTML = `
-      <div class="stat-card">
-        <div class="stat-label">Sessions (7d)</div>
-        <div class="stat-value">${ov.sessions_7d.toLocaleString()}</div>
-        ${delta(ov.sessions_7d, ov.sessions_prev_7d)}
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Page Views (7d)</div>
-        <div class="stat-value">${ov.views_7d.toLocaleString()}</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Avg Session</div>
-        <div class="stat-value">${fmtDuration(ov.avg_session_sec)}</div>
-        <span class="stat-delta delta-flat">Bounce: ${ov.bounce_rate}%</span>
-      </div>`;
+      <div class="stat-card"><div class="stat-label">Sessions (7d)</div><div class="stat-value">${ov.sessions_7d.toLocaleString()}</div>${delta(ov.sessions_7d,ov.sessions_prev_7d)}</div>
+      <div class="stat-card"><div class="stat-label">Page Views (7d)</div><div class="stat-value">${ov.views_7d.toLocaleString()}</div><div class="stat-delta delta-flat">${ov.users_7d.toLocaleString()} users</div></div>
+      <div class="stat-card"><div class="stat-label">Avg Session</div><div class="stat-value">${fmtDur(ov.avg_session_sec)}</div><div class="stat-delta delta-flat">Bounce: ${ov.bounce_rate}%</div></div>`;
 
-    // Trend chart
-    const labels = data.trend_30d.map(d => d.date);
-    const sessions = data.trend_30d.map(d => d.sessions);
+    // Trend
     new Chart(document.getElementById('trend-chart'), {
-      type: 'line',
-      data: {
-        labels,
-        datasets: [{
-          data: sessions,
-          borderColor: '#0071e3',
-          backgroundColor: 'rgba(0,113,227,0.08)',
-          borderWidth: 2,
-          pointRadius: 0,
-          fill: true,
-          tension: 0.4
-        }]
-      },
-      options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: {
-          x: { grid: { display: false }, ticks: { maxTicksLimit: 8, font: { size: 10 } } },
-          y: { grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { font: { size: 10 } } }
-        }
-      }
+      type:'line',
+      data:{ labels:data.trend_30d.map(d=>d.date), datasets:[{data:data.trend_30d.map(d=>d.sessions),borderColor:'#0071e3',backgroundColor:'rgba(0,113,227,0.08)',borderWidth:2,pointRadius:0,fill:true,tension:0.4}] },
+      options:{ responsive:true,maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ x:{grid:{display:false},ticks:{maxTicksLimit:8,font:{size:10}}}, y:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{font:{size:10}}} } }
     });
 
-    // Top pages
-    const maxViews = Math.max(...data.top_pages.map(p => p.views));
-    document.getElementById('top-pages').innerHTML = data.top_pages.map(p => `
-      <div class="trow">
-        <div class="trow-name" title="${p.path}">${p.title || p.path}</div>
-        <div class="trow-bar-wrap"><div class="trow-bar" style="width:${Math.round(p.views/maxViews*100)}%"></div></div>
-        <div class="trow-val">${p.views}</div>
+    // Top pages with expand
+    const maxV = Math.max(...data.top_pages.map(p=>p.views));
+    document.getElementById('top-pages').innerHTML = data.top_pages.map(p=>`
+      <div class="page-row">
+        <div class="page-row-header" onclick="togglePage(this)">
+          <div class="page-title" title="${p.url}">${p.title}</div>
+          <div class="page-bar-wrap"><div class="page-bar" style="width:${Math.round(p.views/maxV*100)}%"></div></div>
+          <div class="page-views">${p.views}</div>
+          <div class="page-chevron">▼</div>
+        </div>
+        <div class="page-detail">
+          <div class="page-detail-grid">
+            <div class="page-detail-item"><label>Views</label><span>${p.views}</span></div>
+            <div class="page-detail-item"><label>Users</label><span>${p.users}</span></div>
+            <div class="page-detail-item"><label>New Users</label><span>${p.new_users}</span></div>
+            <div class="page-detail-item"><label>Avg Time</label><span>${fmtDur(p.duration_sec)}</span></div>
+            <div class="page-detail-item"><label>Bounce Rate</label><span>${p.bounce}%</span></div>
+          </div>
+          <a href="${p.url}" target="_blank" class="page-link">Open page: ${p.path} →</a>
+        </div>
       </div>`).join('');
 
     // Sources
-    const maxSrc = Math.max(...data.traffic_sources.map(s => s.sessions));
-    document.getElementById('sources').innerHTML = data.traffic_sources.map(s => `
+    const maxS = Math.max(...data.traffic_sources.map(s=>s.sessions));
+    document.getElementById('sources').innerHTML = data.traffic_sources.map(s=>`
       <div class="trow">
         <div class="src-dot" style="background:${SRC_COLORS[s.channel]||'#aeaeb2'}"></div>
         <div class="trow-name">${s.channel}</div>
-        <div class="trow-bar-wrap"><div class="trow-bar" style="width:${Math.round(s.sessions/maxSrc*100)}%;background:${SRC_COLORS[s.channel]||'#aeaeb2'}"></div></div>
+        <div class="trow-bar-wrap"><div class="trow-bar" style="width:${Math.round(s.sessions/maxS*100)}%;background:${SRC_COLORS[s.channel]||'#aeaeb2'}"></div></div>
         <div class="trow-val">${s.sessions}</div>
       </div>`).join('');
 
-    // Cities
-    const maxCity = Math.max(...data.top_cities.map(c => c.sessions));
-    document.getElementById('cities').innerHTML = `
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 20px;">
-        ${data.top_cities.map(c => `
-          <div class="trow">
-            <div class="trow-name">${c.city}, ${c.region}</div>
-            <div class="trow-val">${c.sessions}</div>
-          </div>`).join('')}
-      </div>`;
-  })
-  .catch(e => {
-    document.getElementById('stats-row').innerHTML = `<div class="loading" style="grid-column:span 3">Could not load analytics data.</div>`;
-  });
+    // Devices
+    const totalDev = data.devices.reduce((a,d)=>a+d.sessions,0);
+    document.getElementById('devices').innerHTML = data.devices.map(d=>`
+      <div class="trow">
+        <div class="src-dot" style="background:${DEV_COLORS[d.device]||'#aeaeb2'}"></div>
+        <div class="trow-name" style="text-transform:capitalize;">${d.device}</div>
+        <div class="trow-val">${Math.round(d.sessions/totalDev*100)}%</div>
+        <div class="trow-val">${d.sessions}</div>
+      </div>`).join('');
 
-function translatePage() {
-  window.location.href = 'https://translate.google.com/translate?hl=vi&sl=en&tl=vi&u=' + encodeURIComponent(window.location.href);
-  return false;
-}
+    // Hour of day chart
+    const hours = data.hours_of_day;
+    new Chart(document.getElementById('hour-chart'), {
+      type:'bar',
+      data:{ labels:[...Array(24).keys()].map(h=>`${h}h`), datasets:[{data:hours,backgroundColor:'rgba(0,113,227,0.6)',borderRadius:3}] },
+      options:{ responsive:true,maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{ x:{grid:{display:false},ticks:{maxTicksLimit:8,font:{size:9}}}, y:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{font:{size:9}}} } }
+    });
+
+    // Cities
+    const maxC = Math.max(...data.top_cities.map(c=>c.sessions));
+    document.getElementById('cities').innerHTML = data.top_cities.slice(0,8).map(c=>`
+      <div class="trow">
+        <div class="trow-name">${c.city}, ${c.region}</div>
+        <div class="trow-bar-wrap"><div class="trow-bar" style="width:${Math.round(c.sessions/maxC*100)}%;background:#0071e3;"></div></div>
+        <div class="trow-val">${c.sessions}</div>
+      </div>`).join('');
+
+    // Suggestions
+    document.getElementById('suggestions').innerHTML = (data.suggestions||[]).map((s,i)=>`
+      <div class="suggestion">
+        <div class="sug-num">${i+1}</div>
+        <div class="sug-text">${s}</div>
+      </div>`).join('');
+  })
+  .catch(()=>{ document.getElementById('stats-row').innerHTML='<div class="stat-card" style="grid-column:span 3"><div class="loading">Could not load data.</div></div>'; });
+
+function translatePage() { window.location.href='https://translate.google.com/translate?hl=vi&sl=en&tl=vi&u='+encodeURIComponent(window.location.href); return false; }
 </script>
 </body>
 </html>
