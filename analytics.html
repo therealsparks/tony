@@ -39,21 +39,23 @@
     .page-detail-grid { grid-template-columns: 1fr 1fr; }
     body { padding: 16px 12px 40px; }
     h1 { font-size: 22px; }
-    /* Make bars fluid width so rows fit in screen */
-    .trow-bar-wrap { width: 40px; flex-shrink: 1; min-width: 20px; }
-    .page-bar-wrap { width: 40px; flex-shrink: 1; min-width: 20px; }
-    /* Tighten number column */
-    .trow-val { min-width: 28px; font-size: 11px; }
-    .page-views { min-width: 28px; font-size: 11px; }
-    /* Prevent any overflow */
-    .trow { overflow: hidden; }
-    .trow-name { min-width: 0; font-size: 12px; }
+    /* Hide bars entirely on mobile — free up space for numbers */
+    .trow-bar-wrap { display: none; }
+    .page-bar-wrap { display: none; }
+    /* Number columns — never clip, right-aligned */
+    .trow-val { min-width: 0; width: auto; font-size: 12px; flex-shrink: 0; }
+    .page-views { min-width: 0; width: auto; font-size: 12px; flex-shrink: 0; }
+    /* Name takes all remaining space */
+    .trow-name { flex: 1; min-width: 0; font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    /* Page rows */
     .page-row-header { overflow: hidden; }
-    /* Slightly smaller page title on mobile */
-    .page-row-header div > div:first-child { font-size: 12px; }
-    .page-row-header div > div:last-child { font-size: 9px; }
-    /* Cards full width */
+    .page-row-header > div:first-child { flex: 1; min-width: 0; overflow: hidden; }
+    .page-row-header > div:first-child > div:first-child { font-size: 12px; }
+    .page-row-header > div:first-child > div:last-child { font-size: 9px; }
+    /* Cards padding */
     .card { padding: 14px 14px; }
+    /* Src dot stays */
+    .src-dot { flex-shrink: 0; }
   }
 
   /* Page rows */
