@@ -162,7 +162,7 @@ function renderProjects(projects) {
       <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
         <div class="status-dot ${dotClass(status)}"></div>
         <div class="card-main">
-          <div class="card-name">${p.name} ${statusBadge(status)}${p.nda === 'signed' ? ' <span class="badge badge-nda">NDA Signed</span>' : p.nda === 'pending' ? ' <span class="badge badge-nda-pending">NDA Pending</span>' : ''}</div>
+          <div class="card-name">${p.name} ${statusBadge(status)}</div>
           <div class="card-meta">
             <span>👤 ${assigned}</span>
             <span>📅 ${due}</span>
@@ -179,6 +179,7 @@ function renderProjects(projects) {
           <div class="detail-item"><label>Artists</label><span>${assigned}</span></div>
           <div class="detail-item"><label>Due Date</label><span>${due}</span></div>
           <div class="detail-item"><label>Progress</label><span style="color:${pctColor};font-weight:700;">${pct}%</span></div>
+          <div class="detail-item"><label>NDA on File</label><span style="font-weight:600;color:${p.nda==='signed'?'#7c3aed':p.nda==='pending'?'#92400e':'#aeaeb2'}">${p.nda==='signed'?'Yes':p.nda==='pending'?'Pending':'No'}</span></div>
           ${p.dropbox_link ? `<div class="detail-item"><label>Dropbox</label><a href="${p.dropbox_link}" target="_blank">View folder →</a></div>` : ''}
         </div>
         ${statusSummary ? `
