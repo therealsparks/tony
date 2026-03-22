@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-22 05:54 UTC",
+  "updated": "2026-03-22 05:55 UTC",
   "projects": [
     {
       "name": "Alchatek - Video AI RFP",
@@ -26,7 +26,7 @@
       "name": "Biosqueeze - Fines Migration",
       "created_at": "2026-03-21",
       "due_date": "Not set",
-      "status": "not_started",
+      "status": "active",
       "assigned": [
         "peter@austinvisuals.com"
       ],
@@ -43,13 +43,16 @@
       "pending_requests": [],
       "progress_pct": 0,
       "status_summary": "Not started \u2014 #9 in Biosqueeze series.",
-      "next_steps": "Queue after Water Shutoff. Confirm scope with Biosqueeze."
+      "next_steps": "Queue after Water Shutoff. Confirm scope with Biosqueeze.",
+      "flags": [
+        "not_started"
+      ]
     },
     {
       "name": "Biosqueeze - Mechanical Integrity",
       "created_at": "2026-03-21",
       "due_date": "Not set",
-      "status": "not_started",
+      "status": "active",
       "assigned": [
         "peter@austinvisuals.com"
       ],
@@ -66,13 +69,16 @@
       "pending_requests": [],
       "progress_pct": 0,
       "status_summary": "Pending start \u2014 #7 in Biosqueeze series.",
-      "next_steps": "Await green light from Hayden Binde. Assign artist when ready."
+      "next_steps": "Await green light from Hayden Binde. Assign artist when ready.",
+      "flags": [
+        "not_started"
+      ]
     },
     {
       "name": "Biosqueeze - Water Shutoff",
       "created_at": "2026-03-21",
       "due_date": "Not set",
-      "status": "not_started",
+      "status": "active",
       "assigned": [
         "peter@austinvisuals.com"
       ],
@@ -89,7 +95,10 @@
       "pending_requests": [],
       "progress_pct": 0,
       "status_summary": "Not started \u2014 #8 in Biosqueeze series.",
-      "next_steps": "Queue after Mechanical Integrity. Confirm scope with Biosqueeze."
+      "next_steps": "Queue after Mechanical Integrity. Confirm scope with Biosqueeze.",
+      "flags": [
+        "not_started"
+      ]
     },
     {
       "name": "Biosqueeze Project 5 - Underground Mining",
