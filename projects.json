@@ -1,6 +1,31 @@
 {
-  "updated": "2026-03-22 05:58 UTC",
+  "updated": "2026-03-22 06:02 UTC",
   "projects": [
+    {
+      "name": "1915 Films - Stephen Lawrence VFX",
+      "created_at": "2026-03-22",
+      "due_date": "Not set",
+      "status": "active",
+      "nda": null,
+      "flags": [],
+      "assigned": [
+        "peter@austinvisuals.com"
+      ],
+      "dropbox_link": null,
+      "progress_pct": 25,
+      "status_summary": "Active \u2014 VFX film project. 12 initial shots delivered. Expanded to 24 additional shots. Peter lead artist.",
+      "next_steps": "Continue VFX shots with Peter. Budget expanded to $28,500 for remaining 24 shots. Coordinate with Stephen Lawrence.",
+      "updates": [
+        {
+          "author": "matt@austinvisuals.com",
+          "author_name": "Matt",
+          "timestamp": "2026-03-22 05:30 UTC",
+          "text": "1915 Films VFX project with Stephen Lawrence. Original 12 shots at $12,500, expanded to 24 more at $28,500 total. Peter is lead. Multiple artists involved.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": []
+    },
     {
       "name": "Alchatek - Video AI RFP",
       "created_at": "2026-03-21",
@@ -131,6 +156,31 @@
       "next_steps": "Meeting Monday/Tuesday with Hayden Binde at Biosqueeze. Collect final project files from Peter. Send Google review survey to client."
     },
     {
+      "name": "Biosqueeze Project 6 - Airport Construction",
+      "created_at": "2026-03-22",
+      "due_date": "Not set",
+      "status": "collect",
+      "nda": null,
+      "flags": [],
+      "assigned": [
+        "peter@austinvisuals.com"
+      ],
+      "dropbox_link": null,
+      "progress_pct": 100,
+      "status_summary": "100% complete \u2014 Airport Construction animation delivered. All invoices paid.",
+      "next_steps": "Collect final project files from Peter. Send Google review survey to Biosqueeze.",
+      "updates": [
+        {
+          "author": "matt@austinvisuals.com",
+          "author_name": "Matt",
+          "timestamp": "2026-03-22 05:30 UTC",
+          "text": "Project complete. All invoices paid. Needs final file collection from Peter and review survey.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": []
+    },
+    {
       "name": "C-Vision Horse Race Party Video",
       "created_at": "2026-03-21",
       "due_date": "2026-04-18",
@@ -247,6 +297,54 @@
       "progress_pct": 15,
       "status_summary": "15% \u2014 Storyboards in review. 27 boards created, one round of client comments received from Craig. Peter starts animation work Monday.",
       "next_steps": "Round 2 of storyboard comments expected Monday. Peter adjusts boards early this week. Goal: finalize all boards by end of this week. Start animation week of March 30. Bill client milestone when animation phase begins."
+    },
+    {
+      "name": "HR Healthcare",
+      "created_at": "2026-03-22",
+      "due_date": "Not set",
+      "status": "active",
+      "nda": null,
+      "flags": [],
+      "assigned": [
+        "tom@austinvisuals.com"
+      ],
+      "dropbox_link": null,
+      "progress_pct": 25,
+      "status_summary": "Active \u2014 Tom assigned. Katrina Holman contact. In production.",
+      "next_steps": "Continue production with Tom. Proposal pending for second video.",
+      "updates": [
+        {
+          "author": "matt@austinvisuals.com",
+          "author_name": "Matt",
+          "timestamp": "2026-03-22 05:30 UTC",
+          "text": "HR Healthcare active project. Tom assigned. Katrina Holman client. Second video prospect noted \u2014 proposal to come.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": []
+    },
+    {
+      "name": "HR Healthcare - Second Video",
+      "created_at": "2026-03-22",
+      "due_date": "Not set",
+      "status": "prospect",
+      "nda": null,
+      "flags": [],
+      "assigned": [],
+      "dropbox_link": null,
+      "progress_pct": 0,
+      "status_summary": "Prospect \u2014 second video for HR Healthcare. Proposal to come.",
+      "next_steps": "Send proposal to Katrina Holman for second video.",
+      "updates": [
+        {
+          "author": "matt@austinvisuals.com",
+          "author_name": "Matt",
+          "timestamp": "2026-03-22 05:30 UTC",
+          "text": "Second video prospect for HR Healthcare. Proposal has not been sent yet.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": []
     },
     {
       "name": "Landon Lockwood - Ptolemaic Alexandria Animation",
