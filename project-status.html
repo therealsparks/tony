@@ -88,7 +88,8 @@
   </div>
 
   <div id="project-list"><div class="empty">Loading...</div></div>
-  <div class="footer">⚡ Tony for Austin Visuals · Updated daily from project registry</div>
+  <div class="footer">
+    <div style="margin-top:12px;"><a href="#" onclick="translatePage()" style="font-size:11px;color:#aeaeb2;text-decoration:none;opacity:0.6;">🌐 Dich sang tieng Viet</a></div>⚡ Tony for Austin Visuals · Updated daily from project registry</div>
 </div>
 
 <script>
@@ -196,5 +197,12 @@ fetch('projects.json?v=' + Date.now())
   })
   .catch(() => { document.getElementById('project-list').innerHTML = '<div class="empty">Could not load project data.</div>'; });
 </script>
+
+  <script>
+  function translatePage() {
+    window.location.href = "https://translate.google.com/translate?hl=vi&sl=en&tl=vi&u=" + encodeURIComponent(window.location.href);
+    return false;
+  }
+  </script>
 </body>
 </html>
