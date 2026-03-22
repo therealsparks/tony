@@ -83,6 +83,8 @@
     <div class="updated" id="updated">Loading...</div>
   </div>
 
+  <div id="summary-counts" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;"></div>
+
   <div class="filters">
     <button class="filter-btn active" onclick="filter('all', this)">All</button>
     <button class="filter-btn" onclick="filter('active', this)">Active</button>
@@ -109,10 +111,13 @@ function daysSince(isoDate) {
 function toCentral(isoDate) {
   if (!isoDate) return '';
   try {
-    const d = new Date(isoDate.replace(' UTC','Z'));
+    // Handle formats: "2026-03-22 05:30 UTC" or "2026-03-22T05:30:00Z"
+    const cleaned = isoDate.trim().replace(' UTC','Z').replace(' ','T');
+    const d = new Date(cleaned);
+    if (isNaN(d.getTime())) return isoDate;
     return d.toLocaleString('en-US', {
       timeZone: 'America/Chicago',
-      month: 'short', day: 'numeric', year: 'numeric',
+      month: 'short', day: 'numeric',
       hour: 'numeric', minute: '2-digit',
       timeZoneName: 'short'
     });
@@ -234,10 +239,27 @@ fetch('projects.json?v=' + Date.now())
   .then(data => {
     document.getElementById('updated').textContent = 'Last updated: ' + data.updated;
     allProjects = data.projects || [];
-    // Sort: stale first, then active, then pending, then prospect
     const order = {stale:0,active:1,not_started:2,hold:3,prospect:4,collect:5};
     allProjects.sort((a,b) => (order[getStatus(a)]||9) - (order[getStatus(b)]||9));
     renderProjects(allProjects);
+
+    // Summary counts
+    const counts = {active:0, not_started:0, hold:0, prospect:0, stale:0, collect:0};
+    allProjects.forEach(p => {
+      const s = getStatus(p);
+      if (counts[s] !== undefined) counts[s]++;
+    });
+    const total = allProjects.length;
+    const billable = counts.active + counts.stale + counts.not_started + counts.collect;
+    const pills = [
+      {label: `${total} Total`, color: '#1d1d1f', bg: '#f2f2f7'},
+      {label: `${billable} Active / Archive`, color: '#1a7a46', bg: '#e8f8f0'},
+      {label: `${counts.prospect} Prospects`, color: '#1d4ed8', bg: '#eff6ff'},
+      {label: `${counts.collect} To Collect`, color: '#3a3a3c', bg: '#f2f2f7'},
+    ];
+    document.getElementById('summary-counts').innerHTML = pills.map(p =>
+      `<div style="background:${p.bg};color:${p.color};border-radius:99px;padding:6px 14px;font-size:12px;font-weight:700;">${p.label}</div>`
+    ).join('');
   })
   .catch(() => { document.getElementById('project-list').innerHTML = '<div class="empty">Could not load project data.</div>'; });
 </script>
