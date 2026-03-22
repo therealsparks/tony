@@ -167,7 +167,8 @@ function renderProjects(projects) {
     const pct = p.progress_pct || 0;
     const pctColor = pct >= 75 ? '#34c759' : pct >= 40 ? '#ff9f0a' : '#aeaeb2';
     const assigned = (p.assigned || []).map(e => e.split('@')[0]).join(', ') || 'Unassigned';
-    const due = p.due_date && p.due_date !== 'Not set' ? p.due_date : 'No due date';
+    const dueRaw = p.due_date && p.due_date !== 'Not set' ? p.due_date : null;
+    const due = dueRaw ? (() => { try { const d = new Date(dueRaw + 'T12:00:00'); return d.toLocaleDateString('en-US', {month:'short', day:'numeric'}); } catch(e){ return dueRaw; } })() : 'No due date';
     const updates = (p.updates || []).slice().reverse().slice(0, 3);
     const statusSummary = p.status_summary || '';
     const nextSteps = p.next_steps || '';
