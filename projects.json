@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-22 05:55 UTC",
+  "updated": "2026-03-22 05:57 UTC",
   "projects": [
     {
       "name": "Alchatek - Video AI RFP",
@@ -253,7 +253,9 @@
       "created_at": "2026-03-21",
       "due_date": "Not set",
       "status": "prospect",
-      "assigned": [],
+      "assigned": [
+        "adam@austinvisuals.com"
+      ],
       "dropbox_link": "https://www.dropbox.com/scl/fo/8vf4god3va08iuc26ecnx/AF-uwhoeqIU85wzxeGUbuIU?rlkey=hzhmzcdmphuplvczj8k6x6ywh",
       "updates": [
         {
@@ -305,7 +307,9 @@
       "created_at": "2026-03-21",
       "due_date": "Not set",
       "status": "prospect",
-      "assigned": [],
+      "assigned": [
+        "tom@austinvisuals.com"
+      ],
       "dropbox_link": null,
       "updates": [
         {
