@@ -336,12 +336,12 @@
       ],
       "nda": null,
       "assigned": [
-        "peter@austinvisuals.com"
+        "ro@austinvisuals.com"
       ],
       "dropbox_link": "https://www.dropbox.com/scl/fo/jooqkugk3e2z94ah8s253/ANcpgQuRRIRqb38-_rm1S1w?rlkey=4y84zzx4dvlmmvbv7a0m8wta1&dl=0",
       "progress_pct": 50,
-      "status_summary": "Active \u2014 50% complete. VFX supervision done. Waiting for client to deliver source files before Peter can complete the infinity shot.",
-      "next_steps": "Wait for Chris Carpenter to deliver the VFX source files. Once received, Peter to complete the infinity shot VFX.",
+      "status_summary": "Active \u2014 50% complete. VFX supervision done. Ro assigned as lead artist, Peter as backup. Waiting for client to deliver source files to complete the infinity shot.",
+      "next_steps": "Wait for Chris Carpenter to send VFX source files. Ro to complete the infinity shot once files arrive. Peter on backup.",
       "updates": [
         {
           "author": "matt@austinvisuals.com",
