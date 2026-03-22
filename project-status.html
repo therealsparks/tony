@@ -86,7 +86,8 @@
   <div class="filters">
     <button class="filter-btn active" onclick="filter('all', this)">All</button>
     <button class="filter-btn" onclick="filter('active', this)">Active</button>
-    <button class="filter-btn" onclick="filter('pending', this)">Pending</button>
+    <button class="filter-btn" onclick="filter('not_started', this)">Not Started</button>
+    <button class="filter-btn" onclick="filter('hold', this)">Hold</button>
     <button class="filter-btn" onclick="filter('prospect', this)">Prospects</button>
     <button class="filter-btn" onclick="filter('stale', this)">Stale (7d+)</button>
     <button class="filter-btn" onclick="filter('collect', this)">Collect / Archive</button>
@@ -125,18 +126,28 @@ function getLastUpdate(project) {
 }
 
 function statusBadge(status) {
-  const map = {active:'badge-active',pending:'badge-pending',prospect:'badge-prospect',stale:'badge-stale',collect:'badge-collect'};
-  const labels = {active:'Active',pending:'Pending',prospect:'Prospect',stale:'Stale',collect:'Collect / Archive'};
+  const map = {
+    active:'badge-active', not_started:'badge-pending', hold:'badge-pending',
+    prospect:'badge-prospect', stale:'badge-stale', collect:'badge-collect'
+  };
+  const labels = {
+    active:'Active', not_started:'Not Started', hold:'Hold',
+    prospect:'Prospect', stale:'Stale', collect:'Collect / Archive'
+  };
   return `<span class="badge ${map[status]||'badge-pending'}">${labels[status]||status}</span>`;
 }
 
 function dotClass(status) {
-  return {active:'dot-active',pending:'dot-pending',prospect:'dot-prospect',stale:'dot-stale',collect:'dot-collect'}[status]||'dot-pending';
+  return {
+    active:'dot-active', not_started:'dot-pending', hold:'dot-pending',
+    prospect:'dot-prospect', stale:'dot-stale', collect:'dot-collect'
+  }[status]||'dot-pending';
 }
 
 function getStatus(project) {
-  if (project.status === 'collect') return 'collect';
   const base = project.status || 'active';
+  // These statuses never go stale automatically
+  if (['collect','hold','not_started','prospect'].includes(base)) return base;
   const lastUpdate = getLastUpdate(project);
   if (lastUpdate) {
     const days = daysSince(lastUpdate.timestamp);
@@ -218,7 +229,7 @@ fetch('projects.json?v=' + Date.now())
     document.getElementById('updated').textContent = 'Last updated: ' + data.updated;
     allProjects = data.projects || [];
     // Sort: stale first, then active, then pending, then prospect
-    const order = {stale:0,active:1,pending:2,prospect:3,collect:4};
+    const order = {stale:0,active:1,not_started:2,hold:3,prospect:4,collect:5};
     allProjects.sort((a,b) => (order[getStatus(a)]||9) - (order[getStatus(b)]||9));
     renderProjects(allProjects);
   })
