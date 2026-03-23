@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-23 03:06 UTC",
+  "updated": "2026-03-23 05:09 UTC",
   "projects": [
     {
       "name": "1915 Films - Stephen Lawrence VFX",
@@ -468,6 +468,29 @@
           "author_name": "Matt",
           "timestamp": "2026-03-22 05:30 UTC",
           "text": "Second video prospect for HR Healthcare. Proposal has not been sent yet.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": []
+    },
+    {
+      "name": "John Fodor - Education Video",
+      "created_at": "2026-03-23",
+      "due_date": "Not set",
+      "status": "active",
+      "flags": [],
+      "nda": null,
+      "assigned": [],
+      "dropbox_link": null,
+      "progress_pct": 25,
+      "status_summary": "Active \u2014 John Fodor PhD (fodor@emr.org). Education video for high school kids. Last contact: John emailed, Matt responded.",
+      "next_steps": "Matt needs to respond to John Fodor's email to move the project forward.",
+      "updates": [
+        {
+          "author": "matt@austinvisuals.com",
+          "author_name": "Matt",
+          "timestamp": "2026-03-23 05:00 UTC",
+          "text": "Active project. John Fodor emailed, Matt responded. Next step: Matt needs to follow up on John's latest email.",
           "flagged": false
         }
       ],
