@@ -93,6 +93,9 @@
     <button class="filter-btn" onclick="filter('prospect', this)">Prospects</button>
     <button class="filter-btn" onclick="filter('stale', this)">Stale (7d+)</button>
     <button class="filter-btn" onclick="filter('collect', this)">Collect / Archive</button>
+    <select id="artist-filter" onchange="filterByArtist(this.value)" style="padding:6px 12px;border-radius:99px;font-size:12px;font-weight:600;border:none;background:#fff;color:#6e6e73;box-shadow:0 1px 3px rgba(0,0,0,0.08);cursor:pointer;">
+      <option value="">👤 All Artists</option>
+    </select>
   </div>
 
   <div id="project-list"><div class="empty">Loading...</div></div>
@@ -225,13 +228,41 @@ function renderProjects(projects) {
 function filter(type, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+  document.getElementById('artist-filter').value = '';
   if (type === 'all') { renderProjects(allProjects); return; }
-  // Flag-based filters
   if (type === 'not_started' || type === 'hold') {
     renderProjects(allProjects.filter(p => (p.flags||[]).includes(type)));
     return;
   }
   renderProjects(allProjects.filter(p => getStatus(p) === type));
+}
+
+function filterByArtist(artistVal) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  if (!artistVal) { renderProjects(allProjects); return; }
+  renderProjects(allProjects.filter(p => {
+    const assigned = p.assigned || [];
+    return assigned.some(a => {
+      const name = a.includes('@') ? a.split('@')[0].toLowerCase() : a.toLowerCase();
+      return name === artistVal.toLowerCase() || a.toLowerCase() === artistVal.toLowerCase();
+    });
+  }));
+}
+
+function populateArtistFilter(projects) {
+  const artists = new Set();
+  projects.forEach(p => (p.assigned||[]).forEach(a => {
+    const name = a.includes('@') ? a.split('@')[0] : a;
+    if (name && name !== 'tony' && name.length > 1) artists.add(name);
+  }));
+  const sel = document.getElementById('artist-filter');
+  sel.innerHTML = '<option value="">👤 All Artists</option>';
+  [...artists].sort().forEach(a => {
+    const opt = document.createElement('option');
+    opt.value = a;
+    opt.textContent = a.charAt(0).toUpperCase() + a.slice(1);
+    sel.appendChild(opt);
+  });
 }
 
 fetch('projects.json?v=' + Date.now())
@@ -242,6 +273,7 @@ fetch('projects.json?v=' + Date.now())
     const order = {stale:0,active:1,not_started:2,hold:3,prospect:4,collect:5};
     allProjects.sort((a,b) => (order[getStatus(a)]||9) - (order[getStatus(b)]||9));
     renderProjects(allProjects);
+    populateArtistFilter(allProjects);
 
     // Summary counts
     const counts = {active:0, not_started:0, hold:0, prospect:0, stale:0, collect:0};
