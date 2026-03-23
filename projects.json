@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-23 05:30 UTC",
+  "updated": "2026-03-23 06:39 UTC",
   "projects": [
     {
       "name": "1915 Films - Stephen Lawrence VFX",
@@ -9,7 +9,8 @@
       "nda": null,
       "flags": [],
       "assigned": [
-        "Ro"
+        "Ro",
+        "shelly@austinvisuals.com"
       ],
       "dropbox_link": null,
       "progress_pct": 25,
@@ -336,7 +337,8 @@
       ],
       "nda": null,
       "assigned": [
-        "Ro"
+        "Ro",
+        "shelly@austinvisuals.com"
       ],
       "dropbox_link": "https://www.dropbox.com/scl/fo/jooqkugk3e2z94ah8s253/ANcpgQuRRIRqb38-_rm1S1w?rlkey=4y84zzx4dvlmmvbv7a0m8wta1&dl=0",
       "progress_pct": 50,
@@ -401,7 +403,8 @@
       "due_date": "2026-04-18",
       "status": "active",
       "assigned": [
-        "peter@austinvisuals.com"
+        "peter@austinvisuals.com",
+        "shelly@austinvisuals.com"
       ],
       "dropbox_link": "https://www.dropbox.com/scl/fo/rvns03p10z630gopvg4b2/AJ73EjPEeCNNbG9Jo7UUuZg?rlkey=w20jqjafi5jhgd24jd9mlpbur",
       "updates": [
