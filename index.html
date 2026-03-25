@@ -38,6 +38,32 @@
     align-items: center;
     gap: 6px;
   }
+
+  .internal-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .internal-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 12px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #6e6e73;
+    text-decoration: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border: 1px solid #e5e5ea;
+    text-align: center;
+  }
+  @media (max-width: 640px) {
+    .internal-links { grid-template-columns: 1fr; }
+  }
   .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
   .dot-green  { background: #34c759; box-shadow: 0 0 5px rgba(52,199,89,0.5); }
   .dot-gray   { background: #aeaeb2; }
@@ -177,10 +203,10 @@
   </div>
 
   <!-- Internal pages (password protected) -->
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:24px;">
-    <a href="av-process.html" style="display:flex;align-items:center;justify-content:center;gap:6px;background:#fff;border-radius:14px;padding:12px 10px;font-size:12px;font-weight:700;color:#6e6e73;text-decoration:none;box-shadow:0 1px 3px rgba(0,0,0,0.06);border:1px solid #e5e5ea;text-align:center;">🔒 AV Process Guide</a>
-    <a href="directory.html" style="display:flex;align-items:center;justify-content:center;gap:6px;background:#fff;border-radius:14px;padding:12px 10px;font-size:12px;font-weight:700;color:#6e6e73;text-decoration:none;box-shadow:0 1px 3px rgba(0,0,0,0.06);border:1px solid #e5e5ea;text-align:center;">🔒 Company Directory</a>
-    <a href="crm.html" style="display:flex;align-items:center;justify-content:center;gap:6px;background:#fff;border-radius:14px;padding:12px 10px;font-size:12px;font-weight:700;color:#6e6e73;text-decoration:none;box-shadow:0 1px 3px rgba(0,0,0,0.06);border:1px solid #e5e5ea;text-align:center;">🔒 CRM Prototype</a>
+  <div class="internal-links">
+    <a href="av-process.html">🔒 AV Process Guide</a>
+    <a href="directory.html">🔒 Company Directory</a>
+    <a href="crm.html">🔒 CRM</a>
   </div>
 
   <div class="stats">
