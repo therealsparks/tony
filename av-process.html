@@ -33,8 +33,7 @@
   @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
   .step { display: flex; gap: 14px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid #f7f7f7; }
   .step:last-child { border-bottom: none; }
-  .step-num, .step-bullet { width: 26px; height: 26px; border-radius: 50%; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
-  .step-num { background: #1d1d1f; color: #fff; }
+  .step-num, .step-bullet { width: 26px; height: 26px; border-radius: 50%; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; background: #1d1d1f; color: #fff; }
   .step-bullet { background: #e5e5ea; color: #1d1d1f; font-size: 14px; }
   .step-body { flex: 1; }
   .step-title { font-size: 14px; font-weight: 700; color: #1d1d1f; margin-bottom: 3px; }
@@ -43,13 +42,8 @@
   .tag-tony { background: #e8f8f0; color: #1a7a46; }
   .tag-matt { background: #eff6ff; color: #1d4ed8; }
   .tag-nancy { background: #fef2f2; color: #b91c1c; }
-  .tag-david { background: #f3e8ff; color: #7c3aed; }
   .tag-team { background: #fff8e6; color: #9a6800; }
   .tag-sales { background: #ede9fe; color: #5b21b6; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 16px; }
-  .card { background: #f9fafb; border-radius: 14px; padding: 16px; border: 1px solid #eef2ff; }
-  .card-title { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
-  .card-desc { font-size: 12px; color: #6e6e73; line-height: 1.5; }
   .footer { text-align: center; font-size: 11px; color: #aeaeb2; margin-top: 20px; }
 </style>
 </head>
@@ -228,26 +222,39 @@
   <div class="section open">
     <button class="section-head" type="button">👥 Roles & Escalations<span class="chevron">⌃</span></button>
     <div class="section-body">
-      <div class="grid">
-        <div class="card">
-          <div class="card-title">Matt Winters · CEO / Closer</div>
-          <div class="card-desc">Lead response, proposals, high-stakes client calls, final approvals, escalations, key partnerships.</div>
+      <div class="step">
+        <div class="step-bullet">👤</div>
+        <div class="step-body">
+          <div class="step-title">Matt Winters · CEO / Closer</div>
+          <div class="step-desc">Lead response, proposals, high-stakes client calls, final approvals, escalations, key partnerships.</div>
         </div>
-        <div class="card">
-          <div class="card-title">Nancy · Creative Director / PM</div>
-          <div class="card-desc">Treatments, scripting, schedules, weekly updates, resource assignment, quality control.</div>
+      </div>
+      <div class="step">
+        <div class="step-bullet">🎨</div>
+        <div class="step-body">
+          <div class="step-title">Nancy · Creative Director / PM</div>
+          <div class="step-desc">Treatments, scripting, schedules, weekly updates, resource assignment, quality control.</div>
         </div>
-        <div class="card">
-          <div class="card-title">Curtis + Jennifer · Finance Ops</div>
-          <div class="card-desc">Invoices, deposits, milestone billing, QuickBooks reconciliation, collections.</div>
+      </div>
+      <div class="step">
+        <div class="step-bullet">💸</div>
+        <div class="step-body">
+          <div class="step-title">Curtis + Jennifer · Finance Ops</div>
+          <div class="step-desc">Invoices, deposits, milestone billing, QuickBooks reconciliation, collections.</div>
         </div>
-        <div class="card">
-          <div class="card-title">David · Marketing / Distribution</div>
-          <div class="card-desc">Portfolio uploads, YouTube/Vimeo, blog cadence, Best Work Samples sheet, paid media coordination.</div>
+      </div>
+      <div class="step">
+        <div class="step-bullet">📣</div>
+        <div class="step-body">
+          <div class="step-title">David · Marketing / Distribution</div>
+          <div class="step-desc">Portfolio uploads, YouTube/Vimeo, blog cadence, Best Work Samples sheet, paid media coordination.</div>
         </div>
-        <div class="card">
-          <div class="card-title">Tony · Automation Layer</div>
-          <div class="card-desc">Project registry, Dropbox policing, reminder system, analytics pull, watchdog scripts, future billing + review automations.</div>
+      </div>
+      <div class="step">
+        <div class="step-bullet">⚡</div>
+        <div class="step-body">
+          <div class="step-title">Tony · Automation Layer</div>
+          <div class="step-desc">Project registry, Dropbox policing, reminder system, analytics pulls, watchdog scripts, and future billing/review automations.</div>
         </div>
       </div>
     </div>
@@ -283,22 +290,32 @@
   <div class="section open">
     <button class="section-head" type="button">📈 Growth & Marketing Plays (2025–2026)<span class="chevron">⌃</span></button>
     <div class="section-body">
-      <div class="grid">
-        <div class="card">
-          <div class="card-title">Vertical focus</div>
-          <div class="card-desc">Biotech, medical devices, industrial safety, construction, associations, SaaS. Build landing pages + case studies per vertical.</div>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">Vertical focus</div>
+          <div class="step-desc">Biotech, medical devices, industrial safety, construction, associations, SaaS. Build landing pages + case studies per vertical.</div>
         </div>
-        <div class="card">
-          <div class="card-title">Content cadence</div>
-          <div class="card-desc">Weekly blog posts, LinkedIn thought leadership, TikTok snippets, and quarterly whitepapers to support the 90-day AI visibility roadmap.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">Content cadence</div>
+          <div class="step-desc">Weekly blog posts, LinkedIn thought leadership, TikTok snippets, and quarterly whitepapers to support the 90-day AI visibility roadmap.</div>
         </div>
-        <div class="card">
-          <div class="card-title">Ad channels</div>
-          <div class="card-desc">Google Ads remains core. Layer LinkedIn Sponsored Content + CTV tests for targeted sectors. Track CPL + on-site conversions weekly.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">Ad channels</div>
+          <div class="step-desc">Google Ads remains core. Layer LinkedIn Sponsored Content + CTV tests for targeted sectors. Track CPL + on-site conversions weekly.</div>
         </div>
-        <div class="card">
-          <div class="card-title">Assistant-era SEO</div>
-          <div class="card-desc">Schema markup, FAQ/How-To pages, and Q&A content so AI assistants surface Austin Visuals as the go-to animation studio.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-title">Assistant-era SEO</div>
+          <div class="step-desc">Schema markup, FAQ/How-To pages, and Q&A content so AI assistants surface Austin Visuals as the go-to animation studio.</div>
         </div>
       </div>
     </div>
@@ -308,7 +325,7 @@
     <button class="section-head" type="button">🔥 Culture & Operating Tenets<span class="chevron">⌃</span></button>
     <div class="section-body">
       <div class="step">
-        <div class="step-bullet">A</div>
+        <div class="step-bullet">🚀</div>
         <div class="step-body">
           <div class="step-title">Anticipate needs</div>
           <div class="step-desc">Own outcomes, act before being asked, treat every client like a long-term partner.</div>
@@ -342,16 +359,16 @@
     <button class="section-head" type="button">⚡ Tony Automations (Live + Roadmap)<span class="chevron">⌃</span></button>
     <div class="section-body">
       <div class="step">
-        <div class="step-num">•</div>
+        <div class="step-num">1</div>
         <div class="step-body">
-          <div class="step-title">Live</div>
+          <div class="step-title">Live coverage</div>
           <div class="step-desc">Email attachment routing, Dropbox policy enforcement, project registry dashboards, watchdog scripts (email intake, CC scans, gateway uptime), analytics pulls, competitor briefs.</div>
         </div>
       </div>
       <div class="step">
-        <div class="step-num">•</div>
+        <div class="step-num">2</div>
         <div class="step-body">
-          <div class="step-title">Upcoming</div>
+          <div class="step-title">Coming soon</div>
           <div class="step-desc">Intern outreach automation, QuickBooks invoice sync, Google review campaigns, milestone billing nudges, "chat with Tony" widget for AustinVisuals.com.</div>
         </div>
       </div>
