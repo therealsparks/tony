@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-24 03:14 UTC",
+  "updated": "2026-03-25 03:37 UTC",
   "sections": [
     {
       "id": "gov",
@@ -7,52 +7,38 @@
       "icon": "\ud83c\udfdb\ufe0f",
       "items": [
         {
-          "title": "Energy Department sets up $293M funding opportunity for Genesis Mission teams",
-          "link": "https://fedscoop.com/energy-department-funding-genesis-mission-teams/",
-          "desc": "National Labs, other federal agencies, academic institutions and private-sector companies can submit collaborative applications to address the challenges identified by DOE. The post Energy Department sets up $293M funding opportunity for Genesis Miss",
-          "date": "Wed, 18 Mar 2026",
-          "source": "FedScoop"
-        },
-        {
-          "title": "The US Army is already ditching its most powerful laser weapon yet",
-          "link": "https://www.defensenews.com/industry/techwatch/2026/03/23/the-us-army-is-already-ditching-its-most-powerful-laser-weapon-yet/",
-          "desc": "The U.S. Army\u2019s 300 kilowatt Indirect Fire Protection Capability-High Energy Laser system won't transition to a program of record.",
-          "date": "Mon, 23 Mar 2026",
-          "source": "Defense News"
-        },
-        {
-          "title": "Texas Education Agency orders public schools to remove mentions of Cesar Chavez from lessons",
-          "link": "https://feeds.texastribune.org/link/16799/17304762/texas-tea-cesar-chavez-remove-lessons",
-          "desc": "Schools were also directed to cancel or change celebrations of the late civil rights leader amid allegations of sexual abuse.",
-          "date": "Mon, 23 Mar 2026",
+          "title": "Elon Musk company selects proposed mile-long Dallas tunnel",
+          "link": "https://feeds.texastribune.org/link/16799/17305557/dallas-boring-company-tunnel-underground-transit-elon-musk",
+          "desc": "The Boring Company said it would begin assessing the feasibility of building an underground tunnel connecting a university with a new development.",
+          "date": "Wed, 25 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Supreme Court rejects appeal from Texas death row inmate Rodney Reed",
-          "link": "https://feeds.texastribune.org/link/16799/17304652/rodney-reed-texas-death-row-supreme-court",
-          "desc": "Reed has sought to test crime-scene evidence that he says will help clear him of the killing of 19-year-old Stacey Stites in 1996.",
-          "date": "Mon, 23 Mar 2026",
+          "title": "Texas will require proof of legal immigration status to get professional licenses",
+          "link": "https://feeds.texastribune.org/link/16799/17305502/texas-professional-licenses-proof-of-immigration-status-undocumented-tdlr",
+          "desc": "Officials approved the change after hearing from speakers who argued it would hamper the state\u2019s economy and push immigrants to work without licenses in the black market.",
+          "date": "Tue, 24 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Blocked from Texas vouchers, this private Islamic school wants a chance to prove its pro-America values",
-          "link": "https://feeds.texastribune.org/link/16799/17304048/texas-school-vouchers-islam-iman-academy",
-          "desc": "Several Islamic schools sued Texas for excluding them from the voucher program. Iman Academy is instead calling for fairness while hoping to be judged by its work \u2014 not stereotypes.",
-          "date": "Mon, 23 Mar 2026",
+          "title": "TribCast: Inside Texas\u2019 massive ICE detention facilities",
+          "link": "https://feeds.texastribune.org/link/16799/17305426/tribcast-ice-detention-immigration",
+          "desc": "The sprawling immigration lockups are serving as a national blueprint. What's life like for detainees?",
+          "date": "Tue, 24 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Feds plan to install 536 miles of floating barriers on Rio Grande to deter migrants",
-          "link": "https://feeds.texastribune.org/link/16799/17304049/texas-border-rio-grande-buoys-federal-barrier-brownsville",
-          "desc": "The government is installing the first 17 miles of industrial-grade buoys in Brownsville. Experts warn the buoys could intensify flooding and change the river\u2019s course.",
-          "date": "Mon, 23 Mar 2026",
+          "title": "Florida educator tapped to lead Fort Worth schools under Texas takeover",
+          "link": "https://feeds.texastribune.org/link/16799/17305235/texas-fort-worth-isd-superintendent-takeover",
+          "desc": "Texas Education Commissioner Mike Morath also named nine managers to essentially replace the school district\u2019s elected trustees.",
+          "date": "Tue, 24 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Why Texas\u2019 Population Boom Is Reshaping Local Mobility",
-          "link": "https://feeds.texastribune.org/link/16799/17302823/why-texas-population-boom-is-reshaping-local-mobility",
-          "desc": "Rapid growth across Texas is changing how families move, settle, and build community.",
-          "date": "Fri, 20 Mar 2026",
+          "title": "Texas will ban smokeable hemp cannabis on March 31. Here\u2019s what you need to know.",
+          "link": "https://feeds.texastribune.org/link/16799/17305000/texas-hemp-thc-smokeable-flower-joints-regulations",
+          "desc": "New rules from state health officials ban smokeable intoxicating hemp products, including pre-rolled joints and hemp flower.",
+          "date": "Tue, 24 Mar 2026",
           "source": "Texas Tribune"
         }
       ]
@@ -63,39 +49,32 @@
       "icon": "\u26a1",
       "items": [
         {
-          "title": "Aramco CEO Withdraws From Houston Event",
-          "link": "https://www.rigzone.com/news/wire/aramco_ceo_withdraws_from_houston_event-23-mar-2026-183274-article/?rss=true",
-          "desc": "Saudi Aramco Chief Executive Officer Amin Nasser has withdrawn from a major energy conference in Houston as the situation in the Middle East remains volatile.",
-          "date": "Mon, 23 Mar 2026",
+          "title": "Energy Bosses Share Iran Anxieties at CERAWeek",
+          "link": "https://www.rigzone.com/news/wire/energy_bosses_share_iran_anxieties_at_ceraweek-24-mar-2026-183285-article/?rss=true",
+          "desc": "Houston's showpiece energy conference is usually an opportunity for backslapping and glad-handing.",
+          "date": "Tue, 24 Mar 2026",
           "source": "Rigzone"
         },
         {
-          "title": "AEP, SoftBank Ink Deal with US DOE for 10 GW Data Center Power",
-          "link": "https://www.rigzone.com/news/aep_softbank_ink_deal_with_us_doe_for_10_gw_data_center_power-23-mar-2026-183272-article/?rss=true",
-          "desc": "The mostly gas generation capacity will serve a 10-GW data center planned to rise at the site of a former gaseous diffusion plant in Pike County, Ohio.",
-          "date": "Mon, 23 Mar 2026",
+          "title": "Venture Global Notches 5-Year LNG Order from Vitol",
+          "link": "https://www.rigzone.com/news/venture_global_notches_5year_lng_order_from_vitol-24-mar-2026-183281-article/?rss=true",
+          "desc": "Deliveries are to start this year.",
+          "date": "Tue, 24 Mar 2026",
           "source": "Rigzone"
         },
         {
-          "title": "Trump Reports 'Productive Conversations' with Iran",
-          "link": "https://www.rigzone.com/news/trump_reports_productive_conversations_with_iran-23-mar-2026-183273-article/?rss=true",
-          "desc": "'I have instructed the Department of War to postpone any and all military strikes against Iranian power plants and energy infrastructure for a five day period', Trump said.",
-          "date": "Mon, 23 Mar 2026",
+          "title": "OEUK Says New Polling Shows Public Backs Homegrown Energy",
+          "link": "https://www.rigzone.com/news/oeuk_says_new_polling_shows_public_backs_homegrown_energy-24-mar-2026-183280-article/?rss=true",
+          "desc": "'New UK wide polling commissioned by OEUK shows overwhelming public support for using the UK's own oil and gas resources alongside renewables to strengthen national security', OEUK said.",
+          "date": "Tue, 24 Mar 2026",
           "source": "Rigzone"
         },
         {
-          "title": "QatarEnergy Missile Strikes May Cause $100B Revenue Loss",
-          "link": "https://www.rigzone.com/news/qatarenergy_missile_strikes_may_cause_100b_revenue_loss-23-mar-2026-183271-article/?rss=true",
-          "desc": "QatarEnergy said it expects the damage to its Ras Laffan Industrial City caused by missile strikes to cost about $20 billion a year in lost revenue and to take up to five years to repair.",
-          "date": "Mon, 23 Mar 2026",
-          "source": "Rigzone"
-        },
-        {
-          "title": "Iberdrola Reaches Over 11 GW of Installed Capacity in US",
-          "link": "https://www.rigzone.com/news/iberdrola_reaches_over_11_gw_of_installed_capacity_in_us-23-mar-2026-183270-article/?rss=true",
-          "desc": "'Avangrid's growing portfolio is helping to meet a surge in energy demand across the country brought on by the proliferation of data centers powering the country's AI revolution'.",
-          "date": "Mon, 23 Mar 2026",
-          "source": "Rigzone"
+          "title": "Google Has PPAs for Solar Power from Renewable Energy Group",
+          "link": "https://www.powermag.com/google-has-ppas-for-solar-power-from-renewable-energy-group/",
+          "desc": "A Maryland-headquartered utility-scale developer, owner, and operator of solar power and energy storage projects said it has power purchase agreements (PPAs) with technology giant Google for the electricity from two Texas solar installations. The pos",
+          "date": "Tue, 24 Mar 2026",
+          "source": "Power Magazine"
         },
         {
           "title": "The POWER Interview: Electrification Key for Decarbonization, Energy Efficiency",
@@ -115,6 +94,13 @@
           "title": "Nuclear Sprint: DOE and Industry Race to Meet Trump\u2019s Target",
           "link": "https://www.powermag.com/nuclear-sprint-doe-and-industry-race-to-meet-trumps-target/",
           "desc": "The Senate Committee on Energy and Natural Resources convened March 19 for a full committee hearing to examine the Department of Energy\u2019s (DOE\u2019s) implementation of President Trump\u2019s May 2025 nuclear energy executive orders. Three witnesses\u2014DOE Assist",
+          "date": "Thu, 19 Mar 2026",
+          "source": "Power Magazine"
+        },
+        {
+          "title": "Cuba Begins Testing First Battery Energy Storage System to Boost Grid Stability",
+          "link": "https://www.powermag.com/cuba-begins-testing-first-battery-energy-storage-system-to-boost-grid-stability/",
+          "desc": "As part of the country\u2019s strategic program to strengthen the stability of the national grid, Cuba has begun load testing of the first unit of a battery energy storage system (BESS) at the El Cotorro substation in Havana. This is the first of four sys",
           "date": "Thu, 19 Mar 2026",
           "source": "Power Magazine"
         }
@@ -138,29 +124,7 @@
       "id": "legal_tech",
       "title": "Legal & Courts",
       "icon": "\u2696\ufe0f",
-      "items": [
-        {
-          "title": "California sues Department of Energy over restarted oil pipelines",
-          "link": "https://www.courthousenews.com/california-sues-department-of-energy-over-restarted-oil-pipelines/",
-          "desc": "The state claims the federal government unlawfully invoked the Defense Production Act to reopen two pipelines around Santa Barbara, California.",
-          "date": "Mon, 23 Mar 2026",
-          "source": "Courthouse News"
-        },
-        {
-          "title": "Kennedy Center board sued over planned closure and reconstruction",
-          "link": "https://www.courthousenews.com/kennedy-center-board-sued-over-planned-closure-and-reconstruction/",
-          "desc": "The board, chaired by President Donald Trump, approved a proposal to shut the nation\u2019s premier cultural center for two years and remodel the building under the president\u2019s direction.",
-          "date": "Mon, 23 Mar 2026",
-          "source": "Courthouse News"
-        },
-        {
-          "title": "Energy Department sets up $293M funding opportunity for Genesis Mission teams",
-          "link": "https://fedscoop.com/energy-department-funding-genesis-mission-teams/",
-          "desc": "National Labs, other federal agencies, academic institutions and private-sector companies can submit collaborative applications to address the challenges identified by DOE. The post Energy Department sets up $293M funding opportunity for Genesis Miss",
-          "date": "Wed, 18 Mar 2026",
-          "source": "FedScoop"
-        }
-      ]
+      "items": []
     },
     {
       "id": "animation",
@@ -168,39 +132,46 @@
       "icon": "\ud83c\udfac",
       "items": [
         {
-          "title": "Open the Portal Talks \u2018Smiling Friends\u2019 and 11 Years of Mixed Media",
-          "link": "https://www.awn.com/animationworld/open-portal-talks-smiling-friends-and-11-years-mixed-media",
-          "desc": "The studio co-founders applied years of stop-motion expertise to create 7 minutes of a \u201cmagnificently disturbing mash-up of bright 2D and creepy Claymation\u201d in a special episode featuring Mother Nature on the hit Adult Swim comedy.",
-          "date": "Mon, 23 Mar 2026",
+          "title": "How Kenji Kamiyama Changed the World in the Anime Classic \u2018Eden of the East\u2019",
+          "link": "https://www.awn.com/animationworld/how-kenji-kamiyama-changed-world-anime-classic-eden-east",
+          "desc": "Columnist Andrew Osmond looks back to when a seminal political comedy-thriller was made in anime.",
+          "date": "Tue, 24 Mar 2026",
           "source": "Animation World Net"
         },
         {
-          "title": "Oscar Nominee Konstantin Bronzit\u2019s 'Tied Up' Sets Worldwide Digital Release",
-          "link": "https://www.awn.com/news/oscar-nominee-konstantin-bronzits-tied-sets-worldwide-digital-release",
-          "desc": "Feature film by the \u2018The Three Sisters\u2019 director and \u2018Lavatory Lovestory\u2019 writer Dmitry Vysotsky about an unlikely group of discarded objects on a journey of purpose and belonging, releases March 24 across most major digital platforms.",
-          "date": "Mon, 23 Mar 2026",
+          "title": "A New \u2018Breed\u2019 of Mystery - Trailer Drops for 'The Sheep Detectives'",
+          "link": "https://www.awn.com/news/new-breed-mystery-trailer-drops-sheep-detectives",
+          "desc": "Amazon MGM Studios showcases more of its \u2018baaaadass\u2019 wooly sleuths in the mystery comedy about a rather interesting flock that investigates their shepherd\u2019s death; in theaters May 8.",
+          "date": "Tue, 24 Mar 2026",
           "source": "Animation World Net"
         },
         {
-          "title": "Disney Drops \u2018Moana\u2019 Live-Action Official Trailer",
-          "link": "https://www.awn.com/news/disney-drops-moana-live-action-official-trailer",
-          "desc": "Catherine Laga\u02bbaia stars as Moana alongside Dwayne Johnson as Maui, the \u2018shape shifter, demigod of the wind and sea, hero of men... and women too\u2019 in the upcoming adaptation of the studio\u2019s hit animated film; in theaters July 10.",
-          "date": "Mon, 23 Mar 2026",
+          "title": "Zoic Studios Names Raphael A. Pimentel Director of Animation",
+          "link": "https://www.awn.com/news/zoic-studios-names-raphael-pimentel-director-animation",
+          "desc": "Veteran director joins studio from Luma Pictures to oversee animation across feature, episodic, commercial, and experiential projects.",
+          "date": "Tue, 24 Mar 2026",
           "source": "Animation World Net"
         },
         {
-          "title": "MoMI\u2019s 5th Annual Marvels of Media Festival Set for March 26\u201328",
-          "link": "https://www.awn.com/news/momis-5th-annual-marvels-media-festival-set-march-2628",
-          "desc": "The Museum of the Moving Image will host the expansive Astoria, NY event that features work created by autistic media makers, including films, a video game, VR experiences, and expanded nationwide theater partnerships.",
-          "date": "Mon, 23 Mar 2026",
+          "title": "Triggerfish Animation Studios Selects Bristol for UK Base",
+          "link": "https://www.awn.com/news/triggerfish-animation-studios-selects-bristol-uk-base",
+          "desc": "Leading African animation studio expands international operations alongside facilities in Cape Town and Galway to support remote production and participate in BBC Ignite to develop emerging talent.",
+          "date": "Tue, 24 Mar 2026",
           "source": "Animation World Net"
         },
         {
-          "title": "\u2018Mickey + Bluey\u2019 Animated Short Debuts on Disney+",
-          "link": "https://www.awn.com/news/mickey-bluey-animated-short-debuts-disney",
-          "desc": "The new crossover video brings Mickey Mouse and the famed Blue Heeler together on screen for the first time as part of Disney\u2019s collaboration with Ludo Studio and BBC Studios.",
-          "date": "Mon, 23 Mar 2026",
+          "title": "Team Dante or Team Virgil \u2013 Netflix Drops \u2018Devil May Cry\u2019 Season 2 Teaser",
+          "link": "https://www.awn.com/news/team-dante-or-team-virgil-netflix-drops-devil-may-cry-season-2-teaser",
+          "desc": "Sides are being drawn in the run-up to the all-new season of the hit adaptation of the popular Capcom video game, which streams May 12.",
+          "date": "Tue, 24 Mar 2026",
           "source": "Animation World Net"
+        },
+        {
+          "title": "The World of Bosnian Knight | KnapStudio / Kenan Tuzi",
+          "link": "https://motionographer.com/quickie/the-world-of-bosnian-knight-knapstudio-kenan-tuzi/",
+          "desc": "",
+          "date": "Tue, 24 Mar 2026",
+          "source": "Motionographer"
         },
         {
           "title": "Tim Fox Joins Final Frontier",
@@ -214,13 +185,6 @@
           "link": "https://motionographer.com/quickie/an-ordinary-day-retrogusto-creatives/",
           "desc": "",
           "date": "Mon, 23 Mar 2026",
-          "source": "Motionographer"
-        },
-        {
-          "title": "Death Howl \u2013 Launch Trailer | BluBlu Studios",
-          "link": "https://motionographer.com/quickie/death-howl-launch-trailer-blublu-studios/",
-          "desc": "",
-          "date": "Fri, 20 Mar 2026",
           "source": "Motionographer"
         }
       ]
@@ -238,52 +202,52 @@
           "source": "Texas CEO Magazine"
         },
         {
-          "title": "Texas Education Agency orders public schools to remove mentions of Cesar Chavez from lessons",
-          "link": "https://feeds.texastribune.org/link/16799/17304762/texas-tea-cesar-chavez-remove-lessons",
-          "desc": "Schools were also directed to cancel or change celebrations of the late civil rights leader amid allegations of sexual abuse.",
-          "date": "Mon, 23 Mar 2026",
+          "title": "Elon Musk company selects proposed mile-long Dallas tunnel",
+          "link": "https://feeds.texastribune.org/link/16799/17305557/dallas-boring-company-tunnel-underground-transit-elon-musk",
+          "desc": "The Boring Company said it would begin assessing the feasibility of building an underground tunnel connecting a university with a new development.",
+          "date": "Wed, 25 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Supreme Court rejects appeal from Texas death row inmate Rodney Reed",
-          "link": "https://feeds.texastribune.org/link/16799/17304652/rodney-reed-texas-death-row-supreme-court",
-          "desc": "Reed has sought to test crime-scene evidence that he says will help clear him of the killing of 19-year-old Stacey Stites in 1996.",
-          "date": "Mon, 23 Mar 2026",
+          "title": "Texas will require proof of legal immigration status to get professional licenses",
+          "link": "https://feeds.texastribune.org/link/16799/17305502/texas-professional-licenses-proof-of-immigration-status-undocumented-tdlr",
+          "desc": "Officials approved the change after hearing from speakers who argued it would hamper the state\u2019s economy and push immigrants to work without licenses in the black market.",
+          "date": "Tue, 24 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Blocked from Texas vouchers, this private Islamic school wants a chance to prove its pro-America values",
-          "link": "https://feeds.texastribune.org/link/16799/17304048/texas-school-vouchers-islam-iman-academy",
-          "desc": "Several Islamic schools sued Texas for excluding them from the voucher program. Iman Academy is instead calling for fairness while hoping to be judged by its work \u2014 not stereotypes.",
-          "date": "Mon, 23 Mar 2026",
+          "title": "TribCast: Inside Texas\u2019 massive ICE detention facilities",
+          "link": "https://feeds.texastribune.org/link/16799/17305426/tribcast-ice-detention-immigration",
+          "desc": "The sprawling immigration lockups are serving as a national blueprint. What's life like for detainees?",
+          "date": "Tue, 24 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Feds plan to install 536 miles of floating barriers on Rio Grande to deter migrants",
-          "link": "https://feeds.texastribune.org/link/16799/17304049/texas-border-rio-grande-buoys-federal-barrier-brownsville",
-          "desc": "The government is installing the first 17 miles of industrial-grade buoys in Brownsville. Experts warn the buoys could intensify flooding and change the river\u2019s course.",
-          "date": "Mon, 23 Mar 2026",
+          "title": "Florida educator tapped to lead Fort Worth schools under Texas takeover",
+          "link": "https://feeds.texastribune.org/link/16799/17305235/texas-fort-worth-isd-superintendent-takeover",
+          "desc": "Texas Education Commissioner Mike Morath also named nine managers to essentially replace the school district\u2019s elected trustees.",
+          "date": "Tue, 24 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Why Texas\u2019 Population Boom Is Reshaping Local Mobility",
-          "link": "https://feeds.texastribune.org/link/16799/17302823/why-texas-population-boom-is-reshaping-local-mobility",
-          "desc": "Rapid growth across Texas is changing how families move, settle, and build community.",
-          "date": "Fri, 20 Mar 2026",
+          "title": "Texas will ban smokeable hemp cannabis on March 31. Here\u2019s what you need to know.",
+          "link": "https://feeds.texastribune.org/link/16799/17305000/texas-hemp-thc-smokeable-flower-joints-regulations",
+          "desc": "New rules from state health officials ban smokeable intoxicating hemp products, including pre-rolled joints and hemp flower.",
+          "date": "Tue, 24 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "New York City\u2019s data center opportunity may lie on the \u2018edge\u2019: panel",
-          "link": "https://www.constructiondive.com/news/new-york-city-data-center-opportunity-edge-new-york-build/815459/",
-          "desc": "Demand for data center construction is colliding with the city&rsquo;s aging power grid, according to a New York Build 2026 panel session.",
-          "date": "Mon, 23 Mar 2026",
+          "title": "$4.4B Brent Spence Bridge project targets spring groundbreaking",
+          "link": "https://www.constructiondive.com/news/brent-spence-bridge-spring-groundbreaking-cost-rise/815431/",
+          "desc": "The price tag for the work package, to be constructed by a Walsh Construction and Kokosing JV, has risen by about $700 million due to increased highway construction costs.",
+          "date": "Tue, 24 Mar 2026",
           "source": "Construction Dive"
         },
         {
-          "title": "3 ways public\u2013private partnerships are strengthening the construction workforce",
-          "link": "https://www.constructiondive.com/spons/3-ways-publicprivate-partnerships-are-strengthening-the-construction-workf/815022/",
-          "desc": "CEOs rethink workforce strategy through nonprofit partnerships to expand and stabilize labor pipelines.",
-          "date": "Mon, 23 Mar 2026",
+          "title": "Data center boom failed to lift construction spending to start 2026",
+          "link": "https://www.constructiondive.com/news/data-center-boom-construction-spending-january-2026/815519/",
+          "desc": "The lackluster spending report is &ldquo;especially concerning in light of the ongoing conflict in Iran,&rdquo; said Anirban Basu, ABC chief economist.&nbsp;&nbsp;",
+          "date": "Tue, 24 Mar 2026",
           "source": "Construction Dive"
         }
       ]
