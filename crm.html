@@ -25,7 +25,7 @@
   .sub { font-size: 14px; color: #6e6e73; margin-bottom: 24px; }
 
   .cards { display: grid; grid-template-columns: repeat(3, minmax(200px, 1fr)); gap: 14px; margin-bottom: 20px; }
-  .card { background: #fff; border-radius: 16px; padding: 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #f1f1f2; }
+  .card { background: #fff; border-radius: 16px; padding: 18px 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #f1f1f2; }
   .card-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #6e6e73; margin-bottom: 6px; }
   .card-value { font-size: 28px; font-weight: 800; }
   .card-note { font-size: 12px; color: #6e6e73; margin-top: 4px; }
@@ -34,26 +34,36 @@
   .filter-input { flex: 1; min-width: 220px; padding: 12px 14px; border-radius: 12px; border: 1px solid #e5e5ea; font-size: 13px; }
   .filter-select { padding: 12px 14px; border-radius: 12px; border: 1px solid #e5e5ea; font-size: 13px; background: #fff; }
 
-  .table-card { background: #fff; border-radius: 18px; padding: 4px 0 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-  table { width: 100%; border-collapse: collapse; }
-  th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #6e6e73; padding: 14px 20px; border-bottom: 1px solid #f1f1f2; }
-  td { font-size: 13px; padding: 16px 20px; border-bottom: 1px solid #f7f7f8; vertical-align: top; }
-  tr:last-child td { border-bottom: none; }
-  .status-pill { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; }
+  .accordion-card { background: #fff; border-radius: 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); overflow: hidden; border: 1px solid #f1f1f2; }
+  .crm-row { border-bottom: 1px solid #f7f7f8; }
+  .crm-row:last-child { border-bottom: none; }
+  .crm-header { display: flex; align-items: center; gap: 12px; padding: 16px 20px; cursor: pointer; }
+  .crm-header:hover { background: #fafafa; }
+  .crm-name { font-size: 15px; font-weight: 700; color: #1d1d1f; }
+  .crm-meta { font-size: 12px; color: #6e6e73; margin-top: 2px; }
+  .crm-info { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+  .crm-chevron { font-size: 12px; color: #aeaeb2; transition: transform 0.2s; }
+  .crm-row.open .crm-chevron { transform: rotate(180deg); }
+  .crm-pill { display: inline-flex; align-items: center; padding: 4px 12px; border-radius: 999px; font-size: 11px; font-weight: 700; }
   .pill-new { background: #eff6ff; color: #1d4ed8; }
   .pill-follow { background: #fff8e6; color: #9a6800; }
+  .pill-wait { background: #e8f8f0; color: #1a7a46; }
   .pill-cold { background: #f3e8ff; color: #7c3aed; }
   .pill-spam { background: #fee2e2; color: #b91c1c; }
-  .tag-source { font-size: 11px; font-weight: 700; color: #0071e3; }
-  .notes { color: #6e6e73; font-size: 12px; line-height: 1.5; }
-  .actions { font-size: 12px; color: #0071e3; cursor: pointer; }
+  .owner-chip { font-size: 11px; font-weight: 700; color: #6e6e73; }
+  .crm-detail { display: none; padding: 0 20px 16px 20px; }
+  .crm-row.open .crm-detail { display: block; }
+  .crm-detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 12px; }
+  .crm-detail-item label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #aeaeb2; display: block; margin-bottom: 2px; }
+  .crm-detail-item span { font-size: 13px; font-weight: 600; color: #1d1d1f; }
+  .crm-notes { font-size: 13px; color: #555; line-height: 1.5; margin-top: 10px; }
+  .crm-links { margin-top: 10px; font-size: 12px; }
+  .crm-links a { color: #0071e3; font-weight: 600; text-decoration: none; }
 
   @media (max-width: 860px) {
     .cards { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
-    table, thead, tbody, th, td, tr { display: block; }
-    th { display: none; }
-    td { border-bottom: 1px solid #f1f1f2; padding: 12px 16px; }
-    td::before { content: attr(data-label); font-size: 11px; text-transform: uppercase; color: #aeaeb2; display: block; margin-bottom: 4px; }
+    .crm-info { align-items: flex-start; margin-left: 0; }
+    .crm-header { flex-direction: column; align-items: flex-start; }
   }
 </style>
 </head>
@@ -70,92 +80,281 @@
 </div>
 
 <div id="content">
-  <div class="wrap">
-    <a class="back" href="index.html">← Back to Tony</a>
-    <div class="eyebrow">⚡ Austin Visuals Internal</div>
-    <h1>Prospect CRM (Prototype)</h1>
-    <div class="sub">Static layout for feedback — data below is sample only.</div>
+<div class="wrap">
+  <a class="back" href="index.html">← Back to Tony</a>
+  <div class="eyebrow">⚡ Austin Visuals Internal</div>
+  <h1>Prospect CRM (Prototype)</h1>
+  <div class="sub">Accordion view for feedback — data below is sample only.</div>
 
-    <div class="cards">
-      <div class="card">
-        <div class="card-label">New today</div>
-        <div class="card-value">6</div>
-        <div class="card-note">Via info@ and web form</div>
-      </div>
-      <div class="card">
-        <div class="card-label">Needs follow-up</div>
-        <div class="card-value">14</div>
-        <div class="card-note">No reply in &gt;48 hours</div>
-      </div>
-      <div class="card">
-        <div class="card-label">Auto-flagged spam</div>
-        <div class="card-value">9</div>
-        <div class="card-note">Waiting on human review</div>
-      </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-label">New today</div>
+      <div class="card-value">6</div>
+      <div class="card-note">Via info@ + website</div>
     </div>
-
-    <div class="filters">
-      <input type="text" class="filter-input" placeholder="Search name, company, or keyword">
-      <select class="filter-select">
-        <option>Status: All</option>
-        <option>New</option>
-        <option>Needs follow-up</option>
-        <option>Cold / Waiting</option>
-        <option>Spam</option>
-      </select>
-      <select class="filter-select">
-        <option>Source: All</option>
-        <option>info@ inbox</option>
-        <option>matt@ inbox</option>
-        <option>Website form</option>
-        <option>Referral</option>
-      </select>
+    <div class="card">
+      <div class="card-label">Needs follow-up</div>
+      <div class="card-value">14</div>
+      <div class="card-note">Past 48 hours</div>
     </div>
-
-    <div class="table-card">
-      <table>
-        <thead>
-          <tr>
-            <th>Received</th>
-            <th>Contact</th>
-            <th>Topic</th>
-            <th>Status</th>
-            <th>Notes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td data-label="Received">Mar 24 — 10:12 AM<br><span class="tag-source">info@</span></td>
-            <td data-label="Contact"><strong>Landon Lockwood</strong><br>landon313@gmail.com<br><span class="notes">NDA signed</span></td>
-            <td data-label="Topic">Reference upload workflow</td>
-            <td data-label="Status"><span class="status-pill pill-follow">Needs follow-up</span></td>
-            <td data-label="Notes"><div class="notes">Collecting 10–20 references for Adam. Watching Dropbox intake.</div></td>
-          </tr>
-          <tr>
-            <td data-label="Received">Mar 24 — 8:41 AM<br><span class="tag-source">web form</span></td>
-            <td data-label="Contact"><strong>Maya Ortega</strong><br>maya@impactlabs.io</td>
-            <td data-label="Topic">Biotech product video</td>
-            <td data-label="Status"><span class="status-pill pill-new">New</span></td>
-            <td data-label="Notes"><div class="notes">Requested quote for 3-min animation. Budget TBD.</div></td>
-          </tr>
-          <tr>
-            <td data-label="Received">Mar 23 — 4:19 PM<br><span class="tag-source">referral</span></td>
-            <td data-label="Contact"><strong>Chris B.</strong><br>cbaker@metroma.com</td>
-            <td data-label="Topic">Pipeline safety training</td>
-            <td data-label="Status"><span class="status-pill pill-cold">Cold / Waiting</span></td>
-            <td data-label="Notes"><div class="notes">Sent proposal &amp; deck. Waiting on procurement.</div></td>
-          </tr>
-          <tr>
-            <td data-label="Received">Mar 23 — 1:07 PM<br><span class="tag-source">info@</span></td>
-            <td data-label="Contact"><strong>SEO Blast Agency</strong><br>hello@seoblast.co</td>
-            <td data-label="Topic">“Partnership opportunity”</td>
-            <td data-label="Status"><span class="status-pill pill-spam">Spam</span></td>
-            <td data-label="Notes"><div class="notes">Auto-flagged (mass mail). Needs human confirm before delete.</div></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="card">
+      <div class="card-label">Auto-flagged spam</div>
+      <div class="card-value">9</div>
+      <div class="card-note">Waiting review</div>
     </div>
   </div>
+
+  <div class="filters">
+    <input type="text" class="filter-input" placeholder="Search name, company, or keyword">
+    <select class="filter-select">
+      <option>Status: All</option>
+      <option>New</option>
+      <option>Needs follow-up</option>
+      <option>Waiting</option>
+      <option>Parked</option>
+      <option>Spam</option>
+    </select>
+    <select class="filter-select">
+      <option>Owner: All</option>
+      <option>Matt</option>
+      <option>Nancy</option>
+      <option>Tony</option>
+    </select>
+  </div>
+
+  <div class="accordion-card">
+    <!-- Repeat rows -->
+    <div class="crm-row" onclick="toggleRow(this)">
+      <div class="crm-header">
+        <div>
+          <div class="crm-name">Landon Lockwood</div>
+          <div class="crm-meta">landon313@gmail.com · Last contact Mar 24 (Matt)</div>
+        </div>
+        <div class="crm-info">
+          <span class="crm-pill pill-follow">Needs follow-up</span>
+          <div class="owner-chip">Owner: Matt</div>
+        </div>
+        <div class="crm-chevron">▼</div>
+      </div>
+      <div class="crm-detail">
+        <div class="crm-detail-grid">
+          <div class="crm-detail-item"><label>Next step</label><span>Confirm Dropbox uploads + remind about source files</span></div>
+          <div class="crm-detail-item"><label>Budget</label><span>$25k verbal</span></div>
+          <div class="crm-detail-item"><label>Folder</label><span><a href="#">Dropbox →</a></span></div>
+          <div class="crm-detail-item"><label>Status</label><span>NDA signed · file intake</span></div>
+        </div>
+        <div class="crm-notes">Collecting 10–20 reference files for Adam. Tony is monitoring the intake folder hourly and alerting Matt.</div>
+      </div>
+    </div>
+
+    <div class="crm-row" onclick="toggleRow(this)">
+      <div class="crm-header">
+        <div>
+          <div class="crm-name">Maya Ortega · Impact Labs</div>
+          <div class="crm-meta">maya@impactlabs.io · Last contact Mar 24 (Nancy)</div>
+        </div>
+        <div class="crm-info">
+          <span class="crm-pill pill-new">New</span>
+          <div class="owner-chip">Owner: Nancy</div>
+        </div>
+        <div class="crm-chevron">▼</div>
+      </div>
+      <div class="crm-detail">
+        <div class="crm-detail-grid">
+          <div class="crm-detail-item"><label>Next step</label><span>Send capabilities deck + budget range</span></div>
+          <div class="crm-detail-item"><label>Budget</label><span>$18–22k est.</span></div>
+          <div class="crm-detail-item"><label>Folder</label><span>Not created</span></div>
+          <div class="crm-detail-item"><label>Status</label><span>Inbound form · needs reply</span></div>
+        </div>
+        <div class="crm-notes">Needs 3-minute biotech product video. Requested samples + pricing; waiting on Nancy’s response.</div>
+      </div>
+    </div>
+
+    <div class="crm-row" onclick="toggleRow(this)">
+      <div class="crm-header">
+        <div>
+          <div class="crm-name">Chris Baker · Metroma</div>
+          <div class="crm-meta">cbaker@metroma.com · Last contact Mar 22 (Matt)</div>
+        </div>
+        <div class="crm-info">
+          <span class="crm-pill pill-wait">Waiting on client</span>
+          <div class="owner-chip">Owner: Matt</div>
+        </div>
+        <div class="crm-chevron">▼</div>
+      </div>
+      <div class="crm-detail">
+        <div class="crm-detail-grid">
+          <div class="crm-detail-item"><label>Next step</label><span>Follow-up if no PO by Apr 2</span></div>
+          <div class="crm-detail-item"><label>Budget</label><span>$42k</span></div>
+          <div class="crm-detail-item"><label>Folder</label><span><a href="#">Dropbox →</a></span></div>
+          <div class="crm-detail-item"><label>Status</label><span>Proposal sent · procurement review</span></div>
+        </div>
+        <div class="crm-notes">Pipeline safety series. Proposal + deck delivered; they’re waiting on procurement approval.</div>
+      </div>
+    </div>
+
+    <div class="crm-row" onclick="toggleRow(this)">
+      <div class="crm-header">
+        <div>
+          <div class="crm-name">SEO Blast Agency</div>
+          <div class="crm-meta">hello@seoblast.co · Last contact Mar 23 (Auto)</div>
+        </div>
+        <div class="crm-info">
+          <span class="crm-pill pill-spam">Spam</span>
+          <div class="owner-chip">Owner: Tony</div>
+        </div>
+        <div class="crm-chevron">▼</div>
+      </div>
+      <div class="crm-detail">
+        <div class="crm-detail-grid">
+          <div class="crm-detail-item"><label>Next step</label><span>Await review</span></div>
+          <div class="crm-detail-item"><label>Budget</label><span>n/a</span></div>
+          <div class="crm-detail-item"><label>Folder</label><span>n/a</span></div>
+          <div class="crm-detail-item"><label>Status</label><span>Auto-flagged spam</span></div>
+        </div>
+        <div class="crm-notes">Generic SEO pitch. Flagged by Tony; awaiting human confirmation before delete.</div>
+      </div>
+    </div>
+
+    <div class="crm-row" onclick="toggleRow(this)">
+      <div class="crm-header">
+        <div>
+          <div class="crm-name">Jasmine Keller · BayCare</div>
+          <div class="crm-meta">jkeller@baycare.org · Last contact Mar 20 (Nancy)</div>
+        </div>
+        <div class="crm-info">
+          <span class="crm-pill pill-follow">Needs follow-up</span>
+          <div class="owner-chip">Owner: Nancy</div>
+        </div>
+        <div class="crm-chevron">▼</div>
+      </div>
+      <div class="crm-detail">
+        <div class="crm-detail-grid">
+          <div class="crm-detail-item"><label>Next step</label><span>Schedule storyboard review</span></div>
+          <div class="crm-detail-item"><label>Budget</label><span>$30k</span></div>
+          <div class="crm-detail-item"><label>Folder</label><span><a href="#">Dropbox →</a></span></div>
+          <div class="crm-detail-item"><label>Status</label><span>Waiting to book meeting</span></div>
+        </div>
+        <div class="crm-notes">Healthcare explainer. Storyboard draft ready; Nancy needs to book review call.</div>
+      </div>
+    </div>
+
+    <div class="crm-row" onclick="toggleRow(this)">
+      <div class="crm-header">
+        <div>
+          <div class="crm-name">Derek Hsu · PetroNova</div>
+          <div class="crm-meta">dhsu@petronova.com · Last contact Mar 18 (Matt)</div>
+        </div>
+        <div class="crm-info">
+          <span class="crm-pill pill-wait">Waiting on client</span>
+          <div class="owner-chip">Owner: Matt</div>
+        </div>
+        <div class="crm-chevron">▼</div>
+      </div>
+      <div class="crm-detail">
+        <div class="crm-detail-grid">
+          <div class="crm-detail-item"><label>Next step</label><span>Client promised decision by Mar 29</span></div>
+          <div class="crm-detail-item"><label>Budget</label><span>$55k</span></div>
+          <div class="crm-detail-item"><label>Folder</label><span><a href="#">Dropbox →</a></span></div>
+          <div class="crm-detail-item"><label>Status</label><span>Legal + procurement</span></div>
+        </div>
+        <div class="crm-notes">Industrial safety training modules. All paperwork submitted; waiting for final sign-off.</div>
+      </div>
+    </div>
+
+    <div class="crm-row" onclick="toggleRow(this)">
+      <div class="crm-header">
+        <div>
+          <div class="crm-name">Amanda Ruiz · Horizon Holograms</div>
+          <div class="crm-meta">amanda@horizonholo.com · Last contact Mar 21 (Tony draft)</div>
+        </div>
+        <div class="crm-info">
+          <span class="crm-pill pill-new">New</span>
+          <div class="owner-chip">Owner: Tony (drafting)</div>
+        </div>
+        <div class="crm-chevron">▼</div>
+      </div>
+      <div class="crm-detail">
+        <div class="crm-detail-grid">
+          <div class="crm-detail-item"><label>Next step</label><span>Send intro email once Matt approves draft</span></div>
+          <div class="crm-detail-item"><label>Budget</label><span>$12k</span></div>
+          <div class="crm-detail-item"><label>Folder</label><span>Not created</span></div>
+          <div class="crm-detail-item"><label>Status</label><span>Awaiting Matt approval</span></div>
+        </div>
+        <div class="crm-notes">Hologram demo for trade show. Tony prepared email draft from Matt’s notes; waiting for SEND confirmation.</div>
+      </div>
+    </div>
+
+    <div class="crm-row" onclick="toggleRow(this)">
+      <div class="crm-header">
+        <div>
+          <div class="crm-name">Bryan Chen · StratEdge</div>
+          <div class="crm-meta">bchen@stratedge.ai · Last contact Mar 15 (Nancy)</div>
+        </div>
+        <div class="crm-info">
+          <span class="crm-pill pill-cold">Parked 6 months</span>
+          <div class="owner-chip">Owner: Nancy</div>
+        </div>
+        <div class="crm-chevron">▼</div>
+      </div>
+      <div class="crm-detail">
+        <div class="crm-detail-grid">
+          <div class="crm-detail-item"><label>Next step</label><span>Revisit in September unless they ping sooner</span></div>
+          <div class="crm-detail-item"><label>Budget</label><span>$80k (on hold)</span></div>
+          <div class="crm-detail-item"><label>Folder</label><span><a href="#">Dropbox →</a></span></div>
+          <div class="crm-detail-item"><label>Status</label><span>Client asked to pause</span></div>
+        </div>
+        <div class="crm-notes">AI platform launch video. Budget approved but internal marketing freeze until Q4.</div>
+      </div>
+    </div>
+
+    <div class="crm-row" onclick="toggleRow(this)">
+      <div class="crm-header">
+        <div>
+          <div class="crm-name">Olivia Santos · City of Austin</div>
+          <div class="crm-meta">olivia.santos@austin.gov · Last contact Mar 25 (Matt)</div>
+        </div>
+        <div class="crm-info">
+          <span class="crm-pill pill-follow">Needs follow-up</span>
+          <div class="owner-chip">Owner: Matt</div>
+        </div>
+        <div class="crm-chevron">▼</div>
+      </div>
+      <div class="crm-detail">
+        <div class="crm-detail-grid">
+          <div class="crm-detail-item"><label>Next step</label><span>Prep RFP response outline</span></div>
+          <div class="crm-detail-item"><label>Budget</label><span>$60k RFP</span></div>
+          <div class="crm-detail-item"><label>Folder</label><span><a href="#">Dropbox →</a></span></div>
+          <div class="crm-detail-item"><label>Status</label><span>RFP release expected Apr 5</span></div>
+        </div>
+        <div class="crm-notes">City wants a public safety animation package. Matt needs to sketch scope before RFP drops.</div>
+      </div>
+    </div>
+
+    <div class="crm-row" onclick="toggleRow(this)">
+      <div class="crm-header">
+        <div>
+          <div class="crm-name">Nadia Rahman · Skyline Med</div>
+          <div class="crm-meta">nrahman@skylinemed.com · Last contact Mar 23 (Tony)</div>
+        </div>
+        <div class="crm-info">
+          <span class="crm-pill pill-wait">Waiting on client</span>
+          <div class="owner-chip">Owner: Tony assist</div>
+        </div>
+        <div class="crm-chevron">▼</div>
+      </div>
+      <div class="crm-detail">
+        <div class="crm-detail-grid">
+          <div class="crm-detail-item"><label>Next step</label><span>Client promised brand guidelines by Mar 27</span></div>
+          <div class="crm-detail-item"><label>Budget</label><span>$28k</span></div>
+          <div class="crm-detail-item"><label>Folder</label><span><a href="#">Dropbox →</a></span></div>
+          <div class="crm-detail-item"><label>Status</label><span>Waiting on assets</span></div>
+        </div>
+        <div class="crm-notes">Tony routed their reference deck into Dropbox; now waiting on brand guide before Matt scopes.</div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 <script>
@@ -175,6 +374,10 @@ function unlock() {
 if (sessionStorage.getItem('crm_unlocked') === '1') {
   document.getElementById('lock-screen').style.display = 'none';
   document.getElementById('content').style.display = 'block';
+}
+
+function toggleRow(row) {
+  row.classList.toggle('open');
 }
 </script>
 </body>
