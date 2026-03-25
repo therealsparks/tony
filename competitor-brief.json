@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-24 03:14 UTC",
+  "updated": "2026-03-25 03:37 UTC",
   "competitors": [
     {
       "name": "Explainify",
@@ -54,8 +54,27 @@
     {
       "name": "IdeaRocket",
       "website": "idearocketanimation.com",
-      "posts": [],
-      "error": "[WinError 10054] An existing connection was forcibly closed by the remote host"
+      "posts": [
+        {
+          "title": "The Best Startup Videos of All Time and Why They\u2019re Awesome",
+          "link": "https://idearocketanimation.com/28662-the-best-startup-videos-of-all-time-and-why-theyre-awesome/",
+          "desc": "Every startup needs an amazing startup video. From Kickstarter campaigns to Silicon Valley venture capital funding rounds, video offers an interesting way to introduce a new business, product, or service to the world. We\u2019ve compiled some of the best startup videos of all time to show you how startup",
+          "date": "Fri, 20 Mar 2026"
+        },
+        {
+          "title": "10 Clever Ways To Distribute and Repurpose Video Content",
+          "link": "https://idearocketanimation.com/18413-distribute-video-content/",
+          "desc": "You invested time and resources to make a high-quality video and it worked! The view count kept rising and you sat back satisfied in a job well done. But now the watch count is slowing. Maybe it\u2019s time to think about how you can repurpose video content.&#160; With the right long-term distribution st",
+          "date": "Tue, 03 Mar 2026"
+        },
+        {
+          "title": "Elevating Video On A Learning Management System",
+          "link": "https://idearocketanimation.com/20801-learning-management-system/",
+          "desc": "Videos are a great way to deliver training to employees. They help keep employees engaged with learning, can be shared easily, and support knowledge retention. The question is, how can you best organize and distribute your training videos? For many, the answer is with a learning management system, o",
+          "date": "Tue, 24 Feb 2026"
+        }
+      ],
+      "error": null
     },
     {
       "name": "Wyzowl",
@@ -123,8 +142,27 @@
     {
       "name": "Ydraw",
       "website": "ydraw.com",
-      "posts": [],
-      "error": "The read operation timed out"
+      "posts": [
+        {
+          "title": "How to Create a Brand Story that Resonates with Your Audience",
+          "link": "https://ydraw.com/video/how-to-create-a-brand-story-that-resonates-with-your-audience/",
+          "desc": "Every business has a story to tell, but not every story resonates with their audience. In order to create a brand story that will resonate with your target audience, you need to understand what they care about and what motivates them. Once you know this, you can craft a story that speaks to their ne",
+          "date": "Sun, 11 Dec 2022"
+        },
+        {
+          "title": "How to Create a Brand Story that Resonates with Your Audience",
+          "link": "https://ydraw.com/branding/story/",
+          "desc": "Every business needs a strong brand to stand out in the competitive marketplace. A brand is more than just a logo or a tagline &#8211; it&#8217;s the story behind your business and what sets you apart from your competitors. In this article, we&#8217;ll explore the concept of a &#8220;story brand&#82",
+          "date": "Sun, 11 Dec 2022"
+        },
+        {
+          "title": "Six Tips For Success In A New Career",
+          "link": "https://ydraw.com/ydraw/six-tips-for-success-in-a-new-career/",
+          "desc": "I landed my first \u201cbig girl job\u201d way too late in life. This meant that I started my new position with a host of insecurities and misunderstandings. The beautiful thing about this was that it gave me the opportunity to learn some simple truths. Since there are a lot of people who might find themselve",
+          "date": "Thu, 11 Nov 2021"
+        }
+      ],
+      "error": null
     }
   ]
 }
