@@ -34,11 +34,11 @@
   .filter-input { flex: 1; min-width: 220px; padding: 12px 14px; border-radius: 12px; border: 1px solid #e5e5ea; font-size: 13px; }
   .filter-select { padding: 12px 14px; border-radius: 12px; border: 1px solid #e5e5ea; font-size: 13px; background: #fff; }
 
-  .accordion-card { background: #fff; border-radius: 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); overflow: hidden; border: 1px solid #f1f1f2; }
-  .crm-row { border-bottom: 1px solid #f7f7f8; }
-  .crm-row:last-child { border-bottom: none; }
+  .accordion-card { display: flex; flex-direction: column; gap: 12px; }
+  .crm-row { border: 1px solid #f1f1f2; border-radius: 14px; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
   .crm-header { display: flex; align-items: center; gap: 12px; padding: 16px 20px; cursor: pointer; }
-  .crm-header:hover { background: #fafafa; }
+  .crm-header:hover { background: #fafafa; border-radius: 14px 14px 0 0; }
+  .crm-num { width: 30px; height: 30px; border-radius: 8px; background: #f2f2f7; font-weight: 800; font-size: 12px; color: #6e6e73; display: flex; align-items: center; justify-content: center; }
   .crm-name { font-size: 15px; font-weight: 700; color: #1d1d1f; }
   .crm-meta { font-size: 12px; color: #6e6e73; margin-top: 2px; }
   .crm-info { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
@@ -51,7 +51,7 @@
   .pill-cold { background: #f3e8ff; color: #7c3aed; }
   .pill-spam { background: #fee2e2; color: #b91c1c; }
   .owner-chip { font-size: 11px; font-weight: 700; color: #6e6e73; }
-  .crm-detail { display: none; padding: 0 20px 16px 20px; }
+  .crm-detail { display: none; padding: 0 20px 16px 20px; border-top: 1px solid #f7f7f8; }
   .crm-row.open .crm-detail { display: block; }
   .crm-detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 12px; }
   .crm-detail-item label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #aeaeb2; display: block; margin-bottom: 2px; }
@@ -126,6 +126,7 @@
     <!-- Repeat rows -->
     <div class="crm-row" onclick="toggleRow(this)">
       <div class="crm-header">
+        <div class="crm-num">01</div>
         <div>
           <div class="crm-name">Landon Lockwood</div>
           <div class="crm-meta">landon313@gmail.com · Last contact Mar 24 (Matt)</div>
@@ -149,6 +150,7 @@
 
     <div class="crm-row" onclick="toggleRow(this)">
       <div class="crm-header">
+        <div class="crm-num">02</div>
         <div>
           <div class="crm-name">Maya Ortega · Impact Labs</div>
           <div class="crm-meta">maya@impactlabs.io · Last contact Mar 24 (Nancy)</div>
@@ -172,6 +174,7 @@
 
     <div class="crm-row" onclick="toggleRow(this)">
       <div class="crm-header">
+        <div class="crm-num">03</div>
         <div>
           <div class="crm-name">Chris Baker · Metroma</div>
           <div class="crm-meta">cbaker@metroma.com · Last contact Mar 22 (Matt)</div>
@@ -195,6 +198,7 @@
 
     <div class="crm-row" onclick="toggleRow(this)">
       <div class="crm-header">
+        <div class="crm-num">04</div>
         <div>
           <div class="crm-name">SEO Blast Agency</div>
           <div class="crm-meta">hello@seoblast.co · Last contact Mar 23 (Auto)</div>
@@ -218,6 +222,7 @@
 
     <div class="crm-row" onclick="toggleRow(this)">
       <div class="crm-header">
+        <div class="crm-num">05</div>
         <div>
           <div class="crm-name">Jasmine Keller · BayCare</div>
           <div class="crm-meta">jkeller@baycare.org · Last contact Mar 20 (Nancy)</div>
@@ -241,6 +246,7 @@
 
     <div class="crm-row" onclick="toggleRow(this)">
       <div class="crm-header">
+        <div class="crm-num">06</div>
         <div>
           <div class="crm-name">Derek Hsu · PetroNova</div>
           <div class="crm-meta">dhsu@petronova.com · Last contact Mar 18 (Matt)</div>
@@ -264,6 +270,7 @@
 
     <div class="crm-row" onclick="toggleRow(this)">
       <div class="crm-header">
+        <div class="crm-num">07</div>
         <div>
           <div class="crm-name">Amanda Ruiz · Horizon Holograms</div>
           <div class="crm-meta">amanda@horizonholo.com · Last contact Mar 21 (Tony draft)</div>
@@ -287,6 +294,7 @@
 
     <div class="crm-row" onclick="toggleRow(this)">
       <div class="crm-header">
+        <div class="crm-num">08</div>
         <div>
           <div class="crm-name">Bryan Chen · StratEdge</div>
           <div class="crm-meta">bchen@stratedge.ai · Last contact Mar 15 (Nancy)</div>
@@ -310,6 +318,7 @@
 
     <div class="crm-row" onclick="toggleRow(this)">
       <div class="crm-header">
+        <div class="crm-num">09</div>
         <div>
           <div class="crm-name">Olivia Santos · City of Austin</div>
           <div class="crm-meta">olivia.santos@austin.gov · Last contact Mar 25 (Matt)</div>
@@ -333,6 +342,7 @@
 
     <div class="crm-row" onclick="toggleRow(this)">
       <div class="crm-header">
+        <div class="crm-num">10</div>
         <div>
           <div class="crm-name">Nadia Rahman · Skyline Med</div>
           <div class="crm-meta">nrahman@skylinemed.com · Last contact Mar 23 (Tony)</div>
