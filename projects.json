@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-25 19:16 UTC",
+  "updated": "2026-03-25 19:38 UTC",
   "projects": [
     {
       "name": "1915 Films - Stephen Lawrence VFX",
@@ -14,14 +14,14 @@
       ],
       "dropbox_link": null,
       "progress_pct": 25,
-      "status_summary": "Active \u2014 Ro is the primary assigned artist. 25% complete. Multiple VFX shots in progress.",
-      "next_steps": "Continue VFX shots with Peter. Coordinate with Stephen Lawrence on the remaining 24 shots.",
+      "status_summary": "------",
+      "next_steps": "------",
       "updates": [
         {
           "author": "matt@austinvisuals.com",
           "author_name": "Matt",
           "timestamp": "2026-03-22 05:30 UTC",
-          "text": "1915 Films VFX project with Stephen Lawrence. Original 12 shots expanded to 24 more. Peter is lead and multiple artists are involved.",
+          "text": "------",
           "flagged": false
         }
       ],
@@ -145,7 +145,7 @@
           "author": "matt@austinvisuals.com",
           "author_name": "Matt",
           "timestamp": "2026-03-22 09:00 UTC",
-          "text": "Biosqueeze Project 1 complete. All invoices paid. Awaiting file collection.",
+          "text": "------",
           "flagged": false
         }
       ],
@@ -170,7 +170,7 @@
           "author": "matt@austinvisuals.com",
           "author_name": "Matt",
           "timestamp": "2026-03-22 09:00 UTC",
-          "text": "Biosqueeze Project 2 complete. All invoices paid. Awaiting file collection.",
+          "text": "------",
           "flagged": false
         }
       ],
@@ -195,7 +195,7 @@
           "author": "matt@austinvisuals.com",
           "author_name": "Matt",
           "timestamp": "2026-03-22 09:00 UTC",
-          "text": "Biosqueeze Project 3 complete. All invoices paid. Awaiting file collection.",
+          "text": "------",
           "flagged": false
         }
       ],
@@ -220,7 +220,7 @@
           "author": "matt@austinvisuals.com",
           "author_name": "Matt",
           "timestamp": "2026-03-22 09:00 UTC",
-          "text": "Biosqueeze Project 4 - Mining complete. All invoices paid. Awaiting file collection.",
+          "text": "------",
           "flagged": false
         }
       ],
@@ -275,7 +275,7 @@
           "author": "matt@austinvisuals.com",
           "author_name": "Matt",
           "timestamp": "2026-03-22 05:30 UTC",
-          "text": "Project complete. All invoices paid. Needs final file collection from Peter and review survey.",
+          "text": "------",
           "flagged": false
         }
       ],
@@ -349,7 +349,7 @@
           "author": "matt@austinvisuals.com",
           "author_name": "Matt",
           "timestamp": "2026-03-22 22:00 UTC",
-          "text": "Chris Carpenter VFX - Infinity Shot. Fully paid \u2014 all invoices cleared. One VFX shot remaining. Waiting on client to send source files. Peter is assigned. No more billing needed.",
+          "text": "------",
           "flagged": false
         }
       ],
@@ -426,7 +426,7 @@
       "pending_requests": [],
       "progress_pct": 15,
       "status_summary": "15% \u2014 Storyboards in review. 27 boards created, one round of client comments received from Craig. Peter starts animation work Monday.",
-      "next_steps": "Round 2 of storyboard comments expected Monday. Peter adjusts boards early this week. Goal: finalize all boards by end of this week. Start animation week of March 30. Bill client milestone when animation phase begins."
+      "next_steps": "------"
     },
     {
       "name": "HR Healthcare",
@@ -571,14 +571,14 @@
           "author": "nancy@austinvisuals.com",
           "author_name": "Nancy",
           "timestamp": "2026-03-21 00:00 UTC",
-          "text": "Tom assigned. Deposit paid 3/17. In production.",
+          "text": "------",
           "flagged": false
         }
       ],
       "pending_requests": [],
       "progress_pct": 30,
-      "status_summary": "Active \u2014 Tom assigned. Deposit paid 3/17. Production underway.",
-      "next_steps": "Tom to continue work. 2nd payment milestone coming up."
+      "status_summary": "------",
+      "next_steps": "------"
     },
     {
       "name": "TXIPC",
@@ -594,13 +594,13 @@
           "author": "nancy@austinvisuals.com",
           "author_name": "Nancy",
           "timestamp": "2026-03-21 00:00 UTC",
-          "text": "Series animation prospect. Discuss scope and call in one month.",
+          "text": "------",
           "flagged": false
         }
       ],
       "pending_requests": [],
       "progress_pct": 0,
-      "status_summary": "Prospect \u2014 large series animation. Call in one month.",
+      "status_summary": "------",
       "next_steps": "Schedule follow-up call in one month. Prepare series proposal."
     }
   ]
