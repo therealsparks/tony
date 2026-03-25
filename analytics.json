@@ -1,20 +1,15 @@
 {
-  "updated": "2026-03-25 15:39 UTC",
+  "updated": "2026-03-25 15:45 UTC",
   "property": "Austin Visuals \u00e2\u20ac\u201d Matt",
   "overview": {
     "sessions_7d": 634,
-    "sessions_prev_7d": 550,
-    "users_7d": 559,
-    "views_7d": 846,
-    "bounce_rate": 49.7,
-    "avg_session_sec": 117
+    "sessions_prev_7d": 553,
+    "users_7d": 561,
+    "views_7d": 850,
+    "bounce_rate": 49.2,
+    "avg_session_sec": 120
   },
   "trend_30d": [
-    {
-      "date": "02/22",
-      "sessions": 156,
-      "views": 175
-    },
     {
       "date": "02/23",
       "sessions": 232,
@@ -162,8 +157,13 @@
     },
     {
       "date": "03/24",
-      "sessions": 16,
-      "views": 24
+      "sessions": 100,
+      "views": 149
+    },
+    {
+      "date": "03/25",
+      "sessions": 20,
+      "views": 38
     }
   ],
   "top_pages": [
@@ -171,60 +171,60 @@
       "title": "Full-Service 3D Animation Studio | 2D & 3D Animation Services",
       "path": "/",
       "url": "https://austinvisuals.com/",
-      "views": 962,
-      "users": 741,
-      "duration_sec": 118,
-      "bounce": 44.3,
-      "new_users": 650
+      "views": 998,
+      "users": 767,
+      "duration_sec": 113,
+      "bounce": 43.8,
+      "new_users": 674
     },
     {
       "title": "Work samples | Animated Explainer Videos",
       "path": "/videos/",
       "url": "https://austinvisuals.com/videos/",
-      "views": 202,
-      "users": 134,
-      "duration_sec": 123,
-      "bounce": 11.4,
-      "new_users": 12
+      "views": 223,
+      "users": 144,
+      "duration_sec": 119,
+      "bounce": 11.6,
+      "new_users": 13
     },
     {
       "title": "Key Differences Between Animated and Cartoon",
       "path": "/animated-and-cartoon/",
       "url": "https://austinvisuals.com/animated-and-cartoon/",
-      "views": 140,
-      "users": 116,
-      "duration_sec": 95,
-      "bounce": 57.2,
-      "new_users": 113
+      "views": 138,
+      "users": 114,
+      "duration_sec": 96,
+      "bounce": 56.6,
+      "new_users": 111
     },
     {
       "title": "Explore Animation Jobs in Austin Texas",
       "path": "/animation-and-marketing-jobs-in-austin/",
       "url": "https://austinvisuals.com/animation-and-marketing-jobs-in-austin/",
-      "views": 127,
+      "views": 131,
       "users": 99,
-      "duration_sec": 120,
-      "bounce": 22.6,
-      "new_users": 57
+      "duration_sec": 153,
+      "bounce": 21.8,
+      "new_users": 56
     },
     {
       "title": "Contact Austin Visuals | Production Company Commercials",
       "path": "/contact-austin-visuals/",
       "url": "https://austinvisuals.com/contact-austin-visuals/",
-      "views": 111,
-      "users": 94,
-      "duration_sec": 90,
-      "bounce": 10.7,
-      "new_users": 16
+      "views": 118,
+      "users": 100,
+      "duration_sec": 84,
+      "bounce": 10.8,
+      "new_users": 17
     },
     {
       "title": "Learn About Austin Visuals, Our Story",
       "path": "/about-austin-visuals/",
       "url": "https://austinvisuals.com/about-austin-visuals/",
-      "views": 56,
-      "users": 45,
+      "views": 61,
+      "users": 50,
       "duration_sec": 191,
-      "bounce": 20.8,
+      "bounce": 19.0,
       "new_users": 6
     },
     {
@@ -235,17 +235,7 @@
       "users": 35,
       "duration_sec": 26,
       "bounce": 47.5,
-      "new_users": 25
-    },
-    {
-      "title": "How to Create Animated NFT Art ?",
-      "path": "/how-to-create-animated-nft-art/",
-      "url": "https://austinvisuals.com/how-to-create-animated-nft-art/",
-      "views": 34,
-      "users": 32,
-      "duration_sec": 90,
-      "bounce": 71.9,
-      "new_users": 31
+      "new_users": 24
     },
     {
       "title": "Understanding Anime Production Cost",
@@ -258,40 +248,50 @@
       "new_users": 30
     },
     {
+      "title": "How to Create Animated NFT Art ?",
+      "path": "/how-to-create-animated-nft-art/",
+      "url": "https://austinvisuals.com/how-to-create-animated-nft-art/",
+      "views": 33,
+      "users": 31,
+      "duration_sec": 92,
+      "bounce": 71.0,
+      "new_users": 30
+    },
+    {
       "title": "Discover Our Austin Visuals Clients",
       "path": "/austin-visuals-clients/",
       "url": "https://austinvisuals.com/austin-visuals-clients/",
-      "views": 24,
-      "users": 22,
-      "duration_sec": 201,
-      "bounce": 8.3,
-      "new_users": 4
+      "views": 25,
+      "users": 23,
+      "duration_sec": 193,
+      "bounce": 12.0,
+      "new_users": 5
     }
   ],
   "traffic_sources": [
     {
       "channel": "Direct",
-      "sessions": 1368
+      "sessions": 1296
     },
     {
       "channel": "Organic Search",
-      "sessions": 1260
-    },
-    {
-      "channel": "Paid Search",
-      "sessions": 132
+      "sessions": 1267
     },
     {
       "channel": "Referral",
-      "sessions": 132
+      "sessions": 140
+    },
+    {
+      "channel": "Paid Search",
+      "sessions": 138
     },
     {
       "channel": "Organic Social",
-      "sessions": 116
+      "sessions": 112
     },
     {
       "channel": "Unassigned",
-      "sessions": 55
+      "sessions": 57
     },
     {
       "channel": "Organic Video",
@@ -312,22 +312,22 @@
     {
       "city": "New York",
       "region": "New York",
-      "sessions": 70
+      "sessions": 77
     },
     {
       "city": "Hoa Binh",
       "region": "Hoa Binh",
-      "sessions": 53
+      "sessions": 54
     },
     {
       "city": "Houston",
       "region": "Texas",
-      "sessions": 53
+      "sessions": 54
     },
     {
       "city": "Los Angeles",
       "region": "California",
-      "sessions": 48
+      "sessions": 52
     },
     {
       "city": "Ashburn",
@@ -335,64 +335,64 @@
       "sessions": 40
     },
     {
-      "city": "Bayingolin Mongol Autonomous Prefecture",
-      "region": "Xinjiang",
-      "sessions": 37
-    },
-    {
       "city": "Shanghai",
       "region": "Shanghai",
-      "sessions": 35
+      "sessions": 34
+    },
+    {
+      "city": "Bayingolin Mongol Autonomous Prefecture",
+      "region": "Xinjiang",
+      "sessions": 30
     }
   ],
   "devices": [
     {
       "device": "desktop",
-      "sessions": 2401,
-      "views": 3326
+      "sessions": 2338,
+      "views": 3291
     },
     {
       "device": "mobile",
-      "sessions": 632,
-      "views": 832
+      "sessions": 640,
+      "views": 840
     },
     {
       "device": "tablet",
-      "sessions": 31,
-      "views": 47
+      "sessions": 32,
+      "views": 62
     }
   ],
   "hours_of_day": [
-    102,
-    98,
-    105,
-    131,
-    114,
-    116,
-    115,
-    152,
-    156,
-    181,
-    169,
-    198,
-    164,
-    172,
-    142,
-    137,
-    112,
-    129,
-    118,
-    109,
-    106,
-    150,
+    100,
     95,
-    88
+    106,
+    135,
+    112,
+    119,
+    111,
+    151,
+    160,
+    181,
+    170,
+    202,
+    160,
+    177,
+    146,
+    134,
+    101,
+    120,
+    116,
+    103,
+    96,
+    141,
+    89,
+    86
   ],
   "suggestions": [
-    "Work Samples (/videos/) is the #2 page this month. Add a single-line CTA above the fold that links straight to /contact-austin-visuals/ so demo-watchers can raise their hand immediately.",
-    "Austin, Dallas, and New York account for 240+ sessions combined. Use geo callouts in Google Ads headlines or add a short line on the homepage that mentions those cities to increase trust.",
-    "Desktop still drives 79% of sessions but mobile bounce ticked up. Run a 5-minute mobile audit on the homepage contact widget and make sure the phone number + buttons are truly tap-friendly.",
-    "Education/blog posts like 'Animated NFT Art' pull lots of new users but bounce >70%. Drop an inline 'Talk to a producer' module halfway down each article with a one-click contact link.",
-    "Referral + Paid Search together are <10% of this week\u2019s sessions. Refresh last week\u2019s ad creative and confirm your referral partners still point to the contact page (not just the homepage)."
+    "Peak traffic is around 11:00 \u00e2\u20ac\u201d schedule social posts and ad campaigns to run 1-2 hours before peak to catch visitors actively browsing.",
+    "21% of visitors are on mobile. Make sure every contact form and phone number is easy to tap on a phone screen.",
+    "Top traffic source is Direct \u00e2\u20ac\u201d double down on SEO and content that targets your best-performing keywords to grow this channel.",
+    "How to Create Animated NFT Art ? has a 71.0% bounce rate \u00e2\u20ac\u201d add a stronger call-to-action or internal links to keep visitors exploring.",
+    "Your top page (Full-Service 3D Animation Studio | 2D & 3D Animation Services) gets 998 views but if it has no contact form or phone number visible, you're losing leads. Add a CTA above the fold."
   ]
 }
