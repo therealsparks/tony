@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tony CRM — Austin Visuals</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif; background: #f5f5f7; color: #1d1d1f; -webkit-font-smoothing: antialiased; }
+  #lock-screen { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+  .lock-card { background: #fff; border-radius: 20px; padding: 40px; max-width: 360px; width: 100%; text-align: center; box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+  .lock-icon { font-size: 40px; margin-bottom: 16px; }
+  .lock-title { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
+  .lock-sub { font-size: 13px; color: #6e6e73; margin-bottom: 24px; }
+  .lock-input { width: 100%; padding: 12px 16px; border: 2px solid #e5e5ea; border-radius: 10px; font-size: 18px; text-align: center; letter-spacing: 6px; outline: none; margin-bottom: 12px; }
+  .lock-input:focus { border-color: #0071e3; }
+  .lock-btn { width: 100%; background: #1d1d1f; color: #fff; border: none; border-radius: 10px; padding: 13px; font-size: 14px; font-weight: 700; cursor: pointer; }
+  .lock-error { font-size: 12px; color: #b91c1c; margin-top: 8px; display: none; }
+
+  #content { display: none; padding: 32px 20px 60px; }
+  .wrap { max-width: 1100px; margin: 0 auto; }
+  .back { font-size: 13px; font-weight: 600; color: #0071e3; text-decoration: none; margin-bottom: 24px; display: inline-block; }
+  .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6e73; margin-bottom: 6px; }
+  h1 { font-size: 30px; font-weight: 800; letter-spacing: -0.6px; margin-bottom: 6px; }
+  .sub { font-size: 14px; color: #6e6e73; margin-bottom: 24px; }
+
+  .cards { display: grid; grid-template-columns: repeat(3, minmax(200px, 1fr)); gap: 14px; margin-bottom: 20px; }
+  .card { background: #fff; border-radius: 16px; padding: 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #f1f1f2; }
+  .card-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #6e6e73; margin-bottom: 6px; }
+  .card-value { font-size: 28px; font-weight: 800; }
+  .card-note { font-size: 12px; color: #6e6e73; margin-top: 4px; }
+
+  .filters { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+  .filter-input { flex: 1; min-width: 220px; padding: 12px 14px; border-radius: 12px; border: 1px solid #e5e5ea; font-size: 13px; }
+  .filter-select { padding: 12px 14px; border-radius: 12px; border: 1px solid #e5e5ea; font-size: 13px; background: #fff; }
+
+  .table-card { background: #fff; border-radius: 18px; padding: 4px 0 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #6e6e73; padding: 14px 20px; border-bottom: 1px solid #f1f1f2; }
+  td { font-size: 13px; padding: 16px 20px; border-bottom: 1px solid #f7f7f8; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  .status-pill { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; }
+  .pill-new { background: #eff6ff; color: #1d4ed8; }
+  .pill-follow { background: #fff8e6; color: #9a6800; }
+  .pill-cold { background: #f3e8ff; color: #7c3aed; }
+  .pill-spam { background: #fee2e2; color: #b91c1c; }
+  .tag-source { font-size: 11px; font-weight: 700; color: #0071e3; }
+  .notes { color: #6e6e73; font-size: 12px; line-height: 1.5; }
+  .actions { font-size: 12px; color: #0071e3; cursor: pointer; }
+
+  @media (max-width: 860px) {
+    .cards { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+    table, thead, tbody, th, td, tr { display: block; }
+    th { display: none; }
+    td { border-bottom: 1px solid #f1f1f2; padding: 12px 16px; }
+    td::before { content: attr(data-label); font-size: 11px; text-transform: uppercase; color: #aeaeb2; display: block; margin-bottom: 4px; }
+  }
+</style>
+</head>
+<body>
+<div id="lock-screen">
+  <div class="lock-card">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-title">Tony CRM (Prototype)</div>
+    <div class="lock-sub">Internal preview. Enter the shared access code.</div>
+    <input type="password" id="pin-input" class="lock-input" placeholder="••••" maxlength="8" onkeydown="if(event.key==='Enter')unlock()">
+    <button class="lock-btn" onclick="unlock()">Unlock</button>
+    <div class="lock-error" id="lock-error">Incorrect code. Try again.</div>
+  </div>
+</div>
+
+<div id="content">
+  <div class="wrap">
+    <a class="back" href="index.html">← Back to Tony</a>
+    <div class="eyebrow">⚡ Austin Visuals Internal</div>
+    <h1>Prospect CRM (Prototype)</h1>
+    <div class="sub">Static layout for feedback — data below is sample only.</div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-label">New today</div>
+        <div class="card-value">6</div>
+        <div class="card-note">Via info@ and web form</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Needs follow-up</div>
+        <div class="card-value">14</div>
+        <div class="card-note">No reply in &gt;48 hours</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Auto-flagged spam</div>
+        <div class="card-value">9</div>
+        <div class="card-note">Waiting on human review</div>
+      </div>
+    </div>
+
+    <div class="filters">
+      <input type="text" class="filter-input" placeholder="Search name, company, or keyword">
+      <select class="filter-select">
+        <option>Status: All</option>
+        <option>New</option>
+        <option>Needs follow-up</option>
+        <option>Cold / Waiting</option>
+        <option>Spam</option>
+      </select>
+      <select class="filter-select">
+        <option>Source: All</option>
+        <option>info@ inbox</option>
+        <option>matt@ inbox</option>
+        <option>Website form</option>
+        <option>Referral</option>
+      </select>
+    </div>
+
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Received</th>
+            <th>Contact</th>
+            <th>Topic</th>
+            <th>Status</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Received">Mar 24 — 10:12 AM<br><span class="tag-source">info@</span></td>
+            <td data-label="Contact"><strong>Landon Lockwood</strong><br>landon313@gmail.com<br><span class="notes">NDA signed</span></td>
+            <td data-label="Topic">Reference upload workflow</td>
+            <td data-label="Status"><span class="status-pill pill-follow">Needs follow-up</span></td>
+            <td data-label="Notes"><div class="notes">Collecting 10–20 references for Adam. Watching Dropbox intake.</div></td>
+          </tr>
+          <tr>
+            <td data-label="Received">Mar 24 — 8:41 AM<br><span class="tag-source">web form</span></td>
+            <td data-label="Contact"><strong>Maya Ortega</strong><br>maya@impactlabs.io</td>
+            <td data-label="Topic">Biotech product video</td>
+            <td data-label="Status"><span class="status-pill pill-new">New</span></td>
+            <td data-label="Notes"><div class="notes">Requested quote for 3-min animation. Budget TBD.</div></td>
+          </tr>
+          <tr>
+            <td data-label="Received">Mar 23 — 4:19 PM<br><span class="tag-source">referral</span></td>
+            <td data-label="Contact"><strong>Chris B.</strong><br>cbaker@metroma.com</td>
+            <td data-label="Topic">Pipeline safety training</td>
+            <td data-label="Status"><span class="status-pill pill-cold">Cold / Waiting</span></td>
+            <td data-label="Notes"><div class="notes">Sent proposal &amp; deck. Waiting on procurement.</div></td>
+          </tr>
+          <tr>
+            <td data-label="Received">Mar 23 — 1:07 PM<br><span class="tag-source">info@</span></td>
+            <td data-label="Contact"><strong>SEO Blast Agency</strong><br>hello@seoblast.co</td>
+            <td data-label="Topic">“Partnership opportunity”</td>
+            <td data-label="Status"><span class="status-pill pill-spam">Spam</span></td>
+            <td data-label="Notes"><div class="notes">Auto-flagged (mass mail). Needs human confirm before delete.</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+const PASS = '8257';
+function unlock() {
+  const val = document.getElementById('pin-input').value.trim();
+  if (val === PASS) {
+    document.getElementById('lock-screen').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+    sessionStorage.setItem('crm_unlocked', '1');
+  } else {
+    document.getElementById('lock-error').style.display = 'block';
+    document.getElementById('pin-input').value = '';
+    document.getElementById('pin-input').focus();
+  }
+}
+if (sessionStorage.getItem('crm_unlocked') === '1') {
+  document.getElementById('lock-screen').style.display = 'none';
+  document.getElementById('content').style.display = 'block';
+}
+</script>
+</body>
+</html>
