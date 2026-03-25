@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-23 06:39 UTC",
+  "updated": "2026-03-25 19:16 UTC",
   "projects": [
     {
       "name": "1915 Films - Stephen Lawrence VFX",
@@ -14,14 +14,14 @@
       ],
       "dropbox_link": null,
       "progress_pct": 25,
-      "status_summary": "Active \u2014 Ro is the primary assigned artist. 25% complete. Multiple VFX shots. Budget expanded to 24 additional shots.",
-      "next_steps": "Continue VFX shots with Peter. Budget expanded to $28,500 for remaining 24 shots. Coordinate with Stephen Lawrence.",
+      "status_summary": "Active \u2014 Ro is the primary assigned artist. 25% complete. Multiple VFX shots in progress.",
+      "next_steps": "Continue VFX shots with Peter. Coordinate with Stephen Lawrence on the remaining 24 shots.",
       "updates": [
         {
           "author": "matt@austinvisuals.com",
           "author_name": "Matt",
           "timestamp": "2026-03-22 05:30 UTC",
-          "text": "1915 Films VFX project with Stephen Lawrence. Original 12 shots at $12,500, expanded to 24 more at $28,500 total. Peter is lead. Multiple artists involved.",
+          "text": "1915 Films VFX project with Stephen Lawrence. Original 12 shots expanded to 24 more. Peter is lead and multiple artists are involved.",
           "flagged": false
         }
       ],
@@ -500,6 +500,33 @@
       "pending_requests": []
     },
     {
+      "name": "Landon Lockwood - Prospect",
+      "created_at": "2026-03-25",
+      "due_date": "Not set",
+      "status": "prospect",
+      "flags": [
+        "not_started"
+      ],
+      "nda": "Signed",
+      "assigned": [
+        "adam@austinvisuals.com"
+      ],
+      "dropbox_link": "https://www.dropbox.com/scl/fo/kf2pry95ienx3sp4ofgni/ALksJ95dJtQX6QiOcqPb3WA?rlkey=0laxb0fv9jpbt377b5us9zzjm&dl=0",
+      "progress_pct": 5,
+      "status_summary": "Prospect \u2014 NDA signed. Collecting reference files from Landon for Adam to review.",
+      "next_steps": "Landon uploads references via Dropbox request; Adam reviews once files arrive.",
+      "updates": [
+        {
+          "author": "matt@austinvisuals.com",
+          "author_name": "Matt",
+          "timestamp": "2026-03-25 12:30 UTC",
+          "text": "Created prospect folder and Dropbox request so Landon can send reference material. Shared with Adam.",
+          "flagged": false
+        }
+      ],
+      "pending_requests": []
+    },
+    {
       "name": "Landon Lockwood - Ptolemaic Alexandria Animation",
       "created_at": "2026-03-21",
       "due_date": "Not set",
@@ -567,13 +594,13 @@
           "author": "nancy@austinvisuals.com",
           "author_name": "Nancy",
           "timestamp": "2026-03-21 00:00 UTC",
-          "text": "Series animation. Working on $150,000 for 20 minutes. Call in one month.",
+          "text": "Series animation prospect. Discuss scope and call in one month.",
           "flagged": false
         }
       ],
       "pending_requests": [],
       "progress_pct": 0,
-      "status_summary": "Prospect \u2014 large series animation, $150K for 20 mins. Call in one month.",
+      "status_summary": "Prospect \u2014 large series animation. Call in one month.",
       "next_steps": "Schedule follow-up call in one month. Prepare series proposal."
     }
   ]
