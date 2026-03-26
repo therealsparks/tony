@@ -159,6 +159,25 @@
 <script>
 const SRC_COLORS = {'Organic Search':'#0071e3','Direct':'#34c759','Referral':'#ff9f0a','Organic Social':'#af52de','Paid Search':'#ff3b30','Email':'#5ac8fa','Unassigned':'#aeaeb2'};
 const DEV_COLORS = {mobile:'#0071e3',desktop:'#34c759',tablet:'#ff9f0a'};
+const BAD_CHAR_MAP = {'â€”':'—','â€“':'–','â€™':'’','â€œ':'“','â€':'”','Â':''};
+function cleanText(str='') {
+  if (!str) return '';
+  let output = str;
+  for (const [bad, good] of Object.entries(BAD_CHAR_MAP)) {
+    output = output.split(bad).join(good);
+  }
+  return output;
+}
+function sanitizeDeep(value) {
+  if (Array.isArray(value)) return value.map(sanitizeDeep);
+  if (value && typeof value === 'object') {
+    const copy = {};
+    for (const key of Object.keys(value)) copy[key] = sanitizeDeep(value[key]);
+    return copy;
+  }
+  if (typeof value === 'string') return cleanText(value);
+  return value;
+}
 
 function delta(now, prev) {
   if (!prev) return '';
@@ -173,7 +192,8 @@ function togglePage(el) { el.closest('.page-row').classList.toggle('open'); }
 
 fetch('analytics.json?v='+Date.now())
   .then(r=>r.json())
-  .then(data => {
+  .then(raw => {
+    const data = sanitizeDeep(raw);
     document.getElementById('updated').textContent = 'Last updated: '+data.updated+' · 30-day window unless noted';
     const ov = data.overview;
 
