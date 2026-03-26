@@ -24,6 +24,23 @@
   .filter-btn { padding: 6px 14px; border-radius: 99px; font-size: 12px; font-weight: 600; cursor: pointer; border: none; background: #fff; color: #6e6e73; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
   .filter-btn.active { background: #1d1d1f; color: #fff; }
 
+  .upnext-card { background: #fff; border-radius: 16px; padding: 22px 24px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .upnext-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+  .upnext-label { font-size: 18px; font-weight: 700; }
+  .upnext-subtitle { font-size: 13px; color: #6e6e73; margin-top: 4px; }
+  .upnext-list { display: flex; flex-direction: column; gap: 12px; }
+  .upnext-item { border: 1px solid #f0f0f2; border-radius: 14px; padding: 16px 18px; background: #fafafa; transition: border 0.2s, background 0.2s; }
+  .upnext-item.expanded { background: #fff; border-color: #d2d2d7; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .upnext-meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .upnext-title { font-size: 15px; font-weight: 700; flex: 1; }
+  .upnext-when { font-size: 12px; color: #6e6e73; text-align: right; }
+  .upnext-toggle { margin-top: 10px; font-size: 13px; font-weight: 600; color: #0071e3; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; border: none; background: none; padding: 0; }
+  .upnext-details { font-size: 13px; color: #4a4a4a; line-height: 1.6; margin-top: 12px; display: none; }
+  .upnext-item.expanded .upnext-details { display: block; }
+  .upnext-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .upnext-links a { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 999px; font-size: 12px; font-weight: 600; text-decoration: none; background: #1d1d1f; color: #fff; }
+  .upnext-empty { font-size: 13px; color: #6e6e73; padding: 10px 0; }
+
   .project-card {
     background: #fff; border-radius: 16px; margin-bottom: 12px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 2px 12px rgba(0,0,0,0.04);
@@ -85,6 +102,18 @@
 
   <div id="summary-counts" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;"></div>
 
+  <div class="upnext-card">
+    <div class="upnext-header">
+      <div>
+        <div class="upnext-label">Coming Up Next</div>
+        <div class="upnext-subtitle">Manual log of the next big events</div>
+      </div>
+    </div>
+    <div id="upnext-list" class="upnext-list">
+      <div class="upnext-empty">Loading upcoming items…</div>
+    </div>
+  </div>
+
   <div class="filters">
     <button class="filter-btn active" onclick="filter('all', this)">All</button>
     <button class="filter-btn" onclick="filter('active', this)">Active</button>
@@ -104,6 +133,56 @@
 
 <script>
 let allProjects = [];
+
+function formatEventDate(isoDate) {
+  if (!isoDate) return 'Date TBD';
+  const d = new Date(isoDate);
+  if (isNaN(d)) return isoDate;
+  return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }) + ' · ' + d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+}
+
+function renderUpNext(items = []) {
+  const container = document.getElementById('upnext-list');
+  if (!container) return;
+  if (!items.length) {
+    container.innerHTML = '<div class="upnext-empty">No upcoming items logged yet. Update <code>site/status.json</code> when you want something to show here.</div>';
+    return;
+  }
+  const topItems = items.slice(0, 3);
+  container.innerHTML = topItems.map(item => `
+    <div class="upnext-item">
+      <div class="upnext-meta">
+        <div class="upnext-title">${item.title || 'Untitled event'}</div>
+        <div class="upnext-when">${formatEventDate(item.datetime)}</div>
+      </div>
+      <button class="upnext-toggle" type="button">Details <span>＋</span></button>
+      <div class="upnext-details">
+        <div>${item.description || 'No additional details provided yet.'}</div>
+        ${(Array.isArray(item.links) && item.links.length) ? `
+          <div class="upnext-links">
+            ${item.links.map(link => `<a href="${link.url}" target="_blank" rel="noopener">${link.label || 'Link'}</a>`).join('')}
+          </div>` : ''}
+      </div>
+    </div>
+  `).join('');
+  container.querySelectorAll('.upnext-item').forEach(item => {
+    const toggle = item.querySelector('.upnext-toggle');
+    toggle.addEventListener('click', () => {
+      item.classList.toggle('expanded');
+      toggle.querySelector('span').textContent = item.classList.contains('expanded') ? '－' : '＋';
+    });
+  });
+}
+
+function loadUpNext() {
+  fetch('status.json?v=' + Date.now())
+    .then(r => r.json())
+    .then(data => renderUpNext(data.up_next || []))
+    .catch(() => {
+      const container = document.getElementById('upnext-list');
+      if (container) container.innerHTML = '<div class="upnext-empty">Unable to load upcoming items.</div>';
+    });
+}
 
 function daysSince(isoDate) {
   if (!isoDate || isoDate === 'Not set') return null;
@@ -264,6 +343,8 @@ function populateArtistFilter(projects) {
     sel.appendChild(opt);
   });
 }
+
+loadUpNext();
 
 fetch('projects.json?v=' + Date.now())
   .then(r => r.json())
