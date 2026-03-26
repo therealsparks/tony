@@ -8,5 +8,11 @@
     "analytics": "ok",
     "competitor_brief": "ok"
   },
-  "up_next": []
+  "up_next": [
+    {
+      "title": "BioSqueeze · Hayden call",
+      "datetime": "2026-03-26T15:00:00-05:00",
+      "description": "Catch-up with Hayden at BioSqueeze. Matt, Nancy, and Peter will be on the call."
+    }
+  ]
 }
