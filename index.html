@@ -542,7 +542,7 @@
     return false;
   }
   // Status widget
-  fetch('status.json?v=' + Date.now())
+  fetch('/tony/status.json?v=' + Date.now())
     .then(r => r.json())
     .then(data => {
       const minsAgo = Math.floor((Date.now() - new Date(data.last_seen).getTime()) / 60000);
