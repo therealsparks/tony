@@ -91,7 +91,7 @@ function minutesAgo(isoDate) {
   return `${Math.floor(hrs/24)} days ago`;
 }
 
-fetch('status.json?v=' + Date.now())
+fetch('/tony/status.json?v=' + Date.now())
   .then(r => r.json())
   .then(data => {
     const lastSeen = new Date(data.last_seen);
