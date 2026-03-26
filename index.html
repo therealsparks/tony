@@ -548,10 +548,10 @@
       const minsAgo = Math.floor((Date.now() - new Date(data.last_seen).getTime()) / 60000);
       const dot = document.getElementById('status-dot-small');
       const txt = document.getElementById('status-text-small');
-      if (minsAgo > 30) {
+      if (minsAgo > 180) {
         dot.style.background = '#ff3b30';
         txt.textContent = 'Offline';
-      } else if (minsAgo > 15) {
+      } else if (minsAgo > 60) {
         dot.style.background = '#ff9f0a';
         txt.textContent = 'Delayed';
       } else {
