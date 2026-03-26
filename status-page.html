@@ -28,23 +28,6 @@
   .check-name { font-size: 14px; font-weight: 500; flex: 1; }
   .check-status { font-size: 12px; font-weight: 600; color: #6e6e73; }
 
-  .upnext-card { background: #fff; border-radius: 16px; padding: 22px 24px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-  .upnext-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
-  .upnext-label { font-size: 18px; font-weight: 700; }
-  .upnext-subtitle { font-size: 13px; color: #6e6e73; margin-top: 4px; }
-  .upnext-list { display: flex; flex-direction: column; gap: 12px; }
-  .upnext-item { border: 1px solid #f0f0f2; border-radius: 14px; padding: 16px 18px; background: #fafafa; transition: border 0.2s, background 0.2s; }
-  .upnext-item.expanded { background: #fff; border-color: #d2d2d7; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
-  .upnext-meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
-  .upnext-title { font-size: 15px; font-weight: 700; flex: 1; }
-  .upnext-when { font-size: 12px; color: #6e6e73; text-align: right; }
-  .upnext-toggle { margin-top: 10px; font-size: 13px; font-weight: 600; color: #0071e3; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; border: none; background: none; padding: 0; }
-  .upnext-details { font-size: 13px; color: #4a4a4a; line-height: 1.6; margin-top: 12px; display: none; }
-  .upnext-item.expanded .upnext-details { display: block; }
-  .upnext-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-  .upnext-links a { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 999px; font-size: 12px; font-weight: 600; text-decoration: none; background: #1d1d1f; color: #fff; }
-  .upnext-empty { font-size: 13px; color: #6e6e73; padding: 10px 0; }
-
   .report-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
   .report-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
   .report-body { font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 16px; }
@@ -63,18 +46,6 @@
     <div class="status-label" id="status-label">Checking...</div>
     <div class="status-sublabel" id="status-sublabel"></div>
     <div class="last-seen" id="last-seen"></div>
-  </div>
-
-  <div class="upnext-card">
-    <div class="upnext-header">
-      <div>
-        <div class="upnext-label">Coming Up Next</div>
-        <div class="upnext-subtitle">Manual log of the next big events</div>
-      </div>
-    </div>
-    <div id="upnext-list" class="upnext-list">
-      <div class="upnext-empty">Loading upcoming items…</div>
-    </div>
   </div>
 
   <div class="checks-card">
@@ -120,46 +91,6 @@ function minutesAgo(isoDate) {
   return `${Math.floor(hrs/24)} days ago`;
 }
 
-function formatEventDate(isoDate) {
-  if (!isoDate) return 'Date TBD';
-  const d = new Date(isoDate);
-  if (isNaN(d)) return isoDate;
-  return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }) + ' · ' + d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
-}
-
-function renderUpNext(items = []) {
-  const container = document.getElementById('upnext-list');
-  if (!container) return;
-  if (!items.length) {
-    container.innerHTML = '<div class="upnext-empty">No upcoming items logged yet. Edit <code>site/status.json</code> to add something.</div>';
-    return;
-  }
-  const topItems = items.slice(0, 3);
-  container.innerHTML = topItems.map((item, idx) => `
-    <div class="upnext-item" data-index="${idx}">
-      <div class="upnext-meta">
-        <div class="upnext-title">${item.title || 'Untitled event'}</div>
-        <div class="upnext-when">${formatEventDate(item.datetime)}</div>
-      </div>
-      <button class="upnext-toggle" type="button">Details <span>＋</span></button>
-      <div class="upnext-details">
-        <div>${item.description || 'No additional details provided yet.'}</div>
-        ${(Array.isArray(item.links) && item.links.length) ? `
-          <div class="upnext-links">
-            ${item.links.map(link => `<a href="${link.url}" target="_blank" rel="noopener">${link.label || 'Link'}</a>`).join('')}
-          </div>` : ''}
-      </div>
-    </div>
-  `).join('');
-  container.querySelectorAll('.upnext-item').forEach(item => {
-    const toggle = item.querySelector('.upnext-toggle');
-    toggle.addEventListener('click', () => {
-      item.classList.toggle('expanded');
-      toggle.querySelector('span').textContent = item.classList.contains('expanded') ? '－' : '＋';
-    });
-  });
-}
-
 fetch('/tony/status.json?v=' + Date.now())
   .then(r => r.json())
   .then(data => {
@@ -195,8 +126,6 @@ fetch('/tony/status.json?v=' + Date.now())
 
     ls.textContent = `Last check-in: ${minutesAgo(data.last_seen)}`;
 
-    renderUpNext(data.up_next || []);
-
     // Checks
     const checks = data.checks || {};
     document.getElementById('checks-list').innerHTML = Object.entries(checks).map(([key, val]) => `
@@ -212,8 +141,6 @@ fetch('/tony/status.json?v=' + Date.now())
     document.getElementById('status-label').style.color = '#b91c1c';
     document.getElementById('status-sublabel').textContent = 'Could not reach status file.';
     document.getElementById('checks-list').innerHTML = '<div class="check-row"><div class="check-dot" style="background:#aeaeb2"></div><div class="check-name">Unable to load</div></div>';
-    const up = document.getElementById('upnext-list');
-    if (up) up.innerHTML = '<div class="upnext-empty">Unable to load upcoming items.</div>';
   });
 </script>
 </body>
