@@ -24,19 +24,19 @@
   .filter-btn { padding: 6px 14px; border-radius: 99px; font-size: 12px; font-weight: 600; cursor: pointer; border: none; background: #fff; color: #6e6e73; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
   .filter-btn.active { background: #1d1d1f; color: #fff; }
 
-  .upnext-card { background: #fff; border-radius: 16px; padding: 22px 24px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-  .upnext-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+  .upnext-card { background: #fff; border-radius: 16px; padding: 22px 24px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); cursor: pointer; transition: box-shadow 0.2s; }
+  .upnext-card.expanded { box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+  .upnext-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; gap: 12px; }
   .upnext-label { font-size: 18px; font-weight: 700; }
   .upnext-subtitle { font-size: 13px; color: #6e6e73; margin-top: 4px; }
+  .upnext-hint { font-size: 11px; color: #aeaeb2; }
   .upnext-list { display: flex; flex-direction: column; gap: 12px; }
-  .upnext-item { border: 1px solid #f0f0f2; border-radius: 14px; padding: 16px 18px; background: #fafafa; transition: border 0.2s, background 0.2s; }
-  .upnext-item.expanded { background: #fff; border-color: #d2d2d7; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .upnext-item { border: 1px solid #f0f0f2; border-radius: 14px; padding: 14px 16px; background: #fafafa; }
+  .upnext-card.expanded .upnext-item { background: #fff; border-color: #d2d2d7; }
   .upnext-meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
   .upnext-title { font-size: 15px; font-weight: 700; flex: 1; }
   .upnext-when { font-size: 12px; color: #6e6e73; text-align: right; }
-  .upnext-toggle { margin-top: 10px; font-size: 13px; font-weight: 600; color: #0071e3; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; border: none; background: none; padding: 0; }
-  .upnext-details { font-size: 13px; color: #4a4a4a; line-height: 1.6; margin-top: 12px; display: none; }
-  .upnext-item.expanded .upnext-details { display: block; }
+  .upnext-details { font-size: 13px; color: #4a4a4a; line-height: 1.6; margin-top: 10px; }
   .upnext-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
   .upnext-links a { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 999px; font-size: 12px; font-weight: 600; text-decoration: none; background: #1d1d1f; color: #fff; }
   .upnext-empty { font-size: 13px; color: #6e6e73; padding: 10px 0; }
@@ -108,6 +108,7 @@
         <div class="upnext-label">Coming Up Next</div>
         <div class="upnext-subtitle">Manual log of the next big events</div>
       </div>
+      <div class="upnext-hint" id="upnext-hint">Tap to expand</div>
     </div>
     <div id="upnext-list" class="upnext-list">
       <div class="upnext-empty">Loading upcoming items…</div>
@@ -141,37 +142,46 @@ function formatEventDate(isoDate) {
   return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }) + ' · ' + d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
 }
 
-function renderUpNext(items = []) {
+let upNextData = [];
+let upNextExpanded = false;
+
+function renderUpNextList() {
   const container = document.getElementById('upnext-list');
-  if (!container) return;
-  if (!items.length) {
+  const hint = document.getElementById('upnext-hint');
+  const card = document.getElementById('upnext-card');
+  if (!container || !card) return;
+
+  if (!upNextData.length) {
     container.innerHTML = '<div class="upnext-empty">No upcoming items logged yet. Update <code>site/status.json</code> when you want something to show here.</div>';
+    hint.textContent = 'Nothing queued yet';
+    card.classList.remove('expanded');
     return;
   }
-  const topItems = items.slice(0, 3);
-  container.innerHTML = topItems.map(item => `
+
+  const limit = upNextExpanded ? Math.min(upNextData.length, 3) : Math.min(upNextData.length, 2);
+  const visible = upNextData.slice(0, limit);
+  container.innerHTML = visible.map(item => `
     <div class="upnext-item">
       <div class="upnext-meta">
         <div class="upnext-title">${item.title || 'Untitled event'}</div>
         <div class="upnext-when">${formatEventDate(item.datetime)}</div>
       </div>
-      <button class="upnext-toggle" type="button">Details <span>＋</span></button>
-      <div class="upnext-details">
-        <div>${item.description || 'No additional details provided yet.'}</div>
-        ${(Array.isArray(item.links) && item.links.length) ? `
-          <div class="upnext-links">
-            ${item.links.map(link => `<a href="${link.url}" target="_blank" rel="noopener">${link.label || 'Link'}</a>`).join('')}
-          </div>` : ''}
-      </div>
+      ${upNextExpanded ? `<div class="upnext-details">${item.description || 'No additional details provided yet.'}</div>` : ''}
+      ${(upNextExpanded && Array.isArray(item.links) && item.links.length) ? `
+        <div class="upnext-links">
+          ${item.links.map(link => `<a href="${link.url}" target="_blank" rel="noopener">${link.label || 'Link'}</a>`).join('')}
+        </div>` : ''}
     </div>
   `).join('');
-  container.querySelectorAll('.upnext-item').forEach(item => {
-    const toggle = item.querySelector('.upnext-toggle');
-    toggle.addEventListener('click', () => {
-      item.classList.toggle('expanded');
-      toggle.querySelector('span').textContent = item.classList.contains('expanded') ? '－' : '＋';
-    });
-  });
+
+  hint.textContent = upNextExpanded ? `Showing the next ${visible.length} events` : 'Tap to expand';
+  card.classList.toggle('expanded', upNextExpanded);
+}
+
+function renderUpNext(items = []) {
+  upNextData = items;
+  upNextExpanded = false;
+  renderUpNextList();
 }
 
 function loadUpNext() {
@@ -180,7 +190,9 @@ function loadUpNext() {
     .then(data => renderUpNext(data.up_next || []))
     .catch(() => {
       const container = document.getElementById('upnext-list');
+      const hint = document.getElementById('upnext-hint');
       if (container) container.innerHTML = '<div class="upnext-empty">Unable to load upcoming items.</div>';
+      if (hint) hint.textContent = 'Unable to load';
     });
 }
 
@@ -345,6 +357,15 @@ function populateArtistFilter(projects) {
 }
 
 loadUpNext();
+
+const upNextCard = document.getElementById('upnext-card');
+if (upNextCard) {
+  upNextCard.addEventListener('click', (event) => {
+    if (event.target.tagName === 'A') return;
+    upNextExpanded = !upNextExpanded;
+    renderUpNextList();
+  });
+}
 
 fetch('projects.json?v=' + Date.now())
   .then(r => r.json())
