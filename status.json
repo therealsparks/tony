@@ -1,6 +1,6 @@
 {
   "status": "online",
-  "last_seen": "2026-03-26T11:05:00Z",
+  "last_seen": "2026-03-26T11:10:00Z",
   "message": "Online and building the Kling workflow.",
   "checks": {
     "email_handler": "ok",
