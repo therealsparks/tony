@@ -23,10 +23,6 @@
   .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6e73; margin-bottom: 6px; }
   h1 { font-size: 32px; font-weight: 800; letter-spacing: -0.6px; margin-bottom: 8px; }
   .sub { font-size: 15px; color: #4b4b50; margin-bottom: 24px; line-height: 1.5; }
-  .insight { background: #fff; border-radius: 16px; padding: 22px; border-left: 4px solid #0071e3; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-  .insight h2 { font-size: 18px; margin-bottom: 12px; }
-  .insight ul { padding-left: 20px; color: #4c4c50; }
-  .insight li { margin-bottom: 6px; font-size: 14px; }
   .section { background: #fff; border-radius: 16px; margin-bottom: 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); overflow: hidden; border: 1px solid #f1f1f2; }
   .section-head { width: 100%; border: none; background: transparent; padding: 18px 24px; text-align: left; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: #6e6e73; }
   .section-head span { font-size: 13px; font-weight: 600; color: #a0a0a4; letter-spacing: 0; text-transform: none; }
@@ -62,22 +58,13 @@
   <a class="back" href="index.html">← Back to Tony</a>
   <div class="eyebrow">⚡ Austin Visuals Internal</div>
   <h1>AV Operating Playbook</h1>
-  <div class="sub">Merged from 26 legacy SOPs + the new optimized playbook. Each block is written so a new hire can sit down with this page, learn the role, and execute without hunting through scattered Word docs. Owners, tools, SLAs, and risks are all spelled out. Additions marked as TODO are open decisions Matt/Nancy still need to settle.</div>
-  <div class="insight">
-    <h2>Critical Conflicts surfaced while normalizing docs</h2>
-    <ul>
-      <li><strong>Budget cutoff unclear:</strong> Sales materials disagree between $1k, $2k, and $2.5k minimums. Current action: document every lead under $2.5k and ask Matt before spending time.</li>
-      <li><strong>Scheduler mismatch:</strong> Marketing SOPs cite MeetEdgar while ops logs Buffer. Log the actual platform inside every campaign brief until one is retired.</li>
-      <li><strong>PM stack inconsistency:</strong> Contractor agreement references Asana yet ops relies on Any.do. When spinning up a project, state which tool owns truth for that job.</li>
-      <li><strong>Payment splits vary:</strong> 50/25/25, 50/50, and 1/3 splits all appear. Default to 50% deposit, 25% midpoint, 25% final unless Matt writes otherwise in the proposal.</li>
-    </ul>
-  </div>
+  <div class="sub">Welcome to the Austin Visuals training deck. Every section distills the current SOPs into day-one-ready checklists so a new teammate can understand the role, grab the right tools, and execute without hunting through scattered folders. TODO callouts flag items Matt or Nancy still need to finalize.</div>
 <!-- Sales Section -->
 <div class="section open">
   <button class="section-head" type="button">Sales Operations<span>Intake, nurture, proposal, and reactivation</span><span class="chevron">⌃</span></button>
   <div class="section-body">
     <div class="sop-grid">
-      <div class="sop-card"><div class="sop-title">Inbound Lead Intake & Qualification</div><div class="sop-meta"><strong>Purpose:</strong> Filter out unfit work fast and collect everything production will need.</div><div class="sop-meta"><strong>Owner:</strong> Sales lead / Matt · <strong>Tools:</strong> Intake form, CRM, Dropbox client folder.</div><ol class="sop-list"><li>Ask budget first. If below the agreed floor (currently $2k until policy finalizes), refer to partner list.</li><li>Collect scope: audience, delivery medium, runtime, style, references, funding source, deadline.</li><li>Log how they found AV and capture keywords for SEO tracking.</li><li>Send handshake email within 24h promising detailed follow-up inside 48h.</li><li>Escalate to team for feasibility and pricing; request missing assets immediately.</li></ol><div class="callout">SLA: 24h handshake, 48h status update. Risk: quoting without script/brand kit leads to rework.</div></div>
+      <div class="sop-card"><div class="sop-title">Inbound Lead Intake & Qualification</div><div class="sop-meta"><strong>Purpose:</strong> Filter out unfit work fast and collect everything production will need.</div><div class="sop-meta"><strong>Owner:</strong> Sales lead / Matt · <strong>Tools:</strong> Intake form, CRM, Dropbox client folder.</div><ol class="sop-list"><li>Ask budget first. If it lands below the current minimum, route to the partner list.</li><li>Collect scope: audience, delivery medium, runtime, style, references, funding source, deadline.</li><li>Log how they found AV and capture keywords for SEO tracking.</li><li>Send handshake email within 24h promising detailed follow-up inside 48h.</li><li>Escalate to team for feasibility and pricing; request missing assets immediately.</li></ol><div class="callout">SLA: 24h handshake, 48h status update. Risk: quoting without script/brand kit leads to rework.</div></div>
       <div class="sop-card"><div class="sop-title">Relationship Calling Program</div><div class="sop-meta"><strong>Purpose:</strong> Keep AV top-of-mind with past leads and clients, harvest testimonials.</div><div class="sop-meta"><strong>Cadence:</strong> Touch every 45–60 days unless Matt specifies otherwise.</div><ol class="sop-list"><li>Work from prioritized spreadsheet; claim rows via color + initials.</li><li>Use the conversational script, no hard selling. Ask what happened, what they value, and future needs.</li><li>Capture ROI language/testimonials for marketing.</li><li>Email weekly observations + metrics to Matt.</li><li>Mark do-not-call instantly when requested.</li></ol><div class="callout">TODO: lock a single follow-up rhythm; current docs cite 45-day and monthly.</div></div>
       <div class="sop-card"><div class="sop-title">Relationship Call Logging</div><div class="sop-meta"><strong>Purpose:</strong> Standardize intel capture.</div><ol class="sop-list"><li>Log attempts + outcomes, competitor chosen, price paid.</li><li>Record key value drivers (speed, price, reliability, turnkey).</li><li>Store testimonials, personal notes, next-contact date.</li><li>Flag CRM upgrade need if spreadsheets start conflicting.</li></ol></div>
       <div class="sop-card"><div class="sop-title">Agency / Partner Referral Outreach</div><div class="sop-meta">Outbound workflow to build reciprocal lead partnerships.</div><ol class="sop-list"><li>Identify agencies covering AV’s niches.</li><li>Send intro template; position as visualization arm.</li><li>Offer lead swaps / white-label support; log owner.</li><li>Follow up quarterly with reels + wins.</li></ol></div>
