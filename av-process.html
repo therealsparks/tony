@@ -18,26 +18,31 @@
   .lock-btn:hover { opacity: 0.85; }
   .lock-error { font-size: 12px; color: #b91c1c; margin-top: 8px; display: none; }
   #content { display: none; padding: 32px 20px 60px; }
-  .wrap { max-width: 900px; margin: 0 auto; }
+  .wrap { max-width: 940px; margin: 0 auto; }
   .back { font-size: 13px; font-weight: 600; color: #0071e3; text-decoration: none; margin-bottom: 24px; display: inline-block; }
   .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #6e6e73; margin-bottom: 6px; }
   h1 { font-size: 30px; font-weight: 800; letter-spacing: -0.6px; margin-bottom: 6px; }
   .sub { font-size: 14px; color: #6e6e73; margin-bottom: 28px; }
   .section { background: #fff; border-radius: 16px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); overflow: hidden; border: 1px solid #f1f1f2; }
-  .section-head { width: 100%; border: none; background: transparent; padding: 20px 24px; text-align: left; display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer; font-weight: 700; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; color: #6e6e73; }
+  .section-head { width: 100%; border: none; background: transparent; padding: 18px 24px; text-align: left; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; font-weight: 700; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; color: #6e6e73; }
+  .section-head span { font-size: 13px; font-weight: 600; color: #a0a0a4; letter-spacing: 0; text-transform: none; }
   .section-head:focus { outline: 2px solid #0071e3; outline-offset: -4px; }
   .chevron { transition: transform 0.25s ease; font-size: 18px; color: #1d1d1f; }
-  .section-body { padding: 0 24px 24px; border-top: 1px solid #f1f1f2; display: none; }
+  .section-body { padding: 0 24px 28px; border-top: 1px solid #f1f1f2; display: none; }
   .section.open .section-body { display: block; animation: fadeIn 0.2s ease; }
   .section.open .chevron { transform: rotate(180deg); }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
-  .step { display: flex; gap: 14px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid #f7f7f7; }
+  .skill-meta { background: #f7f8fb; border-radius: 14px; padding: 14px 16px; margin: 18px 0 10px; border-left: 3px solid #1d1d1f; }
+  .meta-label { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #8d8d92; margin-bottom: 4px; }
+  .skill-meta p { font-size: 13px; color: #4c4c50; line-height: 1.6; }
+  .step { display: flex; gap: 14px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid #f7f7f7; }
   .step:last-child { border-bottom: none; }
-  .step-num, .step-bullet { width: 26px; height: 26px; border-radius: 50%; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; background: #1d1d1f; color: #fff; }
+  .step-num, .step-bullet { width: 28px; height: 28px; border-radius: 50%; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 3px; background: #1d1d1f; color: #fff; }
   .step-bullet { background: #e5e5ea; color: #1d1d1f; font-size: 14px; }
   .step-body { flex: 1; }
-  .step-title { font-size: 14px; font-weight: 700; color: #1d1d1f; margin-bottom: 3px; }
-  .step-desc { font-size: 13px; color: #6e6e73; line-height: 1.5; }
+  .step-title { font-size: 14px; font-weight: 700; color: #1d1d1f; margin-bottom: 6px; }
+  .step-desc { font-size: 13px; color: #5b5b60; line-height: 1.6; }
+  .step-desc strong { color: #1d1d1f; }
   .tag { display: inline-block; padding: 2px 8px; border-radius: 99px; font-size: 10px; font-weight: 700; margin-left: 6px; }
   .tag-tony { background: #e8f8f0; color: #1a7a46; }
   .tag-matt { background: #eff6ff; color: #1d4ed8; }
@@ -46,6 +51,8 @@
   .tag-sales { background: #ede9fe; color: #5b21b6; }
   .tag-david { background: #e0f2fe; color: #0c4a6e; }
   .tag-che { background: #fef9c3; color: #854d0e; }
+  .checklist { margin-top: 8px; padding-left: 18px; color: #4c4c50; }
+  .checklist li { margin-bottom: 4px; font-size: 13px; }
   .footer { text-align: center; font-size: 11px; color: #aeaeb2; margin-top: 20px; }
 </style>
 </head>
@@ -69,282 +76,349 @@
   <a class="back" href="index.html">← Back to Tony</a>
   <div class="eyebrow">⚡ Austin Visuals Internal</div>
   <h1>Company Process Guide</h1>
-  <div class="sub">Updated 26 Mar 2026 from the first 15 DOCX files in the AV process ingest. Focus: clarity-first marketing, specialist sales posture, and client-prep guardrails. Labels show current best-known owners while conflicts remain under review.</div>
+  <div class="sub">Training modules built from the first 15 DOCX files. Each section teaches a skill so a new contributor can plug into the Austin Visuals production engine without shadowing.</div>
 
+  <!-- Skill 01 -->
   <div class="section open">
-    <button class="section-head" type="button">📣 Social + Channel Cadence<span class="chevron">⌃</span></button>
+    <button class="section-head" type="button">Skill 01 · Social Pillar Deployment<span>Train to run the multi-channel cadence solo</span><span class="chevron">⌃</span></button>
     <div class="section-body">
+      <div class="skill-meta">
+        <div class="meta-label">Objective</div>
+        <p>Take one pain-point pillar and turn it into a 30–45 day sequence across Matt’s LinkedIn, the company LinkedIn, Facebook, YouTube clips, and Google Business without sounding recycled.</p>
+      </div>
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-body">
-          <div class="step-title">Start with a pillar theme <span class="tag tag-david">David</span> <span class="tag tag-nancy">Nancy</span></div>
-          <div class="step-desc">Pick one buyer pain point or flagship blog per cycle. Map it to the target industry/city before anything else so every downstream post feels bespoke, not templated.</div>
+          <div class="step-title">Source material & tone pack <span class="tag tag-nancy">Nancy</span> <span class="tag tag-david">David</span></div>
+          <div class="step-desc"><strong>Pull:</strong> latest approved blog, positioning memo, asset folder, and any legacy post you plan to reuse. Highlight the buyer pain and the city/industry angle. Practice drill: rewrite one 2022 post and compare to the new tone (journalistic, calm authority).</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-body">
-          <div class="step-title">Build the calendar as an execution tool</div>
-          <div class="step-desc">Lay out 10–45 day runs across LinkedIn (Matt + Company), Facebook, YouTube clips, and optional TikTok/shorts. Calendars show sequencing, not policy—rewrite them once the campaign window closes.</div>
+          <div class="step-title">Calendar build</div>
+          <div class="step-desc"><strong>Deliverable:</strong> 30-row sheet. Columns = Date, Channel, Hook, Asset, CTA, Status, Approver. Rotate industries (oil & gas, medical device, legal) and objectives (clarity, speed, AI assist). Tip: calendars are execution tools, not law—stamp each with “Campaign window + owner.”</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-body">
-          <div class="step-title">Reuse with edits only</div>
-          <div class="step-desc">When new direction is light, mine the approved archive but rewrite the hook, CTA, and timestamped lines. Tone stays formal/journalistic. No legacy memes or stale holiday jokes.</div>
+          <div class="step-title">Rewrite for reuse</div>
+          <div class="step-desc">If you reuse archive content, change hook, CTA, and time references. Use the “three edits” test: new lead sentence, updated stat/example, refreshed CTA. Spot-check yourself by reading aloud—anything that sounds dated gets rewired.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">4</div>
         <div class="step-body">
-          <div class="step-title">Pair every post with a visual asset</div>
-          <div class="step-desc">Use demo stills, case-study clips, or industry-specific renders. Legal/medical posts still require the template overlay + contact block per the onboarding guide.</div>
+          <div class="step-title">Asset pairing & delivery</div>
+          <div class="step-desc">Attach a render, still, or reel clip to every slot. Use the legal/medical template when required. Upload finished copy + assets to the scheduler (MeetEdgar/Buffer/Hootsuite — confirm the current platform before your run). If the tool lacks a slot, fill the manual tracker and flag Tony.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">5</div>
         <div class="step-body">
-          <div class="step-title">Local SEO + Google Business shadow</div>
-          <div class="step-desc">Each pillar blog should spawn Google Business posts and city-specific snippets. Keep them keyword-rich but human. Link back to AustinVisuals.com with a clear CTA.</div>
+          <div class="step-title">Google Business shadow set</div>
+          <div class="step-desc">For each pillar blog, write a 120–150 word Google Business post with local cues (“Houston med device teams”, “Austin robotics”). Include keyword, CTA, and internal link. Schedule in sync with the blog drop.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">6</div>
         <div class="step-body">
-          <div class="step-title">Tool + approval reality check</div>
-          <div class="step-desc">MeetEdgar / Buffer / Hootsuite all appear in legacy docs; confirm the active scheduler before onboarding someone new. Matt + Nancy remain final approvers until the matrix is updated.</div>
+          <div class="step-title">Quality checks & handoff</div>
+          <div class="step-desc">Before hand-off to Matt/Nancy: run the “Staleness Scan” (no dated jokes, no reused timestamp). Confirm contact block, CTA, and asset links. Save the full pack in Dropbox ➜ Marketing ➜ Calendars ➜ YYYY-MM-DD. Tag Tony to archive.</div>
         </div>
       </div>
+      <ul class="checklist">
+        <li>✅ Cadence conflicts logged (if doc vs real cadence disagree)</li>
+        <li>✅ Tool used noted in tracker (MeetEdgar / Buffer / Hootsuite)</li>
+        <li>✅ Reuse reason + edits documented</li>
+      </ul>
     </div>
   </div>
 
-  <div class="section open">
-    <button class="section-head" type="button">✉️ Newsletter Engine<span class="chevron">⌃</span></button>
+  <!-- Skill 02 -->
+  <div class="section">
+    <button class="section-head" type="button">Skill 02 · Newsletter: Lead With Value<span>Turn a blog into a send-ready email</span><span class="chevron">⌃</span></button>
     <div class="section-body">
+      <div class="skill-meta">
+        <div class="meta-label">Objective</div>
+        <p>Draft, proof, and stage a value-first newsletter that adds new intel beyond the source blog, hits the Wednesday night / Thursday AM cadence, and produces downstream snippets.</p>
+      </div>
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-body">
-          <div class="step-title">Subject line first</div>
-          <div class="step-desc">Pick the promise and write the subject/title before drafting copy. Audience = time-poor male decision-makers (marketing directors, owners, product leads) who care about speed, clarity, and status.</div>
+          <div class="step-title">Subject line workshop <span class="tag tag-nancy">Nancy</span></div>
+          <div class="step-desc">Write five options. Requirements: ties to money/status/speed, under 55 characters, no clickbait. Share with Matt for pick + angle confirmation before writing.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-body">
-          <div class="step-title">Lead with value, then sell <span class="tag tag-nancy">Nancy</span></div>
-          <div class="step-desc">Use blog posts for raw material but add something new: cost tips, data, or a sharper example. No “Austin Visuals is great” opener—prove usefulness first, sell later.</div>
+          <div class="step-title">Value body + proof pack</div>
+          <div class="step-desc">Outline intro → two proof blocks → CTA. Proof block = stat, example, or cost tip not found in the blog. Pull from case studies, pricing sheets, or SME quotes. Call out the persona (marketing director, owner, product lead) explicitly.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-body">
-          <div class="step-title">Manual build + approvals</div>
-          <div class="step-desc">Copy is finalized in Docs, then pasted manually into Mailchimp. Wednesday-night draft ➜ Thursday 9 AM send is the current fast cadence, but one SOP still says “every two months.” Default to monthly until leadership confirms.</div>
+          <div class="step-title">Manual build</div>
+          <div class="step-desc">Paste into Mailchimp template manually (automation not approved). Double-check buttons, alt text, and text-to-image ratio. Save a PDF proof + HTML export in Dropbox ➜ Marketing ➜ Newsletters.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">4</div>
         <div class="step-body">
-          <div class="step-title">Proof and assets</div>
-          <div class="step-desc">Use charts, pricing tables, or before/after frames when possible; quantitative proof is specifically requested in the workflow doc. Matt approves until a new editor of record is named.</div>
+          <div class="step-title">Approval and downstream assets</div>
+          <div class="step-desc">Send draft + PDF to Matt for green light. After approval, carve two LinkedIn posts and one Google Business snippet from the same content. Note cadence variance (monthly vs bi-monthly) if you had to adjust.</div>
         </div>
       </div>
-      <div class="step">
-        <div class="step-num">5</div>
-        <div class="step-body">
-          <div class="step-title">Repurpose downstream</div>
-          <div class="step-desc">Each newsletter should create at least one LinkedIn thought post and one local SEO snippet to reinforce the theme.</div>
-        </div>
-      </div>
+      <ul class="checklist">
+        <li>✅ Value before pitch (no “Austin Visuals is amazing” in paragraph one)</li>
+        <li>✅ Quant proof present (chart, number, or cost comparison)</li>
+        <li>✅ Manual Mailchimp insert logged with timestamp</li>
+      </ul>
     </div>
   </div>
 
-  <div class="section open">
-    <button class="section-head" type="button">🧠 Blog & Thought Leadership<span class="chevron">⌃</span></button>
+  <!-- Skill 03 -->
+  <div class="section">
+    <button class="section-head" type="button">Skill 03 · Pain-First Blog & Repurpose<span>Create the pillar article + handoffs</span><span class="chevron">⌃</span></button>
     <div class="section-body">
+      <div class="skill-meta">
+        <div class="meta-label">Objective</div>
+        <p>Draft a vertical-specific blog that solves a real buyer pain, weaves in Austin Visuals proof, and seeds social, newsletter, and local SEO derivatives.</p>
+      </div>
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-body">
-          <div class="step-title">Pain-first ideation</div>
-          <div class="step-desc">Pick prompts that echo real buyer friction: clarity for regulators, faster sales decks, technical accuracy, trade-show polish. City/industry angle must be baked in, not tacked on.</div>
+          <div class="step-title">Pain scan + prompt deck <span class="tag tag-david">David</span></div>
+          <div class="step-desc">Interview sales or review CRM notes to pick a fresh pain (e.g., “regulator approvals need precise visuals”). Draft prompt lines for AI assist but note: output must be rewritten by you.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-body">
-          <div class="step-title">Pre-write assets</div>
-          <div class="step-desc">Gather client logos, best-of visuals, bios, and proof points before drafting so the article reads bespoke. Austin Visuals call-outs (3× per article) are still a working SEO rule until disproven.</div>
+          <div class="step-title">Evidence locker</div>
+          <div class="step-desc">Collect client quotes, CAD screenshots, before/after frames, and CTA template. Person-level proof ("Elliot, VP of Ops said…") wins over fluff. Tag each asset with usage rights.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-body">
-          <div class="step-title">Draft ➜ CTA ➜ Repurpose</div>
-          <div class="step-desc">Write the long-form post, close with a direct CTA, then slice it into newsletter sections, social posts, and Google Business blurbs. One pillar article should fuel an entire content cycle.</div>
+          <div class="step-title">Draft + CTA</div>
+          <div class="step-desc">Structure: Hook → Pain → What fails today → Austin Visuals fix → CTA. Mention Austin Visuals at least 3 times (rule from SEO doc) unless Matt updates it. Close with a “Book a clarity sprint” CTA.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">4</div>
         <div class="step-body">
-          <div class="step-title">Tooling</div>
-          <div class="step-desc">Topic generators (Portent, HubSpot) and infogr.am are listed, but the active stack needs reconfirmation. Keep a running list of what’s actually in use.</div>
+          <div class="step-title">Repurpose kit</div>
+          <div class="step-desc">From the blog, output: 1× 200-word LinkedIn thought post, 2× 90-word Facebook variants, 1× Google Business post, 3× newsletter supporting bullets. Store all in the “Pillar Packs” subfolder for Tony’s automations.</div>
         </div>
       </div>
+      <ul class="checklist">
+        <li>✅ City/industry woven throughout, not bolted on</li>
+        <li>✅ Visual references attached (with rights noted)</li>
+        <li>✅ CTA + contact info verified</li>
+      </ul>
     </div>
   </div>
 
-  <div class="section open">
-    <button class="section-head" type="button">💼 Sales Positioning & Qualification<span class="chevron">⌃</span></button>
+  <!-- Skill 04 -->
+  <div class="section">
+    <button class="section-head" type="button">Skill 04 · Specialist Sales & Discovery<span>Qualify, scope, and prep the handoff</span><span class="chevron">⌃</span></button>
     <div class="section-body">
+      <div class="skill-meta">
+        <div class="meta-label">Objective</div>
+        <p>Run a discovery call that positions Austin Visuals as the specialist, qualifies the lead, and gathers every input production will need.</p>
+      </div>
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-body">
-          <div class="step-title">Specialist pitch <span class="tag tag-matt">Matt</span></div>
-          <div class="step-desc">Austin Visuals sells clarity for complex products. Core message: agencies resell production, AV is the direct specialist who keeps technical accuracy intact across many styles.</div>
+          <div class="step-title">Positioning primer <span class="tag tag-matt">Matt</span> <span class="tag tag-sales">Sales</span></div>
+          <div class="step-desc">Memorize the distinctions: technical accuracy, multi-style capability, direct specialist vs agency middle-man. Practice the 60-second “why Austin Visuals” script before every call.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-body">
-          <div class="step-title">Segment lens</div>
-          <div class="step-desc">Mid-enterprise marketing and product leaders are prime; agencies are both competitors and partners. Adjust vocabulary for technical, executive, marketing-led, or procurement-led buyers.</div>
+          <div class="step-title">Qualification grid</div>
+          <div class="step-desc">Capture BANT + Input readiness. Use the intake form: role, audience, why now, budget comfort, timeline, assets on hand (script, runtime, brand kit, CAD/photos), end use (trade show, investor, regulator, training). Missing inputs = risk callout.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-body">
-          <div class="step-title">Qualification checklist</div>
-          <div class="step-desc">Budget, Authority, Need, Timing plus Input Readiness. Ask about script/story, runtime, brand kit, references, CAD/engineering files, field photos, and objective/use case (trade show, training, investor, regulator).</div>
+          <div class="step-title">Discovery playback</div>
+          <div class="step-desc">Summarize back to the prospect: “You’re a marketing director serving X audience, you need clarity for Y, your internal assets include…”. Ask, “What did I miss?” to avoid hidden stakeholders later.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">4</div>
         <div class="step-body">
-          <div class="step-title">Documentation</div>
-          <div class="step-desc">Discovery notes go into the intake form + CRM before promise-making. Hidden stakeholders or missing assets get flagged before pricing.</div>
+          <div class="step-title">Handoff kit</div>
+          <div class="step-desc">Drop call recording + filled intake form + asset links into Dropbox ➜ Client ➜ Client Reference. Notify Nancy + assigned PM. Do not move to proposal until assets are confirmed or paid concept step is ordered.</div>
         </div>
       </div>
-      <div class="step">
-        <div class="step-num">5</div>
-        <div class="step-body">
-          <div class="step-title">Sales→Production handoff</div>
-          <div class="step-desc">Only after deposit + confirmed inputs. Include objectives, audience, deliverables, and whether concept/storyboard step was purchased.</div>
-        </div>
-      </div>
+      <ul class="checklist">
+        <li>✅ Intake form stored with date + initials</li>
+        <li>✅ Missing assets flagged (script/brand/CAD)</li>
+        <li>✅ Opportunity tagged as “Ready / Needs Starter / Hold”</li>
+      </ul>
     </div>
   </div>
 
-  <div class="section open">
-    <button class="section-head" type="button">🛟 Objection Handling & Reactivation<span class="chevron">⌃</span></button>
+  <!-- Skill 05 -->
+  <div class="section">
+    <button class="section-head" type="button">Skill 05 · Objection Handling & Reactivation<span>Lower friction and revive dormant accounts</span><span class="chevron">⌃</span></button>
     <div class="section-body">
+      <div class="skill-meta">
+        <div class="meta-label">Objective</div>
+        <p>Turn hesitation into a smaller paid step and reintroduce Austin Visuals to past clients without sounding dated.</p>
+      </div>
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-body">
-          <div class="step-title">Diagnose hesitation</div>
-          <div class="step-desc">Most pushback = unclear vision, fear of cost overrun, or missing stakeholder buy-in. Surface which one it is before replying.</div>
+          <div class="step-title">Diagnose the block</div>
+          <div class="step-desc">Ask: Is the vision unclear? Are stakeholders unconvinced? Is budget/timeline fuzzy? Document which bucket the objection belongs to before offering solutions.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-body">
-          <div class="step-title">Offer low-friction starters</div>
-          <div class="step-desc">Concept design, style frames, or storyboard packages convert “let us think about it” into a smaller, faster paid step. Make these options explicit on every hesitant lead.</div>
+          <div class="step-title">Offer a low-friction starter</div>
+          <div class="step-desc">Menu: Concept sketch pack (3-day), Storyboard sprint (1 week), or Look-dev frame. Price each so it feels attainable. Explain that deliverables roll forward if they green-light full production.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-body">
-          <div class="step-title">Modernize the legacy script</div>
-          <div class="step-desc">The old cold-call script is relationship-first ("checking in, here's what’s new"). Keep that tone but update the language before reactivation pushes go live.</div>
+          <div class="step-title">Reactivation script refresh</div>
+          <div class="step-desc">Use the legacy structure (relationship-first, “seeing what you’re working on”). Update language to today’s offerings (AI-assisted clarity labs, end-to-end visualization). Log outcomes in CRM immediately.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">4</div>
         <div class="step-body">
-          <div class="step-title">Close the loop</div>
-          <div class="step-desc">Every objection path ends with a defined next action (scheduled design sprint, budget revisit, or polite exit). Log outcomes in the CRM immediately.</div>
+          <div class="step-title">Next-step lock-in</div>
+          <div class="step-desc">End every objection or reactivation call with a dated next action: starter package invoice, follow-up after stakeholder review, or closed-lost reason. No “we’ll circle back.”</div>
         </div>
       </div>
+      <ul class="checklist">
+        <li>✅ Starter offer documented in CRM</li>
+        <li>✅ Reactivation tone updated (no legacy slang)</li>
+        <li>✅ Next step + owner recorded</li>
+      </ul>
     </div>
   </div>
 
-  <div class="section open">
-    <button class="section-head" type="button">🧰 Client Prep & Production Guardrails<span class="chevron">⌃</span></button>
+  <!-- Skill 06 -->
+  <div class="section">
+    <button class="section-head" type="button">Skill 06 · Client Intake & Production Kickoff<span>Collect everything needed to avoid rework</span><span class="chevron">⌃</span></button>
     <div class="section-body">
+      <div class="skill-meta">
+        <div class="meta-label">Objective</div>
+        <p>Gather the full intake package before production starts so costs stay down and revisions stay low.</p>
+      </div>
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-body">
-          <div class="step-title">Minimum viable inputs</div>
-          <div class="step-desc">Script or outline, desired runtime, brand kit, examples of desired + off-limits styles, project objective. Missing items = higher quote or slower kickoff.</div>
+          <div class="step-title">Seven-folder setup <span class="tag tag-tony">Tony</span> <span class="tag tag-team">PM</span></div>
+          <div class="step-desc">Create Client / Art / Client Reference / Project Files / Renders / Scripts / Uploads. Drop all inbound materials into Uploads first; Tony routes to the right subfolder after tagging.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">Minimum viable kit</div>
+          <div class="step-desc">Need before quote locks: script or outline, target runtime, brand kit (logo, fonts, colors), visual references, objective + audience statement. Use the “missing input” template email if something is absent.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
         <div class="step-body">
           <div class="step-title">Technical add-ons</div>
-          <div class="step-desc">For engineering/industrial/medical jobs: CAD files, drawings, field photos, SME access for review. Intake checklist should branch for technical vs general marketing.</div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-body">
-          <div class="step-title">Revision discipline</div>
-          <div class="step-desc">Two structured rounds by default. Capture every note in writing, confirm receipt, and tie comments back to the objectives defined at intake.</div>
+          <div class="step-desc">For industrial/medical/regulatory work collect CAD files, engineering drawings, field photos, or SME availability. Flag these in the intake form so art knows where accuracy is critical.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">4</div>
         <div class="step-body">
-          <div class="step-title">Archive + reuse</div>
-          <div class="step-desc">Finished work feeds the “Best Work Samples” sheet plus future marketing assets. Tag each deliverable with industry, use case, and whether the client allows public use.</div>
+          <div class="step-title">Revision guardrails</div>
+          <div class="step-desc">Set expectations: two structured rounds included. Log every note in the tracker, confirm receipt with the client, and tie each change back to the original objectives to prevent scope creep.</div>
         </div>
       </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <div class="step-title">Archive + reuse</div>
+          <div class="step-desc">After final delivery (and last 25% payment), move masters to Project Files + Uploads ➜ Client. Tag deliverables with industry + permissions so marketing can reuse safely.</div>
+        </div>
+      </div>
+      <ul class="checklist">
+        <li>✅ Intake sheet saved in Client Reference</li>
+        <li>✅ Technical assets verified (CAD/drawings if needed)</li>
+        <li>✅ Revision limits communicated in writing</li>
+      </ul>
     </div>
   </div>
 
-  <div class="section open">
-    <button class="section-head" type="button">🧭 Ownership, Approvals & Gaps<span class="chevron">⌃</span></button>
+  <!-- Skill 07 -->
+  <div class="section">
+    <button class="section-head" type="button">Skill 07 · Ownership, Approvals & Gaps<span>Know who signs off and what’s unresolved</span><span class="chevron">⌃</span></button>
     <div class="section-body">
+      <div class="skill-meta">
+        <div class="meta-label">Objective</div>
+        <p>Understand who approves what today, keep legacy vs current guidance separated, and capture open questions for the next document ingest.</p>
+      </div>
       <div class="step">
         <div class="step-bullet">👑</div>
         <div class="step-body">
-          <div class="step-title">Who owns what (current best guess)</div>
-          <div class="step-desc">Matt = final approvals + enterprise sales. Nancy = creative + PM + newsletter primary. David = blogs/landing pages/social assets. Melissa = design support. Kelvin = scheduling (legacy). Tony = automation + knowledge upkeep. Shelly joins production pods as artist/PM.</div>
+          <div class="step-title">Current owner map</div>
+          <div class="step-desc">Matt = final approvals + enterprise sales. Nancy = creative lead + PM + newsletter. David = blogs/landing pages/social assets. Melissa = design support. Kelvin = scheduling (legacy, confirm before assigning). Tony = automation + doc upkeep. Shelly = artist/PM hybrid.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-bullet">📋</div>
         <div class="step-body">
-          <div class="step-title">What’s still unresolved</div>
-          <div class="step-desc">• Conflicting social cadences (daily vs 3× weekly) <br>• Tool stack drift (MeetEdgar vs Buffer vs Hootsuite) <br>• Newsletter cadence (monthly vs bi-monthly) <br>• Approval matrix for 2026 team <br>• Google Business publishing frequency + owner <br>• Intake checklist storage location.</div>
+          <div class="step-title">Approval + tool gaps</div>
+          <div class="step-desc">Unresolved items list: cadence conflicts (daily vs 3× weekly), scheduler tool (MeetEdgar/Buffer/Hootsuite), newsletter cadence (monthly vs bi-monthly), Google Business owner + frequency, intake checklist storage. Update this list each time a new doc clarifies a rule.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-bullet">🚧</div>
         <div class="step-body">
-          <div class="step-title">How to handle legacy docs</div>
-          <div class="step-desc">Tag anything campaign-specific as “Archive,” keep conflicts visible, and only promote rules corroborated by multiple sources or live practice. This page is the working truth—update it as the remaining 27 docs are ingested.</div>
+          <div class="step-title">Legacy labeling discipline</div>
+          <div class="step-desc">Stamp campaign-specific docs as “Archive” and keep conflicts visible. Promote instructions to this page only after they appear in multiple sources or active practice. Tony owns version control + reminders.</div>
         </div>
       </div>
+      <ul class="checklist">
+        <li>✅ Owner matrix reviewed monthly</li>
+        <li>✅ Open questions carried forward (not erased)</li>
+        <li>✅ Archive vs SOP clearly labeled</li>
+      </ul>
     </div>
   </div>
 
-  <div class="section open">
-    <button class="section-head" type="button">⚡ Tony Automations & Next Steps<span class="chevron">⌃</span></button>
+  <div class="section">
+    <button class="section-head" type="button">Skill 08 · Tony Automations & Next Steps<span>Know what’s live vs planned</span><span class="chevron">⌃</span></button>
     <div class="section-body">
+      <div class="skill-meta">
+        <div class="meta-label">Objective</div>
+        <p>Understand what Tony already automates and what unlocks when the remaining 27 docs arrive.</p>
+      </div>
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-body">
-          <div class="step-title">Live coverage</div>
-          <div class="step-desc">Project registry upkeep, Dropbox policy enforcement, gateway watchdogs, analytics/competitor briefs, intake logging, and newsletter/social calendar reminders.</div>
+          <div class="step-title">Live automations</div>
+          <div class="step-desc">Project registry upkeep, Dropbox policy enforcement, gateway watchdogs, analytics + competitor briefs, intake logging, newsletter/social reminders, and attachment routing.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-body">
-          <div class="step-title">Coming with full ingest</div>
-          <div class="step-desc">Automated approval matrix, Google Business scheduler, intake checklist generator, intern outreach sequencer, and CRM-to-Dropbox bridge once the remaining documents clarify ownership.</div>
+          <div class="step-title">Roadmap</div>
+          <div class="step-desc">Awaiting clarity from remaining docs: approval matrix automation, Google Business scheduler, intake checklist generator, intern outreach sequencer, CRM↔Dropbox bridge.</div>
         </div>
       </div>
     </div>
