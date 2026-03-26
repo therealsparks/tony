@@ -99,8 +99,8 @@ fetch('/tony/status.json?v=' + Date.now())
 
     // Determine status — stale after 30 min = offline
     let status = data.status;
-    if (minsAgo > 30 && status === 'online') status = 'offline';
-    else if (minsAgo > 15 && status === 'online') status = 'degraded';
+    if (minsAgo > 180 && status === 'online') status = 'offline';
+    else if (minsAgo > 60 && status === 'online') status = 'degraded';
 
     const dot = document.getElementById('status-dot');
     const label = document.getElementById('status-label');
