@@ -1,20 +1,15 @@
 {
-  "updated": "2026-03-25 15:45 UTC",
-  "property": "Austin Visuals — Matt",
+  "updated": "2026-03-26 15:45 UTC",
+  "property": "Austin Visuals \u00e2\u20ac\u201d Matt",
   "overview": {
-    "sessions_7d": 634,
-    "sessions_prev_7d": 553,
-    "users_7d": 561,
-    "views_7d": 850,
-    "bounce_rate": 49.2,
-    "avg_session_sec": 120
+    "sessions_7d": 619,
+    "sessions_prev_7d": 567,
+    "users_7d": 546,
+    "views_7d": 790,
+    "bounce_rate": 50.6,
+    "avg_session_sec": 95
   },
   "trend_30d": [
-    {
-      "date": "02/23",
-      "sessions": 232,
-      "views": 285
-    },
     {
       "date": "02/24",
       "sessions": 196,
@@ -162,8 +157,13 @@
     },
     {
       "date": "03/25",
-      "sessions": 20,
-      "views": 38
+      "sessions": 105,
+      "views": 150
+    },
+    {
+      "date": "03/26",
+      "sessions": 16,
+      "views": 17
     }
   ],
   "top_pages": [
@@ -171,127 +171,127 @@
       "title": "Full-Service 3D Animation Studio | 2D & 3D Animation Services",
       "path": "/",
       "url": "https://austinvisuals.com/",
-      "views": 998,
-      "users": 767,
+      "views": 1005,
+      "users": 781,
       "duration_sec": 113,
-      "bounce": 43.8,
-      "new_users": 674
+      "bounce": 44.6,
+      "new_users": 691
     },
     {
       "title": "Work samples | Animated Explainer Videos",
       "path": "/videos/",
       "url": "https://austinvisuals.com/videos/",
-      "views": 223,
-      "users": 144,
-      "duration_sec": 119,
-      "bounce": 11.6,
-      "new_users": 13
+      "views": 209,
+      "users": 138,
+      "duration_sec": 114,
+      "bounce": 12.0,
+      "new_users": 12
     },
     {
       "title": "Key Differences Between Animated and Cartoon",
       "path": "/animated-and-cartoon/",
       "url": "https://austinvisuals.com/animated-and-cartoon/",
-      "views": 138,
-      "users": 114,
-      "duration_sec": 96,
-      "bounce": 56.6,
-      "new_users": 111
+      "views": 136,
+      "users": 112,
+      "duration_sec": 98,
+      "bounce": 56.7,
+      "new_users": 109
     },
     {
       "title": "Explore Animation Jobs in Austin Texas",
       "path": "/animation-and-marketing-jobs-in-austin/",
       "url": "https://austinvisuals.com/animation-and-marketing-jobs-in-austin/",
-      "views": 131,
-      "users": 99,
-      "duration_sec": 153,
-      "bounce": 21.8,
-      "new_users": 56
+      "views": 130,
+      "users": 100,
+      "duration_sec": 158,
+      "bounce": 19.3,
+      "new_users": 53
     },
     {
       "title": "Contact Austin Visuals | Production Company Commercials",
       "path": "/contact-austin-visuals/",
       "url": "https://austinvisuals.com/contact-austin-visuals/",
-      "views": 118,
-      "users": 100,
-      "duration_sec": 84,
-      "bounce": 10.8,
+      "views": 115,
+      "users": 96,
+      "duration_sec": 72,
+      "bounce": 11.3,
       "new_users": 17
     },
     {
       "title": "Learn About Austin Visuals, Our Story",
       "path": "/about-austin-visuals/",
       "url": "https://austinvisuals.com/about-austin-visuals/",
-      "views": 61,
-      "users": 50,
-      "duration_sec": 191,
-      "bounce": 19.0,
+      "views": 58,
+      "users": 49,
+      "duration_sec": 203,
+      "bounce": 18.5,
       "new_users": 6
     },
     {
       "title": "3D Animation Services for Business | Animation Company",
       "path": "/3d-animation-services/",
       "url": "https://austinvisuals.com/3d-animation-services/",
-      "views": 38,
-      "users": 35,
-      "duration_sec": 26,
-      "bounce": 47.5,
-      "new_users": 24
-    },
-    {
-      "title": "Understanding Anime Production Cost",
-      "path": "/anime-production-cost/",
-      "url": "https://austinvisuals.com/anime-production-cost/",
-      "views": 34,
+      "views": 36,
       "users": 33,
-      "duration_sec": 69,
-      "bounce": 52.8,
-      "new_users": 30
+      "duration_sec": 27,
+      "bounce": 47.4,
+      "new_users": 23
     },
     {
       "title": "How to Create Animated NFT Art ?",
       "path": "/how-to-create-animated-nft-art/",
       "url": "https://austinvisuals.com/how-to-create-animated-nft-art/",
-      "views": 33,
-      "users": 31,
-      "duration_sec": 92,
-      "bounce": 71.0,
-      "new_users": 30
+      "views": 35,
+      "users": 32,
+      "duration_sec": 101,
+      "bounce": 68.8,
+      "new_users": 31
     },
     {
-      "title": "Discover Our Austin Visuals Clients",
-      "path": "/austin-visuals-clients/",
-      "url": "https://austinvisuals.com/austin-visuals-clients/",
-      "views": 25,
-      "users": 23,
-      "duration_sec": 193,
-      "bounce": 12.0,
-      "new_users": 5
+      "title": "Understanding Anime Production Cost",
+      "path": "/anime-production-cost/",
+      "url": "https://austinvisuals.com/anime-production-cost/",
+      "views": 33,
+      "users": 32,
+      "duration_sec": 71,
+      "bounce": 51.4,
+      "new_users": 29
+    },
+    {
+      "title": "How much does Animation Cost? Animated Video Pricing",
+      "path": "/how-much-does-an-animated-video-cost-animation-pricing/",
+      "url": "https://austinvisuals.com/how-much-does-an-animated-video-cost-animation-pricing/",
+      "views": 26,
+      "users": 22,
+      "duration_sec": 81,
+      "bounce": 16.0,
+      "new_users": 4
     }
   ],
   "traffic_sources": [
     {
-      "channel": "Direct",
-      "sessions": 1296
+      "channel": "Organic Search",
+      "sessions": 1255
     },
     {
-      "channel": "Organic Search",
-      "sessions": 1267
+      "channel": "Direct",
+      "sessions": 1181
     },
     {
       "channel": "Referral",
-      "sessions": 140
-    },
-    {
-      "channel": "Paid Search",
       "sessions": 138
     },
     {
+      "channel": "Paid Search",
+      "sessions": 136
+    },
+    {
       "channel": "Organic Social",
-      "sessions": 112
+      "sessions": 113
     },
     {
       "channel": "Unassigned",
-      "sessions": 57
+      "sessions": 54
     },
     {
       "channel": "Organic Video",
@@ -302,22 +302,17 @@
     {
       "city": "Austin",
       "region": "Texas",
-      "sessions": 86
+      "sessions": 88
     },
     {
       "city": "Dallas",
       "region": "Texas",
-      "sessions": 84
+      "sessions": 81
     },
     {
       "city": "New York",
       "region": "New York",
-      "sessions": 77
-    },
-    {
-      "city": "Hoa Binh",
-      "region": "Hoa Binh",
-      "sessions": 54
+      "sessions": 76
     },
     {
       "city": "Houston",
@@ -325,74 +320,79 @@
       "sessions": 54
     },
     {
+      "city": "Hoa Binh",
+      "region": "Hoa Binh",
+      "sessions": 52
+    },
+    {
       "city": "Los Angeles",
       "region": "California",
-      "sessions": 52
+      "sessions": 50
     },
     {
       "city": "Ashburn",
       "region": "Virginia",
-      "sessions": 40
+      "sessions": 49
+    },
+    {
+      "city": "London",
+      "region": "England",
+      "sessions": 28
     },
     {
       "city": "Shanghai",
       "region": "Shanghai",
-      "sessions": 34
-    },
-    {
-      "city": "Bayingolin Mongol Autonomous Prefecture",
-      "region": "Xinjiang",
-      "sessions": 30
+      "sessions": 27
     }
   ],
   "devices": [
     {
       "device": "desktop",
-      "sessions": 2338,
-      "views": 3291
+      "sessions": 2212,
+      "views": 3136
     },
     {
       "device": "mobile",
-      "sessions": 640,
-      "views": 840
+      "sessions": 638,
+      "views": 838
     },
     {
       "device": "tablet",
-      "sessions": 32,
-      "views": 62
+      "sessions": 33,
+      "views": 63
     }
   ],
   "hours_of_day": [
-    100,
-    95,
-    106,
-    135,
-    112,
-    119,
-    111,
-    151,
-    160,
-    181,
-    170,
-    202,
-    160,
-    177,
-    146,
-    134,
-    101,
-    120,
+    94,
+    94,
+    102,
+    130,
+    109,
     116,
-    103,
-    96,
-    141,
-    89,
-    86
+    108,
+    150,
+    149,
+    168,
+    168,
+    209,
+    154,
+    171,
+    147,
+    127,
+    92,
+    119,
+    118,
+    97,
+    82,
+    111,
+    83,
+    80
   ],
   "suggestions": [
-    "Peak traffic is around 11:00 AM — schedule social posts and ad campaigns to run 1-2 hours before peak to catch visitors actively browsing.",
-    "21% of visitors are on mobile. Make sure every contact form and phone number is easy to tap on a phone screen.",
-    "Top traffic source is Direct — double down on SEO and content that targets your best-performing keywords to grow this channel.",
-    "How to Create Animated NFT Art ? has a 71.0% bounce rate — add a stronger call-to-action or internal links to keep visitors exploring.",
-    "Your top page (Full-Service 3D Animation Studio | 2D & 3D Animation Services) gets 998 views but if it has no contact form or phone number visible, you're losing leads. Add a CTA above the fold."
+    "Peak traffic is around 11:00 \u00e2\u20ac\u201d schedule social posts and ad campaigns to run 1-2 hours before peak to catch visitors actively browsing.",
+    "22% of visitors are on mobile. Make sure every contact form and phone number is easy to tap on a phone screen.",
+    "Top traffic source is Organic Search \u00e2\u20ac\u201d double down on SEO and content that targets your best-performing keywords to grow this channel.",
+    "Your top page (Full-Service 3D Animation Studio | 2D & 3D Animation Services) gets 1005 views but if it has no contact form or phone number visible, you're losing leads. Add a CTA above the fold.",
+    "Consider adding a short contact form or \"Get a Quote\" button to your top 3 portfolio pages \u00e2\u20ac\u201d visitors are already interested."
   ]
 }
