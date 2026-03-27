@@ -23,6 +23,23 @@
     text-decoration: none;
     margin-bottom: 10px;
   }
+  .personal-link-wrap { display:flex; justify-content:flex-end; }
+  .personal-link {
+    display: inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:12px;
+    font-weight:600;
+    color:#1d1d1f;
+    text-decoration:none;
+    background:#fff;
+    border:1px solid #e5e5ec;
+    border-radius:99px;
+    padding:6px 14px;
+    box-shadow:0 1px 3px rgba(0,0,0,0.05);
+    margin-bottom:18px;
+  }
+  .personal-link:hover { background:#f8f8f9; }
   .back-link:hover { opacity: 0.85; }
   .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: #6e6e73; text-transform: uppercase; margin-bottom: 6px; }
   h1 { font-size: 34px; font-weight: 800; letter-spacing: -0.8px; margin-bottom: 8px; }
@@ -143,6 +160,9 @@
   <div class="eyebrow">⚡ Austin Visuals</div>
   <h1>Company Tasks</h1>
   <p class="sub">Company-wide priorities at a glance. Use the filter to view a specific teammate’s queue, or stay on “All” to see everything Matt and Nancy are tracking.</p>
+  <div class="personal-link-wrap">
+    <a href="tasks-personal.html" class="personal-link">🔒 Personal View (Google Login)</a>
+  </div>
 
   <div class="urgent-panel">
     <h3>Top Priority</h3>
