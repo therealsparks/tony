@@ -39,6 +39,19 @@
   .urgent-panel h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: #6e6e73; margin-bottom: 12px; }
   .urgent-item { display:flex; justify-content:space-between; align-items:flex-start; padding:10px 0; border-bottom:1px solid #f2f2f4; }
   .urgent-item:last-child { border-bottom:none; }
+  .urgent-item.extra { display:none; }
+  .urgent-panel.expanded .urgent-item.extra { display:flex; }
+  .urgent-toggle {
+    margin-top: 16px;
+    border:none;
+    background:#f2f2f7;
+    color:#1d1d1f;
+    font-size:12px;
+    font-weight:600;
+    border-radius:99px;
+    padding:8px 16px;
+    cursor:pointer;
+  }
   .urgent-main { max-width: 80%; }
   .urgent-title { font-size: 15px; font-weight: 700; margin-bottom:4px; }
   .urgent-desc { font-size: 13px; color:#4d4d50; line-height:1.5; }
@@ -156,6 +169,32 @@
       </div>
       <span class="status-badge">Active</span>
     </div>
+
+    <div class="urgent-item extra">
+      <div class="urgent-main">
+        <div class="urgent-title">Tony@ Passive CC Logging</div>
+        <div class="urgent-desc">Complete the listener so invoices + links are filed the moment Matt/Nancy CC Tony. Needed before we open the inbox to the broader crew.</div>
+        <div class="urgent-meta">
+          <span>Owner: Tony</span>
+          <span>Due: Week of Apr 1</span>
+        </div>
+      </div>
+      <span class="status-badge">Queued</span>
+    </div>
+
+    <div class="urgent-item extra">
+      <div class="urgent-main">
+        <div class="urgent-title">Gateway Uptime Hardening</div>
+        <div class="urgent-desc">Finish Matt’s Task Scheduler + power tweaks so Telegram/Gateway doesn’t drop when the laptop closes.</div>
+        <div class="urgent-meta">
+          <span>Owner: Matt</span>
+          <span>Due: After travel leg</span>
+        </div>
+      </div>
+      <span class="status-badge">Queued</span>
+    </div>
+
+    <button class="urgent-toggle" id="urgentToggle">Show more</button>
   </div>
 
   <div class="filter-bar">
@@ -328,6 +367,22 @@
       });
     });
   });
+
+  const urgentPanel = document.querySelector('.urgent-panel');
+  const urgentToggle = document.getElementById('urgentToggle');
+  if (urgentPanel && urgentToggle) {
+    const extras = urgentPanel.querySelectorAll('.urgent-item.extra');
+    if (extras.length === 0) {
+      urgentToggle.style.display = 'none';
+    } else {
+      const collapsedLabel = `Show more (${extras.length} hidden)`;
+      urgentToggle.textContent = collapsedLabel;
+      urgentToggle.addEventListener('click', () => {
+        urgentPanel.classList.toggle('expanded');
+        urgentToggle.textContent = urgentPanel.classList.contains('expanded') ? 'Show less' : collapsedLabel;
+      });
+    }
+  }
 </script>
 </body>
 </html>
