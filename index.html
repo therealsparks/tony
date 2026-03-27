@@ -57,6 +57,11 @@
   .stat-button span { font-size: 12px; }
   .stat-button:hover { opacity: 0.92; }
 
+  @media (min-width: 700px) {
+    .stats { flex-wrap: nowrap; }
+    .stats .stat-button { margin-left: auto; }
+  }
+
   .internal-links {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -237,9 +242,8 @@
 
   <div class="stats">
     <div class="stat-pill"><span class="dot dot-green"></span> 21 Live Skills</div>
-    <div class="stat-pill">5 Categories</div>
+    <div class="stat-pill"><span class="dot dot-green"></span> Kling - Live</div>
     <a class="stat-button" href="tasks.html">Tasks →</a>
-    <div class="stat-pill"><span class="dot dot-green"></span> Kling Video Automation · Live</div>
   </div>
 
   <!-- ── DROPBOX ── -->
