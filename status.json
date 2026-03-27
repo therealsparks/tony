@@ -1,11 +1,31 @@
 {
   "status": "online",
-  "last_seen": "2026-03-27T04:57:26Z",
+  "last_seen": "2026-03-27T04:59:59Z",
   "message": "All systems running normally.",
   "checks": {
     "email_handler": "ok",
     "dropbox": "ok",
     "analytics": "ok",
     "competitor_brief": "ok"
-  }
+  },
+  "known_issues": [
+    {
+      "id": "landon-alerts",
+      "title": "Landon Dropbox alerts paused",
+      "opened": "2026-03-26T23:35:00-05:00",
+      "impact": "Hourly Dropbox alerts for Landon Lockwood are paused until the cron job clears its error state.",
+      "status": "watching fix",
+      "owner": "Tony",
+      "notes": "Folder-not-found errors were patched at 12:12 AM CT on Mar 27; next cron cycle should confirm recovery."
+    },
+    {
+      "id": "analytics-pull",
+      "title": "Daily Analytics Pull failing",
+      "opened": "2026-03-26T11:00:00-05:00",
+      "impact": "Website analytics dashboard may lag by ~24 hours until the GA4 pull succeeds.",
+      "status": "investigating",
+      "owner": "Tony",
+      "notes": "GA4 API credentials are being rotated; rerun scheduled with new service account."
+    }
+  ]
 }
