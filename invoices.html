@@ -111,17 +111,17 @@
     <div class="summary">
       <div class="pill">
         <div class="pill-label">Sent This Month</div>
-        <div class="pill-val">2</div>
+        <div class="pill-val">3</div>
         <div class="pill-sub">invoices out</div>
       </div>
       <div class="pill">
         <div class="pill-label">Awaiting Payment</div>
-        <div class="pill-val" style="color:#9a6800;">3</div>
+        <div class="pill-val" style="color:#9a6800;">5</div>
         <div class="pill-sub">milestones open</div>
       </div>
       <div class="pill">
         <div class="pill-label">Paid This Month</div>
-        <div class="pill-val" style="color:#1a7a46;">1</div>
+        <div class="pill-val" style="color:#1a7a46;">0</div>
         <div class="pill-sub">cleared deposits</div>
       </div>
       <div class="pill">
@@ -155,19 +155,19 @@
       <div class="card-detail">
         <div class="milestone open">
           <div class="milestone-header" onclick="this.parentElement.classList.toggle('open')">
-            <div class="m-dot" style="background:#34c759;"></div>
+            <div class="m-dot" style="background:#ff9f0a;"></div>
             <div class="m-name">Invoice AV-GD-001 — 50% Deposit</div>
-            <div class="m-amount">Cleared</div>
-            <div class="m-status"><span class="badge badge-paid">Paid ✓</span></div>
+            <div class="m-amount">Awaiting</div>
+            <div class="m-status"><span class="badge badge-pending">Awaiting</span></div>
             <span class="m-chevron">▼</span>
           </div>
           <div class="milestone-log">
             <div class="log-title">Activity Log</div>
-            <div class="log-entry"><div class="log-date">13 Mar</div><div class="log-text">Invoice sent to Craig @ Gaurdian (Nancy log entry).</div></div>
-            <div class="log-entry"><div class="log-date">17 Mar</div><div class="log-text">ACH received via QuickBooks. Deposit marked paid.</div></div>
-            <div class="log-entry"><div class="log-date">18 Mar</div><div class="log-text">Funds cleared; storyboard sprint underway (27 boards in review).</div></div>
+            <div class="log-entry"><div class="log-date">13 Mar</div><div class="log-text">Invoice emailed to Craig @ Gaurdian (per Nancy’s tracker).</div></div>
+            <div class="log-entry"><div class="log-date">17 Mar</div><div class="log-text">Client replied “sending today” but ACH has not posted yet.</div></div>
+            <div class="log-entry"><div class="log-date">—</div><div class="log-text">Follow-up daily until funds land. Animation work paused after boards.</div></div>
             <div class="copyable-label">Reference</div>
-            <div class="copyable">AV-GD-001 · 50% deposit · Paid 17 Mar 2026</div>
+            <div class="copyable">AV-GD-001 · 50% deposit · Awaiting payment</div>
           </div>
         </div>
 
@@ -198,6 +198,46 @@
             <div class="log-title">Notes</div>
             <div class="log-entry"><div class="log-date">18 Apr due</div><div class="log-text">Final delivery target 15 Apr; hard deadline 18 Apr per Nancy’s tracker.</div></div>
             <div class="log-entry"><div class="log-date">—</div><div class="log-text">Send along with final MP4 + Dropbox archive. Include review survey link.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- C-Vision -->
+    <div class="project-card">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div class="status-dot dot-pending"></div>
+        <div class="card-main">
+          <div class="card-name">C-Vision Horse Race Party Video <span class="badge badge-pending">Awaiting</span></div>
+          <div class="card-meta">Deposit invoice sent · client says “money is on the way” but no ACH yet</div>
+        </div>
+        <div class="card-right">
+          <div class="card-amount">Next: 50% deposit</div>
+          <div class="card-amount-sub">awaiting funds</div>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="card-detail">
+        <div class="milestone open">
+          <div class="milestone-header" onclick="this.parentElement.classList.toggle('open')">
+            <div class="m-dot" style="background:#ff9f0a;"></div>
+            <div class="m-name">Invoice AV-CV-001 — 50% Deposit</div>
+            <div class="m-amount">Awaiting</div>
+            <div class="m-status"><span class="badge badge-pending">Pending</span></div>
+            <span class="m-chevron">▼</span>
+          </div>
+          <div class="milestone-log">
+            <div class="log-title">Activity Log</div>
+            <div class="log-entry"><div class="log-date">18 Mar</div><div class="log-text">Invoice + DocuSign treatment emailed to Rachel (Nancy log entry).</div></div>
+            <div class="log-entry"><div class="log-date">22 Mar</div><div class="log-text">Client replied “sending start payment now” — still no ACH as of Mar 27.</div></div>
+            <div class="log-entry"><div class="log-date">—</div><div class="log-text">Follow-up once per day until funds land; production stays in script phase.</div></div>
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-header">
+            <div class="m-dot" style="background:#aeaeb2;"></div>
+            <div class="m-name">Invoice AV-CV-002 — Final 50% <span class="coming-soon-tag">Upcoming</span></div>
+            <div class="m-amount">—</div>
           </div>
         </div>
       </div>
