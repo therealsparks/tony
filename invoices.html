@@ -132,14 +132,14 @@
     </div>
 
     <div class="filters">
-      <button class="filter-btn active">All Projects</button>
-      <button class="filter-btn">Awaiting Payment</button>
-      <button class="filter-btn">Paid</button>
-      <button class="filter-btn">Upcoming</button>
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="awaiting">Awaiting Payment</button>
+      <button class="filter-btn" data-filter="paid">Paid</button>
+      <button class="filter-btn" data-filter="upcoming">Upcoming</button>
     </div>
 
     <!-- Gaurdian -->
-    <div class="project-card open">
+    <div class="project-card open" data-tags="awaiting">
       <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
         <div class="status-dot dot-pending"></div>
         <div class="card-main">
@@ -204,7 +204,7 @@
     </div>
 
     <!-- C-Vision -->
-    <div class="project-card">
+    <div class="project-card" data-tags="awaiting">
       <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
         <div class="status-dot dot-pending"></div>
         <div class="card-main">
@@ -244,7 +244,7 @@
     </div>
 
     <!-- Biosqueeze 5 -->
-    <div class="project-card">
+    <div class="project-card" data-tags="awaiting">
       <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
         <div class="status-dot dot-pending"></div>
         <div class="card-main">
@@ -302,7 +302,7 @@
     </div>
 
     <!-- Biosqueeze 1 (paid) -->
-    <div class="project-card">
+    <div class="project-card" data-tags="paid">
       <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
         <div class="status-dot dot-paid"></div>
         <div class="card-main">
@@ -346,7 +346,7 @@
     </div>
 
     <!-- Landon Lockwood -->
-    <div class="project-card">
+    <div class="project-card" data-tags="upcoming">
       <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
         <div class="status-dot dot-upcoming"></div>
         <div class="card-main">
@@ -424,6 +424,26 @@ const saved = localStorage.getItem(STORAGE_KEY);
 if (saved === PASSCODE) {
   showInvoices();
 }
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+function applyFilter(filter) {
+  projectCards.forEach(card => {
+    const tags = card.dataset.tags || '';
+    card.style.display = (filter === 'all' || tags.includes(filter)) ? '' : 'none';
+  });
+}
+
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyFilter(btn.dataset.filter || 'all');
+  });
+});
+
+applyFilter('all');
 </script>
 </body>
 </html>
