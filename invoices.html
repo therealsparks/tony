@@ -14,19 +14,25 @@
   .sub { font-size: 13px; color: #6e6e73; margin-bottom: 6px; }
   .notice { display: inline-flex; align-items: center; gap: 6px; background: #fff8e6; border-radius: 99px; padding: 5px 12px; font-size: 11px; font-weight: 600; color: #9a6800; margin-bottom: 22px; }
 
-  /* Summary pills */
+  #access-card { background: #fff; border-radius: 16px; padding: 18px 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); margin-bottom: 22px; border: 1px solid #ebecef; }
+  .lock-heading { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+  .lock-desc { font-size: 12px; color: #6e6e73; margin-bottom: 12px; }
+  .lock-form { display: flex; gap: 10px; flex-wrap: wrap; }
+  .lock-form input { flex: 1; min-width: 200px; border-radius: 10px; border: 1px solid #d2d5da; padding: 10px 12px; font-size: 13px; }
+  .lock-form button { border: none; background: #1d1d1f; color: #fff; font-weight: 700; border-radius: 10px; padding: 10px 16px; cursor: pointer; }
+  #pass-error { font-size: 12px; color: #ff3b30; margin-top: 10px; display: none; }
+  #invoice-content.locked { display: none; }
+
   .summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px; }
   .pill { background: #fff; border-radius: 14px; padding: 14px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
   .pill-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #aeaeb2; margin-bottom: 5px; }
   .pill-val { font-size: 22px; font-weight: 800; color: #1d1d1f; }
   .pill-sub { font-size: 11px; color: #aeaeb2; margin-top: 2px; }
 
-  /* Filters */
   .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
   .filter-btn { padding: 6px 14px; border-radius: 99px; font-size: 12px; font-weight: 600; cursor: pointer; border: none; background: #fff; color: #6e6e73; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
   .filter-btn.active { background: #1d1d1f; color: #fff; }
 
-  /* Project cards */
   .project-card { background: #fff; border-radius: 16px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); overflow: hidden; }
   .card-header { display: flex; align-items: center; gap: 12px; padding: 16px 20px; cursor: pointer; }
   .card-header:hover { background: #fafafa; }
@@ -49,11 +55,9 @@
   .chevron { font-size: 11px; color: #aeaeb2; margin-left: 8px; transition: transform 0.15s; flex-shrink: 0; }
   .project-card.open .chevron { transform: rotate(180deg); }
 
-  /* Level 1 expand */
   .card-detail { display: none; border-top: 1px solid #f2f2f7; }
   .project-card.open .card-detail { display: block; }
 
-  /* Milestone rows */
   .milestone { padding: 12px 20px 12px 40px; border-bottom: 1px solid #f7f7f7; cursor: pointer; position: relative; }
   .milestone:last-child { border-bottom: none; }
   .milestone-header { display: flex; align-items: center; gap: 10px; }
@@ -64,13 +68,12 @@
   .m-chevron { font-size: 9px; color: #aeaeb2; margin-left: 6px; transition: transform 0.15s; flex-shrink: 0; }
   .milestone.open .m-chevron { transform: rotate(180deg); }
 
-  /* Level 2 expand — log */
   .milestone-log { display: none; background: #f7f8fa; border-radius: 10px; margin: 10px 0 4px 0; padding: 12px 14px; }
   .milestone.open .milestone-log { display: block; }
   .log-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #aeaeb2; margin-bottom: 8px; }
   .log-entry { display: flex; gap: 10px; align-items: baseline; padding: 5px 0; border-bottom: 1px solid #eeeff2; font-size: 12px; }
   .log-entry:last-child { border-bottom: none; }
-  .log-date { color: #aeaeb2; flex-shrink: 0; min-width: 80px; font-size: 11px; }
+  .log-date { color: #aeaeb2; flex-shrink: 0; min-width: 90px; font-size: 11px; }
   .log-text { color: #3a3a3c; flex: 1; }
   .log-check { color: #1a7a46; font-size: 11px; margin-left: 4px; }
   .copyable-label { font-size: 10px; color: #aeaeb2; margin: 10px 0 4px; }
@@ -82,235 +85,305 @@
     .summary { grid-template-columns: 1fr 1fr; }
     .card-amount { font-size: 13px; }
     .milestone { padding-left: 28px; }
+    .lock-form { flex-direction: column; }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <a class="back" href="project-status.html">← Back to Project Status</a>
+  <a class="back" href="index.html">← Back to Tony</a>
   <div class="eyebrow">⚡ Austin Visuals</div>
   <h1>Invoice Tracker</h1>
-  <div class="sub">Project billing status · click a project to expand · click a milestone for the full log</div>
-  <div class="notice">🔒 Login required for real data — coming soon &nbsp;·&nbsp; Showing placeholder layout only</div>
+  <div class="sub">Live billing notes pulled from Nancy’s status tracker export · last refreshed 26 Mar 2026 · QuickBooks sync coming soon</div>
+  <div class="notice">🔒 Protected — enter the shared passcode to view current invoice activity</div>
 
-  <!-- Summary -->
-  <div class="summary">
-    <div class="pill">
-      <div class="pill-label">Sent This Month</div>
-      <div class="pill-val">X</div>
-      <div class="pill-sub">invoices out</div>
+  <div id="access-card">
+    <div class="lock-heading">Enter passcode  to unlock</div>
+    <div class="lock-desc">Invoice data stays internal. Use the 6-digit code Matt shared (ping him/Nancy if you need it reset).</div>
+    <div class="lock-form">
+      <input type="password" id="invoice-pass" placeholder="Passcode" autocomplete="off">
+      <button type="button" onclick="unlockInvoices()">Unlock</button>
     </div>
-    <div class="pill">
-      <div class="pill-label">Awaiting Payment</div>
-      <div class="pill-val" style="color:#9a6800;">X</div>
-      <div class="pill-sub">outstanding</div>
-    </div>
-    <div class="pill">
-      <div class="pill-label">Paid This Month</div>
-      <div class="pill-val" style="color:#1a7a46;">X</div>
-      <div class="pill-sub">collected</div>
-    </div>
-    <div class="pill">
-      <div class="pill-label">Overdue</div>
-      <div class="pill-val" style="color:#b91c1c;">X</div>
-      <div class="pill-sub">need follow-up</div>
-    </div>
+    <div id="pass-error">Incorrect code. Try again or ping Matt.</div>
   </div>
 
-  <!-- Filters -->
-  <div class="filters">
-    <button class="filter-btn active">All Projects</button>
-    <button class="filter-btn">Awaiting Payment</button>
-    <button class="filter-btn">Paid</button>
-    <button class="filter-btn">Overdue</button>
-    <button class="filter-btn">Upcoming</button>
-  </div>
-
-  <!-- Project 1 — mixed status example -->
-  <div class="project-card open">
-    <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
-      <div class="status-dot dot-pending"></div>
-      <div class="card-main">
-        <div class="card-name">Gaurdian Decommissioning <span class="badge badge-pending">Awaiting</span></div>
-        <div class="card-meta">Invoice #1 paid · Invoice #2 pending · Invoice #3 upcoming</div>
+  <div id="invoice-content" class="locked">
+    <div class="summary">
+      <div class="pill">
+        <div class="pill-label">Sent This Month</div>
+        <div class="pill-val">2</div>
+        <div class="pill-sub">invoices out</div>
       </div>
-      <div class="card-right">
-        <div class="card-amount">$X,XXX collected</div>
-        <div class="card-amount-sub">of $XX,XXX total</div>
+      <div class="pill">
+        <div class="pill-label">Awaiting Payment</div>
+        <div class="pill-val" style="color:#9a6800;">3</div>
+        <div class="pill-sub">milestones open</div>
       </div>
-      <span class="chevron">▼</span>
+      <div class="pill">
+        <div class="pill-label">Paid This Month</div>
+        <div class="pill-val" style="color:#1a7a46;">1</div>
+        <div class="pill-sub">cleared deposits</div>
+      </div>
+      <div class="pill">
+        <div class="pill-label">Overdue</div>
+        <div class="pill-val" style="color:#b91c1c;">0</div>
+        <div class="pill-sub">follow-ups required</div>
+      </div>
     </div>
-    <div class="card-detail">
 
-      <div class="milestone open">
-        <div class="milestone-header" onclick="this.parentElement.classList.toggle('open')">
-          <div class="m-dot" style="background:#34c759;"></div>
-          <div class="m-name">Invoice #XXXX — 50% Deposit</div>
-          <div class="m-amount">$X,XXX</div>
-          <div class="m-status"><span class="badge badge-paid">Paid ✓</span></div>
-          <span class="m-chevron">▼</span>
-        </div>
-        <div class="milestone-log">
-          <div class="log-title">Activity Log</div>
-          <div class="log-entry"><div class="log-date">XX/XX/XXXX</div><div class="log-text">Invoice sent to client. <span class="log-check">✓</span></div></div>
-          <div class="log-entry"><div class="log-date">XX/XX/XXXX</div><div class="log-text">Client acknowledged receipt. <span class="log-check">✓</span></div></div>
-          <div class="log-entry"><div class="log-date">XX/XX/XXXX</div><div class="log-text">Payment received. <span class="log-check">✓</span></div></div>
-          <div class="log-entry"><div class="log-date">XX/XX/XXXX</div><div class="log-text">Funds cleared in account. <span class="log-check">✓</span></div></div>
-          <div class="copyable-label">Invoice reference — click to select all and copy</div>
-          <div class="copyable">Invoice #XXXX · Amount: $X,XXX · Sent: XX/XX/XXXX · Paid: XX/XX/XXXX · Cleared: XX/XX/XXXX · Ref: XXXXXXXXX</div>
-        </div>
-      </div>
-
-      <div class="milestone">
-        <div class="milestone-header" onclick="this.parentElement.classList.toggle('open')">
-          <div class="m-dot" style="background:#ff9f0a;"></div>
-          <div class="m-name">Invoice #XXXX — 25% Milestone <span class="coming-soon-tag">Not Sent Yet</span></div>
-          <div class="m-amount">$X,XXX</div>
-          <div class="m-status"><span class="badge badge-pending">Pending</span></div>
-          <span class="m-chevron">▼</span>
-        </div>
-        <div class="milestone-log">
-          <div class="log-title">Activity Log</div>
-          <div class="log-entry"><div class="log-date">—</div><div class="log-text">Invoice not yet created. Awaiting milestone trigger.</div></div>
-        </div>
-      </div>
-
-      <div class="milestone">
-        <div class="milestone-header" onclick="this.parentElement.classList.toggle('open')">
-          <div class="m-dot" style="background:#aeaeb2;"></div>
-          <div class="m-name">Invoice #XXXX — Final 25% <span class="coming-soon-tag">Upcoming</span></div>
-          <div class="m-amount">$X,XXX</div>
-          <div class="m-status"><span class="badge badge-upcoming">Upcoming</span></div>
-          <span class="m-chevron">▼</span>
-        </div>
-        <div class="milestone-log">
-          <div class="log-title">Activity Log</div>
-          <div class="log-entry"><div class="log-date">—</div><div class="log-text">Due on final delivery and client approval.</div></div>
-        </div>
-      </div>
-
+    <div class="filters">
+      <button class="filter-btn active">All Projects</button>
+      <button class="filter-btn">Awaiting Payment</button>
+      <button class="filter-btn">Paid</button>
+      <button class="filter-btn">Upcoming</button>
     </div>
-  </div>
 
-  <!-- Project 2 — all paid -->
-  <div class="project-card">
-    <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
-      <div class="status-dot dot-paid"></div>
-      <div class="card-main">
-        <div class="card-name">[Project Name] <span class="badge badge-paid">Fully Paid</span></div>
-        <div class="card-meta">All invoices paid and cleared</div>
-      </div>
-      <div class="card-right">
-        <div class="card-amount">$X,XXX</div>
-        <div class="card-amount-sub">total collected</div>
-      </div>
-      <span class="chevron">▼</span>
-    </div>
-    <div class="card-detail">
-      <div class="milestone">
-        <div class="milestone-header" onclick="this.parentElement.classList.toggle('open')">
-          <div class="m-dot" style="background:#34c759;"></div>
-          <div class="m-name">Invoice #XXXX — 50% Deposit</div>
-          <div class="m-amount">$X,XXX</div>
-          <div class="m-status"><span class="badge badge-paid">Paid ✓</span></div>
-          <span class="m-chevron">▼</span>
+    <!-- Gaurdian -->
+    <div class="project-card open">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div class="status-dot dot-pending"></div>
+        <div class="card-main">
+          <div class="card-name">Gaurdian Decommissioning <span class="badge badge-pending">Awaiting</span></div>
+          <div class="card-meta">Deposit cleared 17 Mar · Storyboard + final invoices queued</div>
         </div>
-        <div class="milestone-log">
-          <div class="log-title">Activity Log</div>
-          <div class="log-entry"><div class="log-date">XX/XX/XXXX</div><div class="log-text">Invoice sent and paid. <span class="log-check">✓</span></div></div>
-          <div class="copyable-label">Invoice reference</div>
-          <div class="copyable">Invoice #XXXX · $X,XXX · Paid: XX/XX/XXXX</div>
+        <div class="card-right">
+          <div class="card-amount">Next: 25% storyboard</div>
+          <div class="card-amount-sub">target week of Mar 24</div>
         </div>
+        <span class="chevron">▼</span>
       </div>
-      <div class="milestone">
-        <div class="milestone-header" onclick="this.parentElement.classList.toggle('open')">
-          <div class="m-dot" style="background:#34c759;"></div>
-          <div class="m-name">Invoice #XXXX — Final Balance</div>
-          <div class="m-amount">$X,XXX</div>
-          <div class="m-status"><span class="badge badge-paid">Paid ✓</span></div>
-          <span class="m-chevron">▼</span>
+      <div class="card-detail">
+        <div class="milestone open">
+          <div class="milestone-header" onclick="this.parentElement.classList.toggle('open')">
+            <div class="m-dot" style="background:#34c759;"></div>
+            <div class="m-name">Invoice AV-GD-001 — 50% Deposit</div>
+            <div class="m-amount">Cleared</div>
+            <div class="m-status"><span class="badge badge-paid">Paid ✓</span></div>
+            <span class="m-chevron">▼</span>
+          </div>
+          <div class="milestone-log">
+            <div class="log-title">Activity Log</div>
+            <div class="log-entry"><div class="log-date">13 Mar</div><div class="log-text">Invoice sent to Craig @ Gaurdian (Nancy log entry).</div></div>
+            <div class="log-entry"><div class="log-date">17 Mar</div><div class="log-text">ACH received via QuickBooks. Deposit marked paid.</div></div>
+            <div class="log-entry"><div class="log-date">18 Mar</div><div class="log-text">Funds cleared; storyboard sprint underway (27 boards in review).</div></div>
+            <div class="copyable-label">Reference</div>
+            <div class="copyable">AV-GD-001 · 50% deposit · Paid 17 Mar 2026</div>
+          </div>
         </div>
-        <div class="milestone-log">
-          <div class="log-title">Activity Log</div>
-          <div class="log-entry"><div class="log-date">XX/XX/XXXX</div><div class="log-text">Final payment received and cleared. <span class="log-check">✓</span></div></div>
-          <div class="copyable-label">Invoice reference</div>
-          <div class="copyable">Invoice #XXXX · $X,XXX · Paid: XX/XX/XXXX</div>
+
+        <div class="milestone">
+          <div class="milestone-header" onclick="this.parentElement.classList.toggle('open')">
+            <div class="m-dot" style="background:#ff9f0a;"></div>
+            <div class="m-name">Invoice AV-GD-002 — 25% Storyboards</div>
+            <div class="m-amount">Pending</div>
+            <div class="m-status"><span class="badge badge-pending">Pending</span></div>
+            <span class="m-chevron">▼</span>
+          </div>
+          <div class="milestone-log">
+            <div class="log-title">Planned send</div>
+            <div class="log-entry"><div class="log-date">24 Mar (est)</div><div class="log-text">Issue once Craig signs off on 27 boards. Adam & Peter coordinating.</div></div>
+            <div class="log-entry"><div class="log-date">—</div><div class="log-text">Reminder: include storyboard approval memo + Dropbox link.</div></div>
+          </div>
+        </div>
+
+        <div class="milestone">
+          <div class="milestone-header" onclick="this.parentElement.classList.toggle('open')">
+            <div class="m-dot" style="background:#aeaeb2;"></div>
+            <div class="m-name">Invoice AV-GD-003 — Final 25%</div>
+            <div class="m-amount">Upcoming</div>
+            <div class="m-status"><span class="badge badge-upcoming">Upcoming</span></div>
+            <span class="m-chevron">▼</span>
+          </div>
+          <div class="milestone-log">
+            <div class="log-title">Notes</div>
+            <div class="log-entry"><div class="log-date">18 Apr due</div><div class="log-text">Final delivery target 15 Apr; hard deadline 18 Apr per Nancy’s tracker.</div></div>
+            <div class="log-entry"><div class="log-date">—</div><div class="log-text">Send along with final MP4 + Dropbox archive. Include review survey link.</div></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Project 3 — overdue -->
-  <div class="project-card">
-    <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
-      <div class="status-dot dot-overdue"></div>
-      <div class="card-main">
-        <div class="card-name">[Project Name] <span class="badge badge-overdue">Overdue</span></div>
-        <div class="card-meta">Invoice sent XX days ago — no response</div>
-      </div>
-      <div class="card-right">
-        <div class="card-amount">$X,XXX due</div>
-        <div class="card-amount-sub">payment overdue</div>
-      </div>
-      <span class="chevron">▼</span>
-    </div>
-    <div class="card-detail">
-      <div class="milestone">
-        <div class="milestone-header" onclick="this.parentElement.classList.toggle('open')">
-          <div class="m-dot" style="background:#ff3b30;"></div>
-          <div class="m-name">Invoice #XXXX — Balance Due</div>
-          <div class="m-amount">$X,XXX</div>
-          <div class="m-status"><span class="badge badge-overdue">Overdue</span></div>
-          <span class="m-chevron">▼</span>
+    <!-- Biosqueeze 5 -->
+    <div class="project-card">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div class="status-dot dot-pending"></div>
+        <div class="card-main">
+          <div class="card-name">Biosqueeze Project 5 — Underground Mine <span class="badge badge-pending">Collect</span></div>
+          <div class="card-meta">Project delivered · Meeting with Hayden the week of Mar 24 to hand off assets</div>
         </div>
-        <div class="milestone-log">
-          <div class="log-title">Activity Log</div>
-          <div class="log-entry"><div class="log-date">XX/XX/XXXX</div><div class="log-text">Invoice sent to client.</div></div>
-          <div class="log-entry"><div class="log-date">XX/XX/XXXX</div><div class="log-text">Follow-up sent — no response.</div></div>
-          <div class="log-entry"><div class="log-date">XX/XX/XXXX</div><div class="log-text" style="color:#b91c1c;">⚠ Payment now overdue. Escalate to Matt.</div></div>
-          <div class="copyable-label">Invoice reference</div>
-          <div class="copyable">Invoice #XXXX · $X,XXX · Sent: XX/XX/XXXX · Status: OVERDUE</div>
+        <div class="card-right">
+          <div class="card-amount">Awaiting final 25%</div>
+          <div class="card-amount-sub">ready to invoice</div>
         </div>
+        <span class="chevron">▼</span>
       </div>
-    </div>
-  </div>
+      <div class="card-detail">
+        <div class="milestone">
+          <div class="milestone-header" onclick="this.parentElement.classList.toggle('open')">
+            <div class="m-dot" style="background:#34c759;"></div>
+            <div class="m-name">Invoice AV-BSQ5-001 — 50% Deposit</div>
+            <div class="m-amount">Cleared</div>
+            <div class="m-status"><span class="badge badge-paid">Paid ✓</span></div>
+            <span class="m-chevron">▼</span>
+          </div>
+          <div class="milestone-log">
+            <div class="log-entry"><div class="log-date">Feb</div><div class="log-text">Deposit handled prior to production (see Nancy’s Feb status log).</div></div>
+          </div>
+        </div>
 
-  <!-- Project 4 — upcoming / not started -->
-  <div class="project-card">
-    <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
-      <div class="status-dot dot-upcoming"></div>
-      <div class="card-main">
-        <div class="card-name">[Project Name] <span class="badge badge-upcoming">Not Started</span></div>
-        <div class="card-meta">No invoices sent yet</div>
-      </div>
-      <div class="card-right">
-        <div class="card-amount">$—</div>
-        <div class="card-amount-sub">pending kickoff</div>
-      </div>
-      <span class="chevron">▼</span>
-    </div>
-    <div class="card-detail">
-      <div class="milestone">
-        <div class="milestone-header">
-          <div class="m-dot" style="background:#aeaeb2;"></div>
-          <div class="m-name">Invoice #1 — 50% Deposit <span class="coming-soon-tag">Coming Soon</span></div>
-          <div class="m-amount">$X,XXX</div>
+        <div class="milestone">
+          <div class="milestone-header" onclick="this.parentElement.classList.toggle('open')">
+            <div class="m-dot" style="background:#34c759;"></div>
+            <div class="m-name">Invoice AV-BSQ5-002 — 25% Interim</div>
+            <div class="m-amount">Cleared</div>
+            <div class="m-status"><span class="badge badge-paid">Paid ✓</span></div>
+            <span class="m-chevron">▼</span>
+          </div>
+          <div class="milestone-log">
+            <div class="log-entry"><div class="log-date">10 Mar</div><div class="log-text">Cleared after review edit set #2. Peter archived renders.</div></div>
+          </div>
         </div>
-      </div>
-      <div class="milestone">
-        <div class="milestone-header">
-          <div class="m-dot" style="background:#aeaeb2;"></div>
-          <div class="m-name">Invoice #2 — Final Balance <span class="coming-soon-tag">Coming Soon</span></div>
-          <div class="m-amount">$X,XXX</div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="footer">
-    ⚡ Tony · Austin Visuals Invoice Tracker · Placeholder data only · Real data via QuickBooks integration coming soon
-    <div style="margin-top:10px;"><a href="#" onclick="window.location.href='https://translate.google.com/translate?hl=vi&sl=en&tl=vi&u='+encodeURIComponent(window.location.href);return false;" style="font-size:11px;color:#aeaeb2;text-decoration:none;opacity:0.6;">🌐 Dich sang tieng Viet</a></div>
+        <div class="milestone">
+          <div class="milestone-header" onclick="this.parentElement.classList.toggle('open')">
+            <div class="m-dot" style="background:#ff9f0a;"></div>
+            <div class="m-name">Invoice AV-BSQ5-003 — Final 25%</div>
+            <div class="m-amount">Pending</div>
+            <div class="m-status"><span class="badge badge-pending">Pending</span></div>
+            <span class="m-chevron">▼</span>
+          </div>
+          <div class="milestone-log">
+            <div class="log-title">Next steps</div>
+            <div class="log-entry"><div class="log-date">25 Mar (target)</div><div class="log-text">Send after Hayden’s handoff meeting. Include file handoff confirmation + review request.</div></div>
+            <div class="log-entry"><div class="log-date">—</div><div class="log-text">Note from Nancy: “collect final project files from Peter, then invoice.”</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Biosqueeze 1 (paid) -->
+    <div class="project-card">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div class="status-dot dot-paid"></div>
+        <div class="card-main">
+          <div class="card-name">Biosqueeze Project 1 <span class="badge badge-paid">Paid</span></div>
+          <div class="card-meta">All milestones cleared · Needs file collection + review survey (per Nancy)</div>
+        </div>
+        <div class="card-right">
+          <div class="card-amount">$ — (cleared)</div>
+          <div class="card-amount-sub">no follow-up</div>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="card-detail">
+        <div class="milestone">
+          <div class="milestone-header" onclick="this.parentElement.classList.toggle('open')">
+            <div class="m-dot" style="background:#34c759;"></div>
+            <div class="m-name">Invoice AV-BSQ1-001 — 50% Deposit</div>
+            <div class="m-amount">Paid</div>
+            <div class="m-status"><span class="badge badge-paid">Paid ✓</span></div>
+            <span class="m-chevron">▼</span>
+          </div>
+          <div class="milestone-log">
+            <div class="log-entry"><div class="log-date">Jan</div><div class="log-text">Deposits for Biosqueeze series handled via ACH — confirmed in Nancy’s tracker.</div></div>
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-header" onclick="this.parentElement.classList.toggle('open')">
+            <div class="m-dot" style="background:#34c759;"></div>
+            <div class="m-name">Invoice AV-BSQ1-002 — Final Balance</div>
+            <div class="m-amount">Paid</div>
+            <div class="m-status"><span class="badge badge-paid">Paid ✓</span></div>
+            <span class="m-chevron">▼</span>
+          </div>
+          <div class="milestone-log">
+            <div class="log-entry"><div class="log-date">07 Mar</div><div class="log-text">Final payment confirmed. Nancy note: “Needs file collection from Peter and Google review survey.”</div></div>
+            <div class="copyable-label">Reference</div>
+            <div class="copyable">AV-BSQ1-002 · Final balance · Paid 07 Mar 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Landon Lockwood -->
+    <div class="project-card">
+      <div class="card-header" onclick="this.parentElement.classList.toggle('open')">
+        <div class="status-dot dot-upcoming"></div>
+        <div class="card-main">
+          <div class="card-name">Landon Lockwood — Cleopatra Visualization <span class="badge badge-upcoming">Upcoming</span></div>
+          <div class="card-meta">NDA signed · Discovery meeting Tue 24 Mar 2PM CT (Matt + Adam + Landon)</div>
+        </div>
+        <div class="card-right">
+          <div class="card-amount">Next: 50% deposit</div>
+          <div class="card-amount-sub">after scope lock</div>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="card-detail">
+        <div class="milestone">
+          <div class="milestone-header" onclick="this.parentElement.classList.toggle('open')">
+            <div class="m-dot" style="background:#aeaeb2;"></div>
+            <div class="m-name">Invoice AV-LL-001 — 50% Deposit <span class="coming-soon-tag">Not Sent</span></div>
+            <div class="m-amount">—</div>
+            <span class="m-chevron">▼</span>
+          </div>
+          <div class="milestone-log">
+            <div class="log-entry"><div class="log-date">24 Mar</div><div class="log-text">Discovery call booked. Prepare scope + estimate for Landon immediately after.</div></div>
+            <div class="log-entry"><div class="log-date">—</div><div class="log-text">Send DocuSign + invoice once treatment approved.</div></div>
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-header">
+            <div class="m-dot" style="background:#aeaeb2;"></div>
+            <div class="m-name">Invoice AV-LL-002 — Final 50% <span class="coming-soon-tag">Coming Soon</span></div>
+            <div class="m-amount">—</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      ⚡ Tony · Austin Visuals Invoice Tracker · Data source: Nancy’s status sheet export (Mar 26)
+      <div style="margin-top:10px;"><a href="#" onclick="window.location.href='https://translate.google.com/translate?hl=vi&sl=en&tl=vi&u='+encodeURIComponent(window.location.href);return false;" style="font-size:11px;color:#aeaeb2;text-decoration:none;opacity:0.6;">🌐 Dịch sang tiếng Việt</a></div>
+    </div>
   </div>
 </div>
+
+<script>
+const PASSCODE = '825482';
+const STORAGE_KEY = 'avInvoiceUnlock';
+const passInput = document.getElementById('invoice-pass');
+const passError = document.getElementById('pass-error');
+const invoiceContent = document.getElementById('invoice-content');
+const accessCard = document.getElementById('access-card');
+
+function showInvoices() {
+  invoiceContent.classList.remove('locked');
+  accessCard.style.display = 'none';
+}
+
+function unlockInvoices() {
+  const value = passInput.value.trim();
+  if (value === PASSCODE) {
+    localStorage.setItem(STORAGE_KEY, PASSCODE);
+    showInvoices();
+  } else {
+    passError.style.display = 'block';
+    passInput.value = '';
+    passInput.focus();
+  }
+}
+
+passInput.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    unlockInvoices();
+  }
+});
+
+const saved = localStorage.getItem(STORAGE_KEY);
+if (saved === PASSCODE) {
+  showInvoices();
+}
+</script>
 </body>
 </html>
