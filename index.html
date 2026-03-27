@@ -45,7 +45,8 @@
     gap: 10px;
     margin-bottom: 24px;
   }
-  .internal-links a {
+  .internal-links a,
+  .single-link a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,8 +62,11 @@
     border: 1px solid #e5e5ea;
     text-align: center;
   }
+  .single-link { margin-bottom: 16px; }
   @media (max-width: 640px) {
-    .internal-links { grid-template-columns: 1fr; }
+    .internal-links { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .internal-links a { font-size: 11px; padding: 10px 8px; }
+    .single-link a { width: 100%; }
   }
   .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
   .dot-green  { background: #34c759; box-shadow: 0 0 5px rgba(52,199,89,0.5); }
@@ -202,12 +206,15 @@
     </a>
   </div>
 
+  <div class="single-link">
+    <a href="invoices.html">🔒 Invoices</a>
+  </div>
+
   <!-- Internal pages (password protected) -->
   <div class="internal-links">
     <a href="av-process.html">🔒 SOP</a>
     <a href="directory.html">🔒 Directory</a>
     <a href="crm.html">🔒 CRM</a>
-    <a href="invoices.html" style="grid-column: 3;">🔒 Invoices</a>
   </div>
 
   <div class="stats">
