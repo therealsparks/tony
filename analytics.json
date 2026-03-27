@@ -1,20 +1,15 @@
 {
-  "updated": "2026-03-26 15:45 UTC",
+  "updated": "2026-03-27 15:45 UTC",
   "property": "Austin Visuals \u00e2\u20ac\u201d Matt",
   "overview": {
-    "sessions_7d": 619,
-    "sessions_prev_7d": 567,
-    "users_7d": 546,
-    "views_7d": 790,
-    "bounce_rate": 50.6,
-    "avg_session_sec": 95
+    "sessions_7d": 575,
+    "sessions_prev_7d": 564,
+    "users_7d": 515,
+    "views_7d": 879,
+    "bounce_rate": 49.4,
+    "avg_session_sec": 123
   },
   "trend_30d": [
-    {
-      "date": "02/24",
-      "sessions": 196,
-      "views": 250
-    },
     {
       "date": "02/25",
       "sessions": 160,
@@ -162,8 +157,13 @@
     },
     {
       "date": "03/26",
-      "sessions": 16,
-      "views": 17
+      "sessions": 76,
+      "views": 98
+    },
+    {
+      "date": "03/27",
+      "sessions": 8,
+      "views": 12
     }
   ],
   "top_pages": [
@@ -171,80 +171,70 @@
       "title": "Full-Service 3D Animation Studio | 2D & 3D Animation Services",
       "path": "/",
       "url": "https://austinvisuals.com/",
-      "views": 1005,
-      "users": 781,
-      "duration_sec": 113,
-      "bounce": 44.6,
-      "new_users": 691
+      "views": 986,
+      "users": 768,
+      "duration_sec": 117,
+      "bounce": 45.0,
+      "new_users": 682
     },
     {
       "title": "Work samples | Animated Explainer Videos",
       "path": "/videos/",
       "url": "https://austinvisuals.com/videos/",
-      "views": 209,
-      "users": 138,
-      "duration_sec": 114,
-      "bounce": 12.0,
-      "new_users": 12
+      "views": 203,
+      "users": 135,
+      "duration_sec": 111,
+      "bounce": 13.5,
+      "new_users": 13
     },
     {
       "title": "Key Differences Between Animated and Cartoon",
       "path": "/animated-and-cartoon/",
       "url": "https://austinvisuals.com/animated-and-cartoon/",
-      "views": 136,
-      "users": 112,
-      "duration_sec": 98,
-      "bounce": 56.7,
-      "new_users": 109
+      "views": 135,
+      "users": 111,
+      "duration_sec": 96,
+      "bounce": 57.1,
+      "new_users": 108
     },
     {
       "title": "Explore Animation Jobs in Austin Texas",
       "path": "/animation-and-marketing-jobs-in-austin/",
       "url": "https://austinvisuals.com/animation-and-marketing-jobs-in-austin/",
-      "views": 130,
-      "users": 100,
-      "duration_sec": 158,
-      "bounce": 19.3,
+      "views": 132,
+      "users": 99,
+      "duration_sec": 151,
+      "bounce": 20.8,
       "new_users": 53
     },
     {
       "title": "Contact Austin Visuals | Production Company Commercials",
       "path": "/contact-austin-visuals/",
       "url": "https://austinvisuals.com/contact-austin-visuals/",
-      "views": 115,
-      "users": 96,
-      "duration_sec": 72,
-      "bounce": 11.3,
-      "new_users": 17
+      "views": 114,
+      "users": 95,
+      "duration_sec": 70,
+      "bounce": 13.2,
+      "new_users": 18
     },
     {
       "title": "Learn About Austin Visuals, Our Story",
       "path": "/about-austin-visuals/",
       "url": "https://austinvisuals.com/about-austin-visuals/",
-      "views": 58,
-      "users": 49,
-      "duration_sec": 203,
-      "bounce": 18.5,
-      "new_users": 6
-    },
-    {
-      "title": "3D Animation Services for Business | Animation Company",
-      "path": "/3d-animation-services/",
-      "url": "https://austinvisuals.com/3d-animation-services/",
-      "views": 36,
-      "users": 33,
-      "duration_sec": 27,
-      "bounce": 47.4,
-      "new_users": 23
+      "views": 46,
+      "users": 37,
+      "duration_sec": 174,
+      "bounce": 17.1,
+      "new_users": 4
     },
     {
       "title": "How to Create Animated NFT Art ?",
       "path": "/how-to-create-animated-nft-art/",
       "url": "https://austinvisuals.com/how-to-create-animated-nft-art/",
-      "views": 35,
+      "views": 34,
       "users": 32,
-      "duration_sec": 101,
-      "bounce": 68.8,
+      "duration_sec": 63,
+      "bounce": 71.9,
       "new_users": 31
     },
     {
@@ -253,9 +243,19 @@
       "url": "https://austinvisuals.com/anime-production-cost/",
       "views": 33,
       "users": 32,
-      "duration_sec": 71,
+      "duration_sec": 63,
       "bounce": 51.4,
       "new_users": 29
+    },
+    {
+      "title": "3D Animation Services for Business | Animation Company",
+      "path": "/3d-animation-services/",
+      "url": "https://austinvisuals.com/3d-animation-services/",
+      "views": 30,
+      "users": 27,
+      "duration_sec": 28,
+      "bounce": 46.9,
+      "new_users": 18
     },
     {
       "title": "How much does Animation Cost? Animated Video Pricing",
@@ -271,19 +271,19 @@
   "traffic_sources": [
     {
       "channel": "Organic Search",
-      "sessions": 1255
+      "sessions": 1227
     },
     {
       "channel": "Direct",
-      "sessions": 1181
+      "sessions": 1090
     },
     {
       "channel": "Referral",
-      "sessions": 138
+      "sessions": 137
     },
     {
       "channel": "Paid Search",
-      "sessions": 136
+      "sessions": 129
     },
     {
       "channel": "Organic Social",
@@ -291,7 +291,7 @@
     },
     {
       "channel": "Unassigned",
-      "sessions": 54
+      "sessions": 55
     },
     {
       "channel": "Organic Video",
@@ -300,14 +300,14 @@
   ],
   "top_cities": [
     {
-      "city": "Austin",
-      "region": "Texas",
-      "sessions": 88
-    },
-    {
       "city": "Dallas",
       "region": "Texas",
-      "sessions": 81
+      "sessions": 86
+    },
+    {
+      "city": "Austin",
+      "region": "Texas",
+      "sessions": 82
     },
     {
       "city": "New York",
@@ -317,82 +317,82 @@
     {
       "city": "Houston",
       "region": "Texas",
-      "sessions": 54
-    },
-    {
-      "city": "Hoa Binh",
-      "region": "Hoa Binh",
-      "sessions": 52
-    },
-    {
-      "city": "Los Angeles",
-      "region": "California",
-      "sessions": 50
+      "sessions": 55
     },
     {
       "city": "Ashburn",
       "region": "Virginia",
-      "sessions": 49
+      "sessions": 50
+    },
+    {
+      "city": "Hoa Binh",
+      "region": "Hoa Binh",
+      "sessions": 47
+    },
+    {
+      "city": "Los Angeles",
+      "region": "California",
+      "sessions": 47
     },
     {
       "city": "London",
       "region": "England",
-      "sessions": 28
+      "sessions": 31
     },
     {
-      "city": "Shanghai",
-      "region": "Shanghai",
-      "sessions": 27
+      "city": "Bengaluru",
+      "region": "Karnataka",
+      "sessions": 24
     }
   ],
   "devices": [
     {
       "device": "desktop",
-      "sessions": 2212,
-      "views": 3136
+      "sessions": 2082,
+      "views": 2968
     },
     {
       "device": "mobile",
-      "sessions": 638,
-      "views": 838
+      "sessions": 639,
+      "views": 845
     },
     {
       "device": "tablet",
-      "sessions": 33,
-      "views": 63
+      "sessions": 35,
+      "views": 67
     }
   ],
   "hours_of_day": [
-    94,
-    94,
-    102,
-    130,
-    109,
-    116,
+    87,
+    88,
+    101,
+    126,
     108,
-    150,
+    112,
+    105,
     149,
-    168,
-    168,
-    209,
-    154,
-    171,
+    143,
+    165,
+    163,
+    197,
     147,
+    161,
+    137,
     127,
-    92,
-    119,
-    118,
-    97,
-    82,
+    90,
     111,
-    83,
-    80
+    108,
+    95,
+    78,
+    102,
+    71,
+    76
   ],
   "suggestions": [
     "Peak traffic is around 11:00 \u00e2\u20ac\u201d schedule social posts and ad campaigns to run 1-2 hours before peak to catch visitors actively browsing.",
-    "22% of visitors are on mobile. Make sure every contact form and phone number is easy to tap on a phone screen.",
+    "23% of visitors are on mobile. Make sure every contact form and phone number is easy to tap on a phone screen.",
     "Top traffic source is Organic Search \u00e2\u20ac\u201d double down on SEO and content that targets your best-performing keywords to grow this channel.",
-    "Your top page (Full-Service 3D Animation Studio | 2D & 3D Animation Services) gets 1005 views but if it has no contact form or phone number visible, you're losing leads. Add a CTA above the fold.",
-    "Consider adding a short contact form or \"Get a Quote\" button to your top 3 portfolio pages \u00e2\u20ac\u201d visitors are already interested."
+    "How to Create Animated NFT Art ? has a 71.9% bounce rate \u00e2\u20ac\u201d add a stronger call-to-action or internal links to keep visitors exploring.",
+    "Your top page (Full-Service 3D Animation Studio | 2D & 3D Animation Services) gets 986 views but if it has no contact form or phone number visible, you're losing leads. Add a CTA above the fold."
   ]
 }
