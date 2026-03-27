@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-26 03:37 UTC",
+  "updated": "2026-03-27 03:37 UTC",
   "sections": [
     {
       "id": "gov",
@@ -7,38 +7,45 @@
       "icon": "\ud83c\udfdb\ufe0f",
       "items": [
         {
-          "title": "Elon Musk company selects proposed mile-long Dallas tunnel",
-          "link": "https://feeds.texastribune.org/link/16799/17305557/dallas-boring-company-tunnel-underground-transit-elon-musk",
-          "desc": "The Boring Company said it would begin assessing the feasibility of building an underground tunnel connecting a university with a new development.",
-          "date": "Wed, 25 Mar 2026",
+          "title": "Education Dept. HQ handed to Energy as Trump advances effort to dismantle agency",
+          "link": "https://www.govexec.com/management/2026/03/education-hq-handed-energy-trump-advances-effort-dismantle-agency/412424/",
+          "desc": "Education says it no longer needs the space after slashing half of its workforce.",
+          "date": "Thu, 26 Mar 2026",
+          "source": "GovExec"
+        },
+        {
+          "title": "Measles spike in federal detention facility reaches the Texas public, records show",
+          "link": "https://feeds.texastribune.org/link/16799/17306481/texas-measles-el-paso-federal-detention-center-public-community-infections",
+          "desc": "Most of the state\u2019s measles cases reported so far this year are inside the West Texas Detention Facility in Hudspeth County, where four infected El Paso residents worked.",
+          "date": "Thu, 26 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Texas cities, state government cancel Cesar Chavez Day in wake of report on activist",
-          "link": "https://feeds.texastribune.org/link/16799/17301766/cesar-chavez-day-texas-fallout-sexual-abuse-allegations",
-          "desc": "The New York Times on March 18 published allegations that the labor rights leader had sexually abused women and girls.",
-          "date": "Wed, 18 Mar 2026",
+          "title": "Speaker Dustin Burrows lists data centers, property taxes and annexing slice of New Mexico\u00a0among 2027 priorities",
+          "link": "https://feeds.texastribune.org/link/16799/17306855/texas-house-speaker-dustin-burrows-interim-charges-new-mexico-data-centers-property-taxes",
+          "desc": "The Republican speaker\u2019s interim charges also covered water resources, foreign threats and government accountability.",
+          "date": "Thu, 26 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "University of North Texas to cut more than 70 programs and minors to trim $45 million deficit",
-          "link": "https://feeds.texastribune.org/link/16799/17302824/university-north-texas-deficit-program-cuts",
-          "desc": "Offering new details, President Harrison Keller said no state official pushed for the changes, which include phasing out degrees in linguistics and Latin American and women\u2019s and gender studies.",
-          "date": "Fri, 20 Mar 2026",
+          "title": "Legislators, business leaders highlight Texas policies driving competition with Wall Street",
+          "link": "https://feeds.texastribune.org/link/16799/17306764/texas-tribune-panels-yall-street-growth-legislation",
+          "desc": "The panelists at the Dallas event hosted by The Texas Tribune said \u201cY\u2019all Street\u201d is poised to become the nation's financial capital.",
+          "date": "Thu, 26 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "New study says Austin restaurant permitting can cost nearly $9,000 and requires up to 105 steps",
-          "link": "https://feeds.texastribune.org/link/16799/17306043/austin-small-businesses-fees-city-permitting-delays",
-          "desc": "The city\u2019s onerous permitting processes are adding barriers for small businesses that already face rising construction costs and rents.",
-          "date": "Wed, 25 Mar 2026",
+          "title": "Texas suburbs lead U.S. for population growth as international migration slows, census finds",
+          "link": "https://feeds.texastribune.org/link/16799/17306482/texas-population-census-migration-waller-county",
+          "desc": "Waller County, near Houston, was the second fastest growing county in the U.S. Another three Texas counties were among the 10 fastest growing in U.S.",
+          "date": "Thu, 26 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Texas State University professor sues to block firing after Israeli-Palestinian comments",
-          "link": "https://feeds.texastribune.org/link/16799/17306000/texas-state-university-professor-lawsuit-fired-israel-palestine",
-          "desc": "Philosophy professor Idris Robinson argued that his comments, made in an off-campus setting, were protected speech.",
-          "date": "Wed, 25 Mar 2026",
+          "title": "Forced to sell medications at a loss, rural Texas pharmacies seek new survival tactics",
+          "link": "https://feeds.texastribune.org/link/16799/17306483/rural-texas-pharmacies-benefit-managers-strategies-stay-afloat",
+          "desc": "Independent rural pharmacists are starting other businesses or selling baby shower gifts to keep their stores operating. Pharmacy deserts affect 4 million Texans.",
+          "date": "Thu, 26 Mar 2026",
           "source": "Texas Tribune"
         }
       ]
@@ -49,25 +56,39 @@
       "icon": "\u26a1",
       "items": [
         {
-          "title": "Chevron Warns California Risks Energy Crisis Due to Iran War",
-          "link": "https://www.rigzone.com/news/wire/chevron_warns_california_risks_energy_crisis_due_to_iran_war-25-mar-2026-183296-article/?rss=true",
-          "desc": "Chevron Corp. is warning that California is careening toward an energy crisis because of the Iran war.",
-          "date": "Wed, 25 Mar 2026",
+          "title": "E&Ps Flag Iran War in Latest Dallas Fed Energy Survey",
+          "link": "https://www.rigzone.com/news/eps_flag_iran_war_in_latest_dallas_fed_energy_survey-26-mar-2026-183307-article/?rss=true",
+          "desc": "The Iran war was highlighted by several exploration and production companies in the 'comments' section of the first quarter 2026 Dallas Fed Energy Survey.",
+          "date": "Thu, 26 Mar 2026",
           "source": "Rigzone"
         },
         {
-          "title": "USA Shale Producers Not Poised to Quickly Boost Output",
-          "link": "https://www.rigzone.com/news/usa_shale_producers_not_poised_to_quickly_boost_output-25-mar-2026-183297-article/?rss=true",
-          "desc": "U.S. shale producers 'are not poised to quickly ramp up production', according to Matthew Bernstein, Rystad Energy VP North America Oil & Gas.",
-          "date": "Wed, 25 Mar 2026",
+          "title": "Rystad Issues Oil Warning",
+          "link": "https://www.rigzone.com/news/rystad_issues_oil_warning-26-mar-2026-183301-article/?rss=true",
+          "desc": "'The floor has moved up, so has the ceiling', Rystad Energy said.",
+          "date": "Thu, 26 Mar 2026",
           "source": "Rigzone"
         },
         {
-          "title": "JERA Secures Regasification Rights at Dunkirk Terminal",
-          "link": "https://www.rigzone.com/news/jera_secures_regasification_rights_at_dunkirk_terminal-25-mar-2026-183293-article/?rss=true",
-          "desc": "'This marks JERA's first acquisition of overseas LNG terminal capacity and strengthens the company's ability to manage global LNG supply and demand'.",
-          "date": "Wed, 25 Mar 2026",
-          "source": "Rigzone"
+          "title": "FluxPoint Energy Enters Race to Build First New U.S. Uranium Conversion Plant in Nearly 70 Years",
+          "link": "https://www.powermag.com/fluxpoint-energy-enters-race-to-build-first-new-u-s-uranium-conversion-plant-in-nearly-70-years/",
+          "desc": "A new Texas-based startup has launched an effort to build what would be the first U.S. uranium conversion facility in more than seven decades to restore a domestic capability it says has become &#8220;an unacceptable chokepoint&#8221; in America&#821",
+          "date": "Thu, 26 Mar 2026",
+          "source": "Power Magazine"
+        },
+        {
+          "title": "Solar Power Satellites and Orbital Data Centers\u2014International Space Law Implications",
+          "link": "https://www.powermag.com/solar-power-satellites-and-orbital-data-centers-international-space-law-implications/",
+          "desc": "In 2011, I published an article in the Boston University Journal of Science &#38; Technology Law examining space-based solar power (SBSP) and the issue of property rights in space, and more specifically, in geostationary orbit (GEO), under the curren",
+          "date": "Thu, 26 Mar 2026",
+          "source": "Power Magazine"
+        },
+        {
+          "title": "Investing in Energy\u2019s \u2018Anti-Fragile\u2019 Future",
+          "link": "https://www.powermag.com/investing-in-energys-anti-fragile-future/",
+          "desc": "With federal tax credits under threat and regulatory stability in short supply, Bala Nagarajan, managing director of the energy investments team at S2G Investments, explained what he looks for in a company. \u201cIs the product or the solution sold by thi",
+          "date": "Thu, 26 Mar 2026",
+          "source": "Power Magazine"
         },
         {
           "title": "Google Has PPAs for Solar Power from Renewable Energy Group",
@@ -84,25 +105,11 @@
           "source": "Power Magazine"
         },
         {
-          "title": "OpenAI in Talks with Helion to Secure Fusion Energy",
-          "link": "https://www.powermag.com/openai-in-talks-with-helion-to-secure-fusion-energy/",
-          "desc": "Artificial intelligence (AI) group OpenAI is reportedly discussing buying electricity from Helion Energy, the fusion startup company based in Everett, Washington. Sources told POWER that a deal would enable OpenAI to be guaranteed part of Helion's po",
-          "date": "Mon, 23 Mar 2026",
-          "source": "Power Magazine"
-        },
-        {
-          "title": "Nuclear Sprint: DOE and Industry Race to Meet Trump\u2019s Target",
-          "link": "https://www.powermag.com/nuclear-sprint-doe-and-industry-race-to-meet-trumps-target/",
-          "desc": "The Senate Committee on Energy and Natural Resources convened March 19 for a full committee hearing to examine the Department of Energy\u2019s (DOE\u2019s) implementation of President Trump\u2019s May 2025 nuclear energy executive orders. Three witnesses\u2014DOE Assist",
-          "date": "Thu, 19 Mar 2026",
-          "source": "Power Magazine"
-        },
-        {
-          "title": "Cuba Begins Testing First Battery Energy Storage System to Boost Grid Stability",
-          "link": "https://www.powermag.com/cuba-begins-testing-first-battery-energy-storage-system-to-boost-grid-stability/",
-          "desc": "As part of the country\u2019s strategic program to strengthen the stability of the national grid, Cuba has begun load testing of the first unit of a battery energy storage system (BESS) at the El Cotorro substation in Havana. This is the first of four sys",
-          "date": "Thu, 19 Mar 2026",
-          "source": "Power Magazine"
+          "title": "California earmarks $848M for rail, road projects",
+          "link": "https://www.constructiondive.com/news/california-funding-BART-tunnel-San-Jose/815905/",
+          "desc": "Of the funds, $100 million will support the construction of a 5-mile tunnel for Bay Area Rapid Transit trains between San Jose and the city of Santa Clara.",
+          "date": "Thu, 26 Mar 2026",
+          "source": "Construction Dive"
         }
       ]
     },
@@ -110,7 +117,15 @@
       "id": "medical",
       "title": "Medical & Science",
       "icon": "\ud83d\udd2c",
-      "items": []
+      "items": [
+        {
+          "title": "STAT+: Denali Therapeutics, Corcept Therapeutics win FDA approvals",
+          "link": "https://www.statnews.com/2026/03/26/denali-corcept-fda-allogene-car-t-readout-newsletter/?utm_campaign=rss",
+          "desc": "In today's Readout Newsletter, Denali and Corcept win FDA approvals, Sarepta eyes a rebound, and Allogene progresses with an off-the-shelf CAR-T.",
+          "date": "Thu, 26 Mar 2026",
+          "source": "STAT News"
+        }
+      ]
     },
     {
       "id": "legal_tech",
@@ -118,11 +133,18 @@
       "icon": "\u2696\ufe0f",
       "items": [
         {
-          "title": "Texas judge spares \u2018Melanated People of Power\u2019 compound for now",
-          "link": "https://www.courthousenews.com/texas-judge-spares-melanated-people-of-power-compound-for-now/",
-          "desc": "People living on Malcolm Tanner's property in Loving County are allowed to remain while the Indiana social media influencer seeks more materials from local law enforcement.",
-          "date": "Wed, 25 Mar 2026",
+          "title": "Texas voter purge",
+          "link": "https://www.courthousenews.com/texas-voter-purge/",
+          "desc": "AUSTIN, Texas \u2014 Civil rights and voting groups are suing Texas Secretary of State Jane Nelson and other election officials over a state voter \u201cpurge\u201d program that uses the federal Systematic Alien Verification for Entitlements, or SAVE, database to c",
+          "date": "Fri, 27 Mar 2026",
           "source": "Courthouse News"
+        },
+        {
+          "title": "Education Dept. HQ handed to Energy as Trump advances effort to dismantle agency",
+          "link": "https://www.govexec.com/management/2026/03/education-hq-handed-energy-trump-advances-effort-dismantle-agency/412424/",
+          "desc": "Education says it no longer needs the space after slashing half of its workforce.",
+          "date": "Thu, 26 Mar 2026",
+          "source": "GovExec"
         }
       ]
     },
@@ -132,59 +154,59 @@
       "icon": "\ud83c\udfac",
       "items": [
         {
-          "title": "Titmouse Celebrates 20 years of \u20185 Second Day\u2019s Chaos and Creativity",
-          "link": "https://www.awn.com/news/titmouse-celebrates-20-years-5-second-days-chaos-and-creativity",
-          "desc": "What started as a simple excuse to blow off steam has evolved into a long-running ritual \u2014 part inside joke, part creative release valve \u2014 where anything can happen, not everything works, and that\u2019s exactly the point.",
-          "date": "Wed, 25 Mar 2026",
+          "title": "ITFS 2026 Showcases Family and Industry Animation Activities",
+          "link": "https://www.awn.com/news/itfs-2026-showcases-family-and-industry-animation-activities",
+          "desc": "The 33rd Stuttgart International Festival of Animated Film will present around 150 events, including the film competitions, outdoor screenings, workshops and games for audiences of all ages; runs May 5\u201310.",
+          "date": "Thu, 26 Mar 2026",
           "source": "Animation World Net"
         },
         {
-          "title": "Annecy 2026 Official TV and Commissioned Films Selections Announced",
-          "link": "https://www.awn.com/news/annecy-2026-official-tv-and-commissioned-films-selections-announced",
-          "desc": "66 films from 32 countries were selected for the official competition: 30 in the TV Films category and 36 in the Commissioned Films category; celebrating 50 years, the festival runs June 21-27.",
-          "date": "Wed, 25 Mar 2026",
+          "title": "Vine FX Delivers Smoldering VFX on 'After the Flood' Season 2",
+          "link": "https://www.awn.com/news/vine-fx-delivers-smoldering-vfx-after-flood-season-2",
+          "desc": "The Cambridge-based studio returns as sole vendor on the ITV crime drama, delivering 336 shots and 94 sequences combining fire simulation, Gaussian splatting, and invisible effects to support the series\u2019 expanded environmental scope.",
+          "date": "Thu, 26 Mar 2026",
           "source": "Animation World Net"
         },
         {
-          "title": "Annecy 2026 Official Short Film Selections Announced",
-          "link": "https://www.awn.com/news/annecy-2026-official-short-film-selections-announced",
-          "desc": "141 films from 43 countries were selected to compete across the shorts categories: 35 in the Official group, 46 in Graduation, 8 in Off-Limits, 17 in Perspectives, 10 in Young Audiences, 16 in Midnight Shorts and 9 in WTF; celebrating 50 years, the f",
-          "date": "Wed, 25 Mar 2026",
+          "title": "Sylvain Chomet\u2019s \u2018A Magnificent Life\u2019: Animation More Real Than Reality",
+          "link": "https://www.awn.com/animationworld/sylvain-chomets-magnificent-life-animation-more-real-reality",
+          "desc": "The acclaimed, Oscar-nominated French director talks about his new film, his love of animation, and how if the acting, art, and editing are all good, your characters can feel more real than in live-action; in theaters March 27.",
+          "date": "Thu, 26 Mar 2026",
           "source": "Animation World Net"
         },
         {
-          "title": "DreamWorks Animation Drops 'Forgotten Island' Trailer",
-          "link": "https://www.awn.com/news/dreamworks-animation-drops-forgotten-island-trailer",
-          "desc": "The creative team behind \u2018Puss in Boots: The Last Wish\u2019 returns with an original animated adventure that follows two lifelong friends transported to a mythical island\u2026 to face a test that could make them forget each other forever; in theaters Septemb",
-          "date": "Wed, 25 Mar 2026",
+          "title": "Baobab Studios Acquires Roblox Title Rights for Film and TV Development",
+          "link": "https://www.awn.com/news/baobab-studios-acquires-roblox-title-rights-film-and-tv-development",
+          "desc": "Company is developing animated projects based on 3 of the gaming giant\u2019s most widely played titles - 'Natural Disaster Survival,' 'Barry's Prison Run,' and 'Deepwoken' - working with original creators to expand the properties for global audiences.",
+          "date": "Thu, 26 Mar 2026",
           "source": "Animation World Net"
         },
         {
-          "title": "Autodesk Releases Major Updates Across Maya, 3ds Max, Flow Studio and Arnold",
-          "link": "https://www.awn.com/news/autodesk-releases-major-updates-across-maya-3ds-max-flow-studio-and-arnold",
-          "desc": "Powerful new key toolset features announced that introduce \u2018controllable, editable, and trustworthy\u2019 AI-enabled functionality to unlock even greater artist creativity.\u2019",
-          "date": "Wed, 25 Mar 2026",
+          "title": "WEBTOON Unifies CANVAS with New Creator Tools and Translation Program",
+          "link": "https://www.awn.com/news/webtoon-unifies-canvas-new-creator-tools-and-translation-program",
+          "desc": "The company will consolidate its regional user-generated content services into a single global platform, introducing expanded monetization, analytics, and multilingual distribution tools beginning in spring 2026.",
+          "date": "Thu, 26 Mar 2026",
           "source": "Animation World Net"
         },
         {
-          "title": "MAKE Announces 2026 Summer Internship Program",
-          "link": "https://motionographer.com/news/make-announces-2026-summer-internship-program/",
-          "desc": "MAKE, a creative studio known for its storytelling through Motion Design, animation, and visual effects, is now accepting applications for its Summer 2026 Internship Program. Apply before March 29.",
-          "date": "Wed, 25 Mar 2026",
+          "title": "Digital Design Days Celebrates 10th Anniversary With Most Ambitious Edition Ever",
+          "link": "https://motionographer.com/news/digital-design-days-celebrates-10th-anniversary-with-most-ambitious-edition-ever/",
+          "desc": "Digital Design Days (DDD), Italy's leading design and innovation conference, celebrates its tenth anniversary with an extraordinary edition taking place May 7-9, 2026 at Superstudio Village in Milan.",
+          "date": "Thu, 26 Mar 2026",
           "source": "Motionographer"
         },
         {
-          "title": "\u2018INSIDE SAMSUNG\u2019 CAMPAIGN | Panic",
-          "link": "https://motionographer.com/quickie/inside-samsung-campaign-panic/",
+          "title": "Night Landscapes at Llum BCN 2026 | DAQ Studio",
+          "link": "https://motionographer.com/quickie/night-landscapes-at-llum-bcn-2026-daq-studio/",
           "desc": "",
-          "date": "Wed, 25 Mar 2026",
+          "date": "Thu, 26 Mar 2026",
           "source": "Motionographer"
         },
         {
-          "title": "The World of Bosnian Knight | KnapStudio / Kenan Tuzi",
-          "link": "https://motionographer.com/quickie/the-world-of-bosnian-knight-knapstudio-kenan-tuzi/",
-          "desc": "",
-          "date": "Tue, 24 Mar 2026",
+          "title": "Motionographer 4.0: Under Construction \u2013 And Something Big Is Coming in May",
+          "link": "https://motionographer.com/2026/03/26/motionographer-4-0-under-construction-and-something-big-is-coming-in-may/",
+          "desc": "Twenty years in, Motionographer is getting a refresh - not just a redesign, but a rethinking. Dark mode, jobs on the homepage, a new Events page, and something big coming in May. Here's what's already live.",
+          "date": "Thu, 26 Mar 2026",
           "source": "Motionographer"
         }
       ]
@@ -202,52 +224,52 @@
           "source": "Texas CEO Magazine"
         },
         {
-          "title": "Elon Musk company selects proposed mile-long Dallas tunnel",
-          "link": "https://feeds.texastribune.org/link/16799/17305557/dallas-boring-company-tunnel-underground-transit-elon-musk",
-          "desc": "The Boring Company said it would begin assessing the feasibility of building an underground tunnel connecting a university with a new development.",
-          "date": "Wed, 25 Mar 2026",
+          "title": "Measles spike in federal detention facility reaches the Texas public, records show",
+          "link": "https://feeds.texastribune.org/link/16799/17306481/texas-measles-el-paso-federal-detention-center-public-community-infections",
+          "desc": "Most of the state\u2019s measles cases reported so far this year are inside the West Texas Detention Facility in Hudspeth County, where four infected El Paso residents worked.",
+          "date": "Thu, 26 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Texas cities, state government cancel Cesar Chavez Day in wake of report on activist",
-          "link": "https://feeds.texastribune.org/link/16799/17301766/cesar-chavez-day-texas-fallout-sexual-abuse-allegations",
-          "desc": "The New York Times on March 18 published allegations that the labor rights leader had sexually abused women and girls.",
-          "date": "Wed, 18 Mar 2026",
+          "title": "Speaker Dustin Burrows lists data centers, property taxes and annexing slice of New Mexico\u00a0among 2027 priorities",
+          "link": "https://feeds.texastribune.org/link/16799/17306855/texas-house-speaker-dustin-burrows-interim-charges-new-mexico-data-centers-property-taxes",
+          "desc": "The Republican speaker\u2019s interim charges also covered water resources, foreign threats and government accountability.",
+          "date": "Thu, 26 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "University of North Texas to cut more than 70 programs and minors to trim $45 million deficit",
-          "link": "https://feeds.texastribune.org/link/16799/17302824/university-north-texas-deficit-program-cuts",
-          "desc": "Offering new details, President Harrison Keller said no state official pushed for the changes, which include phasing out degrees in linguistics and Latin American and women\u2019s and gender studies.",
-          "date": "Fri, 20 Mar 2026",
+          "title": "Legislators, business leaders highlight Texas policies driving competition with Wall Street",
+          "link": "https://feeds.texastribune.org/link/16799/17306764/texas-tribune-panels-yall-street-growth-legislation",
+          "desc": "The panelists at the Dallas event hosted by The Texas Tribune said \u201cY\u2019all Street\u201d is poised to become the nation's financial capital.",
+          "date": "Thu, 26 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "New study says Austin restaurant permitting can cost nearly $9,000 and requires up to 105 steps",
-          "link": "https://feeds.texastribune.org/link/16799/17306043/austin-small-businesses-fees-city-permitting-delays",
-          "desc": "The city\u2019s onerous permitting processes are adding barriers for small businesses that already face rising construction costs and rents.",
-          "date": "Wed, 25 Mar 2026",
+          "title": "Texas suburbs lead U.S. for population growth as international migration slows, census finds",
+          "link": "https://feeds.texastribune.org/link/16799/17306482/texas-population-census-migration-waller-county",
+          "desc": "Waller County, near Houston, was the second fastest growing county in the U.S. Another three Texas counties were among the 10 fastest growing in U.S.",
+          "date": "Thu, 26 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Texas State University professor sues to block firing after Israeli-Palestinian comments",
-          "link": "https://feeds.texastribune.org/link/16799/17306000/texas-state-university-professor-lawsuit-fired-israel-palestine",
-          "desc": "Philosophy professor Idris Robinson argued that his comments, made in an off-campus setting, were protected speech.",
-          "date": "Wed, 25 Mar 2026",
+          "title": "Forced to sell medications at a loss, rural Texas pharmacies seek new survival tactics",
+          "link": "https://feeds.texastribune.org/link/16799/17306483/rural-texas-pharmacies-benefit-managers-strategies-stay-afloat",
+          "desc": "Independent rural pharmacists are starting other businesses or selling baby shower gifts to keep their stores operating. Pharmacy deserts affect 4 million Texans.",
+          "date": "Thu, 26 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Walsh-Turner JV finishes $1.5B Ohio State University hospital",
-          "link": "https://www.constructiondive.com/news/walsh-turner-jv-ohio-state-university-hospital-wexner/815657/",
-          "desc": "The hospital, which marks the largest single-facility construction project in the school&rsquo;s history, features 820 beds and 24 state-of-the-art operating rooms.",
-          "date": "Wed, 25 Mar 2026",
+          "title": "California earmarks $848M for rail, road projects",
+          "link": "https://www.constructiondive.com/news/california-funding-BART-tunnel-San-Jose/815905/",
+          "desc": "Of the funds, $100 million will support the construction of a 5-mile tunnel for Bay Area Rapid Transit trains between San Jose and the city of Santa Clara.",
+          "date": "Thu, 26 Mar 2026",
           "source": "Construction Dive"
         },
         {
-          "title": "$4.4B Brent Spence Bridge project targets spring groundbreaking",
-          "link": "https://www.constructiondive.com/news/brent-spence-bridge-spring-groundbreaking-cost-rise/815431/",
-          "desc": "The price tag for the work package, to be constructed by a Walsh Construction and Kokosing JV, has risen by about $700 million due to increased highway construction costs.",
-          "date": "Tue, 24 Mar 2026",
+          "title": "Data center buildouts slowed late last year \u2014 finally",
+          "link": "https://www.constructiondive.com/news/data-center-building-boom-slows-despite-massive-spend/815838/",
+          "desc": "Despite ongoing hyperscaler infrastructure investments and record compute demand, construction declined for the first time since 2020, CBRE research found.",
+          "date": "Thu, 26 Mar 2026",
           "source": "Construction Dive"
         }
       ]
