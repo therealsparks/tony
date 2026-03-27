@@ -29,16 +29,24 @@
   .check-status { font-size: 12px; font-weight: 600; color: #6e6e73; }
 
   .issues-card { background: #fff; border-radius: 16px; padding: 20px 22px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-  .issues-title { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #aeaeb2; margin-bottom: 14px; }
-  .issue-item { border: 1px solid #f2f2f7; border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; background: #fdfdfd; }
+  .issues-title { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #aeaeb2; margin-bottom: 6px; }
+  .issue-hint { font-size: 11px; color: #aeaeb2; margin-bottom: 10px; }
+  .issue-item { border: 1px solid #f2f2f7; border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; background: #fdfdfd; cursor: pointer; transition: border-color 0.15s ease, box-shadow 0.15s ease; }
   .issue-item:last-child { margin-bottom: 0; }
-  .issue-header { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
+  .issue-item.open { border-color: #d1d1d6; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+  .issue-header { display: flex; justify-content: space-between; gap: 12px; }
   .issue-title { font-size: 14px; font-weight: 600; color: #1d1d1f; }
   .issue-meta { font-size: 12px; color: #6e6e73; }
-  .issue-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 9px; border-radius: 99px; align-self: flex-start; }
+  .issue-meta-right { display: flex; gap: 8px; align-items: center; }
+  .issue-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 9px; border-radius: 99px; }
   .issue-tag.open { background: #f2f2f7; color: #6e6e73; }
   .issue-tag.investigating { background: #fff7e6; color: #9a6800; }
   .issue-tag.watching-fix { background: #e8f8f0; color: #1a7a46; }
+  .issue-tag.resolved { background: #dff5ff; color: #0566a4; }
+  .issue-caret { font-size: 10px; color: #aeaeb2; transition: transform 0.2s ease; }
+  .issue-item.open .issue-caret { transform: rotate(180deg); }
+  .issue-body { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.2s ease, opacity 0.2s ease; margin-top: 0; }
+  .issue-item.open .issue-body { max-height: 400px; opacity: 1; margin-top: 8px; }
   .issue-impact { font-size: 13px; color: #555; line-height: 1.4; }
   .issue-notes { font-size: 12px; color: #6e6e73; margin-top: 6px; }
   .issue-empty { font-size: 12px; color: #aeaeb2; }
@@ -71,7 +79,8 @@
   </div>
 
   <div class="issues-card">
-    <div class="issues-title">Known Bugs (Unresolved)</div>
+    <div class="issues-title">Known Bugs Log</div>
+    <div class="issue-hint">Tap any bug to expand. Resolved items stay in this list for reference.</div>
     <div id="issues-list">
       <div class="issue-empty">Loading...</div>
     </div>
@@ -168,24 +177,36 @@ fetch('status.json?v=' + Date.now())
     const issuesList = document.getElementById('issues-list');
     if (issuesList) {
       if (!issues.length) {
-        issuesList.innerHTML = '<div class="issue-empty">No unresolved bugs right now.</div>';
+        issuesList.innerHTML = '<div class="issue-empty">No logged bugs right now.</div>';
       } else {
         issuesList.innerHTML = issues.map(issue => {
           const statusLabel = (issue.status || 'open');
           const statusSlug = statusLabel.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+          const opened = issue.opened ? formatDateShort(issue.opened) : null;
+          const resolved = issue.resolved_on ? formatDateShort(issue.resolved_on) : null;
+          const owner = issue.owner ? `Owner: ${issue.owner}` : 'Owner: —';
+          const meta = [opened ? `Opened ${opened}` : null, resolved ? `Resolved ${resolved}` : null, owner].filter(Boolean).join(' · ');
           return `
-            <div class="issue-item">
+            <div class="issue-item ${statusSlug}">
               <div class="issue-header">
                 <div>
                   <div class="issue-title">${issue.title || 'Untitled bug'}</div>
-                  <div class="issue-meta">${issue.owner ? `Owner: ${issue.owner}` : 'Owner: —'}${issue.opened ? ` · Opened ${formatDateShort(issue.opened)}` : ''}</div>
+                  <div class="issue-meta">${meta}</div>
                 </div>
-                <div class="issue-tag ${statusSlug}">${statusLabel}</div>
+                <div class="issue-meta-right">
+                  <div class="issue-tag ${statusSlug}">${statusLabel}</div>
+                  <div class="issue-caret">⌄</div>
+                </div>
               </div>
-              <div class="issue-impact">${issue.impact || ''}</div>
-              ${issue.notes ? `<div class="issue-notes">${issue.notes}</div>` : ''}
+              <div class="issue-body">
+                <div class="issue-impact">${issue.impact || ''}</div>
+                ${issue.notes ? `<div class="issue-notes">${issue.notes}</div>` : ''}
+              </div>
             </div>`;
         }).join('');
+        issuesList.querySelectorAll('.issue-item').forEach(item => {
+          item.addEventListener('click', () => item.classList.toggle('open'));
+        });
       }
     }
   })
