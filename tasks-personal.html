@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Task View</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+    background: #f5f5f7;
+    color: #1d1d1f;
+    padding: 40px 18px 60px;
+  }
+  .wrap { max-width: 520px; margin: 0 auto; text-align: center; }
+  .logo { font-size: 36px; margin-bottom: 12px; }
+  h1 { font-size: 30px; font-weight: 800; letter-spacing: -0.8px; margin-bottom: 10px; }
+  p { font-size: 14px; color:#6e6e73; line-height:1.6; margin-bottom:16px; }
+  .card {
+    background:#fff;
+    border-radius:18px;
+    border:1px solid #ebecef;
+    padding:24px;
+    box-shadow:0 1px 4px rgba(0,0,0,0.06);
+  }
+  .google-btn {
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    border:1px solid #d0d0d7;
+    background:#fff;
+    padding:10px 20px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:600;
+    color:#1d1d1f;
+    cursor:pointer;
+    margin-top:12px;
+  }
+  .note {
+    font-size:12px;
+    color:#6e6e73;
+    margin-top:12px;
+  }
+  a.back { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:600; color:#0071e3; text-decoration:none; margin-top:20px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo">⚡</div>
+  <h1>Personal Task View</h1>
+  <p>Sign in with your Austin Visuals Google account to see the tasks assigned to you. Access is limited to the whitelist Matt approves.</p>
+
+  <div class="card">
+    <p><strong>Secure login coming soon.</strong> For now this is a placeholder—once Google OAuth is wired up, you’ll land on your personalized checklist here.</p>
+    <button class="google-btn" disabled>
+      <span>🔒</span>
+      Sign in with Google
+    </button>
+    <div class="note">Need access? Email Matt to be added to the waitlist.</div>
+  </div>
+
+  <a href="tasks.html" class="back">← Back to Company Tasks</a>
+</div>
+</body>
+</html>
