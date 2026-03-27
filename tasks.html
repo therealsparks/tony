@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tony Tasks Board</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+    background: #f5f5f7;
+    color: #1d1d1f;
+    padding: 40px 20px 60px;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; }
+  .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: #6e6e73; text-transform: uppercase; margin-bottom: 6px; }
+  h1 { font-size: 34px; font-weight: 800; letter-spacing: -0.8px; margin-bottom: 10px; }
+  p.sub { font-size: 14px; color: #6e6e73; line-height: 1.6; margin-bottom: 24px; }
+
+  .task-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+  }
+  .lane {
+    background: #fff;
+    border-radius: 18px;
+    border: 1px solid #ebecef;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    padding: 20px 22px;
+  }
+  .lane-title {
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6e6e73;
+    margin-bottom: 14px;
+  }
+  .task-card {
+    border-radius: 14px;
+    border: 1px solid #f0f0f2;
+    padding: 14px 16px 16px;
+    margin-bottom: 14px;
+    background: #fafafa;
+  }
+  .task-card:last-child { margin-bottom: 0; }
+  .task-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+  .task-status {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 9px;
+    border-radius: 99px;
+  }
+  .status-active { background:#e8f8f0; color:#1a7a46; }
+  .status-next { background:#fff5e0; color:#a45500; }
+  .status-wait { background:#f2f2f7; color:#6e6e73; }
+  .task-owner { font-size: 11px; color:#6e6e73; font-weight:600; }
+  .task-title { font-size: 15px; font-weight:700; margin-bottom:6px; }
+  .task-desc { font-size: 13px; color:#4d4d50; line-height:1.5; margin-bottom:10px; }
+  .task-meta { display:flex; flex-wrap:wrap; gap:8px; font-size:12px; color:#6e6e73; }
+  .task-meta a { color:#0071e3; text-decoration:none; font-weight:600; }
+
+  .how-card {
+    margin-top: 26px;
+    background: #fff;
+    border-radius: 18px;
+    padding: 20px 24px;
+    border: 1px solid #ebecef;
+  }
+  .how-card h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color:#6e6e73; margin-bottom:10px; }
+  .how-card p { font-size: 13px; color:#3a3a3c; line-height:1.6; }
+
+  @media (max-width:640px) {
+    body { padding: 28px 16px 60px; }
+    .task-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">⚡ Austin Visuals</div>
+  <h1>Tony Tasks Board</h1>
+  <p class="sub">Current high-priority work for Tony + the core team. Tasks are grouped by urgency so Matt, Nancy, and the contractors can see what’s active, what’s queued, and what’s waiting on someone else.</p>
+
+  <div class="task-grid">
+    <div class="lane">
+      <div class="lane-title">Immediate Focus</div>
+
+      <div class="task-card">
+        <div class="task-top">
+          <span class="task-status status-active">Active</span>
+          <span class="task-owner">Owner: Tony</span>
+        </div>
+        <div class="task-title">QuickBooks → Invoice Tracker Sync</div>
+        <div class="task-desc">Finish wiring the QuickBooks API feed so invoices.html pulls live statuses, amounts, and payment dates without Nancy’s manual export.</div>
+        <div class="task-meta">
+          <span>Due: ASAP (waiting on refresh token rotation)</span>
+          <a href="invoices.html">View tracker</a>
+        </div>
+      </div>
+
+      <div class="task-card">
+        <div class="task-top">
+          <span class="task-status status-active">Active</span>
+          <span class="task-owner">Owner: Tony</span>
+        </div>
+        <div class="task-title">bot@ Command Handler + Whitelist</div>
+        <div class="task-desc">Stand up the bot@ inbox poller so Nancy/David/Tom/Adam/Peter can email skills directly. Enforce the whitelist JSON and reply with results.</div>
+        <div class="task-meta">
+          <span>Due: Mar 29</span>
+          <span>Blocking: bot@ task routing logic</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lane">
+      <div class="lane-title">Next Up</div>
+
+      <div class="task-card">
+        <div class="task-top">
+          <span class="task-status status-next">Next</span>
+          <span class="task-owner">Owner: Tony</span>
+        </div>
+        <div class="task-title">Tony@ Passive CC Logging</div>
+        <div class="task-desc">Finish the CC/BCC monitor so any thread sent to tony@ automatically files links/attachments and confirms back with Dropbox URLs.</div>
+        <div class="task-meta">
+          <span>Due: Early next week</span>
+          <a href="directory.html">Team directory</a>
+        </div>
+      </div>
+
+      <div class="task-card">
+        <div class="task-top">
+          <span class="task-status status-next">Next</span>
+          <span class="task-owner">Owner: Matt</span>
+        </div>
+        <div class="task-title">Gateway Uptime Hardening</div>
+        <div class="task-desc">Finish the always-on Windows Task Scheduler config + power settings so Telegram doesn’t flag Tony offline when the laptop sleeps.</div>
+        <div class="task-meta">
+          <span>Due: Travel wrap-up</span>
+          <a href="status-page.html">Status page</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="lane">
+      <div class="lane-title">Waiting on Others</div>
+
+      <div class="task-card">
+        <div class="task-top">
+          <span class="task-status status-wait">Waiting</span>
+          <span class="task-owner">Owner: Nancy</span>
+        </div>
+        <div class="task-title">One-Time Invoice Snapshot</div>
+        <div class="task-desc">Send Matt the “paid vs unpaid” email from Nancy’s tracker so Tony can align the manual data before QuickBooks automation goes live.</div>
+        <div class="task-meta">
+          <span>Requested: Mar 27</span>
+          <a href="invoices.html">Invoices</a>
+        </div>
+      </div>
+
+      <div class="task-card">
+        <div class="task-top">
+          <span class="task-status status-wait">Waiting</span>
+          <span class="task-owner">Owner: Curtis</span>
+        </div>
+        <div class="task-title">QuickBooks API Credentials</div>
+        <div class="task-desc">Provide client ID/secret + refresh token + realm ID for the QuickBooks Online app so invoice automation can read live data.</div>
+        <div class="task-meta">
+          <span>Blocking: QuickBooks sync</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lane">
+      <div class="lane-title">Recently Completed</div>
+
+      <div class="task-card">
+        <div class="task-top">
+          <span class="task-status status-next">Done</span>
+          <span class="task-owner">Owner: Tony</span>
+        </div>
+        <div class="task-title">Invoice Tracker Launch</div>
+        <div class="task-desc">Built invoices.html with passcode lock, live project metrics, and Nancy data until QuickBooks automation is ready.</div>
+        <div class="task-meta">
+          <a href="invoices.html">Review page</a>
+        </div>
+      </div>
+
+      <div class="task-card">
+        <div class="task-top">
+          <span class="task-status status-next">Done</span>
+          <span class="task-owner">Owner: Tony</span>
+        </div>
+        <div class="task-title">Watchdog Stack Fix</div>
+        <div class="task-desc">cron-email-watchdog + gateway watchdog hardened so the Landon Dropbox script runs clean with better logging.</div>
+        <div class="task-meta">
+          <a href="status-page.html">Status log</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="how-card">
+    <h3>Add / Update Tasks</h3>
+    <p><strong>Email bot@austinvisuals.com</strong> with the subject line <em>Task: [short title]</em>. Include owner, due date, and any Dropbox/CRM links in the body. Tony will drop it on this board (and route anything automation can handle automatically).</p>
+  </div>
+</div>
+</body>
+</html>
