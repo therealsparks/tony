@@ -1,18 +1,11 @@
 {
   "status": "online",
-  "last_seen": "2026-03-26T17:34:00Z",
-  "message": "Online and building the Kling workflow.",
+  "last_seen": "2026-03-27T04:15:12Z",
+  "message": "All systems running normally.",
   "checks": {
     "email_handler": "ok",
     "dropbox": "ok",
     "analytics": "ok",
     "competitor_brief": "ok"
-  },
-  "up_next": [
-    {
-      "title": "BioSqueeze · Hayden call",
-      "datetime": "2026-03-26T14:00:00-05:00",
-      "description": "2:00 PM CT (3:00 PM ET) catch-up with Hayden at BioSqueeze. Matt, Nancy, and Peter will be on the call."
-    }
-  ]
+  }
 }
