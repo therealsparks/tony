@@ -115,7 +115,8 @@
   .task-composer h2 { margin:0 0 12px; font-size:18px; }
   .input-row { display:flex; flex-direction:column; gap:10px; }
   .input-row input,
-  .input-row textarea {
+  .input-row textarea,
+  .input-row select {
     width:100%;
     border:1px solid #d2d6dc;
     border-radius:14px;
@@ -124,6 +125,19 @@
     font-family:inherit;
     transition:border 0.2s ease, box-shadow 0.2s ease;
   }
+  .two-col {
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .two-col > div {
+    flex:1;
+    min-width:180px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+  .field-label { font-size:12px; font-weight:600; color:#6b7280; }
   .input-row input:focus,
   .input-row textarea:focus {
     outline:none;
@@ -276,7 +290,8 @@
   }
   .clear-btn.is-placeholder { visibility:hidden; }
   .clear-btn:hover { background:#fee2e2; border-color:#fecaca; }
-  .task-meta { font-size:12px; text-transform:uppercase; letter-spacing:0.08em; color:#94a3b8; margin:0 0 6px; }
+  .task-meta { font-size:12px; color:#64748b; margin:0 0 6px; display:flex; gap:8px; flex-wrap:wrap; }
+  .meta-chip { background:#e2e8f0; border-radius:999px; padding:2px 8px; font-weight:600; color:#475569; text-transform:none; letter-spacing:0; }
   .task-notes { font-size:14px; color:#4b5563; margin:6px 0 0; white-space:pre-wrap; }
   .task-links {
     display:flex;
@@ -425,6 +440,17 @@
         <input id="task-title" type="text" maxlength="120" placeholder="e.g., Prep deck for Monday client check-in" autocomplete="off">
         <textarea id="task-notes" rows="3" placeholder="Optional notes, acceptance criteria, or links"></textarea>
       </div>
+      <div class="input-row two-col">
+        <div>
+          <label class="field-label" for="task-due">Due date</label>
+          <input id="task-due" type="datetime-local">
+        </div>
+        <div>
+          <label class="field-label" for="task-assignee">Assign to</label>
+          <select id="task-assignee"></select>
+          <input id="task-assignee-custom" type="email" class="hidden" placeholder="name@austinvisuals.com">
+        </div>
+      </div>
       <button class="primary" id="add-task-btn" type="button">Add to my list</button>
     </div>
 
@@ -454,6 +480,21 @@ const isTouchDevice = window.matchMedia && window.matchMedia('(pointer: coarse)'
 if (isTouchDevice) {
   document.body.classList.add('touch-device');
 }
+
+const TEAM_MEMBERS = [
+  { label: 'Matt Winters', email: 'matt@austinvisuals.com' },
+  { label: 'Nancy Schirm', email: 'nancyschirm@austinvisuals.com' },
+  { label: 'Peter M.', email: 'peter@austinvisuals.com' },
+  { label: 'Tom', email: 'tom@austinvisuals.com' },
+  { label: 'Adam', email: 'adam@austinvisuals.com' },
+  { label: 'Shelly', email: 'shelly@austinvisuals.com' },
+  { label: 'David', email: 'david@austinvisuals.com' }
+];
+let assigneeOptionsMarkup = '<option value="">Unassigned</option>';
+TEAM_MEMBERS.forEach(member => {
+  assigneeOptionsMarkup += `<option value="${member.email}">${member.label}</option>`;
+});
+assigneeOptionsMarkup += '<option value="custom">Custom email…</option>';
 
 function reportRuntimeError(message) {
   const banner = document.getElementById('error-banner');
@@ -489,6 +530,13 @@ const manualPanel = document.getElementById('manual-panel');
 const manualEmailInput = document.getElementById('manual-email');
 const manualNameInput = document.getElementById('manual-name');
 const manualContinueBtn = document.getElementById('manual-continue');
+const assigneeSelect = document.getElementById('task-assignee');
+const assigneeCustomInput = document.getElementById('task-assignee-custom');
+if (assigneeSelect) {
+  assigneeSelect.innerHTML = assigneeOptionsMarkup;
+  assigneeSelect.value = '';
+  setupAssigneeSelect(assigneeSelect, assigneeCustomInput);
+}
 if (manualToggleBtn && manualPanel) {
   manualToggleBtn.addEventListener('click', () => {
     manualPanel.classList.toggle('hidden');
@@ -509,6 +557,7 @@ if (manualContinueBtn) {
 
 const titleInput = document.getElementById('task-title');
 const notesInput = document.getElementById('task-notes');
+const dueInput = document.getElementById('task-due');
 titleInput.addEventListener('keydown', evt => {
   if (evt.key === 'Enter' && !evt.shiftKey) {
     evt.preventDefault();
@@ -582,7 +631,9 @@ function normalizeTasks(list) {
     notes: item.notes || '',
     createdAt: item.createdAt || new Date().toISOString(),
     completed: Boolean(item.completed),
-    children: normalizeTasks(item.children || [])
+    children: normalizeTasks(item.children || []),
+    dueAt: item.dueAt || null,
+    assignee: item.assignee || ''
   }));
 }
 
@@ -630,17 +681,34 @@ function addTask() {
     titleInput.focus();
     return;
   }
+  const dueAt = dueInput?.value ? new Date(dueInput.value).toISOString() : null;
+  let assignee = '';
+  if (assigneeSelect) {
+    if (assigneeSelect.value === 'custom') {
+      assignee = assigneeCustomInput.value.trim();
+    } else {
+      assignee = assigneeSelect.value;
+    }
+  }
   const task = {
     id: generateId(),
     title,
     notes,
     createdAt: new Date().toISOString(),
     completed: false,
-    children: []
+    children: [],
+    dueAt,
+    assignee
   };
   tasks.unshift(task);
   titleInput.value = '';
   notesInput.value = '';
+  if (dueInput) dueInput.value = '';
+  if (assigneeSelect) {
+    assigneeSelect.value = '';
+    setupAssigneeSelect(assigneeSelect, assigneeCustomInput);
+  }
+  if (assigneeCustomInput) assigneeCustomInput.value = '';
   renderTasks();
   saveTasks();
 }
@@ -694,7 +762,11 @@ function renderTaskList(list, container, path) {
         <div class="task-main">
           <div class="task-top">
             <div>
-              <p class="task-meta">Created ${created}</p>
+              <div class="task-meta">
+                <span>Created ${created}</span>
+                ${task.dueAt ? `<span class="meta-chip">Due ${formatDate(task.dueAt)}</span>` : ''}
+                ${task.assignee ? `<span class="meta-chip">Owner ${escapeHtml(task.assignee)}</span>` : ''}
+              </div>
               <p class="task-title ${task.completed ? 'completed' : ''}">${escapeHtml(task.title)}</p>
             </div>
             <div class="task-actions">
@@ -752,6 +824,20 @@ function handleTaskChange(evt) {
   }
 }
 
+function setupAssigneeSelect(selectEl, customInput) {
+  if (!selectEl || !customInput) return;
+  const sync = () => {
+    if (selectEl.value === 'custom') {
+      customInput.classList.remove('hidden');
+      customInput.focus();
+    } else {
+      customInput.classList.add('hidden');
+    }
+  };
+  selectEl.addEventListener('change', sync);
+  sync();
+}
+
 function handleTaskClick(evt) {
   const actionBtn = evt.target.closest('[data-action]');
   if (!actionBtn) return;
@@ -783,12 +869,26 @@ function openSubtaskComposer(pathArray) {
   composer.innerHTML = `
     <input type="text" class="subtask-title" placeholder="Subtask title" maxlength="120">
     <textarea rows="2" class="subtask-notes" placeholder="Optional notes"></textarea>
+    <div class="two-col">
+      <div>
+        <label class="field-label">Due date</label>
+        <input type="datetime-local" class="subtask-due">
+      </div>
+      <div>
+        <label class="field-label">Assign to</label>
+        <select class="subtask-assignee">${assigneeOptionsMarkup}</select>
+        <input type="email" class="subtask-assignee-custom hidden" placeholder="name@austinvisuals.com">
+      </div>
+    </div>
     <div class="composer-actions">
       <button type="button" class="btn-plain" data-action="cancel-subtask">Cancel</button>
       <button type="button" class="btn-secondary" data-action="save-subtask" data-path="${pathStr}">Save</button>
     </div>
   `;
   card.appendChild(composer);
+  const subAssigneeSelect = composer.querySelector('.subtask-assignee');
+  const subAssigneeCustom = composer.querySelector('.subtask-assignee-custom');
+  setupAssigneeSelect(subAssigneeSelect, subAssigneeCustom);
   composer.querySelector('.subtask-title').focus();
 }
 
@@ -796,10 +896,20 @@ function saveSubtask(parentPath, composer) {
   if (!composer) return;
   const titleInput = composer.querySelector('.subtask-title');
   const notesInput = composer.querySelector('.subtask-notes');
+  const dueField = composer.querySelector('.subtask-due');
+  const assigneeField = composer.querySelector('.subtask-assignee');
+  const assigneeCustomField = composer.querySelector('.subtask-assignee-custom');
   const title = titleInput.value.trim();
   if (!title) {
     titleInput.focus();
     return;
+  }
+  const dueAt = dueField && dueField.value ? new Date(dueField.value).toISOString() : null;
+  let assignee = '';
+  if (assigneeField) {
+    assignee = assigneeField.value === 'custom'
+      ? assigneeCustomField.value.trim()
+      : assigneeField.value;
   }
   const newTask = {
     id: generateId(),
@@ -807,7 +917,9 @@ function saveSubtask(parentPath, composer) {
     notes: notesInput.value.trim(),
     createdAt: new Date().toISOString(),
     completed: false,
-    children: []
+    children: [],
+    dueAt,
+    assignee
   };
   const children = getChildrenArray(parentPath);
   if (!children) return;
@@ -963,6 +1075,14 @@ function moveTask(path, direction) {
   parentArray.splice(targetIndex, 0, task);
   renderTasks();
   saveTasks();
+}
+
+function formatDate(isoString) {
+  try {
+    return new Date(isoString).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
+  } catch {
+    return '';
+  }
 }
 
 function showToast(message, undoCallback) {
