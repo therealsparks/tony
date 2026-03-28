@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-27 03:37 UTC",
+  "updated": "2026-03-28 03:37 UTC",
   "sections": [
     {
       "id": "gov",
@@ -14,31 +14,31 @@
           "source": "GovExec"
         },
         {
-          "title": "Measles spike in federal detention facility reaches the Texas public, records show",
-          "link": "https://feeds.texastribune.org/link/16799/17306481/texas-measles-el-paso-federal-detention-center-public-community-infections",
-          "desc": "Most of the state\u2019s measles cases reported so far this year are inside the West Texas Detention Facility in Hudspeth County, where four infected El Paso residents worked.",
-          "date": "Thu, 26 Mar 2026",
+          "title": "Energy Department taps Tech Force for development skills",
+          "link": "https://fedscoop.com/energy-department-tech-force-ai-anthropic/",
+          "desc": "Budget constraints and compliance considerations have presented hurdles for the agency as it aims to onboard technologists, a DOE IT leader said during a Thursday event. The post Energy Department taps Tech Force for development skills appeared first",
+          "date": "Fri, 27 Mar 2026",
+          "source": "FedScoop"
+        },
+        {
+          "title": "Energy supply is the key to the AI race with China",
+          "link": "https://fedscoop.com/energy-supply-is-the-key-to-the-ai-race-with-china/",
+          "desc": "A bipartisan pair of former senators deliver a blueprint for how the U.S. can edge China on AI through key energy choices. The post Energy supply is the key to the AI race with China appeared first on FedScoop.",
+          "date": "Fri, 27 Mar 2026",
+          "source": "FedScoop"
+        },
+        {
+          "title": "Voting rights groups sue Texas over removal of potential noncitizens from the voter roll",
+          "link": "https://feeds.texastribune.org/link/16799/17307937/texas-save-database-voter-rolls-removal-dps-secretary-of-state",
+          "desc": "The lawsuit says officials failed to check for proof of citizenship that voters may have already provided the state.",
+          "date": "Sat, 28 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Speaker Dustin Burrows lists data centers, property taxes and annexing slice of New Mexico\u00a0among 2027 priorities",
-          "link": "https://feeds.texastribune.org/link/16799/17306855/texas-house-speaker-dustin-burrows-interim-charges-new-mexico-data-centers-property-taxes",
-          "desc": "The Republican speaker\u2019s interim charges also covered water resources, foreign threats and government accountability.",
-          "date": "Thu, 26 Mar 2026",
-          "source": "Texas Tribune"
-        },
-        {
-          "title": "Legislators, business leaders highlight Texas policies driving competition with Wall Street",
-          "link": "https://feeds.texastribune.org/link/16799/17306764/texas-tribune-panels-yall-street-growth-legislation",
-          "desc": "The panelists at the Dallas event hosted by The Texas Tribune said \u201cY\u2019all Street\u201d is poised to become the nation's financial capital.",
-          "date": "Thu, 26 Mar 2026",
-          "source": "Texas Tribune"
-        },
-        {
-          "title": "Texas suburbs lead U.S. for population growth as international migration slows, census finds",
-          "link": "https://feeds.texastribune.org/link/16799/17306482/texas-population-census-migration-waller-county",
-          "desc": "Waller County, near Houston, was the second fastest growing county in the U.S. Another three Texas counties were among the 10 fastest growing in U.S.",
-          "date": "Thu, 26 Mar 2026",
+          "title": "Texas Supreme Court ends lawsuits against power generators over 2021 winter storm",
+          "link": "https://feeds.texastribune.org/link/16799/17307884/texas-supreme-court-2021-winter-storm-lawsuits",
+          "desc": "Tens of thousands of residents and small businesses sought damages from power generators after losing electricity during the storm that resulted in billions in losses and 246 deaths.",
+          "date": "Fri, 27 Mar 2026",
           "source": "Texas Tribune"
         },
         {
@@ -46,6 +46,20 @@
           "link": "https://feeds.texastribune.org/link/16799/17306483/rural-texas-pharmacies-benefit-managers-strategies-stay-afloat",
           "desc": "Independent rural pharmacists are starting other businesses or selling baby shower gifts to keep their stores operating. Pharmacy deserts affect 4 million Texans.",
           "date": "Thu, 26 Mar 2026",
+          "source": "Texas Tribune"
+        },
+        {
+          "title": "Long lines linger at Houston\u2019s biggest airport as TSA agents miss work during partial government shutdown",
+          "link": "https://feeds.texastribune.org/link/16799/17307355/texas-houston-airport-tsa-staffing-delays-lines",
+          "desc": "Wait times at George Bush Intercontinental Airport are expected to worsen over the weekend as agents miss a second paycheck and increasingly call in sick.",
+          "date": "Fri, 27 Mar 2026",
+          "source": "Texas Tribune"
+        },
+        {
+          "title": "Dan Patrick adds data centers, prediction markets and THC to Senate priorities",
+          "link": "https://feeds.texastribune.org/link/16799/17307703/dan-patrick-texas-senate-priorities-data-centers-thc-prediction-markets",
+          "desc": "Patrick\u2019s Friday release of priorities calls on lawmakers to study the emerging issues ahead of the 2027 legislative session.",
+          "date": "Fri, 27 Mar 2026",
           "source": "Texas Tribune"
         }
       ]
@@ -56,17 +70,24 @@
       "icon": "\u26a1",
       "items": [
         {
-          "title": "E&Ps Flag Iran War in Latest Dallas Fed Energy Survey",
-          "link": "https://www.rigzone.com/news/eps_flag_iran_war_in_latest_dallas_fed_energy_survey-26-mar-2026-183307-article/?rss=true",
-          "desc": "The Iran war was highlighted by several exploration and production companies in the 'comments' section of the first quarter 2026 Dallas Fed Energy Survey.",
-          "date": "Thu, 26 Mar 2026",
+          "title": "Execs Predict What Price WTI Oil Will Hit in Future",
+          "link": "https://www.rigzone.com/news/execs_predict_what_price_wti_oil_will_hit_in_future-27-mar-2026-183320-article/?rss=true",
+          "desc": "Executives from oil and gas firms have revealed where they expect the WTI crude oil price to be at various points in the future in the first quarter Dallas Fed Energy Survey.",
+          "date": "Fri, 27 Mar 2026",
           "source": "Rigzone"
         },
         {
-          "title": "Rystad Issues Oil Warning",
-          "link": "https://www.rigzone.com/news/rystad_issues_oil_warning-26-mar-2026-183301-article/?rss=true",
-          "desc": "'The floor has moved up, so has the ceiling', Rystad Energy said.",
-          "date": "Thu, 26 Mar 2026",
+          "title": "All Middle East Energy Assets at Risk, StanChart Warns",
+          "link": "https://www.rigzone.com/news/all_middle_east_energy_assets_at_risk_stanchart_warns-27-mar-2026-183314-article/?rss=true",
+          "desc": "'The marked escalation in the U.S.-Iran conflict over the past week puts all energy assets and infrastructure in the region at risk', Standard Chartered Bank Energy Research Head Emily Ashford warned.",
+          "date": "Fri, 27 Mar 2026",
+          "source": "Rigzone"
+        },
+        {
+          "title": "India Taxes Fuel Exports",
+          "link": "https://www.rigzone.com/news/wire/india_taxes_fuel_exports-27-mar-2026-183310-article/?rss=true",
+          "desc": "India has announced a series of tax changes including a levy on fuel exports, as the country tries to shield consumers from the impact of a deepening conflict in the Middle East that has upended energy supply.",
+          "date": "Fri, 27 Mar 2026",
           "source": "Rigzone"
         },
         {
@@ -103,13 +124,6 @@
           "desc": "Electrification has become key for the global move toward cleaner energy, even as government policies continue to impact the use of renewable resources and in some cases embrace continued and even increased support for fossil fuels. Governments and i",
           "date": "Mon, 23 Mar 2026",
           "source": "Power Magazine"
-        },
-        {
-          "title": "California earmarks $848M for rail, road projects",
-          "link": "https://www.constructiondive.com/news/california-funding-BART-tunnel-San-Jose/815905/",
-          "desc": "Of the funds, $100 million will support the construction of a 5-mile tunnel for Bay Area Rapid Transit trains between San Jose and the city of Santa Clara.",
-          "date": "Thu, 26 Mar 2026",
-          "source": "Construction Dive"
         }
       ]
     },
@@ -117,15 +131,7 @@
       "id": "medical",
       "title": "Medical & Science",
       "icon": "\ud83d\udd2c",
-      "items": [
-        {
-          "title": "STAT+: Denali Therapeutics, Corcept Therapeutics win FDA approvals",
-          "link": "https://www.statnews.com/2026/03/26/denali-corcept-fda-allogene-car-t-readout-newsletter/?utm_campaign=rss",
-          "desc": "In today's Readout Newsletter, Denali and Corcept win FDA approvals, Sarepta eyes a rebound, and Allogene progresses with an off-the-shelf CAR-T.",
-          "date": "Thu, 26 Mar 2026",
-          "source": "STAT News"
-        }
-      ]
+      "items": []
     },
     {
       "id": "legal_tech",
@@ -133,18 +139,25 @@
       "icon": "\u2696\ufe0f",
       "items": [
         {
-          "title": "Texas voter purge",
-          "link": "https://www.courthousenews.com/texas-voter-purge/",
-          "desc": "AUSTIN, Texas \u2014 Civil rights and voting groups are suing Texas Secretary of State Jane Nelson and other election officials over a state voter \u201cpurge\u201d program that uses the federal Systematic Alien Verification for Entitlements, or SAVE, database to c",
-          "date": "Fri, 27 Mar 2026",
-          "source": "Courthouse News"
-        },
-        {
           "title": "Education Dept. HQ handed to Energy as Trump advances effort to dismantle agency",
           "link": "https://www.govexec.com/management/2026/03/education-hq-handed-energy-trump-advances-effort-dismantle-agency/412424/",
           "desc": "Education says it no longer needs the space after slashing half of its workforce.",
           "date": "Thu, 26 Mar 2026",
           "source": "GovExec"
+        },
+        {
+          "title": "Energy Department taps Tech Force for development skills",
+          "link": "https://fedscoop.com/energy-department-tech-force-ai-anthropic/",
+          "desc": "Budget constraints and compliance considerations have presented hurdles for the agency as it aims to onboard technologists, a DOE IT leader said during a Thursday event. The post Energy Department taps Tech Force for development skills appeared first",
+          "date": "Fri, 27 Mar 2026",
+          "source": "FedScoop"
+        },
+        {
+          "title": "Energy supply is the key to the AI race with China",
+          "link": "https://fedscoop.com/energy-supply-is-the-key-to-the-ai-race-with-china/",
+          "desc": "A bipartisan pair of former senators deliver a blueprint for how the U.S. can edge China on AI through key energy choices. The post Energy supply is the key to the AI race with China appeared first on FedScoop.",
+          "date": "Fri, 27 Mar 2026",
+          "source": "FedScoop"
         }
       ]
     },
@@ -154,58 +167,58 @@
       "icon": "\ud83c\udfac",
       "items": [
         {
-          "title": "ITFS 2026 Showcases Family and Industry Animation Activities",
-          "link": "https://www.awn.com/news/itfs-2026-showcases-family-and-industry-animation-activities",
-          "desc": "The 33rd Stuttgart International Festival of Animated Film will present around 150 events, including the film competitions, outdoor screenings, workshops and games for audiences of all ages; runs May 5\u201310.",
-          "date": "Thu, 26 Mar 2026",
+          "title": "\u2018Telsche\u2019: Exploring Memory and Loss Through Minimalist Art",
+          "link": "https://www.awn.com/animationworld/telsche-exploring-memory-and-loss-through-minimalist-art",
+          "desc": "Set on a stark salt-flat landscape and rendered in just three colors, Sophie Colfer and Ala Nunu\u2019s 2D short follows a young girl\u2019s search for a mother she can no longer fully remember, using stripped-down visuals without dialogue to explore how memor",
+          "date": "Fri, 27 Mar 2026",
           "source": "Animation World Net"
         },
         {
-          "title": "Vine FX Delivers Smoldering VFX on 'After the Flood' Season 2",
-          "link": "https://www.awn.com/news/vine-fx-delivers-smoldering-vfx-after-flood-season-2",
-          "desc": "The Cambridge-based studio returns as sole vendor on the ITV crime drama, delivering 336 shots and 94 sequences combining fire simulation, Gaussian splatting, and invisible effects to support the series\u2019 expanded environmental scope.",
-          "date": "Thu, 26 Mar 2026",
+          "title": "Adult Swim SMALLS \u20183,2,1\u2026 Chachipistachi\u2019 Short Debuts Today on YouTube",
+          "link": "https://www.awn.com/news/adult-swim-smalls-321-chachipistachi-short-debuts-today-youtube",
+          "desc": "From indie Spanish animator Rafillo comes a film that teaches you everything you ever wanted to know from Professor Chachipistachi who, along with the little siblings Timmy and Mariloli Manilli, will experience a thousand adventures.",
+          "date": "Fri, 27 Mar 2026",
           "source": "Animation World Net"
         },
         {
-          "title": "Sylvain Chomet\u2019s \u2018A Magnificent Life\u2019: Animation More Real Than Reality",
-          "link": "https://www.awn.com/animationworld/sylvain-chomets-magnificent-life-animation-more-real-reality",
-          "desc": "The acclaimed, Oscar-nominated French director talks about his new film, his love of animation, and how if the acting, art, and editing are all good, your characters can feel more real than in live-action; in theaters March 27.",
-          "date": "Thu, 26 Mar 2026",
+          "title": "Crunchyroll Sets Same-Day English Dub Launch for 'Witch Hat Atelier' Anime",
+          "link": "https://www.awn.com/news/crunchyroll-sets-same-day-english-dub-launch-witch-hat-atelier-anime",
+          "desc": "The adaptation of Kamome Shirahama\u2019s manga will premiere April 6 with simultaneous English and Japanese releases of Episodes 1 and 2, alongside multiple dubbed language options.",
+          "date": "Fri, 27 Mar 2026",
           "source": "Animation World Net"
         },
         {
-          "title": "Baobab Studios Acquires Roblox Title Rights for Film and TV Development",
-          "link": "https://www.awn.com/news/baobab-studios-acquires-roblox-title-rights-film-and-tv-development",
-          "desc": "Company is developing animated projects based on 3 of the gaming giant\u2019s most widely played titles - 'Natural Disaster Survival,' 'Barry's Prison Run,' and 'Deepwoken' - working with original creators to expand the properties for global audiences.",
-          "date": "Thu, 26 Mar 2026",
+          "title": "August Media Boards Roye Okupe\u2019s 'Malika: Warrior Queen' as Co-Producer",
+          "link": "https://www.awn.com/news/august-media-boards-roye-okupes-malika-warrior-queen-co-producer",
+          "desc": "Singapore-based company joins the animated feature, financing up to one-third of the project and overseeing animation production across Asia.",
+          "date": "Fri, 27 Mar 2026",
           "source": "Animation World Net"
         },
         {
-          "title": "WEBTOON Unifies CANVAS with New Creator Tools and Translation Program",
-          "link": "https://www.awn.com/news/webtoon-unifies-canvas-new-creator-tools-and-translation-program",
-          "desc": "The company will consolidate its regional user-generated content services into a single global platform, introducing expanded monetization, analytics, and multilingual distribution tools beginning in spring 2026.",
-          "date": "Thu, 26 Mar 2026",
+          "title": "\u2018SPARK\u2019 Issue 2 Now Available for Free Download",
+          "link": "https://www.awn.com/news/spark-issue-2-now-available-free-download",
+          "desc": "The latest edition of the monthly editorial platform dedicated to African animation features a spotlight on women shaping the industry across the continent, a conversation with Smids Animation\u2019s Damilola Solesi, and a look at Louisette Ratsivahiny\u2019s ",
+          "date": "Fri, 27 Mar 2026",
           "source": "Animation World Net"
+        },
+        {
+          "title": "Reza Dolatabadi and NOBORDER Present \u201cSEIZE YOUR NOW. BUILD YOUR FUTURE.\u201d for Aston Martin Formula 1 Team and Coinbase",
+          "link": "https://motionographer.com/news/reza-dolatabadi-and-noborder-present-seize-your-now-build-your-future-for-aston-martin-formula-1-team-and-coinbase/",
+          "desc": "Director Reza Dolatabadi, co founder of NOBORDER Studio, led the creation of SEIZE YOUR NOW. BUILD YOUR FUTURE., a new animated film developed for the Aston Martin Formula 1 Team in collaboration with Coinbase, continuing an ongoing creative partners",
+          "date": "Fri, 27 Mar 2026",
+          "source": "Motionographer"
+        },
+        {
+          "title": "Topstep \u2018Winter Olympics Campaign\u2019 | Scholar",
+          "link": "https://motionographer.com/quickie/topstep-winter-olympics-campaign-scholar/",
+          "desc": "",
+          "date": "Fri, 27 Mar 2026",
+          "source": "Motionographer"
         },
         {
           "title": "Digital Design Days Celebrates 10th Anniversary With Most Ambitious Edition Ever",
           "link": "https://motionographer.com/news/digital-design-days-celebrates-10th-anniversary-with-most-ambitious-edition-ever/",
           "desc": "Digital Design Days (DDD), Italy's leading design and innovation conference, celebrates its tenth anniversary with an extraordinary edition taking place May 7-9, 2026 at Superstudio Village in Milan.",
-          "date": "Thu, 26 Mar 2026",
-          "source": "Motionographer"
-        },
-        {
-          "title": "Night Landscapes at Llum BCN 2026 | DAQ Studio",
-          "link": "https://motionographer.com/quickie/night-landscapes-at-llum-bcn-2026-daq-studio/",
-          "desc": "",
-          "date": "Thu, 26 Mar 2026",
-          "source": "Motionographer"
-        },
-        {
-          "title": "Motionographer 4.0: Under Construction \u2013 And Something Big Is Coming in May",
-          "link": "https://motionographer.com/2026/03/26/motionographer-4-0-under-construction-and-something-big-is-coming-in-may/",
-          "desc": "Twenty years in, Motionographer is getting a refresh - not just a redesign, but a rethinking. Dark mode, jobs on the homepage, a new Events page, and something big coming in May. Here's what's already live.",
           "date": "Thu, 26 Mar 2026",
           "source": "Motionographer"
         }
@@ -224,31 +237,17 @@
           "source": "Texas CEO Magazine"
         },
         {
-          "title": "Measles spike in federal detention facility reaches the Texas public, records show",
-          "link": "https://feeds.texastribune.org/link/16799/17306481/texas-measles-el-paso-federal-detention-center-public-community-infections",
-          "desc": "Most of the state\u2019s measles cases reported so far this year are inside the West Texas Detention Facility in Hudspeth County, where four infected El Paso residents worked.",
-          "date": "Thu, 26 Mar 2026",
+          "title": "Voting rights groups sue Texas over removal of potential noncitizens from the voter roll",
+          "link": "https://feeds.texastribune.org/link/16799/17307937/texas-save-database-voter-rolls-removal-dps-secretary-of-state",
+          "desc": "The lawsuit says officials failed to check for proof of citizenship that voters may have already provided the state.",
+          "date": "Sat, 28 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Speaker Dustin Burrows lists data centers, property taxes and annexing slice of New Mexico\u00a0among 2027 priorities",
-          "link": "https://feeds.texastribune.org/link/16799/17306855/texas-house-speaker-dustin-burrows-interim-charges-new-mexico-data-centers-property-taxes",
-          "desc": "The Republican speaker\u2019s interim charges also covered water resources, foreign threats and government accountability.",
-          "date": "Thu, 26 Mar 2026",
-          "source": "Texas Tribune"
-        },
-        {
-          "title": "Legislators, business leaders highlight Texas policies driving competition with Wall Street",
-          "link": "https://feeds.texastribune.org/link/16799/17306764/texas-tribune-panels-yall-street-growth-legislation",
-          "desc": "The panelists at the Dallas event hosted by The Texas Tribune said \u201cY\u2019all Street\u201d is poised to become the nation's financial capital.",
-          "date": "Thu, 26 Mar 2026",
-          "source": "Texas Tribune"
-        },
-        {
-          "title": "Texas suburbs lead U.S. for population growth as international migration slows, census finds",
-          "link": "https://feeds.texastribune.org/link/16799/17306482/texas-population-census-migration-waller-county",
-          "desc": "Waller County, near Houston, was the second fastest growing county in the U.S. Another three Texas counties were among the 10 fastest growing in U.S.",
-          "date": "Thu, 26 Mar 2026",
+          "title": "Texas Supreme Court ends lawsuits against power generators over 2021 winter storm",
+          "link": "https://feeds.texastribune.org/link/16799/17307884/texas-supreme-court-2021-winter-storm-lawsuits",
+          "desc": "Tens of thousands of residents and small businesses sought damages from power generators after losing electricity during the storm that resulted in billions in losses and 246 deaths.",
+          "date": "Fri, 27 Mar 2026",
           "source": "Texas Tribune"
         },
         {
@@ -259,16 +258,30 @@
           "source": "Texas Tribune"
         },
         {
-          "title": "California earmarks $848M for rail, road projects",
-          "link": "https://www.constructiondive.com/news/california-funding-BART-tunnel-San-Jose/815905/",
-          "desc": "Of the funds, $100 million will support the construction of a 5-mile tunnel for Bay Area Rapid Transit trains between San Jose and the city of Santa Clara.",
-          "date": "Thu, 26 Mar 2026",
+          "title": "Long lines linger at Houston\u2019s biggest airport as TSA agents miss work during partial government shutdown",
+          "link": "https://feeds.texastribune.org/link/16799/17307355/texas-houston-airport-tsa-staffing-delays-lines",
+          "desc": "Wait times at George Bush Intercontinental Airport are expected to worsen over the weekend as agents miss a second paycheck and increasingly call in sick.",
+          "date": "Fri, 27 Mar 2026",
+          "source": "Texas Tribune"
+        },
+        {
+          "title": "Dan Patrick adds data centers, prediction markets and THC to Senate priorities",
+          "link": "https://feeds.texastribune.org/link/16799/17307703/dan-patrick-texas-senate-priorities-data-centers-thc-prediction-markets",
+          "desc": "Patrick\u2019s Friday release of priorities calls on lawmakers to study the emerging issues ahead of the 2027 legislative session.",
+          "date": "Fri, 27 Mar 2026",
+          "source": "Texas Tribune"
+        },
+        {
+          "title": "Granite wins $495M in southern border work",
+          "link": "https://www.constructiondive.com/news/granite-construction-southern-border-work/816028/",
+          "desc": "After nabbing the first border wall contract of President Donald Trump&rsquo;s second term last year, the contractor is set to focus on 27 miles of tactical infrastructure near Laredo, Texas. &nbsp;",
+          "date": "Fri, 27 Mar 2026",
           "source": "Construction Dive"
         },
         {
-          "title": "Data center buildouts slowed late last year \u2014 finally",
-          "link": "https://www.constructiondive.com/news/data-center-building-boom-slows-despite-massive-spend/815838/",
-          "desc": "Despite ongoing hyperscaler infrastructure investments and record compute demand, construction declined for the first time since 2020, CBRE research found.",
+          "title": "California earmarks $848M for rail, road projects",
+          "link": "https://www.constructiondive.com/news/california-funding-BART-tunnel-San-Jose/815905/",
+          "desc": "Of the funds, $100 million will support the construction of a 5-mile tunnel for Bay Area Rapid Transit trains between San Jose and the city of Santa Clara.",
           "date": "Thu, 26 Mar 2026",
           "source": "Construction Dive"
         }
