@@ -439,10 +439,17 @@ function loadTasks(email) {
   }
 }
 
+function generateId() {
+  if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+    return crypto.randomUUID();
+  }
+  return `task-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
+}
+
 function normalizeTasks(list) {
   if (!Array.isArray(list)) return [];
   return list.map(item => ({
-    id: item.id || (crypto.randomUUID ? crypto.randomUUID() : Date.now().toString()),
+    id: item.id || generateId(),
     title: item.title || 'Untitled task',
     notes: item.notes || '',
     createdAt: item.createdAt || new Date().toISOString(),
@@ -496,7 +503,7 @@ function addTask() {
     return;
   }
   const task = {
-    id: crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(),
+    id: generateId(),
     title,
     notes,
     createdAt: new Date().toISOString(),
@@ -638,7 +645,7 @@ function saveSubtask(parentPath, composer) {
     return;
   }
   const newTask = {
-    id: crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(),
+    id: generateId(),
     title,
     notes: notesInput.value.trim(),
     createdAt: new Date().toISOString(),
