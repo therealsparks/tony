@@ -103,6 +103,27 @@
   }
   button.primary:hover { background:#1d4ed8; }
   .task-list { display:flex; flex-direction:column; gap:12px; }
+  .task-toolbar {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border:1px solid #e5e7eb;
+    border-radius:14px;
+    padding:10px 14px;
+    background:#fff;
+    font-size:13px;
+    color:#4b5563;
+  }
+  .master-checkbox {
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-weight:600;
+  }
+  .master-checkbox input {
+    width:18px;
+    height:18px;
+  }
   .task-card {
     border:1px solid #e4e7ec;
     border-radius:16px;
@@ -117,6 +138,7 @@
   .task-row {
     display:flex;
     gap:12px;
+    align-items:flex-start;
   }
   .checkbox {
     position:relative;
@@ -178,13 +200,21 @@
     flex-shrink:0;
   }
   .drag-handle {
-    border:1px solid transparent;
+    border:1px solid #e5e7eb;
     background:#f3f4f6;
     color:#6b7280;
     border-radius:10px;
-    padding:6px 8px;
-    font-size:12px;
+    width:24px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     cursor:grab;
+  }
+  .drag-handle::before {
+    content:'⋮⋮';
+    font-size:16px;
+    line-height:1;
   }
   .clear-btn {
     border:1px solid #e5e7eb;
@@ -526,6 +556,21 @@ function renderTasks() {
     taskListEl.appendChild(empty);
     return;
   }
+  const toolbar = document.createElement('div');
+  toolbar.className = 'task-toolbar';
+  toolbar.innerHTML = `
+    <label class="master-checkbox">
+      <input type="checkbox" id="master-toggle">
+      Select / clear all
+    </label>
+  `;
+  taskListEl.appendChild(toolbar);
+  const masterToggle = toolbar.querySelector('#master-toggle');
+  masterToggle.checked = areAllTasksCompleted(tasks);
+  masterToggle.indeterminate = !masterToggle.checked && hasAnyCompleted(tasks);
+  masterToggle.addEventListener('change', evt => {
+    toggleAllTasks(evt.target.checked);
+  });
   renderTaskList(tasks, taskListEl, []);
 }
 
@@ -542,6 +587,7 @@ function renderTaskList(list, container, path) {
     const created = new Date(task.createdAt).toLocaleString();
     card.innerHTML = `
       <div class="task-row">
+        <button class="drag-handle" type="button" aria-label="Reorder"></button>
         <label class="checkbox">
           <input type="checkbox" data-action="toggle" data-path="${pathStr}" ${task.completed ? 'checked' : ''}>
           <span></span>
@@ -554,7 +600,6 @@ function renderTaskList(list, container, path) {
             </div>
             <div class="task-actions">
               <button class="clear-btn ${task.completed ? '' : 'hidden'}" data-action="clear" data-path="${pathStr}">Clear task</button>
-              <button class="drag-handle" type="button">⋮⋮</button>
             </div>
           </div>
           ${task.notes ? `<p class="task-notes">${escapeHtml(task.notes)}</p>` : ''}
@@ -776,6 +821,28 @@ function parsePath(str) {
 function pathsEqual(a, b) {
   if (a.length !== b.length) return false;
   return a.every((val, idx) => val === b[idx]);
+}
+
+function areAllTasksCompleted(list) {
+  if (!list.length) return false;
+  return list.every(task => task.completed && areAllTasksCompleted(task.children || []));
+}
+
+function hasAnyCompleted(list) {
+  return list.some(task => task.completed || hasAnyCompleted(task.children || []));
+}
+
+function setCompletedRecursive(list, value) {
+  list.forEach(task => {
+    task.completed = value;
+    setCompletedRecursive(task.children || [], value);
+  });
+}
+
+function toggleAllTasks(value) {
+  setCompletedRecursive(tasks, value);
+  renderTasks();
+  saveTasks();
 }
 
 function showToast(message, undoCallback) {
