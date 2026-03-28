@@ -3,63 +3,325 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Personal Task View</title>
+<title>Personal Task Workspace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  :root {
+    color-scheme: light;
+  }
+  * {
+    box-sizing: border-box;
+  }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
-    background: #f5f5f7;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+    background: linear-gradient(180deg, #f7f7fa 0%, #f0f4ff 100%);
     color: #1d1d1f;
     padding: 40px 18px 60px;
+    min-height: 100vh;
   }
-  .wrap { max-width: 520px; margin: 0 auto; text-align: center; }
-  .logo { font-size: 36px; margin-bottom: 12px; }
-  h1 { font-size: 30px; font-weight: 800; letter-spacing: -0.8px; margin-bottom: 10px; }
-  p { font-size: 14px; color:#6e6e73; line-height:1.6; margin-bottom:16px; }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  .logo { font-size: 40px; margin-bottom: 12px; }
+  h1 { font-size: 34px; font-weight: 800; letter-spacing: -0.8px; margin-bottom: 6px; }
+  p.lede { font-size: 15px; color:#4b5563; line-height:1.6; margin-bottom:24px; }
   .card {
     background:#fff;
-    border-radius:18px;
-    border:1px solid #ebecef;
-    padding:24px;
-    box-shadow:0 1px 4px rgba(0,0,0,0.06);
+    border-radius:22px;
+    border:1px solid #e4e7ec;
+    padding:28px;
+    box-shadow:0 20px 40px rgba(15,23,42,0.08);
+    margin-bottom:24px;
   }
-  .google-btn {
-    display:inline-flex;
+  .card.hidden { display: none; }
+  .signin-note { font-size:13px; color:#6b7280; margin-top:16px; }
+  .profile {
+    display:flex;
     align-items:center;
-    gap:10px;
-    border:1px solid #d0d0d7;
+    justify-content:space-between;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom:24px;
+    border-bottom:1px solid #f0f2f5;
+    padding-bottom:18px;
+  }
+  .profile-pill {
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+  }
+  .profile-pill .eyebrow { font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#9ca3af; }
+  .profile-name { font-size:20px; font-weight:700; }
+  .profile-email { font-size:14px; color:#6b7280; }
+  button.ghost {
+    border:1px solid #e5e7eb;
     background:#fff;
-    padding:10px 20px;
+    color:#1d1d1f;
+    padding:10px 18px;
     border-radius:999px;
+    font-weight:600;
+    cursor:pointer;
+    transition: all 0.2s ease;
+  }
+  button.ghost:hover { border-color:#cbd5f5; color:#2563eb; }
+  .task-composer {
+    background:#f8fafc;
+    border-radius:18px;
+    padding:20px;
+    margin-bottom:20px;
+  }
+  .task-composer h2 { margin:0 0 12px; font-size:18px; }
+  .input-row { display:flex; flex-direction:column; gap:10px; }
+  .input-row input,
+  .input-row textarea {
+    width:100%;
+    border:1px solid #d2d6dc;
+    border-radius:14px;
+    padding:12px 14px;
+    font-size:14px;
+    font-family:inherit;
+    transition:border 0.2s ease, box-shadow 0.2s ease;
+  }
+  .input-row input:focus,
+  .input-row textarea:focus {
+    outline:none;
+    border-color:#2563eb;
+    box-shadow:0 0 0 2px rgba(37,99,235,0.15);
+  }
+  button.primary {
+    margin-top:12px;
+    background:#2563eb;
+    color:#fff;
+    border:none;
+    border-radius:14px;
+    padding:12px 16px;
     font-size:14px;
     font-weight:600;
-    color:#1d1d1f;
+    width:100%;
     cursor:pointer;
-    margin-top:12px;
+    transition:background 0.2s ease;
   }
-  .note {
-    font-size:12px;
-    color:#6e6e73;
-    margin-top:12px;
+  button.primary:hover { background:#1d4ed8; }
+  .task-list { display:flex; flex-direction:column; gap:12px; }
+  .task-card {
+    border:1px solid #e4e7ec;
+    border-radius:16px;
+    padding:16px;
+    background:#fff;
   }
-  a.back { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:600; color:#0071e3; text-decoration:none; margin-top:20px; }
+  .task-card h3 { margin:0 0 6px; font-size:16px; }
+  .task-meta { font-size:12px; text-transform:uppercase; letter-spacing:0.08em; color:#94a3b8; margin-bottom:8px; }
+  .task-notes { font-size:14px; color:#4b5563; margin:0; }
+  .empty { text-align:center; color:#9ca3af; font-size:14px; padding:18px; border:1px dashed #cbd5f5; border-radius:16px; }
+  .integration-note {
+    margin-top:24px;
+    font-size:13px;
+    color:#6b7280;
+    background:#fef9c3;
+    padding:16px;
+    border-radius:16px;
+    border:1px solid #fcd34d;
+  }
+  .back { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#2563eb; text-decoration:none; margin-top:12px; }
 </style>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
 <div class="wrap">
   <div class="logo">⚡</div>
-  <h1>Personal Task View</h1>
-  <p>Sign in with your Austin Visuals Google account to see the tasks assigned to you. Access is limited to the whitelist Matt approves.</p>
+  <h1>Personal Task Workspace</h1>
+  <p class="lede">Sign in with your Austin Visuals Google account to land in your private task bay. Today it runs locally; once the backend is wired, this same surface will sync straight into Tony + OpenClaw.</p>
 
-  <div class="card">
-    <p><strong>Secure login coming soon.</strong> For now this is a placeholder—once Google OAuth is wired up, you’ll land on your personalized checklist here.</p>
-    <button class="google-btn" disabled>
-      <span>🔒</span>
-      Sign in with Google
-    </button>
-    <div class="note">Need access? Email Matt to be added to the waitlist.</div>
-  </div>
+  <section id="signin-card" class="card">
+    <div id="g_id_onload"
+         data-client_id="850841913123-f1t6n57e9umcgnlhip2thih9m7id4389.apps.googleusercontent.com"
+         data-context="signin"
+         data-ux_mode="popup"
+         data-callback="handleCredentialResponse"
+         data-auto_prompt="false">
+    </div>
+    <div class="g_id_signin"
+         data-type="standard"
+         data-size="large"
+         data-theme="outline"
+         data-text="signin_with"
+         data-shape="pill"
+         data-logo_alignment="left">
+    </div>
+    <p class="signin-note">Whitelist only. Reach out to Matt if your Austin Visuals Google account needs to be added.</p>
+  </section>
+
+  <section id="workspace" class="card hidden">
+    <div class="profile">
+      <div class="profile-pill">
+        <span class="eyebrow">Signed in as</span>
+        <span class="profile-name" id="profile-name">—</span>
+        <span class="profile-email" id="profile-email">—</span>
+      </div>
+      <button class="ghost" id="signout-btn" type="button">Sign out</button>
+    </div>
+
+    <div class="task-composer">
+      <h2>Create a task</h2>
+      <div class="input-row">
+        <input id="task-title" type="text" maxlength="120" placeholder="e.g., Prep deck for Monday client check-in" autocomplete="off">
+        <textarea id="task-notes" rows="3" placeholder="Optional notes, acceptance criteria, or links"></textarea>
+      </div>
+      <button class="primary" id="add-task-btn" type="button">Add to my list</button>
+    </div>
+
+    <div id="task-list" class="task-list">
+      <div class="empty">No personal tasks yet. Add one above to start your list.</div>
+    </div>
+
+    <div class="integration-note">
+      <strong>Next phase:</strong> This workspace will call OpenClaw endpoints so tasks can sync, trigger automations, or surface AI helpers. The hook will live in <code>syncWithTony()</code> inside the script below—ready whenever the backend ships.
+    </div>
+  </section>
 
   <a href="tasks.html" class="back">← Back to Company Tasks</a>
 </div>
+
+<script>
+const CLIENT_ID = '850841913123-f1t6n57e9umcgnlhip2thih9m7id4389.apps.googleusercontent.com';
+let currentUser = null;
+let tasks = [];
+
+window.handleCredentialResponse = function(response) {
+  if (!response || !response.credential) {
+    console.warn('Missing credential response');
+    return;
+  }
+  const profile = decodeJwt(response.credential);
+  enterWorkspace(profile, response.credential);
+};
+
+document.getElementById('add-task-btn').addEventListener('click', addTask);
+document.getElementById('signout-btn').addEventListener('click', signOut);
+
+document.addEventListener('keydown', (evt) => {
+  if (evt.key === 'Enter' && evt.metaKey) {
+    evt.preventDefault();
+    addTask();
+  }
+});
+
+function decodeJwt(token) {
+  const base64Url = token.split('.')[1];
+  const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  const jsonPayload = decodeURIComponent(atob(base64).split('').map(c => {
+    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  }).join(''));
+  return JSON.parse(jsonPayload);
+}
+
+function enterWorkspace(profile, token) {
+  currentUser = {
+    name: profile.name || profile.given_name || profile.email?.split('@')[0] || 'Teammate',
+    email: profile.email || 'unknown@austinvisuals.com',
+    token
+  };
+  document.getElementById('profile-name').textContent = currentUser.name;
+  document.getElementById('profile-email').textContent = currentUser.email;
+  document.getElementById('signin-card').classList.add('hidden');
+  document.getElementById('workspace').classList.remove('hidden');
+  tasks = loadTasks(currentUser.email);
+  renderTasks();
+}
+
+function persistenceKey(email) {
+  return `tony.personalTasks.${email}`;
+}
+
+function loadTasks(email) {
+  if (!email) return [];
+  try {
+    const raw = localStorage.getItem(persistenceKey(email));
+    return raw ? JSON.parse(raw) : [];
+  } catch (err) {
+    console.warn('Unable to load tasks', err);
+    return [];
+  }
+}
+
+function saveTasks() {
+  if (!currentUser?.email) return;
+  localStorage.setItem(persistenceKey(currentUser.email), JSON.stringify(tasks));
+  syncWithTony();
+}
+
+function addTask() {
+  if (!currentUser) {
+    alert('Sign in with Google first.');
+    return;
+  }
+  const titleInput = document.getElementById('task-title');
+  const notesInput = document.getElementById('task-notes');
+  const title = titleInput.value.trim();
+  const notes = notesInput.value.trim();
+  if (!title) {
+    titleInput.focus();
+    return;
+  }
+  tasks.unshift({
+    id: crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(),
+    title,
+    notes,
+    createdAt: new Date().toISOString()
+  });
+  titleInput.value = '';
+  notesInput.value = '';
+  renderTasks();
+  saveTasks();
+}
+
+function renderTasks() {
+  const list = document.getElementById('task-list');
+  list.innerHTML = '';
+  if (!tasks.length) {
+    const empty = document.createElement('div');
+    empty.className = 'empty';
+    empty.textContent = 'No personal tasks yet. Add one above to start your list.';
+    list.appendChild(empty);
+    return;
+  }
+  tasks.forEach(task => {
+    const card = document.createElement('div');
+    card.className = 'task-card';
+    card.innerHTML = `
+      <div class="task-meta">Created ${new Date(task.createdAt).toLocaleString()}</div>
+      <h3>${escapeHtml(task.title)}</h3>
+      ${task.notes ? `<p class="task-notes">${escapeHtml(task.notes)}</p>` : ''}
+    `;
+    list.appendChild(card);
+  });
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+function signOut() {
+  currentUser = null;
+  tasks = [];
+  document.getElementById('workspace').classList.add('hidden');
+  document.getElementById('signin-card').classList.remove('hidden');
+  document.getElementById('task-title').value = '';
+  document.getElementById('task-notes').value = '';
+  google.accounts.id.disableAutoSelect();
+}
+
+function syncWithTony() {
+  // Placeholder for the future OpenClaw/tony sync call.
+  // Example shape:
+  // fetch('https://api.tony.workers.dev/tasks', {
+  //   method: 'POST',
+  //   headers: { 'Content-Type': 'application/json' },
+  //   body: JSON.stringify({ token: currentUser.token, tasks })
+  // });
+}
+</script>
 </body>
 </html>
