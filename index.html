@@ -25,7 +25,6 @@
     gap: 12px;
     margin-bottom: 32px;
     flex-wrap: wrap;
-    align-items: center;
   }
   .stat-pill {
     background: #fff;
@@ -38,28 +37,6 @@
     display: flex;
     align-items: center;
     gap: 6px;
-  }
-  .stat-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: linear-gradient(135deg,#0071e3,#34aadc);
-    border-radius: 99px;
-    padding: 7px 16px;
-    font-size: 12px;
-    font-weight: 700;
-    color: #fff;
-    text-decoration: none;
-    box-shadow: 0 6px 18px rgba(0,113,227,0.18);
-    border: none;
-    white-space: nowrap;
-  }
-  .stat-button span { font-size: 12px; }
-  .stat-button:hover { opacity: 0.92; }
-
-  @media (min-width: 700px) {
-    .stats { flex-wrap: nowrap; }
-    .stats .stat-button { margin-left: auto; }
   }
 
   .internal-links {
@@ -242,8 +219,7 @@
 
   <div class="stats">
     <div class="stat-pill"><span class="dot dot-green"></span> 21 Live Skills</div>
-    <div class="stat-pill"><span class="dot dot-green"></span> Kling - Live</div>
-    <a class="stat-button" href="tasks.html">Tasks →</a>
+    <div class="stat-pill">5 Categories</div>
   </div>
 
   <!-- ── DROPBOX ── -->
@@ -577,16 +553,16 @@
     return false;
   }
   // Status widget
-  fetch('/tony/status.json?v=' + Date.now())
+  fetch('status.json?v=' + Date.now())
     .then(r => r.json())
     .then(data => {
       const minsAgo = Math.floor((Date.now() - new Date(data.last_seen).getTime()) / 60000);
       const dot = document.getElementById('status-dot-small');
       const txt = document.getElementById('status-text-small');
-      if (minsAgo > 180) {
+      if (minsAgo > 30) {
         dot.style.background = '#ff3b30';
         txt.textContent = 'Offline';
-      } else if (minsAgo > 60) {
+      } else if (minsAgo > 15) {
         dot.style.background = '#ff9f0a';
         txt.textContent = 'Delayed';
       } else {
