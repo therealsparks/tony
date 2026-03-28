@@ -439,8 +439,9 @@ function decodeJwt(token) {
 }
 
 function enterWorkspace(profile, token) {
+  const derivedName = profile.name || profile.given_name || (profile.email ? profile.email.split('@')[0] : '');
   currentUser = {
-    name: profile.name || profile.given_name || profile.email?.split('@')[0] || 'Teammate',
+    name: derivedName || 'Teammate',
     email: profile.email || 'unknown@austinvisuals.com',
     token: token || profile.token || null
   };
@@ -489,7 +490,7 @@ function normalizeTasks(list) {
 }
 
 function saveSession() {
-  if (!currentUser?.email) return;
+  if (!currentUser || !currentUser.email) return;
   try {
     localStorage.setItem(SESSION_KEY, JSON.stringify({
       name: currentUser.name,
@@ -516,7 +517,7 @@ function clearSession() {
 }
 
 function saveTasks() {
-  if (!currentUser?.email) return;
+  if (!currentUser || !currentUser.email) return;
   localStorage.setItem(persistenceKey(currentUser.email), JSON.stringify(tasks));
   syncWithTony();
 }
@@ -620,7 +621,7 @@ function renderTaskList(list, container, path) {
     container.appendChild(card);
 
     const subtasksContainer = card.querySelector('.subtasks');
-    if (task.children?.length) {
+    if (task.children && task.children.length) {
       renderTaskList(task.children, subtasksContainer, currentPath);
     }
   });
@@ -655,7 +656,7 @@ function handleTaskClick(evt) {
     openSubtaskComposer(path);
   } else if (action === 'cancel-subtask') {
     const composer = actionBtn.closest('.subtask-composer');
-    composer?.remove();
+    if (composer) composer.remove();
   } else if (action === 'save-subtask' && path) {
     const composer = actionBtn.closest('.subtask-composer');
     saveSubtask(path, composer);
@@ -856,7 +857,9 @@ function showToast(message, undoCallback) {
       clearTimeout(undoTimer);
       undoTimer = null;
     }
-    undoCallback?.();
+    if (typeof undoCallback === 'function') {
+      undoCallback();
+    }
   };
 }
 
@@ -877,7 +880,7 @@ function signOut() {
 }
 
 const restoredSession = loadSession();
-if (restoredSession?.email) {
+if (restoredSession && restoredSession.email) {
   enterWorkspace(restoredSession, restoredSession.token || null);
 }
 
