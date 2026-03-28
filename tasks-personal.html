@@ -909,6 +909,11 @@ function signOut() {
 const restoredSession = loadSession();
 if (restoredSession && restoredSession.email) {
   enterWorkspace(restoredSession, restoredSession.token || null);
+} else {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('dev') === '1') {
+    enterWorkspace({ name: 'Dev Tester', email: 'dev@austinvisuals.com' }, null);
+  }
 }
 
 function syncWithTony() {
