@@ -613,7 +613,6 @@ function renderTaskList(list, container, path) {
     card.className = 'task-card' + (task.completed ? ' completed' : '');
     card.dataset.path = pathStr;
     card.style.setProperty('--indent', currentPath.length * 24);
-    card.setAttribute('draggable', 'true');
 
     const created = new Date(task.createdAt).toLocaleString();
     card.innerHTML = `
@@ -642,11 +641,14 @@ function renderTaskList(list, container, path) {
       <div class="subtasks"></div>
     `;
 
-    card.addEventListener('dragstart', handleDragStart);
+    const handleBtn = card.querySelector('.drag-handle');
+    handleBtn.setAttribute('draggable', 'true');
+    handleBtn.addEventListener('dragstart', evt => handleDragStart(evt, pathStr));
+    handleBtn.addEventListener('dragend', handleDragEnd);
+
     card.addEventListener('dragover', handleDragOver);
     card.addEventListener('dragleave', handleDragLeave);
     card.addEventListener('drop', handleDrop);
-    card.addEventListener('dragend', handleDragEnd);
 
     container.appendChild(card);
 
@@ -757,13 +759,8 @@ function clearTask(path) {
   }, 6000);
 }
 
-function handleDragStart(evt) {
-  const handle = evt.target.closest('.drag-handle');
-  if (!handle) {
-    evt.preventDefault();
-    return;
-  }
-  draggedPath = evt.currentTarget.dataset.path;
+function handleDragStart(evt, pathStr) {
+  draggedPath = pathStr;
   evt.dataTransfer.effectAllowed = 'move';
 }
 
@@ -799,8 +796,8 @@ function handleDrop(evt) {
   saveTasks();
 }
 
-function handleDragEnd(evt) {
-  evt.currentTarget.classList.remove('drag-over');
+function handleDragEnd() {
+  document.querySelectorAll('.task-card.drag-over').forEach(el => el.classList.remove('drag-over'));
   draggedPath = null;
 }
 
