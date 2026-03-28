@@ -274,7 +274,7 @@
     cursor:pointer;
     transition:all 0.2s ease;
   }
-  .clear-btn.hidden { display:none; }
+  .clear-btn.is-placeholder { visibility:hidden; }
   .clear-btn:hover { background:#fee2e2; border-color:#fecaca; }
   .task-meta { font-size:12px; text-transform:uppercase; letter-spacing:0.08em; color:#94a3b8; margin:0 0 6px; }
   .task-notes { font-size:14px; color:#4b5563; margin:6px 0 0; white-space:pre-wrap; }
@@ -704,7 +704,7 @@ function renderTaskList(list, container, path) {
                   <button class="reorder-btn" data-action="move-down" data-path="${pathStr}" aria-label="Move down">↓</button>
                 </div>
               ` : ''}
-              <button class="clear-btn ${task.completed ? '' : 'hidden'}" data-action="clear" data-path="${pathStr}">Clear task</button>
+              <button class="clear-btn ${task.completed ? '' : 'is-placeholder'}" data-action="clear" data-path="${pathStr}">Clear task</button>
             </div>
           </div>
           ${task.notes ? `<p class="task-notes">${escapeHtml(task.notes)}</p>` : ''}
