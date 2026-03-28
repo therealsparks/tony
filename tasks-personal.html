@@ -18,7 +18,7 @@
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
     background: linear-gradient(180deg, #f7f7fa 0%, #f0f4ff 100%);
     color: #1d1d1f;
-    padding: 40px 18px 60px;
+    padding: 40px 18px 80px;
     min-height: 100vh;
   }
   .wrap { max-width: 720px; margin: 0 auto; }
@@ -108,10 +108,157 @@
     border-radius:16px;
     padding:16px;
     background:#fff;
+    margin-left: calc(var(--indent, 0) * 1px);
   }
-  .task-card h3 { margin:0 0 6px; font-size:16px; }
-  .task-meta { font-size:12px; text-transform:uppercase; letter-spacing:0.08em; color:#94a3b8; margin-bottom:8px; }
-  .task-notes { font-size:14px; color:#4b5563; margin:0; }
+  .task-card.drag-over {
+    border-color:#2563eb;
+    box-shadow:0 0 0 2px rgba(37,99,235,0.1);
+  }
+  .task-row {
+    display:flex;
+    gap:12px;
+  }
+  .checkbox {
+    position:relative;
+    width:22px;
+    height:22px;
+    flex-shrink:0;
+  }
+  .checkbox input {
+    position:absolute;
+    opacity:0;
+    width:22px;
+    height:22px;
+    margin:0;
+    cursor:pointer;
+  }
+  .checkbox span {
+    position:absolute;
+    inset:0;
+    border:2px solid #cbd5f5;
+    border-radius:6px;
+    transition:all 0.2s ease;
+  }
+  .checkbox input:checked + span {
+    background:#2563eb;
+    border-color:#2563eb;
+  }
+  .checkbox span::after {
+    content:'';
+    position:absolute;
+    left:6px;
+    top:1px;
+    width:6px;
+    height:12px;
+    border:2px solid transparent;
+    border-left-color:#fff;
+    border-bottom-color:#fff;
+    transform:rotate(-45deg);
+    opacity:0;
+  }
+  .checkbox input:checked + span::after { opacity:1; }
+  .task-main { flex:1; min-width:0; }
+  .task-top {
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    align-items:flex-start;
+  }
+  .task-title {
+    font-size:16px;
+    font-weight:600;
+    margin:0;
+    word-break:break-word;
+  }
+  .task-title.completed { text-decoration: line-through; color:#9ca3af; }
+  .task-actions {
+    display:flex;
+    gap:8px;
+    align-items:center;
+    flex-shrink:0;
+  }
+  .drag-handle {
+    border:1px solid transparent;
+    background:#f3f4f6;
+    color:#6b7280;
+    border-radius:10px;
+    padding:6px 8px;
+    font-size:12px;
+    cursor:grab;
+  }
+  .clear-btn {
+    border:1px solid #e5e7eb;
+    background:#fff;
+    color:#ef4444;
+    border-radius:10px;
+    padding:6px 10px;
+    font-size:12px;
+    font-weight:600;
+    cursor:pointer;
+    transition:all 0.2s ease;
+  }
+  .clear-btn.hidden { display:none; }
+  .clear-btn:hover { background:#fee2e2; border-color:#fecaca; }
+  .task-meta { font-size:12px; text-transform:uppercase; letter-spacing:0.08em; color:#94a3b8; margin:0 0 6px; }
+  .task-notes { font-size:14px; color:#4b5563; margin:6px 0 0; white-space:pre-wrap; }
+  .task-links {
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:10px;
+  }
+  .text-link {
+    border:none;
+    background:transparent;
+    color:#2563eb;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    padding:0;
+  }
+  .subtasks { margin-top:10px; display:flex; flex-direction:column; gap:8px; }
+  .task-card.completed { opacity:0.65; }
+  .subtask-composer {
+    margin-top:12px;
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    padding:12px;
+    background:#f8fafc;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .subtask-composer input,
+  .subtask-composer textarea {
+    border:1px solid #d2d6dc;
+    border-radius:10px;
+    padding:10px;
+    font-family:inherit;
+    font-size:13px;
+  }
+  .subtask-composer input:focus,
+  .subtask-composer textarea:focus {
+    outline:none;
+    border-color:#2563eb;
+    box-shadow:0 0 0 2px rgba(37,99,235,0.12);
+  }
+  .composer-actions {
+    display:flex;
+    gap:8px;
+    justify-content:flex-end;
+  }
+  .btn-secondary,
+  .btn-plain {
+    border:none;
+    border-radius:10px;
+    padding:8px 12px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+  }
+  .btn-secondary { background:#2563eb; color:#fff; }
+  .btn-secondary:hover { background:#1d4ed8; }
+  .btn-plain { background:#e5e7eb; color:#374151; }
   .empty { text-align:center; color:#9ca3af; font-size:14px; padding:18px; border:1px dashed #cbd5f5; border-radius:16px; }
   .integration-note {
     margin-top:24px;
@@ -123,6 +270,34 @@
     border:1px solid #fcd34d;
   }
   .back { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#2563eb; text-decoration:none; margin-top:12px; }
+  .toast {
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#1f2937;
+    color:#fff;
+    padding:12px 18px;
+    border-radius:999px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 0.2s ease;
+  }
+  .toast.show { opacity:1; pointer-events:auto; }
+  .toast button {
+    border:none;
+    background:#34d399;
+    color:#064e3b;
+    border-radius:999px;
+    padding:6px 12px;
+    font-size:12px;
+    font-weight:600;
+    cursor:pointer;
+  }
 </style>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
@@ -175,17 +350,23 @@
     </div>
 
     <div class="integration-note">
-      <strong>Next phase:</strong> This workspace will call OpenClaw endpoints so tasks can sync, trigger automations, or surface AI helpers. The hook will live in <code>syncWithTony()</code> inside the script below—ready whenever the backend ships.
+      <strong>Next phase:</strong> This workspace will call OpenClaw endpoints so tasks can sync, trigger automations, or surface AI helpers. The hook lives in <code>syncWithTony()</code> below—ready whenever the backend ships.
     </div>
   </section>
 
   <a href="tasks.html" class="back">← Back to Company Tasks</a>
 </div>
 
+<div id="toast" class="toast" aria-live="polite"></div>
+
 <script>
 const CLIENT_ID = '850841913123-hdlrk8jpb2gle3qulq9bgqlch3l3s40c.apps.googleusercontent.com';
+const SESSION_KEY = 'tony.personalTasks.session';
 let currentUser = null;
 let tasks = [];
+let draggedPath = null;
+let pendingUndo = null;
+let undoTimer = null;
 
 window.handleCredentialResponse = function(response) {
   if (!response || !response.credential) {
@@ -199,12 +380,24 @@ window.handleCredentialResponse = function(response) {
 document.getElementById('add-task-btn').addEventListener('click', addTask);
 document.getElementById('signout-btn').addEventListener('click', signOut);
 
-document.addEventListener('keydown', (evt) => {
-  if (evt.key === 'Enter' && evt.metaKey) {
+const titleInput = document.getElementById('task-title');
+const notesInput = document.getElementById('task-notes');
+titleInput.addEventListener('keydown', evt => {
+  if (evt.key === 'Enter' && !evt.shiftKey) {
     evt.preventDefault();
     addTask();
   }
 });
+notesInput.addEventListener('keydown', evt => {
+  if ((evt.metaKey || evt.ctrlKey) && evt.key === 'Enter') {
+    evt.preventDefault();
+    addTask();
+  }
+});
+
+const taskListEl = document.getElementById('task-list');
+taskListEl.addEventListener('change', handleTaskChange);
+taskListEl.addEventListener('click', handleTaskClick);
 
 function decodeJwt(token) {
   const base64Url = token.split('.')[1];
@@ -219,7 +412,7 @@ function enterWorkspace(profile, token) {
   currentUser = {
     name: profile.name || profile.given_name || profile.email?.split('@')[0] || 'Teammate',
     email: profile.email || 'unknown@austinvisuals.com',
-    token
+    token: token || profile.token || null
   };
   document.getElementById('profile-name').textContent = currentUser.name;
   document.getElementById('profile-email').textContent = currentUser.email;
@@ -227,6 +420,7 @@ function enterWorkspace(profile, token) {
   document.getElementById('workspace').classList.remove('hidden');
   tasks = loadTasks(currentUser.email);
   renderTasks();
+  saveSession();
 }
 
 function persistenceKey(email) {
@@ -237,11 +431,51 @@ function loadTasks(email) {
   if (!email) return [];
   try {
     const raw = localStorage.getItem(persistenceKey(email));
-    return raw ? JSON.parse(raw) : [];
+    const data = raw ? JSON.parse(raw) : [];
+    return normalizeTasks(data);
   } catch (err) {
     console.warn('Unable to load tasks', err);
     return [];
   }
+}
+
+function normalizeTasks(list) {
+  if (!Array.isArray(list)) return [];
+  return list.map(item => ({
+    id: item.id || (crypto.randomUUID ? crypto.randomUUID() : Date.now().toString()),
+    title: item.title || 'Untitled task',
+    notes: item.notes || '',
+    createdAt: item.createdAt || new Date().toISOString(),
+    completed: Boolean(item.completed),
+    children: normalizeTasks(item.children || [])
+  }));
+}
+
+function saveSession() {
+  if (!currentUser?.email) return;
+  try {
+    localStorage.setItem(SESSION_KEY, JSON.stringify({
+      name: currentUser.name,
+      email: currentUser.email,
+      token: currentUser.token || null
+    }));
+  } catch (err) {
+    console.warn('Unable to persist session', err);
+  }
+}
+
+function loadSession() {
+  try {
+    const raw = localStorage.getItem(SESSION_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch (err) {
+    console.warn('Unable to load saved session', err);
+    return null;
+  }
+}
+
+function clearSession() {
+  localStorage.removeItem(SESSION_KEY);
 }
 
 function saveTasks() {
@@ -255,20 +489,21 @@ function addTask() {
     alert('Sign in with Google first.');
     return;
   }
-  const titleInput = document.getElementById('task-title');
-  const notesInput = document.getElementById('task-notes');
   const title = titleInput.value.trim();
   const notes = notesInput.value.trim();
   if (!title) {
     titleInput.focus();
     return;
   }
-  tasks.unshift({
+  const task = {
     id: crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(),
     title,
     notes,
-    createdAt: new Date().toISOString()
-  });
+    createdAt: new Date().toISOString(),
+    completed: false,
+    children: []
+  };
+  tasks.unshift(task);
   titleInput.value = '';
   notesInput.value = '';
   renderTasks();
@@ -276,24 +511,66 @@ function addTask() {
 }
 
 function renderTasks() {
-  const list = document.getElementById('task-list');
-  list.innerHTML = '';
+  taskListEl.innerHTML = '';
   if (!tasks.length) {
     const empty = document.createElement('div');
     empty.className = 'empty';
     empty.textContent = 'No personal tasks yet. Add one above to start your list.';
-    list.appendChild(empty);
+    taskListEl.appendChild(empty);
     return;
   }
-  tasks.forEach(task => {
+  renderTaskList(tasks, taskListEl, []);
+}
+
+function renderTaskList(list, container, path) {
+  list.forEach((task, index) => {
+    const currentPath = [...path, index];
+    const pathStr = currentPath.join('.');
     const card = document.createElement('div');
-    card.className = 'task-card';
+    card.className = 'task-card' + (task.completed ? ' completed' : '');
+    card.dataset.path = pathStr;
+    card.style.setProperty('--indent', currentPath.length * 24);
+    card.setAttribute('draggable', 'true');
+
+    const created = new Date(task.createdAt).toLocaleString();
     card.innerHTML = `
-      <div class="task-meta">Created ${new Date(task.createdAt).toLocaleString()}</div>
-      <h3>${escapeHtml(task.title)}</h3>
-      ${task.notes ? `<p class="task-notes">${escapeHtml(task.notes)}</p>` : ''}
+      <div class="task-row">
+        <label class="checkbox">
+          <input type="checkbox" data-action="toggle" data-path="${pathStr}" ${task.completed ? 'checked' : ''}>
+          <span></span>
+        </label>
+        <div class="task-main">
+          <div class="task-top">
+            <div>
+              <p class="task-meta">Created ${created}</p>
+              <p class="task-title ${task.completed ? 'completed' : ''}">${escapeHtml(task.title)}</p>
+            </div>
+            <div class="task-actions">
+              <button class="clear-btn ${task.completed ? '' : 'hidden'}" data-action="clear" data-path="${pathStr}">Clear task</button>
+              <button class="drag-handle" type="button">⋮⋮</button>
+            </div>
+          </div>
+          ${task.notes ? `<p class="task-notes">${escapeHtml(task.notes)}</p>` : ''}
+          <div class="task-links">
+            <button class="text-link" data-action="add-subtask" data-path="${pathStr}">Add subtask</button>
+          </div>
+        </div>
+      </div>
+      <div class="subtasks"></div>
     `;
-    list.appendChild(card);
+
+    card.addEventListener('dragstart', handleDragStart);
+    card.addEventListener('dragover', handleDragOver);
+    card.addEventListener('dragleave', handleDragLeave);
+    card.addEventListener('drop', handleDrop);
+    card.addEventListener('dragend', handleDragEnd);
+
+    container.appendChild(card);
+
+    const subtasksContainer = card.querySelector('.subtasks');
+    if (task.children?.length) {
+      renderTaskList(task.children, subtasksContainer, currentPath);
+    }
   });
 }
 
@@ -303,14 +580,231 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
+function handleTaskChange(evt) {
+  const action = evt.target.dataset.action;
+  if (action === 'toggle') {
+    const path = parsePath(evt.target.dataset.path);
+    const ref = getTaskRef(path);
+    if (!ref) return;
+    ref.task.completed = evt.target.checked;
+    renderTasks();
+    saveTasks();
+  }
+}
+
+function handleTaskClick(evt) {
+  const actionBtn = evt.target.closest('[data-action]');
+  if (!actionBtn) return;
+  const action = actionBtn.dataset.action;
+  const path = actionBtn.dataset.path ? parsePath(actionBtn.dataset.path) : null;
+  if (action === 'clear' && path) {
+    clearTask(path);
+  } else if (action === 'add-subtask' && path) {
+    openSubtaskComposer(path);
+  } else if (action === 'cancel-subtask') {
+    const composer = actionBtn.closest('.subtask-composer');
+    composer?.remove();
+  } else if (action === 'save-subtask' && path) {
+    const composer = actionBtn.closest('.subtask-composer');
+    saveSubtask(path, composer);
+  }
+}
+
+function openSubtaskComposer(pathArray) {
+  const pathStr = pathArray.join('.');
+  const card = document.querySelector(`.task-card[data-path="${pathStr}"]`);
+  if (!card || card.querySelector('.subtask-composer')) return;
+  const composer = document.createElement('div');
+  composer.className = 'subtask-composer';
+  composer.innerHTML = `
+    <input type="text" class="subtask-title" placeholder="Subtask title" maxlength="120">
+    <textarea rows="2" class="subtask-notes" placeholder="Optional notes"></textarea>
+    <div class="composer-actions">
+      <button type="button" class="btn-plain" data-action="cancel-subtask">Cancel</button>
+      <button type="button" class="btn-secondary" data-action="save-subtask" data-path="${pathStr}">Save</button>
+    </div>
+  `;
+  card.appendChild(composer);
+  composer.querySelector('.subtask-title').focus();
+}
+
+function saveSubtask(parentPath, composer) {
+  if (!composer) return;
+  const titleInput = composer.querySelector('.subtask-title');
+  const notesInput = composer.querySelector('.subtask-notes');
+  const title = titleInput.value.trim();
+  if (!title) {
+    titleInput.focus();
+    return;
+  }
+  const newTask = {
+    id: crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(),
+    title,
+    notes: notesInput.value.trim(),
+    createdAt: new Date().toISOString(),
+    completed: false,
+    children: []
+  };
+  const children = getChildrenArray(parentPath);
+  if (!children) return;
+  children.unshift(newTask);
+  composer.remove();
+  renderTasks();
+  saveTasks();
+}
+
+function clearTask(path) {
+  const removed = removeTaskAtPath(path);
+  if (!removed) return;
+  renderTasks();
+  saveTasks();
+  const parentPath = path.slice(0, -1);
+  pendingUndo = { task: removed.task, parentPath, index: removed.index };
+  if (undoTimer) clearTimeout(undoTimer);
+  showToast('Task cleared', () => {
+    if (!pendingUndo) return;
+    insertTaskAtPath(pendingUndo.parentPath, pendingUndo.index, pendingUndo.task);
+    pendingUndo = null;
+    renderTasks();
+    saveTasks();
+  });
+  undoTimer = setTimeout(() => {
+    pendingUndo = null;
+    hideToast();
+  }, 6000);
+}
+
+function handleDragStart(evt) {
+  const handle = evt.target.closest('.drag-handle');
+  if (!handle) {
+    evt.preventDefault();
+    return;
+  }
+  draggedPath = evt.currentTarget.dataset.path;
+  evt.dataTransfer.effectAllowed = 'move';
+}
+
+function handleDragOver(evt) {
+  evt.preventDefault();
+  evt.dataTransfer.dropEffect = 'move';
+  evt.currentTarget.classList.add('drag-over');
+}
+
+function handleDragLeave(evt) {
+  evt.currentTarget.classList.remove('drag-over');
+}
+
+function handleDrop(evt) {
+  evt.preventDefault();
+  const target = evt.currentTarget;
+  target.classList.remove('drag-over');
+  if (!draggedPath) return;
+  const targetPath = parsePath(target.dataset.path);
+  const sourcePath = parsePath(draggedPath);
+  if (pathsEqual(targetPath, sourcePath)) return;
+  const removed = removeTaskAtPath(sourcePath);
+  if (!removed) return;
+  let targetParent = targetPath.slice(0, -1);
+  let insertIndex = targetPath[targetPath.length - 1];
+  const sourceParent = sourcePath.slice(0, -1);
+  if (pathsEqual(targetParent, sourceParent) && sourcePath[sourcePath.length - 1] < insertIndex) {
+    insertIndex -= 1;
+  }
+  insertTaskAtPath(targetParent, insertIndex, removed.task);
+  draggedPath = null;
+  renderTasks();
+  saveTasks();
+}
+
+function handleDragEnd(evt) {
+  evt.currentTarget.classList.remove('drag-over');
+  draggedPath = null;
+}
+
+function getTaskRef(path) {
+  if (!path.length) return null;
+  let arr = tasks;
+  let parent = null;
+  let task = null;
+  for (let i = 0; i < path.length; i++) {
+    const idx = path[i];
+    parent = arr;
+    task = arr[idx];
+    if (!task) return null;
+    if (i < path.length - 1) {
+      arr = task.children || [];
+    }
+  }
+  return { parentArray: parent, index: path[path.length - 1], task };
+}
+
+function removeTaskAtPath(path) {
+  const ref = getTaskRef(path);
+  if (!ref) return null;
+  const removed = ref.parentArray.splice(ref.index, 1)[0];
+  return { task: removed, index: ref.index };
+}
+
+function insertTaskAtPath(parentPath, index, task) {
+  const arr = getChildrenArray(parentPath);
+  if (!arr) return;
+  const safeIndex = Math.max(0, Math.min(index, arr.length));
+  arr.splice(safeIndex, 0, task);
+}
+
+function getChildrenArray(path) {
+  let arr = tasks;
+  for (const idx of path) {
+    if (!arr[idx]) return null;
+    arr = arr[idx].children;
+  }
+  return arr;
+}
+
+function parsePath(str) {
+  if (!str) return [];
+  return str.split('.').filter(Boolean).map(n => parseInt(n, 10));
+}
+
+function pathsEqual(a, b) {
+  if (a.length !== b.length) return false;
+  return a.every((val, idx) => val === b[idx]);
+}
+
+function showToast(message, undoCallback) {
+  const toast = document.getElementById('toast');
+  toast.innerHTML = `${message}<button type="button">UNDO</button>`;
+  toast.classList.add('show');
+  const btn = toast.querySelector('button');
+  btn.onclick = () => {
+    hideToast();
+    if (undoTimer) {
+      clearTimeout(undoTimer);
+      undoTimer = null;
+    }
+    undoCallback?.();
+  };
+}
+
+function hideToast() {
+  const toast = document.getElementById('toast');
+  toast.classList.remove('show');
+}
+
 function signOut() {
   currentUser = null;
   tasks = [];
+  clearSession();
   document.getElementById('workspace').classList.add('hidden');
   document.getElementById('signin-card').classList.remove('hidden');
-  document.getElementById('task-title').value = '';
-  document.getElementById('task-notes').value = '';
+  titleInput.value = '';
+  notesInput.value = '';
   google.accounts.id.disableAutoSelect();
+}
+
+const restoredSession = loadSession();
+if (restoredSession?.email) {
+  enterWorkspace(restoredSession, restoredSession.token || null);
 }
 
 function syncWithTony() {
