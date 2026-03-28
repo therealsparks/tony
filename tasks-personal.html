@@ -36,6 +36,37 @@
   .hidden { display:none !important; }
   .card.hidden { display: none; }
   .signin-note { font-size:13px; color:#6b7280; margin-top:16px; }
+  .manual-signin {
+    margin-top:16px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .manual-signin input {
+    border:1px solid #d2d6dc;
+    border-radius:12px;
+    padding:10px 12px;
+    font-size:14px;
+  }
+  .manual-signin button {
+    align-self:flex-start;
+  }
+  body.touch-device .drag-handle { display:none; }
+  .reorder-buttons {
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+  }
+  .reorder-btn {
+    border:1px solid #e5e7eb;
+    background:#fff;
+    color:#1f2937;
+    border-radius:8px;
+    width:28px;
+    height:28px;
+    font-size:14px;
+    font-weight:600;
+  }
   .error-banner {
     display:none;
     background:#fee2e2;
@@ -157,6 +188,9 @@
     width:22px;
     height:22px;
     flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
   }
   .checkbox input {
     position:absolute;
@@ -367,6 +401,12 @@
          data-logo_alignment="left">
     </div>
     <p class="signin-note">Whitelist only. Reach out to Matt if your Austin Visuals Google account needs to be added.</p>
+    <button class="ghost" id="manual-toggle" type="button">Continue without Google</button>
+    <div id="manual-panel" class="manual-signin hidden">
+      <input id="manual-email" type="email" placeholder="name@austinvisuals.com">
+      <input id="manual-name" type="text" placeholder="Display name (optional)">
+      <button class="primary" id="manual-continue" type="button">Enter workspace</button>
+    </div>
   </section>
 
   <section id="workspace" class="card hidden">
@@ -410,6 +450,10 @@ let tasks = [];
 let draggedPath = null;
 let pendingUndo = null;
 let undoTimer = null;
+const isTouchDevice = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+if (isTouchDevice) {
+  document.body.classList.add('touch-device');
+}
 
 function reportRuntimeError(message) {
   const banner = document.getElementById('error-banner');
@@ -439,6 +483,29 @@ window.handleCredentialResponse = function(response) {
 
 document.getElementById('add-task-btn').addEventListener('click', addTask);
 document.getElementById('signout-btn').addEventListener('click', signOut);
+
+const manualToggleBtn = document.getElementById('manual-toggle');
+const manualPanel = document.getElementById('manual-panel');
+const manualEmailInput = document.getElementById('manual-email');
+const manualNameInput = document.getElementById('manual-name');
+const manualContinueBtn = document.getElementById('manual-continue');
+if (manualToggleBtn && manualPanel) {
+  manualToggleBtn.addEventListener('click', () => {
+    manualPanel.classList.toggle('hidden');
+  });
+}
+if (manualContinueBtn) {
+  manualContinueBtn.addEventListener('click', () => {
+    const email = manualEmailInput.value.trim();
+    const name = manualNameInput.value.trim();
+    if (!email) {
+      alert('Enter your email to continue.');
+      manualEmailInput.focus();
+      return;
+    }
+    enterWorkspace({ name: name || (email.includes('@') ? email.split('@')[0] : email), email }, null);
+  });
+}
 
 const titleInput = document.getElementById('task-title');
 const notesInput = document.getElementById('task-notes');
@@ -631,6 +698,12 @@ function renderTaskList(list, container, path) {
               <p class="task-title ${task.completed ? 'completed' : ''}">${escapeHtml(task.title)}</p>
             </div>
             <div class="task-actions">
+              ${isTouchDevice ? `
+                <div class="reorder-buttons">
+                  <button class="reorder-btn" data-action="move-up" data-path="${pathStr}" aria-label="Move up">↑</button>
+                  <button class="reorder-btn" data-action="move-down" data-path="${pathStr}" aria-label="Move down">↓</button>
+                </div>
+              ` : ''}
               <button class="clear-btn ${task.completed ? '' : 'hidden'}" data-action="clear" data-path="${pathStr}">Clear task</button>
             </div>
           </div>
@@ -694,6 +767,10 @@ function handleTaskClick(evt) {
   } else if (action === 'save-subtask' && path) {
     const composer = actionBtn.closest('.subtask-composer');
     saveSubtask(path, composer);
+  } else if (action === 'move-up' && path) {
+    moveTask(path, -1);
+  } else if (action === 'move-down' && path) {
+    moveTask(path, 1);
   }
 }
 
@@ -871,6 +948,19 @@ function setCompletedRecursive(list, value) {
 
 function toggleAllTasks(value) {
   setCompletedRecursive(tasks, value);
+  renderTasks();
+  saveTasks();
+}
+
+function moveTask(path, direction) {
+  if (!path.length) return;
+  const parentPath = path.slice(0, -1);
+  const currentIndex = path[path.length - 1];
+  const targetIndex = currentIndex + direction;
+  const parentArray = getChildrenArray(parentPath);
+  if (!parentArray || targetIndex < 0 || targetIndex >= parentArray.length) return;
+  const [task] = parentArray.splice(currentIndex, 1);
+  parentArray.splice(targetIndex, 0, task);
   renderTasks();
   saveTasks();
 }
