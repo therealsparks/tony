@@ -854,7 +854,7 @@ function pathsEqual(a, b) {
 }
 
 function areAllTasksCompleted(list) {
-  if (!list.length) return false;
+  if (!list.length) return true;
   return list.every(task => task.completed && areAllTasksCompleted(task.children || []));
 }
 
