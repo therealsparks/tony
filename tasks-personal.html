@@ -33,8 +33,20 @@
     box-shadow:0 20px 40px rgba(15,23,42,0.08);
     margin-bottom:24px;
   }
+  .hidden { display:none !important; }
   .card.hidden { display: none; }
   .signin-note { font-size:13px; color:#6b7280; margin-top:16px; }
+  .error-banner {
+    display:none;
+    background:#fee2e2;
+    color:#991b1b;
+    border:1px solid #fecaca;
+    border-radius:14px;
+    padding:12px 16px;
+    margin-bottom:16px;
+    font-size:13px;
+  }
+  .error-banner.show { display:block; }
   .profile {
     display:flex;
     align-items:center;
@@ -332,6 +344,7 @@
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
+<div id="error-banner" class="error-banner"></div>
 <div class="wrap">
   <div class="logo">⚡</div>
   <h1>Personal Task Workspace</h1>
@@ -397,6 +410,23 @@ let tasks = [];
 let draggedPath = null;
 let pendingUndo = null;
 let undoTimer = null;
+
+function reportRuntimeError(message) {
+  const banner = document.getElementById('error-banner');
+  if (!banner) return;
+  banner.textContent = message;
+  banner.classList.add('show');
+  console.error(message);
+}
+
+window.addEventListener('error', evt => {
+  reportRuntimeError('Error: ' + evt.message);
+});
+
+window.addEventListener('unhandledrejection', evt => {
+  const reason = evt.reason && evt.reason.message ? evt.reason.message : evt.reason;
+  reportRuntimeError('Promise rejection: ' + reason);
+});
 
 window.handleCredentialResponse = function(response) {
   if (!response || !response.credential) {
