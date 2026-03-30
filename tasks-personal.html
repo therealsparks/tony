@@ -423,6 +423,42 @@
     padding:2px 8px;
     font-weight:600;
   }
+  .summary-strip {
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin:16px 0;
+  }
+  .summary-pill {
+    background:#eef2ff;
+    border:1px solid #c7d2fe;
+    border-radius:14px;
+    padding:10px 14px;
+    font-size:12px;
+    font-weight:600;
+    color:#3730a3;
+    display:flex;
+    flex-direction:column;
+    min-width:140px;
+  }
+  .summary-pill strong {
+    font-size:18px;
+    color:#1e1b4b;
+  }
+  .icon-button {
+    border:1px solid #e2e8f0;
+    background:#fff;
+    border-radius:10px;
+    width:32px;
+    height:32px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    font-size:14px;
+    color:#475569;
+  }
+  .icon-button:hover { background:#e0e7ff; border-color:#c7d2fe; color:#312e81; }
   .back { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#2563eb; text-decoration:none; margin-top:12px; }
   .toast {
     position:fixed;
@@ -494,6 +530,21 @@
         <span class="profile-email" id="profile-email">—</span>
       </div>
       <button class="ghost" id="signout-btn" type="button">Sign out</button>
+    </div>
+
+    <div class="summary-strip">
+      <div class="summary-pill">
+        <span>Due today</span>
+        <strong id="summary-today">0</strong>
+      </div>
+      <div class="summary-pill">
+        <span>Due tomorrow</span>
+        <strong id="summary-tomorrow">0</strong>
+      </div>
+      <div class="summary-pill">
+        <span>Due this week</span>
+        <strong id="summary-week">0</strong>
+      </div>
     </div>
 
     <div class="task-composer">
@@ -704,6 +755,12 @@ function loadTasks(email) {
 }
 
 function renderSectionPreview() {
+  const todayEl = document.getElementById('summary-today');
+  const tomorrowEl = document.getElementById('summary-tomorrow');
+  const weekEl = document.getElementById('summary-week');
+  if (todayEl) todayEl.textContent = '3';
+  if (tomorrowEl) tomorrowEl.textContent = '2';
+  if (weekEl) weekEl.textContent = '7';
   taskListEl.innerHTML = '';
   previewSections.forEach(section => {
     const wrapper = document.createElement('div');
@@ -871,7 +928,6 @@ function renderTaskList(list, container, path) {
     card.dataset.path = pathStr;
     card.style.setProperty('--indent', currentPath.length * 24);
 
-    const created = new Date(task.createdAt).toLocaleString();
     card.innerHTML = `
       <div class="task-row">
         <button class="drag-handle" type="button" aria-label="Reorder"></button>
@@ -883,13 +939,13 @@ function renderTaskList(list, container, path) {
           <div class="task-top">
             <div>
               <div class="task-meta">
-                <span>Created ${created}</span>
                 ${task.dueAt ? `<span class="meta-chip">Due ${formatDate(task.dueAt)}</span>` : ''}
                 ${task.assignee ? `<span class="meta-chip">Owner ${escapeHtml(task.assignee)}</span>` : ''}
               </div>
               <p class="task-title ${task.completed ? 'completed' : ''}">${escapeHtml(task.title)}</p>
             </div>
             <div class="task-actions">
+              <button class="icon-button" data-action="edit-task" data-path="${pathStr}" aria-label="Edit task">✏️</button>
               ${isTouchDevice ? `
                 <div class="reorder-buttons">
                   <button class="reorder-btn" data-action="move-up" data-path="${pathStr}" aria-label="Move up">↑</button>
@@ -977,6 +1033,8 @@ function handleTaskClick(evt) {
     moveTask(path, -1);
   } else if (action === 'move-down' && path) {
     moveTask(path, 1);
+  } else if (action === 'edit-task' && path) {
+    openTaskEditor(path);
   }
 }
 
@@ -1010,6 +1068,12 @@ function openSubtaskComposer(pathArray) {
   const subAssigneeCustom = composer.querySelector('.subtask-assignee-custom');
   setupAssigneeSelect(subAssigneeSelect, subAssigneeCustom);
   composer.querySelector('.subtask-title').focus();
+}
+
+function openTaskEditor(path) {
+  const ref = getTaskRef(path);
+  if (!ref) return;
+  alert(`Editing "${ref.task.title}" is coming soon in this build.`);
 }
 
 function saveSubtask(parentPath, composer) {
