@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-28 03:37 UTC",
+  "updated": "2026-03-30 04:58 UTC",
   "sections": [
     {
       "id": "gov",
@@ -70,6 +70,13 @@
       "icon": "\u26a1",
       "items": [
         {
+          "title": "Woodside Sees Delay in Start of Cleaner Ammonia Production at Texas Project",
+          "link": "https://www.rigzone.com/news/woodside_sees_delay_in_start_of_cleaner_ammonia_production_at_texas_project-29-mar-2026-183313-article/?rss=true",
+          "desc": "The expected delay is 'due to construction issues at the third-party feedstock supply facility'.",
+          "date": "Sun, 29 Mar 2026",
+          "source": "Rigzone"
+        },
+        {
           "title": "Execs Predict What Price WTI Oil Will Hit in Future",
           "link": "https://www.rigzone.com/news/execs_predict_what_price_wti_oil_will_hit_in_future-27-mar-2026-183320-article/?rss=true",
           "desc": "Executives from oil and gas firms have revealed where they expect the WTI crude oil price to be at various points in the future in the first quarter Dallas Fed Energy Survey.",
@@ -84,11 +91,11 @@
           "source": "Rigzone"
         },
         {
-          "title": "India Taxes Fuel Exports",
-          "link": "https://www.rigzone.com/news/wire/india_taxes_fuel_exports-27-mar-2026-183310-article/?rss=true",
-          "desc": "India has announced a series of tax changes including a levy on fuel exports, as the country tries to shield consumers from the impact of a deepening conflict in the Middle East that has upended energy supply.",
-          "date": "Fri, 27 Mar 2026",
-          "source": "Rigzone"
+          "title": "Arevon Starts Construction of $600 Million Cormorant Energy Storage Project",
+          "link": "https://www.powermag.com/arevon-starts-construction-of-600-million-cormorant-energy-storage-project/",
+          "desc": "An Arizona-headquartered developer, owner, and operator of renewable energy projects said construction of another major energy storage project is underway in California. The post Arevon Starts Construction of $600 Million Cormorant Energy Storage Pro",
+          "date": "Sun, 29 Mar 2026",
+          "source": "Power Magazine"
         },
         {
           "title": "FluxPoint Energy Enters Race to Build First New U.S. Uranium Conversion Plant in Nearly 70 Years",
@@ -117,13 +124,6 @@
           "desc": "A Maryland-headquartered utility-scale developer, owner, and operator of solar power and energy storage projects said it has power purchase agreements (PPAs) with technology giant Google for the electricity from two Texas solar installations. The pos",
           "date": "Tue, 24 Mar 2026",
           "source": "Power Magazine"
-        },
-        {
-          "title": "The POWER Interview: Electrification Key for Decarbonization, Energy Efficiency",
-          "link": "https://www.powermag.com/the-power-interview-electrification-key-for-decarbonization-energy-efficiency/",
-          "desc": "Electrification has become key for the global move toward cleaner energy, even as government policies continue to impact the use of renewable resources and in some cases embrace continued and even increased support for fossil fuels. Governments and i",
-          "date": "Mon, 23 Mar 2026",
-          "source": "Power Magazine"
         }
       ]
     },
@@ -138,6 +138,13 @@
       "title": "Legal & Courts",
       "icon": "\u2696\ufe0f",
       "items": [
+        {
+          "title": "Mexico City sex workers say World Cup construction hurting their income",
+          "link": "https://www.courthousenews.com/mexico-city-sex-workers-say-world-cup-construction-hurting-their-income/",
+          "desc": "Bike path and pedestrian walkway construction is underway for the World Cup on one of Mexico City's major thoroughfares \u2014 but not everyone is buying in.",
+          "date": "Sun, 29 Mar 2026",
+          "source": "Courthouse News"
+        },
         {
           "title": "Education Dept. HQ handed to Energy as Trump advances effort to dismantle agency",
           "link": "https://www.govexec.com/management/2026/03/education-hq-handed-energy-trump-advances-effort-dismantle-agency/412424/",
@@ -231,9 +238,9 @@
       "items": [
         {
           "title": "Texas Weekly Deal Highlights",
-          "link": "https://www.texasceomagazine.com/p/texas-weekly-deal-highlights-f70",
-          "desc": "March 22, 2026",
-          "date": "Mon, 23 Mar 2026",
+          "link": "https://www.texasceomagazine.com/p/texas-weekly-deal-highlights-fea",
+          "desc": "March 29, 2026",
+          "date": "Mon, 30 Mar 2026",
           "source": "Texas CEO Magazine"
         },
         {
