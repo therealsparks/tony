@@ -371,7 +371,7 @@
   .section-header {
     display:flex;
     align-items:center;
-    justify-content:space-between;
+    gap:12px;
     padding:16px 20px;
     border-bottom:1px solid #f1f5f9;
   }
@@ -426,7 +426,8 @@
   .summary-strip {
     display:flex;
     gap:12px;
-    flex-wrap:wrap;
+    flex-wrap:nowrap;
+    overflow-x:auto;
     margin:16px 0;
   }
   .summary-pill {
@@ -440,6 +441,24 @@
     display:flex;
     flex-direction:column;
     min-width:140px;
+    flex:1;
+  }
+  @media (max-width: 640px) {
+    .summary-strip {
+      gap:8px;
+      overflow-x:scroll;
+    }
+    .summary-pill {
+      min-width:140px;
+      flex:none;
+    }
+    .task-top {
+      flex-direction:column;
+      align-items:flex-start;
+    }
+    .task-meta {
+      gap:4px;
+    }
   }
   .summary-pill strong {
     font-size:18px;
@@ -767,11 +786,11 @@ function renderSectionPreview() {
     wrapper.className = 'section-card';
     wrapper.innerHTML = `
       <div class="section-header">
+        <label class="checkbox" style="margin-right:12px;">
+          <input type="checkbox" aria-label="Select section ${section.title}">
+          <span></span>
+        </label>
         <div class="section-title">${section.title}</div>
-        <div class="section-controls">
-          <button class="clear-btn">Select all</button>
-          <button class="clear-btn">Clear</button>
-        </div>
       </div>
       <div class="section-body"></div>
     `;
