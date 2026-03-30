@@ -256,8 +256,9 @@
   .task-title.completed { text-decoration: line-through; color:#9ca3af; }
   .task-actions {
     display:flex;
-    gap:8px;
-    align-items:center;
+    flex-direction:column;
+    gap:6px;
+    align-items:flex-end;
     flex-shrink:0;
   }
   .drag-handle {
@@ -367,6 +368,10 @@
     margin-bottom:16px;
     background:#fff;
     box-shadow:0 4px 12px rgba(15,23,42,0.06);
+    overflow:hidden;
+  }
+  .section-card.collapsed .section-body {
+    display:none;
   }
   .section-header {
     display:flex;
@@ -398,6 +403,15 @@
     flex-direction:column;
     gap:6px;
     background:#f8fafc;
+  }
+  .section-task-head {
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .task-number {
+    font-weight:700;
+    color:#0f172a;
   }
   .section-task h4 {
     margin:0;
@@ -795,18 +809,35 @@ function renderSectionPreview() {
       <div class="section-body"></div>
     `;
     const body = wrapper.querySelector('.section-body');
-    section.tasks.forEach(task => {
+    section.tasks.forEach((task, idx) => {
       const taskEl = document.createElement('div');
       taskEl.className = 'section-task';
       taskEl.innerHTML = `
-        <h4>${task.title}</h4>
-        <div class="section-meta">
-          <span>${task.owner}</span>
-          <span>${task.due}</span>
+        <div class="section-task-head">
+          <span class="task-number">#${idx + 1}</span>
+          <label class="checkbox" style="margin-right:8px;">
+            <input type="checkbox" aria-label="Mark ${task.title}">
+            <span></span>
+          </label>
+          <div>
+            <h4>${task.title}</h4>
+            <div class="section-meta">
+              <span>${task.owner}</span>
+              <span>${task.due}</span>
+            </div>
+          </div>
         </div>
         <p>${task.notes}</p>
       `;
       body.appendChild(taskEl);
+    });
+    const header = wrapper.querySelector('.section-header');
+    const headerCheckbox = header.querySelector('input[type="checkbox"]');
+    if (headerCheckbox) {
+      headerCheckbox.addEventListener('click', evt => evt.stopPropagation());
+    }
+    header.addEventListener('click', () => {
+      wrapper.classList.toggle('collapsed');
     });
     taskListEl.appendChild(wrapper);
   });
