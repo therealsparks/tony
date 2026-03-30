@@ -361,6 +361,68 @@
     border-radius:16px;
     border:1px solid #fcd34d;
   }
+  .section-card {
+    border:1px solid #e5e7eb;
+    border-radius:18px;
+    margin-bottom:16px;
+    background:#fff;
+    box-shadow:0 4px 12px rgba(15,23,42,0.06);
+  }
+  .section-header {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 20px;
+    border-bottom:1px solid #f1f5f9;
+  }
+  .section-title {
+    font-size:15px;
+    font-weight:700;
+    color:#0f172a;
+  }
+  .section-controls {
+    display:flex;
+    gap:8px;
+  }
+  .section-body {
+    padding:16px 20px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .section-task {
+    border:1px solid #e2e8f0;
+    border-radius:14px;
+    padding:12px 14px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    background:#f8fafc;
+  }
+  .section-task h4 {
+    margin:0;
+    font-size:14px;
+    font-weight:600;
+    color:#0f172a;
+  }
+  .section-task p {
+    margin:0;
+    font-size:13px;
+    color:#475569;
+  }
+  .section-meta {
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    font-size:12px;
+    color:#475569;
+  }
+  .section-meta span {
+    background:#e2e8f0;
+    border-radius:999px;
+    padding:2px 8px;
+    font-weight:600;
+  }
   .back { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#2563eb; text-decoration:none; margin-top:12px; }
   .toast {
     position:fixed;
@@ -476,10 +538,31 @@ let tasks = [];
 let draggedPath = null;
 let pendingUndo = null;
 let undoTimer = null;
+const urlParams = new URLSearchParams(window.location.search);
+const previewMode = urlParams.get('preview');
 const isTouchDevice = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
 if (isTouchDevice) {
   document.body.classList.add('touch-device');
 }
+
+const previewSections = [
+  {
+    id: 'sec-guardian',
+    title: 'Guardian Decommissioning Ramp-Up',
+    tasks: [
+      { title: 'Prep client deck for 4/2 review', owner: 'Matt', due: 'Today · 3 PM', notes: 'Slides 6–9 need updated renders and the logistics flow.' },
+      { title: 'Confirm helicopter vendor paperwork', owner: 'Nancy', due: 'Tomorrow · 10 AM', notes: 'FAA cert + indemnity letter. Ping Guardian Legal if signature stalls.' }
+    ]
+  },
+  {
+    id: 'sec-backlog',
+    title: 'Backlog / Later This Week',
+    tasks: [
+      { title: 'Draft ops handoff checklist', owner: 'Peter', due: 'Wed · 1 PM', notes: 'Focus on wellhead-to-pipeline steps. Nancy will review.' },
+      { title: 'Storyboard QA pass', owner: 'Tom', due: 'Thu · 9 AM', notes: 'Spot-check scene notes against operator feedback.' }
+    ]
+  }
+];
 
 const TEAM_MEMBERS = [
   { label: 'Matt Winters', email: 'matt@austinvisuals.com' },
@@ -596,7 +679,11 @@ function enterWorkspace(profile, token) {
   document.getElementById('signin-card').classList.add('hidden');
   document.getElementById('workspace').classList.remove('hidden');
   tasks = loadTasks(currentUser.email);
-  renderTasks();
+  if (previewMode === 'sections') {
+    renderSectionPreview();
+  } else {
+    renderTasks();
+  }
   saveSession();
 }
 
@@ -614,6 +701,39 @@ function loadTasks(email) {
     console.warn('Unable to load tasks', err);
     return [];
   }
+}
+
+function renderSectionPreview() {
+  taskListEl.innerHTML = '';
+  previewSections.forEach(section => {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'section-card';
+    wrapper.innerHTML = `
+      <div class="section-header">
+        <div class="section-title">${section.title}</div>
+        <div class="section-controls">
+          <button class="clear-btn">Select all</button>
+          <button class="clear-btn">Clear</button>
+        </div>
+      </div>
+      <div class="section-body"></div>
+    `;
+    const body = wrapper.querySelector('.section-body');
+    section.tasks.forEach(task => {
+      const taskEl = document.createElement('div');
+      taskEl.className = 'section-task';
+      taskEl.innerHTML = `
+        <h4>${task.title}</h4>
+        <div class="section-meta">
+          <span>${task.owner}</span>
+          <span>${task.due}</span>
+        </div>
+        <p>${task.notes}</p>
+      `;
+      body.appendChild(taskEl);
+    });
+    taskListEl.appendChild(wrapper);
+  });
 }
 
 function generateId() {
@@ -1121,6 +1241,8 @@ function signOut() {
 const restoredSession = loadSession();
 if (restoredSession && restoredSession.email) {
   enterWorkspace(restoredSession, restoredSession.token || null);
+} else if (previewMode === 'sections') {
+  enterWorkspace({ name: 'Sections Preview', email: 'preview@austinvisuals.com' }, null);
 } else {
   const params = new URLSearchParams(window.location.search);
   if (params.get('dev') === '1') {
