@@ -192,6 +192,10 @@
     padding:16px;
     background:#fff;
     margin-left: calc(var(--indent, 0) * 1px);
+    transition:opacity 0.2s ease;
+  }
+  .task-card.completed {
+    opacity:0.55;
   }
   .task-card.drag-over {
     border-color:#2563eb;
@@ -1373,16 +1377,18 @@ function pathsEqual(a, b) {
 }
 
 function areAllTasksCompleted(list) {
-  if (!list.length) return true;
-  return list.every(task => task.completed && areAllTasksCompleted(task.children || []));
+  const filtered = list.filter(task => !task.isSection);
+  if (!filtered.length) return true;
+  return filtered.every(task => task.completed && areAllTasksCompleted(task.children || []));
 }
 
 function hasAnyCompleted(list) {
-  return list.some(task => task.completed || hasAnyCompleted(task.children || []));
+  return list.some(task => (!task.isSection && task.completed) || hasAnyCompleted(task.children || []));
 }
 
 function setCompletedRecursive(list, value) {
   list.forEach(task => {
+    if (task.isSection) return;
     task.completed = value;
     setCompletedRecursive(task.children || [], value);
   });
