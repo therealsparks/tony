@@ -340,6 +340,7 @@
   }
   .task-meta { font-size:12px; color:#64748b; margin:0 0 6px; display:flex; gap:8px; flex-wrap:wrap; }
   .meta-chip { background:#e2e8f0; border-radius:999px; padding:2px 8px; font-weight:600; color:#475569; text-transform:none; letter-spacing:0; }
+  .meta-due-inline { display:none; }
   .task-notes { font-size:14px; color:#4b5563; margin:6px 0 0; white-space:pre-wrap; }
   .text-link {
     border:none;
@@ -509,6 +510,12 @@
     }
     .task-meta {
       gap:4px;
+    }
+    .task-top-right {
+      display:none;
+    }
+    .meta-due-inline {
+      display:inline-flex;
     }
   }
   .summary-pill strong {
@@ -1125,6 +1132,7 @@ function renderTaskList(list, container, path) {
             <div>
               <div class="task-meta">
                 ${task.assignee ? `<span class="meta-chip">Owner ${escapeHtml(task.assignee)}</span>` : ''}
+                ${task.dueAt ? `<span class="meta-chip meta-due-inline">Due ${formatDuePill(task.dueAt)}</span>` : ''}
               </div>
               <p class="task-title ${task.completed ? 'completed' : ''}">${escapeHtml(task.title)}</p>
             </div>
