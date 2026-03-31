@@ -858,14 +858,11 @@ function renderSectionPreview() {
   const toolbar = document.createElement('div');
   toolbar.className = 'task-toolbar';
   toolbar.innerHTML = `
-    <div class="toolbar-left">
-      <label class="master-checkbox">
-        <input type="checkbox" disabled>
-        Select / clear all
-      </label>
+    <div class="toolbar-left" style="font-size:12px;color:#475569;">
+      Preview mode — sample sections only.
     </div>
     <div class="toolbar-actions">
-      <button type="button" class="icon-button" disabled title="Preview only">+ Section</button>
+      <a href="tasks-personal.html" style="font-size:12px;font-weight:600;color:#0071e3;text-decoration:none;">Open live view →</a>
     </div>
   `;
   taskListEl.appendChild(toolbar);
