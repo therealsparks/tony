@@ -242,8 +242,8 @@
   .checkbox input:checked + span::after { opacity:1; }
   .task-main { flex:1; min-width:0; }
   .task-top {
-    display:flex;
-    justify-content:space-between;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
     gap:12px;
     align-items:flex-start;
   }
@@ -465,10 +465,6 @@
     .summary-pill {
       min-width:140px;
       flex:none;
-    }
-    .task-top {
-      flex-direction:column;
-      align-items:flex-start;
     }
     .task-meta {
       gap:4px;
