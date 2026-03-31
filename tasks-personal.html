@@ -846,6 +846,12 @@ titleInput.addEventListener('keydown', evt => {
     addTask();
   }
 });
+titleInput.addEventListener('keyup', evt => {
+  if (evt.key === 'Enter' && !evt.shiftKey) {
+    evt.preventDefault();
+    addTask();
+  }
+});
 notesInput.addEventListener('keydown', evt => {
   if ((evt.metaKey || evt.ctrlKey) && evt.key === 'Enter') {
     evt.preventDefault();
@@ -1079,7 +1085,7 @@ function addTask() {
     sequence: getNextSequence(),
     expanded: true
   };
-  tasks.unshift(task);
+  tasks.push(task);
   titleInput.value = '';
   notesInput.value = '';
   if (dueInput) dueInput.value = '';
