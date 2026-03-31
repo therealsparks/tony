@@ -112,7 +112,27 @@
     padding:20px;
     margin-bottom:20px;
   }
-  .task-composer h2 { margin:0 0 12px; font-size:18px; }
+  .composer-header { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px; }
+  .task-composer h2 { margin:0; font-size:18px; }
+  .quick-toggle {
+    border:1px solid #d1d5db;
+    background:#fff;
+    color:#1f2937;
+    font-size:12px;
+    font-weight:600;
+    padding:6px 12px;
+    border-radius:999px;
+    cursor:pointer;
+  }
+  .task-composer.simple-mode .quick-toggle {
+    border-color:#2563eb;
+    color:#2563eb;
+    background:#e0ecff;
+  }
+  .task-composer.simple-mode textarea,
+  .task-composer.simple-mode .input-row.two-col {
+    display:none;
+  }
   .input-row { display:flex; flex-direction:column; gap:10px; }
   .input-row input,
   .input-row textarea,
@@ -644,8 +664,11 @@
       </div>
     </div>
 
-    <div class="task-composer">
-      <h2>Create a task</h2>
+    <div class="task-composer" id="task-composer">
+      <div class="composer-header">
+        <h2>Create a task</h2>
+        <button class="quick-toggle" id="quick-mode-toggle" type="button">Simple mode</button>
+      </div>
       <div class="input-row">
         <input id="task-title" type="text" maxlength="120" placeholder="e.g., Prep deck for Monday client check-in" autocomplete="off">
         <textarea id="task-notes" rows="3" placeholder="Optional notes, acceptance criteria, or links"></textarea>
@@ -802,6 +825,21 @@ if (iosSafari) {
 const titleInput = document.getElementById('task-title');
 const notesInput = document.getElementById('task-notes');
 const dueInput = document.getElementById('task-due');
+const composerEl = document.getElementById('task-composer');
+const quickToggleBtn = document.getElementById('quick-mode-toggle');
+const defaultTitlePlaceholder = titleInput ? titleInput.getAttribute('placeholder') : '';
+let simpleMode = false;
+if (quickToggleBtn && composerEl) {
+  quickToggleBtn.addEventListener('click', () => {
+    simpleMode = !simpleMode;
+    composerEl.classList.toggle('simple-mode', simpleMode);
+    quickToggleBtn.textContent = simpleMode ? 'Detailed mode' : 'Simple mode';
+    if (titleInput) {
+      titleInput.placeholder = simpleMode ? 'Type a task and press Enter…' : defaultTitlePlaceholder;
+      titleInput.focus();
+    }
+  });
+}
 titleInput.addEventListener('keydown', evt => {
   if (evt.key === 'Enter' && !evt.shiftKey) {
     evt.preventDefault();
@@ -1052,6 +1090,7 @@ function addTask() {
   if (assigneeCustomInput) assigneeCustomInput.value = '';
   renderTasks();
   saveTasks();
+  if (titleInput) titleInput.focus();
 }
 
 function addSectionDivider() {
