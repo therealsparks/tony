@@ -163,10 +163,16 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
+    gap:12px;
     border:1px solid #e5e7eb;
     border-radius:14px;
     padding:10px 14px;
     background:#fff;
+  }
+  .toolbar-actions {
+    display:flex;
+    gap:8px;
+  }
     font-size:13px;
     color:#4b5563;
   }
@@ -205,6 +211,10 @@
     display:flex;
     align-items:center;
     justify-content:center;
+  }
+  .task-row .checkbox {
+    align-self:center;
+    justify-self:center;
   }
   .checkbox input {
     position:absolute;
@@ -480,6 +490,24 @@
   .summary-pill strong {
     font-size:18px;
     color:#1e1b4b;
+  }
+  .section-divider-row {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:8px 6px;
+    color:#475569;
+    font-weight:700;
+    text-transform:uppercase;
+    font-size:12px;
+  }
+  .section-divider-label {
+    white-space:nowrap;
+  }
+  .section-divider-line {
+    flex:1;
+    height:1px;
+    background:linear-gradient(90deg,#cbd5f5,transparent);
   }
   .icon-button {
     border:1px solid #e2e8f0;
@@ -842,6 +870,10 @@ function renderSectionPreview() {
     header.addEventListener('click', () => {
       wrapper.classList.toggle('collapsed');
     });
+    wrapper.addEventListener('click', evt => {
+      if (evt.target.closest('button') || evt.target.closest('input')) return;
+      wrapper.classList.toggle('collapsed');
+    });
     taskListEl.appendChild(wrapper);
   });
 }
@@ -943,6 +975,21 @@ function addTask() {
   saveTasks();
 }
 
+function addSectionDivider() {
+  const title = window.prompt('Section name');
+  if (!title) return;
+  const section = {
+    id: generateId(),
+    title: title.trim(),
+    isSection: true,
+    createdAt: new Date().toISOString(),
+    children: []
+  };
+  tasks.unshift(section);
+  renderTasks();
+  saveTasks();
+}
+
 function renderTasks() {
   taskListEl.innerHTML = '';
   if (!tasks.length) {
@@ -955,13 +1002,20 @@ function renderTasks() {
   const toolbar = document.createElement('div');
   toolbar.className = 'task-toolbar';
   toolbar.innerHTML = `
-    <label class="master-checkbox">
-      <input type="checkbox" id="master-toggle">
-      Select / clear all
-    </label>
+    <div class="toolbar-left">
+      <label class="master-checkbox">
+        <input type="checkbox" id="master-toggle">
+        Select / clear all
+      </label>
+    </div>
+    <div class="toolbar-actions">
+      <button type="button" id="add-section-btn" class="icon-button">+ Section</button>
+    </div>
   `;
   taskListEl.appendChild(toolbar);
   const masterToggle = toolbar.querySelector('#master-toggle');
+  const addSectionBtn = toolbar.querySelector('#add-section-btn');
+  if (addSectionBtn) addSectionBtn.addEventListener('click', addSectionDivider);
   masterToggle.checked = areAllTasksCompleted(tasks);
   masterToggle.indeterminate = !masterToggle.checked && hasAnyCompleted(tasks);
   masterToggle.addEventListener('click', evt => {
@@ -976,6 +1030,16 @@ function renderTaskList(list, container, path) {
   list.forEach((task, index) => {
     const currentPath = [...path, index];
     const pathStr = currentPath.join('.');
+    if (task.isSection) {
+      const divider = document.createElement('div');
+      divider.className = 'section-divider-row';
+      divider.innerHTML = `
+        <div class="section-divider-label">${escapeHtml(task.title)}</div>
+        <div class="section-divider-line"></div>
+      `;
+      container.appendChild(divider);
+      return;
+    }
     const card = document.createElement('div');
     card.className = 'task-card' + (task.completed ? ' completed' : '');
     card.classList.add('collapsed');
