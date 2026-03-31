@@ -616,6 +616,7 @@
       <input id="manual-name" type="text" placeholder="Display name (optional)">
       <button class="primary" id="manual-continue" type="button">Enter workspace</button>
     </div>
+    <p id="ios-safari-note" class="signin-note hidden" style="color:#b45309;">Safari on iPhone/iPad: tap “Continue without Google” above for now while we finish the Google sign-in fix.</p>
   </section>
 
   <section id="workspace" class="card hidden">
@@ -786,6 +787,16 @@ if (manualContinueBtn) {
     }
     enterWorkspace({ name: name || (email.includes('@') ? email.split('@')[0] : email), email }, null);
   });
+}
+
+const iosSafari = /iP(ad|hone|od)/.test(navigator.userAgent) && !window.MSStream && /Safari/i.test(navigator.userAgent) && !/CriOS/i.test(navigator.userAgent);
+if (iosSafari) {
+  const googleBtn = document.querySelector('.g_id_signin');
+  const iosNote = document.getElementById('ios-safari-note');
+  if (googleBtn) googleBtn.style.display = 'none';
+  if (manualPanel) manualPanel.classList.remove('hidden');
+  if (manualToggleBtn) manualToggleBtn.style.display = 'none';
+  if (iosNote) iosNote.classList.remove('hidden');
 }
 
 const titleInput = document.getElementById('task-title');
