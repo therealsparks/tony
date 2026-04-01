@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-30 04:58 UTC",
+  "updated": "2026-04-01 04:59 UTC",
   "sections": [
     {
       "id": "gov",
@@ -7,11 +7,18 @@
       "icon": "\ud83c\udfdb\ufe0f",
       "items": [
         {
-          "title": "Education Dept. HQ handed to Energy as Trump advances effort to dismantle agency",
-          "link": "https://www.govexec.com/management/2026/03/education-hq-handed-energy-trump-advances-effort-dismantle-agency/412424/",
-          "desc": "Education says it no longer needs the space after slashing half of its workforce.",
-          "date": "Thu, 26 Mar 2026",
-          "source": "GovExec"
+          "title": "Energy Department speeds up nuclear regulatory process with AI",
+          "link": "https://fedscoop.com/energy-department-national-labs-ai-nuclear-regulatory-experiment/",
+          "desc": "The agency called the experiment, which was conducted in collaboration with two national labs, two vendors and the Nuclear Regulatory Commission, a \u201cmilestone test case.\u201d The post Energy Department speeds up nuclear regulatory process with AI appeare",
+          "date": "Mon, 30 Mar 2026",
+          "source": "FedScoop"
+        },
+        {
+          "title": "National Weather Service taps Accenture, Booz Allen for data system modernization",
+          "link": "https://fedscoop.com/national-weather-service-taps-accenture-booz-allen-for-data-system-modernization/",
+          "desc": "The two government contractors will each build new cloud-based tools for forecasting and analysis as well as centralizing weather data, replacing a decades-old system. The post National Weather Service taps Accenture, Booz Allen for data system moder",
+          "date": "Mon, 30 Mar 2026",
+          "source": "FedScoop"
         },
         {
           "title": "Energy Department taps Tech Force for development skills",
@@ -21,45 +28,38 @@
           "source": "FedScoop"
         },
         {
-          "title": "Energy supply is the key to the AI race with China",
-          "link": "https://fedscoop.com/energy-supply-is-the-key-to-the-ai-race-with-china/",
-          "desc": "A bipartisan pair of former senators deliver a blueprint for how the U.S. can edge China on AI through key energy choices. The post Energy supply is the key to the AI race with China appeared first on FedScoop.",
-          "date": "Fri, 27 Mar 2026",
-          "source": "FedScoop"
-        },
-        {
-          "title": "Voting rights groups sue Texas over removal of potential noncitizens from the voter roll",
-          "link": "https://feeds.texastribune.org/link/16799/17307937/texas-save-database-voter-rolls-removal-dps-secretary-of-state",
-          "desc": "The lawsuit says officials failed to check for proof of citizenship that voters may have already provided the state.",
-          "date": "Sat, 28 Mar 2026",
+          "title": "TDCJ official confirms in trial testimony that it could cost $1.5 billion to fully cool Texas prisons",
+          "link": "https://feeds.texastribune.org/link/16799/17311234/texas-prison-ac-trial-heat-deaths-allegations",
+          "desc": "Current and former heads of Texas\u2019 prison system defended asking for lesser amounts to air-condition facilities during a federal trial on extreme heat in TDCJ facilities.",
+          "date": "Wed, 01 Apr 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Texas Supreme Court ends lawsuits against power generators over 2021 winter storm",
-          "link": "https://feeds.texastribune.org/link/16799/17307884/texas-supreme-court-2021-winter-storm-lawsuits",
-          "desc": "Tens of thousands of residents and small businesses sought damages from power generators after losing electricity during the storm that resulted in billions in losses and 246 deaths.",
-          "date": "Fri, 27 Mar 2026",
+          "title": "Texas\u2019 ban on smokeable hemp cannabis is in effect. Here\u2019s what you need to know.",
+          "link": "https://feeds.texastribune.org/link/16799/17305000/texas-hemp-thc-smokeable-flower-joints-regulations",
+          "desc": "New rules from state health officials ban smokeable intoxicating hemp products, including pre-rolled joints and hemp flower.",
+          "date": "Tue, 24 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Forced to sell medications at a loss, rural Texas pharmacies seek new survival tactics",
-          "link": "https://feeds.texastribune.org/link/16799/17306483/rural-texas-pharmacies-benefit-managers-strategies-stay-afloat",
-          "desc": "Independent rural pharmacists are starting other businesses or selling baby shower gifts to keep their stores operating. Pharmacy deserts affect 4 million Texans.",
-          "date": "Thu, 26 Mar 2026",
+          "title": "Texas will launch its own clinical trials into ibogaine psychedelic after failing to find a drug company to help",
+          "link": "https://feeds.texastribune.org/link/16799/17311186/texas-ibogaine-research-clinical-trials-psychedelics",
+          "desc": "The Legislature last year approved $50 million to research the psychedelic and find a company to develop it into a drug for FDA approval.",
+          "date": "Tue, 31 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Long lines linger at Houston\u2019s biggest airport as TSA agents miss work during partial government shutdown",
-          "link": "https://feeds.texastribune.org/link/16799/17307355/texas-houston-airport-tsa-staffing-delays-lines",
-          "desc": "Wait times at George Bush Intercontinental Airport are expected to worsen over the weekend as agents miss a second paycheck and increasingly call in sick.",
-          "date": "Fri, 27 Mar 2026",
+          "title": "Texas judge rejects push to let churches make political endorsements",
+          "link": "https://feeds.texastribune.org/link/16799/17311179/texas-johnson-amendment-churches-political-endorsements-nonprofits-federal-judge",
+          "desc": "A group of Texas churches and the IRS agreed to nix the Johnson Amendment, which prohibits nonprofits from endorsing candidates. A Trump-appointed judge said no.",
+          "date": "Tue, 31 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Dan Patrick adds data centers, prediction markets and THC to Senate priorities",
-          "link": "https://feeds.texastribune.org/link/16799/17307703/dan-patrick-texas-senate-priorities-data-centers-thc-prediction-markets",
-          "desc": "Patrick\u2019s Friday release of priorities calls on lawmakers to study the emerging issues ahead of the 2027 legislative session.",
-          "date": "Fri, 27 Mar 2026",
+          "title": "Photos: The last day Texas stores can sell smokeable hemp cannabis",
+          "link": "https://feeds.texastribune.org/link/16799/17310810/hemp-last-day-sale-ban-thc-austin-smoke-shop-texas",
+          "desc": "New state rules that went into effect March 31 further restricts the amount of THC that can be found in hemp-derived products, effectively banning smokeables.",
+          "date": "Tue, 31 Mar 2026",
           "source": "Texas Tribune"
         }
       ]
@@ -70,25 +70,32 @@
       "icon": "\u26a1",
       "items": [
         {
-          "title": "Woodside Sees Delay in Start of Cleaner Ammonia Production at Texas Project",
-          "link": "https://www.rigzone.com/news/woodside_sees_delay_in_start_of_cleaner_ammonia_production_at_texas_project-29-mar-2026-183313-article/?rss=true",
-          "desc": "The expected delay is 'due to construction issues at the third-party feedstock supply facility'.",
-          "date": "Sun, 29 Mar 2026",
+          "title": "QatarEnergy, ExxonMobil Start Production at Texas LNG Project",
+          "link": "https://www.rigzone.com/news/qatarenergy_exxonmobil_start_production_at_texas_lng_project-31-mar-2026-183342-article/?rss=true",
+          "desc": "Golden Pass LNG expects to ship its first cargo in the second quarter.",
+          "date": "Tue, 31 Mar 2026",
           "source": "Rigzone"
         },
         {
-          "title": "Execs Predict What Price WTI Oil Will Hit in Future",
-          "link": "https://www.rigzone.com/news/execs_predict_what_price_wti_oil_will_hit_in_future-27-mar-2026-183320-article/?rss=true",
-          "desc": "Executives from oil and gas firms have revealed where they expect the WTI crude oil price to be at various points in the future in the first quarter Dallas Fed Energy Survey.",
-          "date": "Fri, 27 Mar 2026",
+          "title": "EIA Launches Pilot Studies to Assess Data Center Energy Demand",
+          "link": "https://www.rigzone.com/news/eia_launches_pilot_studies_to_assess_data_center_energy_demand-31-mar-2026-183341-article/?rss=true",
+          "desc": "The U.S. Energy Information Administration announced that it is launching three voluntary pilot field studies to evaluate energy consumption in data centers.",
+          "date": "Tue, 31 Mar 2026",
           "source": "Rigzone"
         },
         {
-          "title": "All Middle East Energy Assets at Risk, StanChart Warns",
-          "link": "https://www.rigzone.com/news/all_middle_east_energy_assets_at_risk_stanchart_warns-27-mar-2026-183314-article/?rss=true",
-          "desc": "'The marked escalation in the U.S.-Iran conflict over the past week puts all energy assets and infrastructure in the region at risk', Standard Chartered Bank Energy Research Head Emily Ashford warned.",
-          "date": "Fri, 27 Mar 2026",
+          "title": "Siemens Energy Bags $4B EGL4 Contract",
+          "link": "https://www.rigzone.com/news/siemens_energy_bags_4b_egl4_contract-31-mar-2026-183335-article/?rss=true",
+          "desc": "National Grid and Iberdrola awarded a GBP 3 billion ($3.96 billion) contract to Siemens Energy for Eastern Green Link 4 converter stations.",
+          "date": "Tue, 31 Mar 2026",
           "source": "Rigzone"
+        },
+        {
+          "title": "Protecting the Grid in the Age of Data Center Growth",
+          "link": "https://www.powermag.com/protecting-the-grid-in-the-age-of-data-center-growth/",
+          "desc": "The rapid growth of data centers in recent years is increasingly causing angst among power operators. Power industry leaders want assurances that the electric grid is reliable, protected, and sustainable for businesses and the public alike. The post ",
+          "date": "Tue, 31 Mar 2026",
+          "source": "Power Magazine"
         },
         {
           "title": "Arevon Starts Construction of $600 Million Cormorant Energy Storage Project",
@@ -117,13 +124,6 @@
           "desc": "With federal tax credits under threat and regulatory stability in short supply, Bala Nagarajan, managing director of the energy investments team at S2G Investments, explained what he looks for in a company. \u201cIs the product or the solution sold by thi",
           "date": "Thu, 26 Mar 2026",
           "source": "Power Magazine"
-        },
-        {
-          "title": "Google Has PPAs for Solar Power from Renewable Energy Group",
-          "link": "https://www.powermag.com/google-has-ppas-for-solar-power-from-renewable-energy-group/",
-          "desc": "A Maryland-headquartered utility-scale developer, owner, and operator of solar power and energy storage projects said it has power purchase agreements (PPAs) with technology giant Google for the electricity from two Texas solar installations. The pos",
-          "date": "Tue, 24 Mar 2026",
-          "source": "Power Magazine"
         }
       ]
     },
@@ -139,30 +139,23 @@
       "icon": "\u2696\ufe0f",
       "items": [
         {
-          "title": "Mexico City sex workers say World Cup construction hurting their income",
-          "link": "https://www.courthousenews.com/mexico-city-sex-workers-say-world-cup-construction-hurting-their-income/",
-          "desc": "Bike path and pedestrian walkway construction is underway for the World Cup on one of Mexico City's major thoroughfares \u2014 but not everyone is buying in.",
-          "date": "Sun, 29 Mar 2026",
-          "source": "Courthouse News"
+          "title": "Energy Department speeds up nuclear regulatory process with AI",
+          "link": "https://fedscoop.com/energy-department-national-labs-ai-nuclear-regulatory-experiment/",
+          "desc": "The agency called the experiment, which was conducted in collaboration with two national labs, two vendors and the Nuclear Regulatory Commission, a \u201cmilestone test case.\u201d The post Energy Department speeds up nuclear regulatory process with AI appeare",
+          "date": "Mon, 30 Mar 2026",
+          "source": "FedScoop"
         },
         {
-          "title": "Education Dept. HQ handed to Energy as Trump advances effort to dismantle agency",
-          "link": "https://www.govexec.com/management/2026/03/education-hq-handed-energy-trump-advances-effort-dismantle-agency/412424/",
-          "desc": "Education says it no longer needs the space after slashing half of its workforce.",
-          "date": "Thu, 26 Mar 2026",
-          "source": "GovExec"
+          "title": "National Weather Service taps Accenture, Booz Allen for data system modernization",
+          "link": "https://fedscoop.com/national-weather-service-taps-accenture-booz-allen-for-data-system-modernization/",
+          "desc": "The two government contractors will each build new cloud-based tools for forecasting and analysis as well as centralizing weather data, replacing a decades-old system. The post National Weather Service taps Accenture, Booz Allen for data system moder",
+          "date": "Mon, 30 Mar 2026",
+          "source": "FedScoop"
         },
         {
           "title": "Energy Department taps Tech Force for development skills",
           "link": "https://fedscoop.com/energy-department-tech-force-ai-anthropic/",
           "desc": "Budget constraints and compliance considerations have presented hurdles for the agency as it aims to onboard technologists, a DOE IT leader said during a Thursday event. The post Energy Department taps Tech Force for development skills appeared first",
-          "date": "Fri, 27 Mar 2026",
-          "source": "FedScoop"
-        },
-        {
-          "title": "Energy supply is the key to the AI race with China",
-          "link": "https://fedscoop.com/energy-supply-is-the-key-to-the-ai-race-with-china/",
-          "desc": "A bipartisan pair of former senators deliver a blueprint for how the U.S. can edge China on AI through key energy choices. The post Energy supply is the key to the AI race with China appeared first on FedScoop.",
           "date": "Fri, 27 Mar 2026",
           "source": "FedScoop"
         }
@@ -174,59 +167,59 @@
       "icon": "\ud83c\udfac",
       "items": [
         {
-          "title": "\u2018Telsche\u2019: Exploring Memory and Loss Through Minimalist Art",
-          "link": "https://www.awn.com/animationworld/telsche-exploring-memory-and-loss-through-minimalist-art",
-          "desc": "Set on a stark salt-flat landscape and rendered in just three colors, Sophie Colfer and Ala Nunu\u2019s 2D short follows a young girl\u2019s search for a mother she can no longer fully remember, using stripped-down visuals without dialogue to explore how memor",
-          "date": "Fri, 27 Mar 2026",
+          "title": "Changing of the Anime Season: Endings and Beginnings",
+          "link": "https://www.awn.com/animationworld/changing-anime-season-endings-and-beginnings",
+          "desc": "Columnist Andrew Osmond considers the endings to four \u2018winter\u2019 TV anime \u2013 \u2018Journal With Witch,\u2019 \u2018Trigun Stargaze,\u2019 \u2018You And I Are Polar Opposites,\u2019 and \u2018Shiboyugi;\u2019 and for an encore, he\u2019s brought back some snaps from last weekend\u2019s \u2018AnimeJapan\u2019 even",
+          "date": "Tue, 31 Mar 2026",
           "source": "Animation World Net"
         },
         {
-          "title": "Adult Swim SMALLS \u20183,2,1\u2026 Chachipistachi\u2019 Short Debuts Today on YouTube",
-          "link": "https://www.awn.com/news/adult-swim-smalls-321-chachipistachi-short-debuts-today-youtube",
-          "desc": "From indie Spanish animator Rafillo comes a film that teaches you everything you ever wanted to know from Professor Chachipistachi who, along with the little siblings Timmy and Mariloli Manilli, will experience a thousand adventures.",
-          "date": "Fri, 27 Mar 2026",
+          "title": "Brunico Shuts Down Kidscreen Summit; Publisher Jocelyn Christie Departs",
+          "link": "https://www.awn.com/news/brunico-shuts-down-kidscreen-summit-publisher-jocelyn-christie-departs",
+          "desc": "Brunico Communications will discontinue the longtime conference and its other U.S. events business in 2027, citing market consolidation, as the longtime \u2018Kidscreen\u2019 publisher exits after 28 years.",
+          "date": "Tue, 31 Mar 2026",
           "source": "Animation World Net"
         },
         {
-          "title": "Crunchyroll Sets Same-Day English Dub Launch for 'Witch Hat Atelier' Anime",
-          "link": "https://www.awn.com/news/crunchyroll-sets-same-day-english-dub-launch-witch-hat-atelier-anime",
-          "desc": "The adaptation of Kamome Shirahama\u2019s manga will premiere April 6 with simultaneous English and Japanese releases of Episodes 1 and 2, alongside multiple dubbed language options.",
-          "date": "Fri, 27 Mar 2026",
+          "title": "Meat Dept. Joins Psyop Global Creative Network",
+          "link": "https://www.awn.com/news/meat-dept-joins-psyop-global-creative-network",
+          "desc": "The French directing collective brings to the company a hybrid AI-driven and handcrafted production approach rooted in research and technical development.",
+          "date": "Tue, 31 Mar 2026",
           "source": "Animation World Net"
         },
         {
-          "title": "August Media Boards Roye Okupe\u2019s 'Malika: Warrior Queen' as Co-Producer",
-          "link": "https://www.awn.com/news/august-media-boards-roye-okupes-malika-warrior-queen-co-producer",
-          "desc": "Singapore-based company joins the animated feature, financing up to one-third of the project and overseeing animation production across Asia.",
-          "date": "Fri, 27 Mar 2026",
+          "title": "Trailer #2 Drops for Travis Knight\u2019s \u2018Masters of the Universe\u2019",
+          "link": "https://www.awn.com/news/trailer-2-drops-travis-knights-masters-universe",
+          "desc": "He\u2019s finally back to save Eternia\u2026 there\u2019s a new He-Man coming to theaters in the live-action fantasy adventure about 10-year-old Prince Adam re-uniting with his magical Sword of Power to take on Skeletor; from Mattel Films and Amazon MGM Studios, wa",
+          "date": "Tue, 31 Mar 2026",
           "source": "Animation World Net"
         },
         {
-          "title": "\u2018SPARK\u2019 Issue 2 Now Available for Free Download",
-          "link": "https://www.awn.com/news/spark-issue-2-now-available-free-download",
-          "desc": "The latest edition of the monthly editorial platform dedicated to African animation features a spotlight on women shaping the industry across the continent, a conversation with Smids Animation\u2019s Damilola Solesi, and a look at Louisette Ratsivahiny\u2019s ",
-          "date": "Fri, 27 Mar 2026",
+          "title": "Boris FX Acquires Vegas Pro, Sound Forge, and Acid Pro",
+          "link": "https://www.awn.com/news/boris-fx-acquires-vegas-pro-sound-forge-and-acid-pro",
+          "desc": "The acclaimed VFX developer bolsters its award-winning product family with popular professional video editing, content creation, and audio applications.",
+          "date": "Mon, 30 Mar 2026",
           "source": "Animation World Net"
         },
         {
-          "title": "Reza Dolatabadi and NOBORDER Present \u201cSEIZE YOUR NOW. BUILD YOUR FUTURE.\u201d for Aston Martin Formula 1 Team and Coinbase",
-          "link": "https://motionographer.com/news/reza-dolatabadi-and-noborder-present-seize-your-now-build-your-future-for-aston-martin-formula-1-team-and-coinbase/",
-          "desc": "Director Reza Dolatabadi, co founder of NOBORDER Studio, led the creation of SEIZE YOUR NOW. BUILD YOUR FUTURE., a new animated film developed for the Aston Martin Formula 1 Team in collaboration with Coinbase, continuing an ongoing creative partners",
-          "date": "Fri, 27 Mar 2026",
+          "title": "Heart Based Leadership: Live Session \u2014 April 6 @ 17:00 CET",
+          "link": "https://motionographer.com/news/heart-based-leadership-live-session-april-6-1700-cet/",
+          "desc": "You are invited to a 90-minute live, interactive leadership development session exploring what it truly means.",
+          "date": "Wed, 01 Apr 2026",
           "source": "Motionographer"
         },
         {
-          "title": "Topstep \u2018Winter Olympics Campaign\u2019 | Scholar",
-          "link": "https://motionographer.com/quickie/topstep-winter-olympics-campaign-scholar/",
+          "title": "OFFF Is Not a Festival. It is a Mindset.",
+          "link": "https://motionographer.com/2026/03/31/offf-is-not-a-festival-it-is-a-mindset/",
+          "desc": "After 25 years, OFFF Barcelona director Pep Salazar has one answer for why thousands of creatives keep boarding planes to Barcelona every April: \"OFFF is a peaceful place to meet. And we need these places, especially now.\" In this exclusive conversat",
+          "date": "Wed, 01 Apr 2026",
+          "source": "Motionographer"
+        },
+        {
+          "title": "Dopaminised | Zak Peric",
+          "link": "https://motionographer.com/quickie/dopaminised-zak-peric/",
           "desc": "",
-          "date": "Fri, 27 Mar 2026",
-          "source": "Motionographer"
-        },
-        {
-          "title": "Digital Design Days Celebrates 10th Anniversary With Most Ambitious Edition Ever",
-          "link": "https://motionographer.com/news/digital-design-days-celebrates-10th-anniversary-with-most-ambitious-edition-ever/",
-          "desc": "Digital Design Days (DDD), Italy's leading design and innovation conference, celebrates its tenth anniversary with an extraordinary edition taking place May 7-9, 2026 at Superstudio Village in Milan.",
-          "date": "Thu, 26 Mar 2026",
+          "date": "Tue, 31 Mar 2026",
           "source": "Motionographer"
         }
       ]
@@ -244,52 +237,52 @@
           "source": "Texas CEO Magazine"
         },
         {
-          "title": "Voting rights groups sue Texas over removal of potential noncitizens from the voter roll",
-          "link": "https://feeds.texastribune.org/link/16799/17307937/texas-save-database-voter-rolls-removal-dps-secretary-of-state",
-          "desc": "The lawsuit says officials failed to check for proof of citizenship that voters may have already provided the state.",
-          "date": "Sat, 28 Mar 2026",
+          "title": "TDCJ official confirms in trial testimony that it could cost $1.5 billion to fully cool Texas prisons",
+          "link": "https://feeds.texastribune.org/link/16799/17311234/texas-prison-ac-trial-heat-deaths-allegations",
+          "desc": "Current and former heads of Texas\u2019 prison system defended asking for lesser amounts to air-condition facilities during a federal trial on extreme heat in TDCJ facilities.",
+          "date": "Wed, 01 Apr 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Texas Supreme Court ends lawsuits against power generators over 2021 winter storm",
-          "link": "https://feeds.texastribune.org/link/16799/17307884/texas-supreme-court-2021-winter-storm-lawsuits",
-          "desc": "Tens of thousands of residents and small businesses sought damages from power generators after losing electricity during the storm that resulted in billions in losses and 246 deaths.",
-          "date": "Fri, 27 Mar 2026",
+          "title": "Texas\u2019 ban on smokeable hemp cannabis is in effect. Here\u2019s what you need to know.",
+          "link": "https://feeds.texastribune.org/link/16799/17305000/texas-hemp-thc-smokeable-flower-joints-regulations",
+          "desc": "New rules from state health officials ban smokeable intoxicating hemp products, including pre-rolled joints and hemp flower.",
+          "date": "Tue, 24 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Forced to sell medications at a loss, rural Texas pharmacies seek new survival tactics",
-          "link": "https://feeds.texastribune.org/link/16799/17306483/rural-texas-pharmacies-benefit-managers-strategies-stay-afloat",
-          "desc": "Independent rural pharmacists are starting other businesses or selling baby shower gifts to keep their stores operating. Pharmacy deserts affect 4 million Texans.",
-          "date": "Thu, 26 Mar 2026",
+          "title": "Texas will launch its own clinical trials into ibogaine psychedelic after failing to find a drug company to help",
+          "link": "https://feeds.texastribune.org/link/16799/17311186/texas-ibogaine-research-clinical-trials-psychedelics",
+          "desc": "The Legislature last year approved $50 million to research the psychedelic and find a company to develop it into a drug for FDA approval.",
+          "date": "Tue, 31 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Long lines linger at Houston\u2019s biggest airport as TSA agents miss work during partial government shutdown",
-          "link": "https://feeds.texastribune.org/link/16799/17307355/texas-houston-airport-tsa-staffing-delays-lines",
-          "desc": "Wait times at George Bush Intercontinental Airport are expected to worsen over the weekend as agents miss a second paycheck and increasingly call in sick.",
-          "date": "Fri, 27 Mar 2026",
+          "title": "Texas judge rejects push to let churches make political endorsements",
+          "link": "https://feeds.texastribune.org/link/16799/17311179/texas-johnson-amendment-churches-political-endorsements-nonprofits-federal-judge",
+          "desc": "A group of Texas churches and the IRS agreed to nix the Johnson Amendment, which prohibits nonprofits from endorsing candidates. A Trump-appointed judge said no.",
+          "date": "Tue, 31 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Dan Patrick adds data centers, prediction markets and THC to Senate priorities",
-          "link": "https://feeds.texastribune.org/link/16799/17307703/dan-patrick-texas-senate-priorities-data-centers-thc-prediction-markets",
-          "desc": "Patrick\u2019s Friday release of priorities calls on lawmakers to study the emerging issues ahead of the 2027 legislative session.",
-          "date": "Fri, 27 Mar 2026",
+          "title": "Photos: The last day Texas stores can sell smokeable hemp cannabis",
+          "link": "https://feeds.texastribune.org/link/16799/17310810/hemp-last-day-sale-ban-thc-austin-smoke-shop-texas",
+          "desc": "New state rules that went into effect March 31 further restricts the amount of THC that can be found in hemp-derived products, effectively banning smokeables.",
+          "date": "Tue, 31 Mar 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Granite wins $495M in southern border work",
-          "link": "https://www.constructiondive.com/news/granite-construction-southern-border-work/816028/",
-          "desc": "After nabbing the first border wall contract of President Donald Trump&rsquo;s second term last year, the contractor is set to focus on 27 miles of tactical infrastructure near Laredo, Texas. &nbsp;",
-          "date": "Fri, 27 Mar 2026",
+          "title": "Judge orders construction work stoppage on Trump\u2019s $400M ballroom",
+          "link": "https://www.constructiondive.com/news/white-house-ballroom-construction-halted-judge/816273/",
+          "desc": "A federal judge ruled Congress must sign off on the addition to the president&rsquo;s home, which is being built by Clark Construction and engineered by AECOM.",
+          "date": "Tue, 31 Mar 2026",
           "source": "Construction Dive"
         },
         {
-          "title": "California earmarks $848M for rail, road projects",
-          "link": "https://www.constructiondive.com/news/california-funding-BART-tunnel-San-Jose/815905/",
-          "desc": "Of the funds, $100 million will support the construction of a 5-mile tunnel for Bay Area Rapid Transit trains between San Jose and the city of Santa Clara.",
-          "date": "Thu, 26 Mar 2026",
+          "title": "Cumming Group launches advanced tech division",
+          "link": "https://www.constructiondive.com/news/cumming-group-advanced-tech-division/816258/",
+          "desc": "The advisory firm&rsquo;s new Advanced Technology unit has helped it land a significant microprocessor project and multiple data center campuses, according to the company.",
+          "date": "Tue, 31 Mar 2026",
           "source": "Construction Dive"
         }
       ]
