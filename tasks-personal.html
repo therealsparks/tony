@@ -401,7 +401,8 @@
   }
   .subtasks { margin-top:10px; display:flex; flex-direction:column; gap:8px; }
   .task-card.completed { opacity:0.65; }
-  .subtask-composer {
+  .subtask-composer,
+  .task-editor {
     margin-top:12px;
     border:1px solid #e5e7eb;
     border-radius:12px;
@@ -412,7 +413,10 @@
     gap:8px;
   }
   .subtask-composer input,
-  .subtask-composer textarea {
+  .subtask-composer textarea,
+  .task-editor input,
+  .task-editor textarea,
+  .task-editor select {
     border:1px solid #d2d6dc;
     border-radius:10px;
     padding:10px;
@@ -604,6 +608,18 @@
     color:#475569;
   }
   .icon-button:hover { background:#e0e7ff; border-color:#c7d2fe; color:#312e81; }
+  #delete-selected-btn {
+    min-width:120px;
+  }
+  #delete-selected-btn:disabled {
+    opacity:0.5;
+    cursor:not-allowed;
+  }
+  #delete-selected-btn:not(:disabled) {
+    border-color:#fecaca;
+    background:#fee2e2;
+    color:#b91c1c;
+  }
   .back { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#2563eb; text-decoration:none; margin-top:12px; }
   .toast {
     position:fixed;
@@ -1045,7 +1061,8 @@ function normalizeTasks(list) {
       assignee: item.assignee || '',
       isSection,
       sequence,
-      expanded: item.expanded !== false
+      expanded: item.expanded !== false,
+      selected: Boolean(item.selected)
     };
   });
 }
@@ -1165,19 +1182,27 @@ function renderTasks() {
       </label>
     </div>
     <div class="toolbar-actions">
+      <button type="button" id="delete-selected-btn" class="icon-button" disabled>Delete selected</button>
       <button type="button" id="add-section-btn" class="icon-button add-section-btn">+ Section</button>
     </div>
   `;
   taskListEl.appendChild(toolbar);
   const masterToggle = toolbar.querySelector('#master-toggle');
   const addSectionBtn = toolbar.querySelector('#add-section-btn');
+  const deleteSelectedBtn = toolbar.querySelector('#delete-selected-btn');
   if (addSectionBtn) addSectionBtn.addEventListener('click', addSectionDivider);
-  masterToggle.checked = areAllTasksCompleted(tasks);
-  masterToggle.indeterminate = !masterToggle.checked && hasAnyCompleted(tasks);
+  if (deleteSelectedBtn) deleteSelectedBtn.addEventListener('click', deleteSelectedTasks);
+  const allSelected = areAllTasksSelected(tasks);
+  const anySelected = hasAnySelected(tasks);
+  masterToggle.checked = allSelected;
+  masterToggle.indeterminate = !allSelected && anySelected;
+  if (deleteSelectedBtn) {
+    deleteSelectedBtn.disabled = !anySelected;
+  }
   masterToggle.addEventListener('click', evt => {
     evt.preventDefault();
-    const nextState = areAllTasksCompleted(tasks) ? false : true;
-    toggleAllTasks(nextState);
+    const nextState = areAllTasksSelected(tasks) ? false : true;
+    toggleSelectAll(nextState);
   });
   taskRenderCounter = 0;
   renderTaskList(tasks, taskListEl, []);
@@ -1211,7 +1236,7 @@ function renderTaskList(list, container, path) {
         <button class="drag-handle" type="button" aria-label="Reorder"></button>
         <span class="task-number-badge">#${displayNumber}</span>
         <label class="checkbox">
-          <input type="checkbox" data-action="toggle" data-path="${pathStr}" ${task.completed ? 'checked' : ''}>
+          <input type="checkbox" data-action="select-task" data-path="${pathStr}" ${task.selected ? 'checked' : ''}>
           <span></span>
         </label>
         <div class="task-main">
@@ -1239,6 +1264,7 @@ function renderTaskList(list, container, path) {
               <button class="text-link subtle" data-action="clear" data-path="${pathStr}">Clear</button>
             </div>
             <div class="task-controls">
+              <button class="icon-button" data-action="toggle-complete" data-path="${pathStr}" aria-label="${task.completed ? 'Mark incomplete' : 'Mark complete'}">${task.completed ? '↺' : '✓'}</button>
               <button class="icon-button" data-action="edit-task" data-path="${pathStr}" aria-label="Edit task">✏️</button>
               <button class="icon-button" data-action="delete-task" data-path="${pathStr}" aria-label="Delete task">🗑️</button>
             </div>
@@ -1291,15 +1317,20 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
+function escapeAttr(str) {
+  if (str === null || str === undefined) return '';
+  return String(str).replace(/"/g, '&quot;');
+}
+
 function handleTaskChange(evt) {
   const action = evt.target.dataset.action;
-  if (action === 'toggle') {
+  if (action === 'select-task') {
     const path = parsePath(evt.target.dataset.path);
     const ref = getTaskRef(path);
     if (!ref) return;
-    ref.task.completed = evt.target.checked;
-    renderTasks();
+    ref.task.selected = evt.target.checked;
     saveTasks();
+    renderTasks();
   }
 }
 
@@ -1342,6 +1373,14 @@ function handleTaskClick(evt) {
     deleteTask(path);
   } else if (action === 'toggle-card' && path) {
     toggleCard(path);
+  } else if (action === 'toggle-complete' && path) {
+    toggleTaskCompletion(path);
+  } else if (action === 'cancel-edit') {
+    const editor = actionBtn.closest('.task-editor');
+    if (editor) editor.remove();
+  } else if (action === 'save-edit' && path) {
+    const editor = actionBtn.closest('.task-editor');
+    saveTaskEdits(path, editor);
   }
 }
 
@@ -1381,23 +1420,91 @@ function openTaskEditor(path) {
   const ref = getTaskRef(path);
   if (!ref) return;
   const task = ref.task;
-  const newTitle = window.prompt('Task title', task.title);
-  if (newTitle === null) return;
-  const newNotes = window.prompt('Notes (optional)', task.notes || '') ?? task.notes;
-  const newAssignee = window.prompt('Assignee email (leave blank for unassigned)', task.assignee || '') ?? task.assignee;
-  const dateHint = task.dueAt ? formatEditorDate(task.dueAt) : '';
-  const newDue = window.prompt('Due date (YYYY-MM-DD HH:MM, blank to clear)', dateHint) || '';
-  task.title = newTitle.trim() || task.title;
-  task.notes = (newNotes || '').trim();
-  task.assignee = (newAssignee || '').trim();
-  if (newDue.trim()) {
-    const parsed = parseEditorDate(newDue.trim());
-    if (parsed) task.dueAt = parsed.toISOString();
+  const pathStr = path.join('.');
+  const card = document.querySelector(`.task-card[data-path="${pathStr}"]`);
+  if (!card) return;
+  if (card.querySelector('.task-editor')) return;
+  const editor = document.createElement('div');
+  editor.className = 'task-editor';
+  editor.innerHTML = `
+    <input type="text" class="edit-title" value="${escapeAttr(task.title)}" placeholder="Task title">
+    <textarea rows="3" class="edit-notes" placeholder="Notes">${escapeHtml(task.notes || '')}</textarea>
+    <div class="two-col">
+      <div>
+        <label class="field-label">Due date</label>
+        <input type="datetime-local" class="edit-due" value="${formatInputDateValue(task.dueAt)}">
+      </div>
+      <div>
+        <label class="field-label">Assign to</label>
+        <select class="edit-assignee">${assigneeOptionsMarkup}</select>
+        <input type="email" class="edit-assignee-custom hidden" placeholder="name@austinvisuals.com">
+      </div>
+    </div>
+    <div class="composer-actions">
+      <button type="button" class="btn-plain" data-action="cancel-edit">Cancel</button>
+      <button type="button" class="btn-secondary" data-action="save-edit" data-path="${pathStr}">Save</button>
+    </div>
+  `;
+  card.appendChild(editor);
+  const assigneeSelect = editor.querySelector('.edit-assignee');
+  const assigneeCustom = editor.querySelector('.edit-assignee-custom');
+  if (task.assignee) {
+    const builtInOption = Array.from(assigneeSelect.options).find(opt => opt.value === task.assignee);
+    if (builtInOption) {
+      assigneeSelect.value = task.assignee;
+    } else {
+      assigneeSelect.value = 'custom';
+      assigneeCustom.value = task.assignee;
+    }
+  } else {
+    assigneeSelect.value = '';
+  }
+  setupAssigneeSelect(assigneeSelect, assigneeCustom);
+  if (assigneeSelect.value === 'custom') {
+    assigneeCustom.classList.remove('hidden');
+  }
+  editor.querySelector('.edit-title').focus();
+}
+
+function saveTaskEdits(path, editor) {
+  if (!editor) return;
+  const ref = getTaskRef(path);
+  if (!ref) return;
+  const task = ref.task;
+  const titleField = editor.querySelector('.edit-title');
+  const notesField = editor.querySelector('.edit-notes');
+  const dueField = editor.querySelector('.edit-due');
+  const assigneeField = editor.querySelector('.edit-assignee');
+  const assigneeCustomField = editor.querySelector('.edit-assignee-custom');
+  const title = titleField.value.trim();
+  if (!title) {
+    titleField.focus();
+    return;
+  }
+  task.title = title;
+  task.notes = notesField.value.trim();
+  if (dueField && dueField.value) {
+    task.dueAt = new Date(dueField.value).toISOString();
   } else {
     task.dueAt = null;
   }
-  renderTasks();
+  if (assigneeField) {
+    task.assignee = assigneeField.value === 'custom'
+      ? assigneeCustomField.value.trim()
+      : assigneeField.value;
+  }
+  editor.remove();
+  task.expanded = true;
   saveTasks();
+  renderTasks();
+}
+
+function toggleTaskCompletion(path) {
+  const ref = getTaskRef(path);
+  if (!ref) return;
+  ref.task.completed = !ref.task.completed;
+  saveTasks();
+  renderTasks();
 }
 
 function saveSubtask(parentPath, composer) {
@@ -1553,28 +1660,73 @@ function pathsEqual(a, b) {
   return a.every((val, idx) => val === b[idx]);
 }
 
-function areAllTasksCompleted(list) {
-  const filtered = list.filter(task => !task.isSection);
-  if (!filtered.length) return true;
-  return filtered.every(task => task.completed && areAllTasksCompleted(task.children || []));
-}
-
-function hasAnyCompleted(list) {
-  return list.some(task => (!task.isSection && task.completed) || hasAnyCompleted(task.children || []));
-}
-
-function setCompletedRecursive(list, value) {
+function flattenTasks(list) {
+  const bucket = [];
   list.forEach(task => {
     if (task.isSection) return;
-    task.completed = value;
-    setCompletedRecursive(task.children || [], value);
+    bucket.push(task);
+    if (task.children && task.children.length) {
+      bucket.push(...flattenTasks(task.children));
+    }
+  });
+  return bucket;
+}
+
+function areAllTasksSelected(list) {
+  const flat = flattenTasks(list);
+  if (!flat.length) return false;
+  return flat.every(task => task.selected);
+}
+
+function hasAnySelected(list) {
+  return flattenTasks(list).some(task => task.selected);
+}
+
+function setSelectedRecursive(list, value) {
+  list.forEach(task => {
+    if (task.isSection) return;
+    task.selected = value;
+    if (task.children && task.children.length) {
+      setSelectedRecursive(task.children, value);
+    }
   });
 }
 
-function toggleAllTasks(value) {
-  setCompletedRecursive(tasks, value);
-  renderTasks();
+function toggleSelectAll(value) {
+  setSelectedRecursive(tasks, value);
   saveTasks();
+  renderTasks();
+}
+
+function collectSelectedPaths(list, prefix = []) {
+  let paths = [];
+  list.forEach((task, index) => {
+    const current = [...prefix, index];
+    if (!task.isSection && task.selected) {
+      paths.push(current);
+    }
+    if (task.children && task.children.length) {
+      paths = paths.concat(collectSelectedPaths(task.children, current));
+    }
+  });
+  return paths;
+}
+
+function comparePathsDesc(a, b) {
+  const len = Math.min(a.length, b.length);
+  for (let i = 0; i < len; i++) {
+    if (a[i] !== b[i]) return b[i] - a[i];
+  }
+  return b.length - a.length;
+}
+
+function deleteSelectedTasks() {
+  const selectedPaths = collectSelectedPaths(tasks);
+  if (!selectedPaths.length) return;
+  if (!window.confirm(`Delete ${selectedPaths.length} selected task(s)?`)) return;
+  selectedPaths.sort(comparePathsDesc).forEach(path => removeTaskAtPath(path));
+  saveTasks();
+  renderTasks();
 }
 
 function moveTask(path, direction) {
@@ -1606,6 +1758,13 @@ function formatEditorDate(isoString) {
   } catch {
     return '';
   }
+}
+
+function formatInputDateValue(isoString) {
+  if (!isoString) return '';
+  const date = new Date(isoString);
+  if (isNaN(date.getTime())) return '';
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}T${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`;
 }
 
 function parseEditorDate(input) {
