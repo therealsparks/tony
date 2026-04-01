@@ -22,6 +22,17 @@
     min-height: 100vh;
   }
   .wrap { max-width: 720px; margin: 0 auto; }
+  .back-link {
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:12px;
+    font-weight:600;
+    color:#2563eb;
+    text-decoration:none;
+    margin-bottom:10px;
+  }
+  .back-link:hover { opacity:0.85; }
   h1 { font-size: 34px; font-weight: 800; letter-spacing: -0.8px; margin-bottom: 6px; }
   p.lede { font-size: 15px; color:#4b5563; line-height:1.6; margin-bottom:24px; }
   .card {
@@ -655,6 +666,7 @@
 <body>
 <div id="error-banner" class="error-banner"></div>
 <div class="wrap">
+  <a href="index.html" class="back-link">← Back to Tony Home</a>
   <h1>Personal Task Workspace</h1>
   <p class="lede">Your private Austin Visuals task bay — everything stays local until Tony syncs it.</p>
 
