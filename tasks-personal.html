@@ -183,18 +183,26 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
+    flex-wrap:wrap;
     gap:12px;
     border:1px solid #e5e7eb;
     border-radius:14px;
     padding:10px 14px;
     background:#fff;
   }
+  .toolbar-left {
+    flex:1;
+    min-width:200px;
+  }
   .toolbar-actions {
     display:flex;
     gap:8px;
+    margin-left:auto;
   }
+  .toolbar-actions .add-section-btn {
+    padding:8px 16px;
     font-size:13px;
-    color:#4b5563;
+    font-weight:600;
   }
   .master-checkbox {
     display:flex;
@@ -299,6 +307,7 @@
   .task-card.collapsed .subtasks {
     display:none;
   }
+  .checkbox {
     position:relative;
     width:22px;
     height:22px;
@@ -1156,7 +1165,7 @@ function renderTasks() {
       </label>
     </div>
     <div class="toolbar-actions">
-      <button type="button" id="add-section-btn" class="icon-button">+ Section</button>
+      <button type="button" id="add-section-btn" class="icon-button add-section-btn">+ Section</button>
     </div>
   `;
   taskListEl.appendChild(toolbar);
@@ -1216,6 +1225,10 @@ function renderTaskList(list, container, path) {
             </div>
             <div class="task-top-right">
               ${task.dueAt ? `<span class="task-due-pill">${formatDuePill(task.dueAt)}</span>` : ''}
+              <div class="reorder-buttons">
+                <button class="reorder-btn" data-action="move-up" data-path="${pathStr}" aria-label="Move up">↑</button>
+                <button class="reorder-btn" data-action="move-down" data-path="${pathStr}" aria-label="Move down">↓</button>
+              </div>
               <button class="task-toggle-btn" data-action="toggle-card" data-path="${pathStr}" aria-label="${task.expanded ? 'Collapse task' : 'Expand task'}">${task.expanded ? '▾' : '▸'}</button>
             </div>
           </div>
@@ -1226,10 +1239,6 @@ function renderTaskList(list, container, path) {
               <button class="text-link subtle" data-action="clear" data-path="${pathStr}">Clear</button>
             </div>
             <div class="task-controls">
-              <div class="reorder-buttons">
-                <button class="reorder-btn" data-action="move-up" data-path="${pathStr}" aria-label="Move up">↑</button>
-                <button class="reorder-btn" data-action="move-down" data-path="${pathStr}" aria-label="Move down">↓</button>
-              </div>
               <button class="icon-button" data-action="edit-task" data-path="${pathStr}" aria-label="Edit task">✏️</button>
               <button class="icon-button" data-action="delete-task" data-path="${pathStr}" aria-label="Delete task">🗑️</button>
             </div>
