@@ -666,7 +666,7 @@
 <body>
 <div id="error-banner" class="error-banner"></div>
 <div class="wrap">
-  <a href="index.html" class="back-link">← Back to Tony Home</a>
+  <a href="index.html" class="back-link" id="backLink" data-default-label="← Back to Tony Home">← Back to Tony Home</a>
   <h1>Personal Task Workspace</h1>
   <p class="lede">Your private Austin Visuals task bay — everything stays local until Tony syncs it.</p>
 
@@ -1833,6 +1833,32 @@ function signOut() {
   notesInput.value = '';
   google.accounts.id.disableAutoSelect();
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const backLink = document.getElementById('backLink');
+  if (!backLink) return;
+  const ref = document.referrer;
+  const defaultLabel = backLink.dataset.defaultLabel || backLink.textContent;
+  if (!ref) return;
+  try {
+    const url = new URL(ref);
+    if (url.origin !== window.location.origin) return;
+    const pathname = url.pathname;
+    if (pathname.endsWith('tasks.html') || pathname.endsWith('/tasks.html')) {
+      backLink.href = 'tasks.html';
+      backLink.textContent = '← Back to Company Tasks';
+    } else if (pathname.endsWith('project-status.html') || pathname.endsWith('/project-status.html')) {
+      backLink.href = 'tasks.html';
+      backLink.textContent = '← Back to Company Tasks';
+    } else {
+      backLink.href = 'index.html';
+      backLink.textContent = defaultLabel;
+    }
+  } catch (err) {
+    backLink.href = 'index.html';
+    backLink.textContent = defaultLabel;
+  }
+});
 
 const restoredSession = loadSession();
 if (restoredSession && restoredSession.email) {
