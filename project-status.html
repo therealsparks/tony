@@ -116,13 +116,13 @@
   </div>
 
   <div class="filters">
-    <button class="filter-btn active" onclick="filter('all', this)">All</button>
-    <button class="filter-btn" onclick="filter('active', this)">Active</button>
-    <button class="filter-btn" onclick="filter('not_started', this)">Not Started</button>
-    <button class="filter-btn" onclick="filter('hold', this)">Hold</button>
-    <button class="filter-btn" onclick="filter('prospect', this)">Prospects</button>
-    <button class="filter-btn" onclick="filter('stale', this)">Stale (7d+)</button>
-    <button class="filter-btn" onclick="filter('collect', this)">Collect / Archive</button>
+    <button class="filter-btn" data-filter="all" onclick="filter('all', this)">All</button>
+    <button class="filter-btn" data-filter="active" onclick="filter('active', this)">Active</button>
+    <button class="filter-btn" data-filter="not_started" onclick="filter('not_started', this)">Not Started</button>
+    <button class="filter-btn" data-filter="hold" onclick="filter('hold', this)">Hold</button>
+    <button class="filter-btn" data-filter="prospect" onclick="filter('prospect', this)">Prospects</button>
+    <button class="filter-btn" data-filter="stale" onclick="filter('stale', this)">Stale (7d+)</button>
+    <button class="filter-btn" data-filter="collect" onclick="filter('collect', this)">Collect / Archive</button>
     <select id="artist-filter" onchange="filterByArtist(this.value)" style="padding:6px 12px;border-radius:99px;font-size:12px;font-weight:600;border:none;background:#fff;color:#6e6e73;box-shadow:0 1px 3px rgba(0,0,0,0.08);cursor:pointer;">
       <option value="">👤 All Artists</option>
     </select>
@@ -318,9 +318,16 @@ function renderProjects(projects) {
 
 function filter(type, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+  if (btn) btn.classList.add('active');
   document.getElementById('artist-filter').value = '';
   if (type === 'all') { renderProjects(allProjects); return; }
+  if (type === 'active') {
+    renderProjects(allProjects.filter(p => {
+      const status = getStatus(p);
+      return status === 'active' || status === 'stale';
+    }));
+    return;
+  }
   if (type === 'not_started' || type === 'hold') {
     renderProjects(allProjects.filter(p => (p.flags||[]).includes(type)));
     return;
@@ -374,8 +381,14 @@ fetch('projects.json?v=' + Date.now())
     allProjects = data.projects || [];
     const order = {stale:0,active:1,not_started:2,hold:3,prospect:4,collect:5};
     allProjects.sort((a,b) => (order[getStatus(a)]||9) - (order[getStatus(b)]||9));
-    renderProjects(allProjects);
     populateArtistFilter(allProjects);
+
+    const defaultBtn = document.querySelector('.filter-btn[data-filter="active"]');
+    if (defaultBtn) {
+      filter('active', defaultBtn);
+    } else {
+      renderProjects(allProjects);
+    }
 
     // Summary counts
     const counts = {active:0, not_started:0, hold:0, prospect:0, stale:0, collect:0};
