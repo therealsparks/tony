@@ -241,6 +241,25 @@
     gap:8px;
     align-items:center;
   }
+  .task-toggle-btn {
+    border:1px solid #e5e7eb;
+    background:#f8fafc;
+    color:#475569;
+    border-radius:8px;
+    width:28px;
+    height:28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    font-weight:700;
+    cursor:pointer;
+  }
+  .task-toggle-btn:hover {
+    background:#e0e7ff;
+    border-color:#c7d2fe;
+    color:#312e81;
+  }
   .task-due-pill {
     background:#fff4e6;
     color:#bd6400;
@@ -505,6 +524,8 @@
     flex-wrap:nowrap;
     overflow-x:auto;
     margin:16px 0;
+    padding-bottom:6px;
+    -webkit-overflow-scrolling:touch;
   }
   .summary-pill {
     background:#eef2ff;
@@ -1015,7 +1036,7 @@ function normalizeTasks(list) {
       assignee: item.assignee || '',
       isSection,
       sequence,
-      expanded: Boolean(item.expanded)
+      expanded: item.expanded !== false
     };
   });
 }
@@ -1195,6 +1216,7 @@ function renderTaskList(list, container, path) {
             </div>
             <div class="task-top-right">
               ${task.dueAt ? `<span class="task-due-pill">${formatDuePill(task.dueAt)}</span>` : ''}
+              <button class="task-toggle-btn" data-action="toggle-card" data-path="${pathStr}" aria-label="${task.expanded ? 'Collapse task' : 'Expand task'}">${task.expanded ? '▾' : '▸'}</button>
             </div>
           </div>
           ${task.notes ? `<p class="task-notes">${escapeHtml(task.notes)}</p>` : ''}
@@ -1204,12 +1226,10 @@ function renderTaskList(list, container, path) {
               <button class="text-link subtle" data-action="clear" data-path="${pathStr}">Clear</button>
             </div>
             <div class="task-controls">
-              ${isTouchDevice ? `
-                <div class="reorder-buttons">
-                  <button class="reorder-btn" data-action="move-up" data-path="${pathStr}" aria-label="Move up">↑</button>
-                  <button class="reorder-btn" data-action="move-down" data-path="${pathStr}" aria-label="Move down">↓</button>
-                </div>
-              ` : ''}
+              <div class="reorder-buttons">
+                <button class="reorder-btn" data-action="move-up" data-path="${pathStr}" aria-label="Move up">↑</button>
+                <button class="reorder-btn" data-action="move-down" data-path="${pathStr}" aria-label="Move down">↓</button>
+              </div>
               <button class="icon-button" data-action="edit-task" data-path="${pathStr}" aria-label="Edit task">✏️</button>
               <button class="icon-button" data-action="delete-task" data-path="${pathStr}" aria-label="Delete task">🗑️</button>
             </div>
@@ -1222,9 +1242,7 @@ function renderTaskList(list, container, path) {
     card.addEventListener('click', evt => {
       const interactive = evt.target.closest('button, input, textarea, select, a, .text-link, .task-controls, .reorder-buttons, label.checkbox, .drag-handle');
       if (interactive) return;
-      const nowCollapsed = card.classList.toggle('collapsed');
-      task.expanded = !nowCollapsed;
-      saveTasks();
+      toggleCardByPath(pathStr);
     });
 
     const handleBtn = card.querySelector('.drag-handle');
@@ -1243,6 +1261,19 @@ function renderTaskList(list, container, path) {
       renderTaskList(task.children, subtasksContainer, currentPath);
     }
   });
+}
+
+function toggleCardByPath(pathStr) {
+  const path = parsePath(pathStr);
+  toggleCard(path);
+}
+
+function toggleCard(path) {
+  const ref = getTaskRef(path);
+  if (!ref) return;
+  ref.task.expanded = !ref.task.expanded;
+  saveTasks();
+  renderTasks();
 }
 
 function escapeHtml(str) {
@@ -1300,6 +1331,8 @@ function handleTaskClick(evt) {
     openTaskEditor(path);
   } else if (action === 'delete-task' && path) {
     deleteTask(path);
+  } else if (action === 'toggle-card' && path) {
+    toggleCard(path);
   }
 }
 
@@ -1421,6 +1454,7 @@ function clearTask(path) {
 function handleDragStart(evt, pathStr) {
   draggedPath = pathStr;
   evt.dataTransfer.effectAllowed = 'move';
+  evt.dataTransfer.setData('text/plain', pathStr || 'task');
 }
 
 function handleDragOver(evt) {
