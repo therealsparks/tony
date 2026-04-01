@@ -1,0 +1,2006 @@
+{
+  "fetched_at": "2026-04-01T03:42:19.437791+00:00",
+  "count": 100,
+  "invoices": [
+    {
+      "id": "36423",
+      "doc_number": "5190",
+      "txn_date": "2026-03-09",
+      "due_date": "2026-03-11",
+      "balance": 0,
+      "total": 1600.0,
+      "currency": "USD",
+      "customer": "Hayden Binde",
+      "email_status": "NotSet",
+      "private_note": "Last installment 50%",
+      "meta": {
+        "CreateTime": "2026-03-09T15:03:04-07:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-03-31T09:01:06-07:00"
+      },
+      "terms": "Last installment 50%"
+    },
+    {
+      "id": "36519",
+      "doc_number": "5194",
+      "txn_date": "2026-03-19",
+      "due_date": "2026-03-20",
+      "balance": 0,
+      "total": 9000.0,
+      "currency": "USD",
+      "customer": "Rachel Botting",
+      "email_status": "NotSet",
+      "private_note": "Horse Race First 50%",
+      "meta": {
+        "CreateTime": "2026-03-19T10:39:37-07:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-03-31T09:01:03-07:00"
+      },
+      "terms": "Pay 50% upfront"
+    },
+    {
+      "id": "36461",
+      "doc_number": "5193",
+      "txn_date": "2026-03-13",
+      "due_date": "2026-03-16",
+      "balance": 0,
+      "total": 17475.0,
+      "currency": "USD",
+      "customer": "Guardian Decom",
+      "email_status": "NotSet",
+      "private_note": "50% Start",
+      "meta": {
+        "CreateTime": "2026-03-13T09:56:21-07:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-03-31T09:00:50-07:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "36598",
+      "doc_number": "5196",
+      "txn_date": "2026-03-29",
+      "due_date": "2026-04-01",
+      "balance": 4368.75,
+      "total": 4368.75,
+      "currency": "USD",
+      "customer": "Guardian Decom",
+      "email_status": "NotSet",
+      "private_note": "12.5% Milestone",
+      "meta": {
+        "CreateTime": "2026-03-29T13:30:55-07:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-03-29T13:30:55-07:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "36557",
+      "doc_number": "5195",
+      "txn_date": "2026-03-24",
+      "due_date": "2026-04-01",
+      "balance": 3500.0,
+      "total": 3500.0,
+      "currency": "USD",
+      "customer": "Nicola Frasca",
+      "email_status": "NotSet",
+      "private_note": "Final 50%",
+      "meta": {
+        "CreateTime": "2026-03-24T15:46:51-07:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-03-24T15:46:51-07:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "36441",
+      "doc_number": "5192",
+      "txn_date": "2026-03-12",
+      "due_date": "2026-04-01",
+      "balance": 0,
+      "total": 3500.0,
+      "currency": "USD",
+      "customer": "Nicola Frasca",
+      "email_status": "NotSet",
+      "private_note": "First 50% Worker Impact",
+      "meta": {
+        "CreateTime": "2026-03-12T11:45:14-07:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-03-17T10:26:19-07:00"
+      },
+      "terms": "Pay 50% upfront"
+    },
+    {
+      "id": "36299",
+      "doc_number": "5185",
+      "txn_date": "2026-02-18",
+      "due_date": "2026-03-01",
+      "balance": 0,
+      "total": 1600.0,
+      "currency": "USD",
+      "customer": "Hayden Binde",
+      "email_status": "NotSet",
+      "private_note": "Last 50% of Airport",
+      "meta": {
+        "CreateTime": "2026-02-18T14:41:52-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-03-13T08:49:49-07:00"
+      },
+      "terms": "Last installment"
+    },
+    {
+      "id": "36424",
+      "doc_number": "5191",
+      "txn_date": "2026-03-09",
+      "due_date": "2026-04-01",
+      "balance": 0,
+      "total": 375.0,
+      "currency": "USD",
+      "customer": "Marcy Carpenter",
+      "email_status": "NotSet",
+      "private_note": null,
+      "meta": {
+        "CreateTime": "2026-03-09T18:19:28-07:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-03-13T08:43:30-07:00"
+      },
+      "terms": "25% installment"
+    },
+    {
+      "id": "36287",
+      "doc_number": "5184",
+      "txn_date": "2026-02-17",
+      "due_date": "2026-03-01",
+      "balance": 0,
+      "total": 2500.0,
+      "currency": "USD",
+      "customer": "Paul Phelps",
+      "email_status": "NotSet",
+      "private_note": null,
+      "meta": {
+        "CreateTime": "2026-02-17T13:20:28-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-03-11T08:16:17-07:00"
+      },
+      "terms": "Pay 50% upfront"
+    },
+    {
+      "id": "36233",
+      "doc_number": "5182",
+      "txn_date": "2026-02-06",
+      "due_date": "2026-02-11",
+      "balance": 0,
+      "total": 4375.0,
+      "currency": "USD",
+      "customer": "Cyprus Specialty Metals Company",
+      "email_status": "NotSet",
+      "private_note": "Final 50% of Navajo",
+      "meta": {
+        "CreateTime": "2026-02-06T14:07:03-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-03-10T10:39:57-07:00"
+      },
+      "terms": "Final 50%"
+    },
+    {
+      "id": "36217",
+      "doc_number": "5180",
+      "txn_date": "2026-02-04",
+      "due_date": "2026-02-09",
+      "balance": 0,
+      "total": 7400.0,
+      "currency": "USD",
+      "customer": "Cameron LNG",
+      "email_status": "NotSet",
+      "private_note": null,
+      "meta": {
+        "CreateTime": "2026-02-04T13:38:02-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-03-09T12:08:49-07:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "36366",
+      "doc_number": "5189",
+      "txn_date": "2026-03-02",
+      "due_date": "2026-04-01",
+      "balance": 0,
+      "total": 1500.0,
+      "currency": "USD",
+      "customer": "Marcy Carpenter",
+      "email_status": "NotSet",
+      "private_note": "Invoice for Deposit",
+      "meta": {
+        "CreateTime": "2026-03-02T12:09:44-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-03-05T10:07:06-08:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "36218",
+      "doc_number": "5181",
+      "txn_date": "2026-02-04",
+      "due_date": "2026-02-09",
+      "balance": 0,
+      "total": 6250.0,
+      "currency": "USD",
+      "customer": "Rheoxtech",
+      "email_status": "NotSet",
+      "private_note": null,
+      "meta": {
+        "CreateTime": "2026-02-04T14:09:07-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-03-04T07:23:55-08:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "36344",
+      "doc_number": "5188",
+      "txn_date": "2026-02-26",
+      "due_date": "2026-03-01",
+      "balance": 0,
+      "total": 1600.0,
+      "currency": "USD",
+      "customer": "Hayden Binde",
+      "email_status": "NotSet",
+      "private_note": "Underground Mine 50%",
+      "meta": {
+        "CreateTime": "2026-02-26T08:23:53-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-03-03T06:57:16-08:00"
+      },
+      "terms": "Pay 50% upfront"
+    },
+    {
+      "id": "36211",
+      "doc_number": "5179",
+      "txn_date": "2026-02-03",
+      "due_date": "2026-02-13",
+      "balance": 0,
+      "total": 1600.0,
+      "currency": "USD",
+      "customer": "Hayden Binde",
+      "email_status": "NotSet",
+      "private_note": "50% Deposit Airport",
+      "meta": {
+        "CreateTime": "2026-02-03T18:29:21-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-02-27T07:53:35-08:00"
+      },
+      "terms": "50% upfront"
+    },
+    {
+      "id": "36343",
+      "doc_number": "5187",
+      "txn_date": "2026-02-25",
+      "due_date": "2026-02-27",
+      "balance": 5500.0,
+      "total": 5500.0,
+      "currency": "USD",
+      "customer": "Katrina Holman",
+      "email_status": "NotSet",
+      "private_note": "25% Milestone",
+      "meta": {
+        "CreateTime": "2026-02-25T10:52:53-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-02-25T10:52:53-08:00"
+      },
+      "terms": "25% Milestone"
+    },
+    {
+      "id": "36256",
+      "doc_number": "5183",
+      "txn_date": "2026-02-10",
+      "due_date": "2026-02-13",
+      "balance": 0,
+      "total": 3000.0,
+      "currency": "USD",
+      "customer": "Fortress Biotech",
+      "email_status": "NotSet",
+      "private_note": "Final 50%",
+      "meta": {
+        "CreateTime": "2026-02-10T20:22:58-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-02-14T15:36:10-08:00"
+      },
+      "terms": "Last installment"
+    },
+    {
+      "id": "36101",
+      "doc_number": "5177",
+      "txn_date": "2026-01-20",
+      "due_date": "2026-02-01",
+      "balance": 0,
+      "total": 1062.5,
+      "currency": "USD",
+      "customer": "Hayden Binde",
+      "email_status": "NotSet",
+      "private_note": "Last installment, Project Mining",
+      "meta": {
+        "CreateTime": "2026-01-20T18:54:29-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-02-06T08:08:04-08:00"
+      },
+      "terms": "Last installment"
+    },
+    {
+      "id": "36070",
+      "doc_number": "5175",
+      "txn_date": "2026-01-15",
+      "due_date": "2026-01-16",
+      "balance": 0,
+      "total": 1062.5,
+      "currency": "USD",
+      "customer": "Hayden Binde",
+      "email_status": "NotSet",
+      "private_note": "25% Milestone",
+      "meta": {
+        "CreateTime": "2026-01-15T14:42:15-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-02-03T07:44:51-08:00"
+      },
+      "terms": "25% Milestone"
+    },
+    {
+      "id": "35924",
+      "doc_number": "5164",
+      "txn_date": "2025-12-23",
+      "due_date": "2025-12-26",
+      "balance": 0,
+      "total": 2750.0,
+      "currency": "USD",
+      "customer": "Matt Kretzer",
+      "email_status": "EmailSent",
+      "private_note": "Last Half",
+      "meta": {
+        "CreateTime": "2025-12-23T15:37:11-08:00",
+        "LastModifiedByRef": {
+          "value": "0"
+        },
+        "LastUpdatedTime": "2026-02-02T19:55:57-08:00"
+      },
+      "terms": "Last installment"
+    },
+    {
+      "id": "36125",
+      "doc_number": "5178",
+      "txn_date": "2026-01-23",
+      "due_date": "2026-01-26",
+      "balance": 0,
+      "total": 9553.51,
+      "currency": "USD",
+      "customer": "Cameron LNG",
+      "email_status": "NotSet",
+      "private_note": null,
+      "meta": {
+        "CreateTime": "2026-01-23T13:57:26-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-01-29T08:30:25-08:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "36100",
+      "doc_number": "5176",
+      "txn_date": "2026-01-20",
+      "due_date": "2026-01-21",
+      "balance": 0,
+      "total": 2375.0,
+      "currency": "USD",
+      "customer": "Kevin Hefner",
+      "email_status": "NotSet",
+      "private_note": "Last Installment for Project",
+      "meta": {
+        "CreateTime": "2026-01-20T13:00:56-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-01-28T09:50:23-08:00"
+      },
+      "terms": "Last installment"
+    },
+    {
+      "id": "35958",
+      "doc_number": "5172",
+      "txn_date": "2025-12-30",
+      "due_date": "2026-01-01",
+      "balance": 0,
+      "total": 664.62,
+      "currency": "USD",
+      "customer": "Cyprus Specialty Metals Company",
+      "email_status": "NotSet",
+      "private_note": "Software w/ no receipts but proof of QBO.",
+      "meta": {
+        "CreateTime": "2025-12-30T14:57:43-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-01-16T09:50:12-08:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35955",
+      "doc_number": "5169",
+      "txn_date": "2025-12-30",
+      "due_date": "2025-12-30",
+      "balance": 0,
+      "total": 1918.7,
+      "currency": "USD",
+      "customer": "Cyprus Specialty Metals Company",
+      "email_status": "NotSet",
+      "private_note": "For Software",
+      "meta": {
+        "CreateTime": "2025-12-30T11:44:06-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-01-16T09:50:12-08:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35923",
+      "doc_number": "5163",
+      "txn_date": "2025-12-23",
+      "due_date": "2025-12-29",
+      "balance": 0,
+      "total": 26883.06,
+      "currency": "USD",
+      "customer": "Cyprus Specialty Metals Company",
+      "email_status": "EmailSent",
+      "private_note": "Remaining Difference of the Proposal",
+      "meta": {
+        "CreateTime": "2025-12-23T14:05:05-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-01-16T09:50:12-08:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35949",
+      "doc_number": "5166",
+      "txn_date": "2025-12-29",
+      "due_date": "2026-01-01",
+      "balance": 0,
+      "total": 2125.0,
+      "currency": "USD",
+      "customer": "Hayden Binde",
+      "email_status": "NotSet",
+      "private_note": "50% upfront",
+      "meta": {
+        "CreateTime": "2025-12-29T11:04:59-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-01-15T07:59:35-08:00"
+      },
+      "terms": "Pay 50% Deposit"
+    },
+    {
+      "id": "35890",
+      "doc_number": "5161",
+      "txn_date": "2025-12-19",
+      "due_date": "2025-12-22",
+      "balance": 0,
+      "total": 4375.0,
+      "currency": "USD",
+      "customer": "Cyprus Specialty Metals Company",
+      "email_status": "NotSet",
+      "private_note": "50% upfront Deposit",
+      "meta": {
+        "CreateTime": "2025-12-19T11:29:00-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-01-09T08:32:27-08:00"
+      },
+      "terms": "Pay 50% upfront"
+    },
+    {
+      "id": "35235",
+      "doc_number": "5128",
+      "txn_date": "2025-09-17",
+      "due_date": "2025-09-22",
+      "balance": 0,
+      "total": 750.0,
+      "currency": "USD",
+      "customer": "Into the Light Productions, LLC",
+      "email_status": "EmailSent",
+      "private_note": "50% upfront",
+      "meta": {
+        "CreateTime": "2025-09-17T15:55:28-07:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-01-08T08:40:59-08:00"
+      },
+      "terms": "50% deposit upfront"
+    },
+    {
+      "id": "35956",
+      "doc_number": "5170",
+      "txn_date": "2025-12-30",
+      "due_date": "2025-12-31",
+      "balance": 0,
+      "total": 375.0,
+      "currency": "USD",
+      "customer": "Into the Light Productions, LLC",
+      "email_status": "NotSet",
+      "private_note": null,
+      "meta": {
+        "CreateTime": "2025-12-30T13:54:20-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-01-08T08:37:55-08:00"
+      },
+      "terms": "Milestone"
+    },
+    {
+      "id": "35957",
+      "doc_number": "5171",
+      "txn_date": "2025-12-30",
+      "due_date": "2026-01-01",
+      "balance": 300.0,
+      "total": 300.0,
+      "currency": "USD",
+      "customer": "Into the Light Productions, LLC",
+      "email_status": "NotSet",
+      "private_note": "Final",
+      "meta": {
+        "CreateTime": "2025-12-30T13:55:26-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-01-08T08:28:20-08:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35953",
+      "doc_number": "5167",
+      "txn_date": "2025-12-29",
+      "due_date": "2025-12-30",
+      "balance": 0,
+      "total": 1550.0,
+      "currency": "USD",
+      "customer": "A.J. Pyne",
+      "email_status": "NotSet",
+      "private_note": "Last 25% installment",
+      "meta": {
+        "CreateTime": "2025-12-29T13:39:53-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-01-08T08:15:42-08:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35954",
+      "doc_number": "5168",
+      "txn_date": "2025-12-29",
+      "due_date": "2025-12-30",
+      "balance": 0,
+      "total": 300.0,
+      "currency": "USD",
+      "customer": "Kevin Hefner",
+      "email_status": "NotSet",
+      "private_note": "Upcharge",
+      "meta": {
+        "CreateTime": "2025-12-29T14:32:04-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-01-07T08:51:05-08:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35948",
+      "doc_number": "5165",
+      "txn_date": "2025-12-29",
+      "due_date": "2025-12-30",
+      "balance": 0,
+      "total": 1447.35,
+      "currency": "USD",
+      "customer": "Kelly Ballard",
+      "email_status": "NotSet",
+      "private_note": "First and final payment",
+      "meta": {
+        "CreateTime": "2025-12-29T10:59:22-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2025-12-31T11:30:47-08:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35862",
+      "doc_number": "5157",
+      "txn_date": "2025-12-16",
+      "due_date": "2025-12-19",
+      "balance": 0,
+      "total": 3000.39,
+      "currency": "USD",
+      "customer": "Fortress Biotech",
+      "email_status": "NotSet",
+      "private_note": "50% Deposit",
+      "meta": {
+        "CreateTime": "2025-12-16T13:18:11-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2025-12-22T12:27:32-08:00"
+      },
+      "terms": "Pay 50% upfront"
+    },
+    {
+      "id": "35764",
+      "doc_number": "5148",
+      "txn_date": "2025-12-02",
+      "due_date": "2025-12-03",
+      "balance": 0,
+      "total": 2375.0,
+      "currency": "USD",
+      "customer": "Kevin Hefner",
+      "email_status": "NotSet",
+      "private_note": "25% Installment",
+      "meta": {
+        "CreateTime": "2025-12-02T09:35:03-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2025-12-22T12:27:32-08:00"
+      },
+      "terms": "25% installment"
+    },
+    {
+      "id": "35891",
+      "doc_number": "5162",
+      "txn_date": "2025-12-19",
+      "due_date": "2025-12-19",
+      "balance": 0,
+      "total": 1600.0,
+      "currency": "USD",
+      "customer": "Hayden Binde",
+      "email_status": "NotSet",
+      "private_note": "Overage Partial Request",
+      "meta": {
+        "CreateTime": "2025-12-19T11:43:34-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2025-12-19T11:43:47-08:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35840",
+      "doc_number": "5155",
+      "txn_date": "2025-12-11",
+      "due_date": "2025-12-12",
+      "balance": 0,
+      "total": 1600.0,
+      "currency": "USD",
+      "customer": "Hayden Binde",
+      "email_status": "NotSet",
+      "private_note": "Last Installment",
+      "meta": {
+        "CreateTime": "2025-12-11T14:46:22-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2025-12-19T07:53:27-08:00"
+      },
+      "terms": "Last installment"
+    },
+    {
+      "id": "35839",
+      "doc_number": "5154",
+      "txn_date": "2025-12-11",
+      "due_date": "2025-12-11",
+      "balance": 0,
+      "total": 200.0,
+      "currency": "USD",
+      "customer": "Hayden Binde",
+      "email_status": "NotSet",
+      "private_note": "Fist 50% deposit, Previously paid $1400",
+      "meta": {
+        "CreateTime": "2025-12-11T14:37:26-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2025-12-19T07:53:13-08:00"
+      },
+      "terms": "Pay 50% upfront"
+    },
+    {
+      "id": "34199",
+      "doc_number": "5099",
+      "txn_date": "2025-05-29",
+      "due_date": "2025-06-01",
+      "balance": 0,
+      "total": 2550.0,
+      "currency": "USD",
+      "customer": "Frank Mullholland",
+      "email_status": "EmailSent",
+      "private_note": "50% Upfront Deposit",
+      "meta": {
+        "CreateTime": "2025-05-29T08:27:17-07:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2025-12-17T11:30:26-08:00"
+      },
+      "terms": "50% upfront"
+    },
+    {
+      "id": "34077",
+      "doc_number": "5091",
+      "txn_date": "2025-05-12",
+      "due_date": "2025-06-01",
+      "balance": 0,
+      "total": 250.0,
+      "currency": "USD",
+      "customer": "Josh Sallon",
+      "email_status": "EmailSent",
+      "private_note": null,
+      "meta": {
+        "CreateTime": "2025-05-12T13:49:43-07:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2025-12-17T11:28:24-08:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "34076",
+      "doc_number": "5090",
+      "txn_date": "2025-05-12",
+      "due_date": "2025-05-12",
+      "balance": 0,
+      "total": 250.0,
+      "currency": "USD",
+      "customer": "Josh Sallon",
+      "email_status": "EmailSent",
+      "private_note": null,
+      "meta": {
+        "CreateTime": "2025-05-12T13:47:57-07:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2025-12-17T11:28:24-08:00"
+      },
+      "terms": "2 invoice $250 immediate"
+    },
+    {
+      "id": "32191",
+      "doc_number": "5045",
+      "txn_date": "2025-01-08",
+      "due_date": "2025-01-08",
+      "balance": 0,
+      "total": 451.04,
+      "currency": "USD",
+      "customer": "Dennis Abert",
+      "email_status": "EmailSent",
+      "private_note": "Accumulated balance of all open invoices",
+      "meta": {
+        "CreateTime": "2025-01-08T04:49:47-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2025-12-17T10:17:05-08:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35413",
+      "doc_number": "5136",
+      "txn_date": "2025-10-15",
+      "due_date": "2025-10-17",
+      "balance": 0,
+      "total": 4250.0,
+      "currency": "USD",
+      "customer": "Major Creative Marketing",
+      "email_status": "EmailSent",
+      "private_note": "Final Installment",
+      "meta": {
+        "CreateTime": "2025-10-15T20:04:54-07:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2025-12-17T07:57:44-08:00"
+      },
+      "terms": "Last installment"
+    },
+    {
+      "id": "35847",
+      "doc_number": "5156",
+      "txn_date": "2025-12-16",
+      "due_date": "2025-12-17",
+      "balance": 0,
+      "total": 1550.0,
+      "currency": "USD",
+      "customer": "A.J. Pyne",
+      "email_status": "NotSet",
+      "private_note": null,
+      "meta": {
+        "CreateTime": "2025-12-16T08:08:48-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2025-12-16T08:09:04-08:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35777",
+      "doc_number": "5149",
+      "txn_date": "2025-12-02",
+      "due_date": "2025-12-03",
+      "balance": 0,
+      "total": 600.0,
+      "currency": "USD",
+      "customer": "B Wiseman",
+      "email_status": "NotSet",
+      "private_note": null,
+      "meta": {
+        "CreateTime": "2025-12-02T19:10:05-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2025-12-10T10:02:28-08:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35788",
+      "doc_number": "5151",
+      "txn_date": "2025-12-05",
+      "due_date": "2025-12-08",
+      "balance": 0,
+      "total": 3100.0,
+      "currency": "USD",
+      "customer": "A.J. Pyne",
+      "email_status": "EmailSent",
+      "private_note": "first 50%",
+      "meta": {
+        "CreateTime": "2025-12-05T07:49:16-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2025-12-09T16:41:20-08:00"
+      },
+      "terms": "50% Deposit"
+    },
+    {
+      "id": "35809",
+      "doc_number": "5153",
+      "txn_date": "2025-12-08",
+      "due_date": "2025-12-08",
+      "balance": 0,
+      "total": 1400.0,
+      "currency": "USD",
+      "customer": "Hayden Binde",
+      "email_status": "NotSet",
+      "private_note": "First 50% project 3",
+      "meta": {
+        "CreateTime": "2025-12-08T17:03:22-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2025-12-08T17:04:49-08:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35802",
+      "doc_number": "5152",
+      "txn_date": "2025-12-05",
+      "due_date": "2026-01-01",
+      "balance": 0,
+      "total": 482.35,
+      "currency": "USD",
+      "customer": "Ken Beechie",
+      "email_status": "NotSet",
+      "private_note": null,
+      "meta": {
+        "CreateTime": "2025-12-05T08:02:37-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2025-12-05T08:04:23-08:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35666",
+      "doc_number": "5146",
+      "txn_date": "2025-11-17",
+      "due_date": "2025-11-21",
+      "balance": 0,
+      "total": 3250.0,
+      "currency": "USD",
+      "customer": "Rheoxtech",
+      "email_status": "NotSet",
+      "private_note": "50% upfront deposit",
+      "meta": {
+        "CreateTime": "2025-11-17T06:55:11-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2025-12-03T11:48:46-08:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35692",
+      "doc_number": "5147",
+      "txn_date": "2025-11-19",
+      "due_date": "2025-11-21",
+      "balance": 0,
+      "total": 1375.17,
+      "currency": "USD",
+      "customer": "Hayden Binde",
+      "email_status": "NotSet",
+      "private_note": "Last 50%",
+      "meta": {
+        "CreateTime": "2025-11-19T15:34:32-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2025-11-24T11:20:47-08:00"
+      },
+      "terms": "Last installment"
+    },
+    {
+      "id": "35659",
+      "doc_number": "5145",
+      "txn_date": "2025-11-13",
+      "due_date": "2025-11-17",
+      "balance": 0,
+      "total": 1400.0,
+      "currency": "USD",
+      "customer": "Hayden Binde",
+      "email_status": "EmailSent",
+      "private_note": "50% upfront (start new project)",
+      "meta": {
+        "CreateTime": "2025-11-13T11:34:45-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2025-11-24T11:14:23-08:00"
+      },
+      "terms": "Pay 50% upfront"
+    },
+    {
+      "id": "35649",
+      "doc_number": "5144",
+      "txn_date": "2025-11-12",
+      "due_date": "2025-11-12",
+      "balance": 0,
+      "total": 482.35,
+      "currency": "USD",
+      "customer": "Ken Beechie",
+      "email_status": "NotSet",
+      "private_note": null,
+      "meta": {
+        "CreateTime": "2025-11-12T09:12:47-08:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2025-11-12T09:13:12-08:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35611",
+      "doc_number": "5143",
+      "txn_date": "2025-11-10",
+      "due_date": "2025-11-14",
+      "balance": 0,
+      "total": 2500.0,
+      "currency": "USD",
+      "customer": "B Wiseman",
+      "email_status": "EmailSent",
+      "private_note": "Last half",
+      "meta": {
+        "CreateTime": "2025-11-10T15:23:39-08:00",
+        "LastModifiedByRef": {
+          "value": "0"
+        },
+        "LastUpdatedTime": "2025-11-11T10:53:50-08:00"
+      },
+      "terms": "Last installment"
+    },
+    {
+      "id": "35368",
+      "doc_number": "5133",
+      "txn_date": "2025-10-07",
+      "due_date": "2025-10-13",
+      "balance": 0,
+      "total": 5437.0,
+      "currency": "USD",
+      "customer": "Cameron LNG",
+      "email_status": "EmailSent",
+      "private_note": null,
+      "meta": {
+        "CreateTime": "2025-10-07T07:50:31-07:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2025-11-10T12:06:05-08:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35382",
+      "doc_number": "5134",
+      "txn_date": "2025-10-08",
+      "due_date": "2025-11-01",
+      "balance": 0,
+      "total": 3150.0,
+      "currency": "USD",
+      "customer": "Nathan",
+      "email_status": "EmailSent",
+      "private_note": "Last installment of Motorcycle Crash",
+      "meta": {
+        "CreateTime": "2025-10-08T11:55:46-07:00",
+        "LastModifiedByRef": {
+          "value": "0"
+        },
+        "LastUpdatedTime": "2025-11-06T14:33:03-08:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35550",
+      "doc_number": "5142",
+      "txn_date": "2025-10-31",
+      "due_date": "2025-11-03",
+      "balance": 0,
+      "total": 1747.71,
+      "currency": "USD",
+      "customer": "Hayden Binde",
+      "email_status": "EmailSent",
+      "private_note": "Last Payment for the project",
+      "meta": {
+        "CreateTime": "2025-10-31T12:31:39-07:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2025-11-06T13:15:08-08:00"
+      },
+      "terms": "Last installment"
+    },
+    {
+      "id": "35544",
+      "doc_number": "5141",
+      "txn_date": "2025-10-29",
+      "due_date": "2025-10-31",
+      "balance": 0,
+      "total": 3450.0,
+      "currency": "USD",
+      "customer": "Arga Medtech",
+      "email_status": "EmailSent",
+      "private_note": "Final Payment",
+      "meta": {
+        "CreateTime": "2025-10-29T12:29:29-07:00",
+        "LastModifiedByRef": {
+          "value": "0"
+        },
+        "LastUpdatedTime": "2025-11-04T05:34:25-08:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35496",
+      "doc_number": "5139",
+      "txn_date": "2025-10-25",
+      "due_date": "2025-10-31",
+      "balance": 0,
+      "total": 1747.71,
+      "currency": "USD",
+      "customer": "Hayden Binde",
+      "email_status": "EmailSent",
+      "private_note": "50% up front",
+      "meta": {
+        "CreateTime": "2025-10-25T15:47:47-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-10-29T08:28:18-07:00"
+      },
+      "terms": "Pay 50% Start Production"
+    },
+    {
+      "id": "35482",
+      "doc_number": "5138",
+      "txn_date": "2025-10-22",
+      "due_date": "2025-11-01",
+      "balance": 0,
+      "total": 1250.0,
+      "currency": "USD",
+      "customer": "John Fodor",
+      "email_status": "EmailSent",
+      "private_note": null,
+      "meta": {
+        "CreateTime": "2025-10-22T13:44:14-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-10-29T07:55:29-07:00"
+      },
+      "terms": "Pay 50% upfront"
+    },
+    {
+      "id": "35362",
+      "doc_number": "5132",
+      "txn_date": "2025-10-06",
+      "due_date": "2025-10-06",
+      "balance": 0,
+      "total": 500.0,
+      "currency": "USD",
+      "customer": "Texas Internal Pipe Coating LLC",
+      "email_status": "EmailSent",
+      "private_note": "revisions",
+      "meta": {
+        "CreateTime": "2025-10-06T07:47:38-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-10-29T07:51:30-07:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35110",
+      "doc_number": "5122",
+      "txn_date": "2025-08-28",
+      "due_date": "2025-09-01",
+      "balance": 0,
+      "total": 4400.0,
+      "currency": "USD",
+      "customer": "Texas Internal Pipe Coating LLC",
+      "email_status": "EmailSent",
+      "private_note": "Last 50%",
+      "meta": {
+        "CreateTime": "2025-08-28T12:17:28-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-10-29T07:51:30-07:00"
+      },
+      "terms": "Pay last \n50%"
+    },
+    {
+      "id": "35510",
+      "doc_number": "5140",
+      "txn_date": "2025-10-27",
+      "due_date": "2025-10-31",
+      "balance": 0,
+      "total": 4750.0,
+      "currency": "USD",
+      "customer": "Kevin Hefner",
+      "email_status": "EmailSent",
+      "private_note": "50% upfront deposit",
+      "meta": {
+        "CreateTime": "2025-10-27T12:25:49-07:00",
+        "LastModifiedByRef": {
+          "value": "0"
+        },
+        "LastUpdatedTime": "2025-10-28T09:49:35-07:00"
+      },
+      "terms": "50% deposit start production"
+    },
+    {
+      "id": "35412",
+      "doc_number": "5135",
+      "txn_date": "2025-10-15",
+      "due_date": "2025-10-25",
+      "balance": 0,
+      "total": 2750.0,
+      "currency": "USD",
+      "customer": "Matt Kretzer",
+      "email_status": "EmailSent",
+      "private_note": "50% upfront",
+      "meta": {
+        "CreateTime": "2025-10-15T09:20:53-07:00",
+        "LastModifiedByRef": {
+          "value": "0"
+        },
+        "LastUpdatedTime": "2025-10-17T08:53:41-07:00"
+      },
+      "terms": "Pay 50% upfront"
+    },
+    {
+      "id": "35259",
+      "doc_number": "5131",
+      "txn_date": "2025-09-26",
+      "due_date": "2025-09-26",
+      "balance": 0,
+      "total": 500.0,
+      "currency": "USD",
+      "customer": "Ken Beechie",
+      "email_status": "EmailSent",
+      "private_note": "repeat every month",
+      "meta": {
+        "CreateTime": "2025-09-26T11:38:54-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-10-01T10:25:42-07:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35161",
+      "doc_number": "5124",
+      "txn_date": "2025-09-08",
+      "due_date": "2025-09-12",
+      "balance": 0,
+      "total": 1600.0,
+      "currency": "USD",
+      "customer": "Cameron LNG",
+      "email_status": "EmailSent",
+      "private_note": "Last Half",
+      "meta": {
+        "CreateTime": "2025-09-08T08:02:10-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-10-01T09:45:21-07:00"
+      },
+      "terms": "Last installment"
+    },
+    {
+      "id": "35084",
+      "doc_number": "5121",
+      "txn_date": "2025-08-25",
+      "due_date": "2025-09-01",
+      "balance": 0,
+      "total": 1600.0,
+      "currency": "USD",
+      "customer": "Major Creative Marketing",
+      "email_status": "EmailSent",
+      "private_note": "last half 50%",
+      "meta": {
+        "CreateTime": "2025-08-25T19:22:00-07:00",
+        "LastModifiedByRef": {
+          "value": "0"
+        },
+        "LastUpdatedTime": "2025-09-30T09:37:57-07:00"
+      },
+      "terms": "Last installment"
+    },
+    {
+      "id": "35251",
+      "doc_number": "5130",
+      "txn_date": "2025-09-23",
+      "due_date": "2025-10-01",
+      "balance": 0,
+      "total": 2050.0,
+      "currency": "USD",
+      "customer": "Teresa Edwords",
+      "email_status": "EmailSent",
+      "private_note": "Rush completion",
+      "meta": {
+        "CreateTime": "2025-09-23T20:13:01-07:00",
+        "LastModifiedByRef": {
+          "value": "0"
+        },
+        "LastUpdatedTime": "2025-09-24T20:16:58-07:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35244",
+      "doc_number": "5129",
+      "txn_date": "2025-09-21",
+      "due_date": "2025-09-26",
+      "balance": 0,
+      "total": 2500.0,
+      "currency": "USD",
+      "customer": "B Wiseman",
+      "email_status": "EmailSent",
+      "private_note": "first half deposit",
+      "meta": {
+        "CreateTime": "2025-09-21T07:37:26-07:00",
+        "LastModifiedByRef": {
+          "value": "0"
+        },
+        "LastUpdatedTime": "2025-09-22T10:32:30-07:00"
+      },
+      "terms": "50% deposit upfront"
+    },
+    {
+      "id": "35212",
+      "doc_number": "5127",
+      "txn_date": "2025-09-15",
+      "due_date": "2025-09-15",
+      "balance": 0,
+      "total": 8000.0,
+      "currency": "USD",
+      "customer": "915 Films",
+      "email_status": "EmailSent",
+      "private_note": null,
+      "meta": {
+        "CreateTime": "2025-09-15T11:35:52-07:00",
+        "LastModifiedByRef": {
+          "value": "0"
+        },
+        "LastUpdatedTime": "2025-09-15T16:05:23-07:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35186",
+      "doc_number": "5125",
+      "txn_date": "2025-02-19",
+      "due_date": "2025-03-26",
+      "balance": 0,
+      "total": 1535.0,
+      "currency": "USD",
+      "customer": "Stiletto Supply",
+      "email_status": "EmailSent",
+      "private_note": null,
+      "meta": {
+        "CreateTime": "2025-09-10T12:39:13-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-09-10T12:44:34-07:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35157",
+      "doc_number": "5123",
+      "txn_date": "2025-09-05",
+      "due_date": "2025-09-10",
+      "balance": 0,
+      "total": 3600.0,
+      "currency": "USD",
+      "customer": "915 Films",
+      "email_status": "EmailSent",
+      "private_note": null,
+      "meta": {
+        "CreateTime": "2025-09-05T15:13:45-07:00",
+        "LastModifiedByRef": {
+          "value": "0"
+        },
+        "LastUpdatedTime": "2025-09-05T18:33:59-07:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "34306",
+      "doc_number": "5104",
+      "txn_date": "2025-06-07",
+      "due_date": "2025-07-01",
+      "balance": 0,
+      "total": 12000.0,
+      "currency": "USD",
+      "customer": "TEXTRON",
+      "email_status": "EmailSent",
+      "private_note": "7 minute strat plan",
+      "meta": {
+        "CreateTime": "2025-06-07T10:09:20-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-09-05T09:03:27-07:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35018",
+      "doc_number": "5120",
+      "txn_date": "2025-08-18",
+      "due_date": "2025-09-01",
+      "balance": 0,
+      "total": 1600.0,
+      "currency": "USD",
+      "customer": "Cameron LNG",
+      "email_status": "EmailSent",
+      "private_note": "Pay 50% deposit",
+      "meta": {
+        "CreateTime": "2025-08-18T13:31:15-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-08-25T12:39:27-07:00"
+      },
+      "terms": "Pay 50% deposit"
+    },
+    {
+      "id": "34939",
+      "doc_number": "5117",
+      "txn_date": "2025-08-12",
+      "due_date": "2025-09-01",
+      "balance": 0,
+      "total": 2650.0,
+      "currency": "USD",
+      "customer": "Nathan",
+      "email_status": "EmailSent",
+      "private_note": "50% upfront",
+      "meta": {
+        "CreateTime": "2025-08-12T10:14:57-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-08-25T12:36:28-07:00"
+      },
+      "terms": "Pay 50% upfront"
+    },
+    {
+      "id": "35017",
+      "doc_number": "5119",
+      "txn_date": "2025-08-18",
+      "due_date": "2025-09-01",
+      "balance": 0,
+      "total": 250.0,
+      "currency": "USD",
+      "customer": "Rheoxtech",
+      "email_status": "EmailSent",
+      "private_note": null,
+      "meta": {
+        "CreateTime": "2025-08-18T12:41:37-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-08-21T10:32:58-07:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "35016",
+      "doc_number": "5118",
+      "txn_date": "2025-08-18",
+      "due_date": "2025-09-01",
+      "balance": 0,
+      "total": 3250.0,
+      "currency": "USD",
+      "customer": "Teresa Edwords",
+      "email_status": "EmailSent",
+      "private_note": "50% upfront Convention Video",
+      "meta": {
+        "CreateTime": "2025-08-18T12:06:01-07:00",
+        "LastModifiedByRef": {
+          "value": "0"
+        },
+        "LastUpdatedTime": "2025-08-19T21:42:39-07:00"
+      },
+      "terms": "Pay 50% upfront"
+    },
+    {
+      "id": "34173",
+      "doc_number": "5098",
+      "txn_date": "2025-05-28",
+      "due_date": "2025-05-29",
+      "balance": 0,
+      "total": 2500.0,
+      "currency": "USD",
+      "customer": "Andrew Biancheri",
+      "email_status": "EmailSent",
+      "private_note": "Nancy's Revisions - Weekend Before Event",
+      "meta": {
+        "CreateTime": "2025-05-28T08:08:57-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-08-14T11:50:10-07:00"
+      },
+      "terms": "Adjust of prequel charges"
+    },
+    {
+      "id": "34803",
+      "doc_number": "5113",
+      "txn_date": "2025-07-30",
+      "due_date": "2025-08-01",
+      "balance": 0,
+      "total": 2450.0,
+      "currency": "USD",
+      "customer": "Arga Medtech",
+      "email_status": "EmailSent",
+      "private_note": "AGRA Catheter next 25% of $9800",
+      "meta": {
+        "CreateTime": "2025-07-30T10:21:09-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-08-13T09:45:31-07:00"
+      },
+      "terms": "25% installment"
+    },
+    {
+      "id": "34854",
+      "doc_number": "5116",
+      "txn_date": "2025-08-04",
+      "due_date": "2025-09-01",
+      "balance": 0,
+      "total": 1600.0,
+      "currency": "USD",
+      "customer": "Major Creative Marketing",
+      "email_status": "EmailSent",
+      "private_note": "Day and Night Plumbing 6 Still 50% upfront",
+      "meta": {
+        "CreateTime": "2025-08-04T14:34:40-07:00",
+        "LastModifiedByRef": {
+          "value": "0"
+        },
+        "LastUpdatedTime": "2025-08-05T15:11:48-07:00"
+      },
+      "terms": "Pay 50% upfront"
+    },
+    {
+      "id": "34664",
+      "doc_number": "5110",
+      "txn_date": "2025-07-17",
+      "due_date": "2025-08-01",
+      "balance": 0,
+      "total": 14100.0,
+      "currency": "USD",
+      "customer": "Cyprus Specialty Metals Company",
+      "email_status": "EmailSent",
+      "private_note": "Remaining Amount + Upcharges",
+      "meta": {
+        "CreateTime": "2025-07-17T14:37:52-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-08-05T10:07:37-07:00"
+      },
+      "terms": "Remaining Amount + Upcharge"
+    },
+    {
+      "id": "34802",
+      "doc_number": "5112",
+      "txn_date": "2025-07-30",
+      "due_date": "2025-08-01",
+      "balance": 0,
+      "total": 0,
+      "currency": "USD",
+      "customer": "Revzz Nascar",
+      "email_status": "EmailSent",
+      "private_note": "Voided",
+      "meta": {
+        "CreateTime": "2025-07-30T10:03:31-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-08-05T09:33:29-07:00"
+      },
+      "terms": "Pay 50% upfront"
+    },
+    {
+      "id": "34723",
+      "doc_number": "5111",
+      "txn_date": "2025-07-22",
+      "due_date": "2025-08-01",
+      "balance": 0,
+      "total": 2500.0,
+      "currency": "USD",
+      "customer": "Bird Divert",
+      "email_status": "EmailSent",
+      "private_note": "Last 50%",
+      "meta": {
+        "CreateTime": "2025-07-22T10:58:47-07:00",
+        "LastModifiedByRef": {
+          "value": "0"
+        },
+        "LastUpdatedTime": "2025-07-22T11:44:02-07:00"
+      },
+      "terms": "Last installment"
+    },
+    {
+      "id": "34315",
+      "doc_number": "5106",
+      "txn_date": "2025-06-07",
+      "due_date": "2025-07-11",
+      "balance": 0,
+      "total": 5163.5,
+      "currency": "USD",
+      "customer": "Andrew Biancheri",
+      "email_status": "EmailSent",
+      "private_note": "Ron Birkla's Labor",
+      "meta": {
+        "CreateTime": "2025-06-07T16:16:42-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-07-22T08:30:06-07:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "34314",
+      "doc_number": "5105",
+      "txn_date": "2025-06-07",
+      "due_date": "2025-06-13",
+      "balance": 0,
+      "total": 7624.0,
+      "currency": "USD",
+      "customer": "Andrew Biancheri",
+      "email_status": "EmailSent",
+      "private_note": "Last 50% Prequel Graphics Package",
+      "meta": {
+        "CreateTime": "2025-06-07T16:10:54-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-07-22T08:30:06-07:00"
+      },
+      "terms": "Final 50% Prequel Graphics"
+    },
+    {
+      "id": "34162",
+      "doc_number": "5097",
+      "txn_date": "2025-05-27",
+      "due_date": "2025-05-28",
+      "balance": 0,
+      "total": 4349.56,
+      "currency": "USD",
+      "customer": "Andrew Biancheri",
+      "email_status": "EmailSent",
+      "private_note": "Last Installment - Original Holoconnect",
+      "meta": {
+        "CreateTime": "2025-05-27T12:53:11-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-07-22T08:30:06-07:00"
+      },
+      "terms": "Last installment"
+    },
+    {
+      "id": "34441",
+      "doc_number": "5109",
+      "txn_date": "2025-06-23",
+      "due_date": "2025-06-30",
+      "balance": 0,
+      "total": 15125.0,
+      "currency": "USD",
+      "customer": "Global Komatsu",
+      "email_status": "EmailSent",
+      "private_note": "Future Vision Revisions and Updates ( June 23-June 30th )",
+      "meta": {
+        "CreateTime": "2025-06-23T12:31:32-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-07-02T08:49:44-07:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "34107",
+      "doc_number": "5095",
+      "txn_date": "2025-05-19",
+      "due_date": "2025-05-21",
+      "balance": 0,
+      "total": 2900.0,
+      "currency": "USD",
+      "customer": "Andrew Biancheri",
+      "email_status": "EmailSent",
+      "private_note": "Reception Graphics - Holobox Added",
+      "meta": {
+        "CreateTime": "2025-05-19T13:47:29-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-06-25T12:13:45-07:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "34106",
+      "doc_number": "5094",
+      "txn_date": "2025-05-16",
+      "due_date": "2025-05-21",
+      "balance": 0,
+      "total": 5125.0,
+      "currency": "USD",
+      "customer": "Andrew Biancheri",
+      "email_status": "EmailSent",
+      "private_note": "3rd Installment - Original Holoconnect",
+      "meta": {
+        "CreateTime": "2025-05-16T13:14:30-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-06-25T12:12:03-07:00"
+      },
+      "terms": "25% installment"
+    },
+    {
+      "id": "34105",
+      "doc_number": "5093",
+      "txn_date": "2025-05-16",
+      "due_date": "2025-05-21",
+      "balance": 0,
+      "total": 9474.56,
+      "currency": "USD",
+      "customer": "Andrew Biancheri",
+      "email_status": "EmailSent",
+      "private_note": "2nd installment. Original Holoconnect",
+      "meta": {
+        "CreateTime": "2025-05-16T12:46:05-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-06-25T12:11:24-07:00"
+      },
+      "terms": "25% installment"
+    },
+    {
+      "id": "34035",
+      "doc_number": "5088",
+      "txn_date": "2025-05-06",
+      "due_date": "2025-05-06",
+      "balance": 0,
+      "total": 17396.63,
+      "currency": "USD",
+      "customer": "Andrew Biancheri",
+      "email_status": "EmailSent",
+      "private_note": "First installment 50% Original Holoconnect",
+      "meta": {
+        "CreateTime": "2025-05-06T17:31:59-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-06-25T12:10:34-07:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "33929",
+      "doc_number": "5084",
+      "txn_date": "2025-04-23",
+      "due_date": "2025-05-01",
+      "balance": 0,
+      "total": 10250.0,
+      "currency": "USD",
+      "customer": "Andrew Biancheri",
+      "email_status": "EmailSent",
+      "private_note": "50% Upfront Prequel Graphics",
+      "meta": {
+        "CreateTime": "2025-04-23T15:40:46-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-06-25T12:09:46-07:00"
+      },
+      "terms": "50% deposit upfront"
+    },
+    {
+      "id": "34303",
+      "doc_number": "5103",
+      "txn_date": "2025-06-06",
+      "due_date": "2025-06-10",
+      "balance": 0,
+      "total": 1500.0,
+      "currency": "USD",
+      "customer": "Rheoxtech",
+      "email_status": "EmailSent",
+      "private_note": "Replaced Inv 5085",
+      "meta": {
+        "CreateTime": "2025-06-06T12:41:47-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-06-12T09:49:15-07:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "34356",
+      "doc_number": "5108",
+      "txn_date": "2025-06-10",
+      "due_date": "2025-07-01",
+      "balance": 0,
+      "total": 160.0,
+      "currency": "USD",
+      "customer": "Teresa Edwords",
+      "email_status": "EmailSent",
+      "private_note": null,
+      "meta": {
+        "CreateTime": "2025-06-10T20:38:06-07:00",
+        "LastModifiedByRef": {
+          "value": "0"
+        },
+        "LastUpdatedTime": "2025-06-11T05:18:05-07:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "34324",
+      "doc_number": "5107",
+      "txn_date": "2025-06-09",
+      "due_date": "2025-06-10",
+      "balance": 0,
+      "total": 1535.0,
+      "currency": "USD",
+      "customer": "Stiletto Supply",
+      "email_status": "EmailSent",
+      "private_note": "Bounced/Returned- Recreated and resent",
+      "meta": {
+        "CreateTime": "2025-06-09T09:09:11-07:00",
+        "LastModifiedByRef": {
+          "value": "0"
+        },
+        "LastUpdatedTime": "2025-06-10T09:37:32-07:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "33989",
+      "doc_number": "5085",
+      "txn_date": "2025-05-01",
+      "due_date": "2025-05-01",
+      "balance": 0,
+      "total": 0,
+      "currency": "USD",
+      "customer": "Rheoxtech",
+      "email_status": "EmailSent",
+      "private_note": "Voided",
+      "meta": {
+        "CreateTime": "2025-05-01T10:28:31-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-06-06T12:38:08-07:00"
+      },
+      "terms": "Pay 50% upfront"
+    },
+    {
+      "id": "34217",
+      "doc_number": "5100",
+      "txn_date": "2025-05-30",
+      "due_date": "2025-05-30",
+      "balance": 0,
+      "total": 560.0,
+      "currency": "USD",
+      "customer": "Teresa Edwords",
+      "email_status": "EmailSent",
+      "private_note": null,
+      "meta": {
+        "CreateTime": "2025-05-30T18:35:41-07:00",
+        "LastModifiedByRef": {
+          "value": "0"
+        },
+        "LastUpdatedTime": "2025-06-05T20:48:41-07:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "34244",
+      "doc_number": "5102",
+      "txn_date": "2025-06-03",
+      "due_date": "2025-06-09",
+      "balance": 0,
+      "total": 6250.0,
+      "currency": "USD",
+      "customer": "915 Films",
+      "email_status": "EmailSent",
+      "private_note": "50% Upfront Payment",
+      "meta": {
+        "CreateTime": "2025-06-03T08:55:43-07:00",
+        "LastModifiedByRef": {
+          "value": "0"
+        },
+        "LastUpdatedTime": "2025-06-04T12:33:26-07:00"
+      },
+      "terms": "Pay 50% upfront"
+    },
+    {
+      "id": "34243",
+      "doc_number": "5101",
+      "txn_date": "2025-06-03",
+      "due_date": "2025-06-03",
+      "balance": 0,
+      "total": 2500.0,
+      "currency": "USD",
+      "customer": "Bird Divert",
+      "email_status": "EmailSent",
+      "private_note": "50% upfront payment",
+      "meta": {
+        "CreateTime": "2025-06-03T08:08:27-07:00",
+        "LastModifiedByRef": {
+          "value": "0"
+        },
+        "LastUpdatedTime": "2025-06-03T12:20:34-07:00"
+      },
+      "terms": "Pay 50% upfront"
+    },
+    {
+      "id": "34119",
+      "doc_number": "5096",
+      "txn_date": "2025-05-20",
+      "due_date": "2025-05-28",
+      "balance": 0,
+      "total": 41490.0,
+      "currency": "USD",
+      "customer": "Global Komatsu",
+      "email_status": "EmailSent",
+      "private_note": "The rest of the balance",
+      "meta": {
+        "CreateTime": "2025-05-20T13:14:49-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-05-30T07:52:33-07:00"
+      },
+      "terms": null
+    },
+    {
+      "id": "33990",
+      "doc_number": "5086",
+      "txn_date": "2025-05-02",
+      "due_date": "2025-06-01",
+      "balance": 0,
+      "total": 4250.0,
+      "currency": "USD",
+      "customer": "Major Creative Marketing",
+      "email_status": "EmailSent",
+      "private_note": null,
+      "meta": {
+        "CreateTime": "2025-05-02T12:03:49-07:00",
+        "LastModifiedByRef": {
+          "value": "9341453885633394"
+        },
+        "LastUpdatedTime": "2025-05-28T11:20:56-07:00"
+      },
+      "terms": "interim 25%"
+    }
+  ]
+}
