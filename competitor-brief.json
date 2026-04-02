@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-01 04:58 UTC",
+  "updated": "2026-04-02 04:58 UTC",
   "competitors": [
     {
       "name": "Explainify",
@@ -119,22 +119,22 @@
       "website": "lemonlight.com",
       "posts": [
         {
-          "title": "When Should You Use AI Video? A Decision Framework for Marketers",
-          "link": "https://www.lemonlight.com/blog/when-should-you-use-ai-video/",
-          "desc": "Key Takeaways Quick AnswerUse AI video when speed, scale, or cost efficiency are the priority: performance ads, social content, product demos, ecommerce visuals, and multi-language versions are natural fits. Choose traditional production when authentic human emotion is non-negotiable. Consider hybri",
-          "date": "Mon, 30 Mar 2026"
+          "title": "Lemonlight\u2019s AI Video Production Workflow: From Brief to Final Cut",
+          "link": "https://www.lemonlight.com/blog/ai-video-production-workflow/",
+          "desc": "Key Takeaways When brands ask about AI video production, they usually start with the same question: what actually happens once we say yes? Capability claims are everywhere right now. What&#8217;s harder to find is a straight answer about the work itself. This post walks through our process from firs",
+          "date": "Thu, 02 Apr 2026"
         },
         {
-          "title": "AI Video Production Cost: What Brands Should Expect",
-          "link": "https://www.lemonlight.com/blog/ai-video-production-cost/",
-          "desc": "Key Takeaways How Much Does AI Video Production Actually Cost? Quick AnswerAI video production costs range from $20/month for DIY tools to $50,000+ per video for traditional production. At Lemonlight, professional AI video production starts at $5,000 for a 30-second brand video, approximately 60% le",
-          "date": "Thu, 26 Mar 2026"
+          "title": "Creative Ideas for Short Videos (50 Examples for Brands)",
+          "link": "https://www.lemonlight.com/blog/creative-ideas-for-short-videos/",
+          "desc": "Key Takeaways E-commerce &#38; Direct-to-Consumer (DTC) E-commerce brands thrive on short-form video because the format mirrors how people already shop online: quick, visual, and decision-driven. These concepts reduce purchase hesitation and build confidence by showing products in context rather tha",
+          "date": "Wed, 01 Apr 2026"
         },
         {
-          "title": "AI Video is the New Normal and Most Brands Are Still Getting it Wrong",
-          "link": "https://www.lemonlight.com/blog/ai-video-production-manifesto/",
-          "desc": "Let me be direct. I&#8217;m not an AI optimist, and I&#8217;m not an AI skeptic. I&#8217;m an AI practitioner. At Lemonlight, we have produced hundreds of AI videos for real brands with real performance expectations attached to them. We have learned, through trial and error, what works and what does",
-          "date": "Wed, 25 Mar 2026"
+          "title": "AI Video vs. Traditional Video Production: An Honest Comparison",
+          "link": "https://www.lemonlight.com/blog/ai-video-vs-traditional-video-production-an-honest-comparison/",
+          "desc": "Key Takeaways Why This Comparison Actually Matters There&#8217;s no shortage of hot takes on AI video production. Some people are convinced it will replace traditional production entirely. Others treat it as a gimmick not worth serious consideration. Both perspectives miss the point. For brand marke",
+          "date": "Wed, 01 Apr 2026"
         }
       ],
       "error": null
@@ -142,27 +142,8 @@
     {
       "name": "Ydraw",
       "website": "ydraw.com",
-      "posts": [
-        {
-          "title": "How to Create a Brand Story that Resonates with Your Audience",
-          "link": "https://ydraw.com/video/how-to-create-a-brand-story-that-resonates-with-your-audience/",
-          "desc": "Every business has a story to tell, but not every story resonates with their audience. In order to create a brand story that will resonate with your target audience, you need to understand what they care about and what motivates them. Once you know this, you can craft a story that speaks to their ne",
-          "date": "Sun, 11 Dec 2022"
-        },
-        {
-          "title": "How to Create a Brand Story that Resonates with Your Audience",
-          "link": "https://ydraw.com/branding/story/",
-          "desc": "Every business needs a strong brand to stand out in the competitive marketplace. A brand is more than just a logo or a tagline &#8211; it&#8217;s the story behind your business and what sets you apart from your competitors. In this article, we&#8217;ll explore the concept of a &#8220;story brand&#82",
-          "date": "Sun, 11 Dec 2022"
-        },
-        {
-          "title": "Six Tips For Success In A New Career",
-          "link": "https://ydraw.com/ydraw/six-tips-for-success-in-a-new-career/",
-          "desc": "I landed my first \u201cbig girl job\u201d way too late in life. This meant that I started my new position with a host of insecurities and misunderstandings. The beautiful thing about this was that it gave me the opportunity to learn some simple truths. Since there are a lot of people who might find themselve",
-          "date": "Thu, 11 Nov 2021"
-        }
-      ],
-      "error": null
+      "posts": [],
+      "error": "<urlopen error [Errno 11001] getaddrinfo failed>"
     }
   ]
 }
