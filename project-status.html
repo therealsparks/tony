@@ -41,6 +41,19 @@
   .upnext-links a { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 999px; font-size: 12px; font-weight: 600; text-decoration: none; background: #1d1d1f; color: #fff; }
   .upnext-empty { font-size: 13px; color: #6e6e73; padding: 10px 0; }
 
+  .priority-card { background: #fff; border-radius: 16px; padding: 22px 24px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .priority-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .priority-label { font-size: 18px; font-weight: 700; }
+  .priority-subtitle { font-size: 13px; color: #6e6e73; margin-top: 4px; }
+  .priority-list { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+  .priority-item { border: 1px solid #f0f0f2; border-radius: 14px; padding: 14px 16px; background: #fafafa; }
+  .priority-top { display: flex; justify-content: space-between; gap: 12px; align-items: center; margin-bottom: 6px; }
+  .priority-title { font-size: 15px; font-weight: 700; flex: 1; }
+  .priority-pill { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; background: #f2f2f7; color: #6e6e73; }
+  .priority-meta { font-size: 12px; color: #6e6e73; display: flex; gap: 12px; flex-wrap: wrap; }
+  .priority-notes { font-size: 13px; color: #4a4a4a; line-height: 1.6; margin-top: 8px; }
+  .priority-empty { font-size: 13px; color: #6e6e73; }
+
   .project-card {
     background: #fff; border-radius: 16px; margin-bottom: 12px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 2px 12px rgba(0,0,0,0.04);
@@ -115,6 +128,18 @@
     </div>
   </div>
 
+  <div class="priority-card">
+    <div class="priority-header">
+      <div>
+        <div class="priority-label">Priority Stack</div>
+        <div class="priority-subtitle">Top focus items for Matt</div>
+      </div>
+    </div>
+    <div id="priority-list" class="priority-list">
+      <div class="priority-empty">Loading priority items…</div>
+    </div>
+  </div>
+
   <div class="filters">
     <button class="filter-btn" data-filter="all" onclick="filter('all', this)">All</button>
     <button class="filter-btn" data-filter="active" onclick="filter('active', this)">Active</button>
@@ -184,15 +209,44 @@ function renderUpNext(items = []) {
   renderUpNextList();
 }
 
+function renderPriority(items = []) {
+  const container = document.getElementById('priority-list');
+  if (!container) return;
+  if (!items.length) {
+    container.innerHTML = '<div class="priority-empty">No tracked priority items yet.</div>';
+    return;
+  }
+  const visible = items.slice(0, 5);
+  container.innerHTML = visible.map(item => {
+    const meta = [];
+    if (item.owner) meta.push(`👤 ${item.owner}`);
+    if (item.due) meta.push(`⏰ ${formatEventDate(item.due)}`);
+    return `
+      <div class="priority-item">
+        <div class="priority-top">
+          <div class="priority-title">${item.title || 'Untitled task'}</div>
+          <span class="priority-pill">${(item.type || 'Task').toUpperCase()}</span>
+        </div>
+        ${meta.length ? `<div class="priority-meta">${meta.map(m => `<span>${m}</span>`).join('')}</div>` : ''}
+        ${item.notes ? `<div class="priority-notes">${item.notes}</div>` : ''}
+      </div>`;
+  }).join('');
+}
+
 function loadUpNext() {
   fetch('status.json?v=' + Date.now())
     .then(r => r.json())
-    .then(data => renderUpNext(data.up_next || []))
+    .then(data => {
+      renderUpNext(data.up_next || []);
+      renderPriority(data.priority_stack || []);
+    })
     .catch(() => {
-      const container = document.getElementById('upnext-list');
+      const upnext = document.getElementById('upnext-list');
       const hint = document.getElementById('upnext-hint');
-      if (container) container.innerHTML = '<div class="upnext-empty">Unable to load upcoming items.</div>';
+      if (upnext) upnext.innerHTML = '<div class="upnext-empty">Unable to load upcoming items.</div>';
       if (hint) hint.textContent = 'Unable to load';
+      const priority = document.getElementById('priority-list');
+      if (priority) priority.innerHTML = '<div class="priority-empty">Unable to load priority items.</div>';
     });
 }
 
