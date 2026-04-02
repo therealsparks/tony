@@ -25,7 +25,6 @@
     gap: 12px;
     margin-bottom: 32px;
     flex-wrap: wrap;
-    align-items: center;
   }
   .stat-pill {
     background: #fff;
@@ -38,28 +37,6 @@
     display: flex;
     align-items: center;
     gap: 6px;
-  }
-  .stat-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: linear-gradient(135deg,#0071e3,#34aadc);
-    border-radius: 99px;
-    padding: 7px 16px;
-    font-size: 12px;
-    font-weight: 700;
-    color: #fff;
-    text-decoration: none;
-    box-shadow: 0 6px 18px rgba(0,113,227,0.18);
-    border: none;
-    white-space: nowrap;
-  }
-  .stat-button span { font-size: 12px; }
-  .stat-button:hover { opacity: 0.92; }
-
-  @media (min-width: 700px) {
-    .stats { flex-wrap: nowrap; }
-    .stats .stat-button { margin-left: auto; }
   }
 
   .internal-links {
@@ -86,19 +63,10 @@
     text-align: center;
   }
   .single-link { margin-bottom: 16px; }
-  .quick-links-grid {
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap:10px;
-    margin-bottom:12px;
-  }
-  .mobile-only-link { display:none !important; }
   @media (max-width: 640px) {
     .internal-links { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .internal-links a { font-size: 11px; padding: 10px 8px; }
     .single-link a { width: 100%; }
-    .quick-links-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .mobile-only-link { display:flex !important; }
   }
   .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
   .dot-green  { background: #34c759; box-shadow: 0 0 5px rgba(52,199,89,0.5); }
@@ -226,21 +194,15 @@
   </div>
 
   <!-- Dashboard quick links -->
-  <div class="quick-links-grid">
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px;">
     <a href="project-status.html" style="display:flex;align-items:center;justify-content:center;gap:6px;background:#fff;border-radius:14px;padding:13px 10px;font-size:12px;font-weight:700;color:#1d1d1f;text-decoration:none;box-shadow:0 1px 3px rgba(0,0,0,0.06),0 2px 12px rgba(0,0,0,0.04);border:1px solid #e5e5ea;text-align:center;">
-      📋 Projects →
+      📋 Project Status →
     </a>
     <a href="competitor-brief.html" style="display:flex;align-items:center;justify-content:center;gap:6px;background:#fff;border-radius:14px;padding:13px 10px;font-size:12px;font-weight:700;color:#1d1d1f;text-decoration:none;box-shadow:0 1px 3px rgba(0,0,0,0.06),0 2px 12px rgba(0,0,0,0.04);border:1px solid #e5e5ea;text-align:center;">
-      📡 Intel →
+      📡 Intel Brief →
     </a>
     <a href="analytics.html" style="display:flex;align-items:center;justify-content:center;gap:6px;background:#fff;border-radius:14px;padding:13px 10px;font-size:12px;font-weight:700;color:#1d1d1f;text-decoration:none;box-shadow:0 1px 3px rgba(0,0,0,0.06),0 2px 12px rgba(0,0,0,0.04);border:1px solid #e5e5ea;text-align:center;">
       📊 Analytics →
-    </a>
-    <a href="tasks-personal.html?preview=sections" style="display:flex;align-items:center;justify-content:center;gap:6px;background:#fff;border-radius:14px;padding:13px 10px;font-size:12px;font-weight:700;color:#1d1d1f;text-decoration:none;box-shadow:0 1px 3px rgba(0,0,0,0.06),0 2px 12px rgba(0,0,0,0.04);border:1px solid #e5e5ea;text-align:center;">
-      🗒️ Tasks →
-    </a>
-    <a href="tasks-personal.html" class="mobile-only-link" style="display:flex;align-items:center;justify-content:center;gap:6px;background:#fff;border-radius:14px;padding:13px 10px;font-size:12px;font-weight:700;color:#1d1d1f;text-decoration:none;box-shadow:0 1px 3px rgba(0,0,0,0.06),0 2px 12px rgba(0,0,0,0.04);border:1px solid #e5e5ea;text-align:center;">
-      🗒️ Tasks (mobile)
     </a>
   </div>
 
@@ -256,9 +218,8 @@
   </div>
 
   <div class="stats">
-    <div class="stat-pill"><span class="dot dot-green"></span> 22 Live Skills</div>
-    <div class="stat-pill"><span class="dot dot-green"></span> Kling - Live</div>
-    <a class="stat-button" href="tasks.html">Tasks →</a>
+    <div class="stat-pill"><span class="dot dot-green"></span> 21 Live Skills</div>
+    <div class="stat-pill">5 Categories</div>
   </div>
 
   <!-- ── DROPBOX ── -->
@@ -424,7 +385,7 @@
         <div class="cat-desc">Generate voiceovers, sound effects, and AI video clips from text</div>
       </div>
       <div class="cat-right">
-        <span class="cat-count">6 skills</span>
+        <span class="cat-count">5 skills</span>
         <span class="cat-badge badge-live">Live</span>
         <span class="cat-chevron">▼</span>
       </div>
@@ -482,28 +443,6 @@
           <span>Attachments / Links:</span> start.png, end.png (or a Dropbox folder with numbered frames).<br>
           <span>Body:</span> “4s @ 24fps, 16:9. Camera push-in over drone footage. Prompt: sunrise flare over offshore rig, stylized energy bloom. Need 2 variations.”<br><br>
           <span>Tony replies:</span> Dropbox link, MP4 download, thumbnails, and board-ready caption as soon as Kling finishes (usually 2–5 minutes).
-        </div>
-      </div>
-
-      <div class="skill-item">
-        <span class="skill-status live">Live</span>
-        <div class="skill-title">Video Watermark Grid</div>
-        <div class="skill-desc">Email any MP4 to bot@austinvisuals.com with instructions like “Watermark this clip.” Tony tiles <strong>“Austin Visuals Sample”</strong> (or any text you specify) in a 3×3 grid across the frame at ~18% opacity, keeps audio intact, and emails the watermarked file back for safe sharing.</div>
-        <div class="skill-example">
-          <span>Subject:</span> Watermark sample clip<br>
-          <span>Body:</span> “Use text: Austin Visuals Sample. 3×3 grid, 20% opacity.”<br>
-          <span>Attachment:</span> <code>client_preview.mp4</code><br><br>
-          <span>Tony replies:</span> <code>client_preview_watermarked.mp4</code> + summary of the watermark settings.
-        </div>
-      </div>
-
-      <div class="skill-item">
-        <span class="skill-status coming">In Progress</span>
-        <div class="skill-title">Storyboard → Animation Workflow</div>
-        <div class="skill-desc">Extracts ordered frames from a Word storyboard, pairs start/end images per beat, applies quick Ken Burns moves, stitches the beats, and layers optional music so clients can preview timing before production.</div>
-        <div class="skill-example">
-          <span>Input:</span> storyboard.docx + beat sheet + optional MP3<br>
-          <span>Output:</span> 1080p MP4 with each storyboard beat animated (crossfades/zooms) plus optional backing track.
         </div>
       </div>
 
@@ -596,7 +535,7 @@
   </div>
 
   <div class="footer">
-    ⚡ Tony · Austin Visuals AI Assistant · Updated March 31, 2026 · 22 skills live
+    ⚡ Tony · Austin Visuals AI Assistant · Updated March 22, 2026 · 17 skills live
     <div style="margin-top:12px;">
       <a href="#" onclick="translatePage()" style="font-size:11px;color:#aeaeb2;text-decoration:none;opacity:0.6;">🌐 Dịch sang tiếng Việt</a>
     </div>
@@ -614,16 +553,16 @@
     return false;
   }
   // Status widget
-  fetch('/tony/status.json?v=' + Date.now())
+  fetch('status.json?v=' + Date.now())
     .then(r => r.json())
     .then(data => {
       const minsAgo = Math.floor((Date.now() - new Date(data.last_seen).getTime()) / 60000);
       const dot = document.getElementById('status-dot-small');
       const txt = document.getElementById('status-text-small');
-      if (minsAgo > 180) {
+      if (minsAgo > 30) {
         dot.style.background = '#ff3b30';
         txt.textContent = 'Offline';
-      } else if (minsAgo > 60) {
+      } else if (minsAgo > 15) {
         dot.style.background = '#ff9f0a';
         txt.textContent = 'Delayed';
       } else {
