@@ -8,6 +8,58 @@
     "analytics": "ok",
     "competitor_brief": "ok"
   },
+  "up_next": [
+    {
+      "title": "Copper wiring intro call",
+      "datetime": "2026-04-03T14:00:00-05:00",
+      "description": "Discovery call with the copper wiring company. Confirm agenda and bring the latest ops deck."
+    }
+  ],
+  "priority_stack": [
+    {
+      "title": "Reply to John Fedor",
+      "type": "Client",
+      "owner": "Matt",
+      "notes": "Answer his email about the separate project and confirm next steps."
+    },
+    {
+      "title": "Edit Nancy's proposal → send to Randy (Low Road Films)",
+      "type": "Proposal",
+      "owner": "Matt",
+      "notes": "Two quick projects. Clean up Nancy's doc, then email Randy with revised numbers."
+    },
+    {
+      "title": "Prep for Friday 2 PM copper wiring call",
+      "type": "Meeting",
+      "owner": "Matt",
+      "due": "2026-04-03T14:00:00-05:00",
+      "notes": "Line up questions + invite Nancy if needed before migration."
+    },
+    {
+      "title": "Coordinate interns/contractors on AI SOP playbook",
+      "type": "Ops",
+      "owner": "Matt",
+      "notes": "Keep the SOP/documentation push moving so the AI has better context."
+    },
+    {
+      "title": "Scope chef pitch video (AI 5-min concept)",
+      "type": "Proposal",
+      "owner": "Matt",
+      "notes": "Outline concept + budget before writing proposal."
+    },
+    {
+      "title": "Send closure update to Stephen / 1915 Films",
+      "type": "Client",
+      "owner": "Matt",
+      "notes": "Let him know we're moving on from the VFX project."
+    },
+    {
+      "title": "Inbox sweep / triage Nancy's latest notes",
+      "type": "Ops",
+      "owner": "Matt",
+      "notes": "Quick pass through email so nothing slips." 
+    }
+  ],
   "known_issues": [
     {
       "id": "landon-alerts",
