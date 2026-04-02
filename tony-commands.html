@@ -45,7 +45,8 @@
     gap: 10px;
     margin-bottom: 24px;
   }
-  .internal-links a {
+  .internal-links a,
+  .single-link a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,8 +62,11 @@
     border: 1px solid #e5e5ea;
     text-align: center;
   }
+  .single-link { margin-bottom: 16px; }
   @media (max-width: 640px) {
-    .internal-links { grid-template-columns: 1fr; }
+    .internal-links { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .internal-links a { font-size: 11px; padding: 10px 8px; }
+    .single-link a { width: 100%; }
   }
   .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
   .dot-green  { background: #34c759; box-shadow: 0 0 5px rgba(52,199,89,0.5); }
@@ -202,15 +206,19 @@
     </a>
   </div>
 
+  <div class="single-link">
+    <a href="invoices.html">🔒 Invoices</a>
+  </div>
+
   <!-- Internal pages (password protected) -->
   <div class="internal-links">
-    <a href="av-process.html">🔒 AV Process Guide</a>
-    <a href="directory.html">🔒 Company Directory</a>
+    <a href="av-process.html">🔒 SOP</a>
+    <a href="directory.html">🔒 Directory</a>
     <a href="crm.html">🔒 CRM</a>
   </div>
 
   <div class="stats">
-    <div class="stat-pill"><span class="dot dot-green"></span> 17 Live Skills</div>
+    <div class="stat-pill"><span class="dot dot-green"></span> 22 Live Skills</div>
     <div class="stat-pill">5 Categories</div>
   </div>
 
@@ -377,7 +385,7 @@
         <div class="cat-desc">Generate voiceovers, sound effects, and AI video clips from text</div>
       </div>
       <div class="cat-right">
-        <span class="cat-count">3 skills</span>
+        <span class="cat-count">5 skills</span>
         <span class="cat-badge badge-live">Live</span>
         <span class="cat-chevron">▼</span>
       </div>
@@ -423,6 +431,18 @@
           <span>Subject:</span> Generate video [Project Name]<br>
           <span>Body:</span> A cinematic aerial shot of a modern office building at sunrise, photorealistic<br><br>
           <span>To upgrade:</span> Add "Use Veo 3 because: client presentation next week"
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <span class="skill-status live">Live</span>
+        <div class="skill-title">Kling Start/End Frame Video Workflow</div>
+        <div class="skill-desc">Send Tony high-res start + end frames (or a multi-image reference set) plus the creative brief. Tony packages the shot for Kling, tracks the render, and drops the MP4 + thumbnails into <code>artifacts/kling/[project]</code> with ready-to-paste storyboard notes.</div>
+        <div class="skill-example">
+          <span>Subject:</span> Kling video — AcmeWell Shot 05<br>
+          <span>Attachments / Links:</span> start.png, end.png (or a Dropbox folder with numbered frames).<br>
+          <span>Body:</span> “4s @ 24fps, 16:9. Camera push-in over drone footage. Prompt: sunrise flare over offshore rig, stylized energy bloom. Need 2 variations.”<br><br>
+          <span>Tony replies:</span> Dropbox link, MP4 download, thumbnails, and board-ready caption as soon as Kling finishes (usually 2–5 minutes).
         </div>
       </div>
 
@@ -494,10 +514,12 @@
       <div class="skill-item">
         <span class="skill-status live">Live</span>
         <div class="skill-title">Stream-of-consciousness → polished email draft</div>
-        <div class="skill-desc">Send Tony rough notes, bullet points, or a stream of consciousness. He organizes it into a clean, grammatically correct email draft and sends it back for approval. Nothing goes out externally until you reply with “SEND” (or give edit instructions), so you stay in control.</div>
+        <div class="skill-desc">Send Tony rough notes, bullet points, or a stream of consciousness. Add <strong>MAKE FORMAL</strong> when you want a neutral, executive-ready tone, or tag <strong>PERSONALIZE NOTES (Name)</strong> to have Tony mirror that recipient’s past voice using the whitelisted contractor personas. Nothing goes out externally until you reply with “SEND,” so you stay in control.</div>
         <div class="skill-example">
-          <span>Notes you send:</span> “john fador — thank him for call, remind NDA signed, need source files asap, cc Nancy, ask for reply by Friday.”<br><br>
-          <span>Tony replies:</span> Finished email + “SEND?” prompt. Reply “SEND” to let Tony deliver it or reply with edits for a new draft.
+          <span>Example — MAKE FORMAL:</span> “MAKE FORMAL: john fador — thank him for call, remind NDA signed, need source files asap, cc Nancy, ask for reply by Friday.”<br>
+          <em>Tony replies:</em> Boardroom-ready email + “SEND?” prompt.<br><br>
+          <span>Example — PERSONALIZE NOTES (Nancy → Matt):</span> “PERSONALIZE NOTES (Matt): nancy wants matt to see revised storyboard, stress it matches his voice memo, invite him to call tomorrow.”<br>
+          <em>Tony replies:</em> Draft written in Matt’s familiar tone, still ending with “SEND?” so you can approve or tweak.
         </div>
       </div>
 
