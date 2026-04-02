@@ -722,6 +722,8 @@
       </div>
     </div>
 
+    <button class="ghost hidden" id="priority-import-btn" type="button" style="margin-bottom:12px;">Load priority stack</button>
+
     <div class="task-composer" id="task-composer">
       <div class="composer-header">
         <h2>Create a task</h2>
@@ -762,6 +764,7 @@
 <script>
 const CLIENT_ID = '850841913123-hdlrk8jpb2gle3qulq9bgqlch3l3s40c.apps.googleusercontent.com';
 const SESSION_KEY = 'tony.personalTasks.session';
+const PRIORITY_SEED_FLAG = 'tony.prioritySeeded.v1';
 let currentUser = null;
 let tasks = [];
 let draggedPath = null;
@@ -839,6 +842,25 @@ window.handleCredentialResponse = function(response) {
 
 document.getElementById('add-task-btn').addEventListener('click', addTask);
 document.getElementById('signout-btn').addEventListener('click', signOut);
+const priorityImportBtn = document.getElementById('priority-import-btn');
+if (priorityImportBtn) {
+  priorityImportBtn.addEventListener('click', () => {
+    priorityImportBtn.disabled = true;
+    seedPriorityTasksFromStatus(true)
+      .then(() => {
+        showToast('Priority stack loaded.');
+        priorityImportBtn.classList.add('hidden');
+        renderTasks();
+      })
+      .catch(err => {
+        console.warn('Priority import failed', err);
+        showToast('Could not load priority stack.');
+      })
+      .finally(() => {
+        priorityImportBtn.disabled = false;
+      });
+  });
+}
 
 const manualToggleBtn = document.getElementById('manual-toggle');
 const manualPanel = document.getElementById('manual-panel');
@@ -943,6 +965,7 @@ function enterWorkspace(profile, token) {
   document.getElementById('workspace').classList.remove('hidden');
   tasks = loadTasks(currentUser.email);
   const finishRender = () => {
+    updatePriorityButtonVisibility();
     if (previewMode === 'sections') {
       renderSectionPreview();
     } else {
@@ -979,10 +1002,12 @@ function loadTasks(email) {
 
 function shouldSeedPriorityTasks() {
   if (!currentUser || !currentUser.email) return false;
-  return currentUser.email.toLowerCase() === 'matt@austinvisuals.com' && (!tasks || tasks.length === 0);
+  const alreadySeeded = localStorage.getItem(PRIORITY_SEED_FLAG) === '1';
+  return currentUser.email.toLowerCase() === 'matt@austinvisuals.com' && (!tasks || tasks.length === 0) && !alreadySeeded;
 }
 
-function seedPriorityTasksFromStatus() {
+function seedPriorityTasksFromStatus(force = false) {
+  if (!force && tasks && tasks.length) return Promise.resolve();
   return fetch('status.json?v=' + Date.now())
     .then(r => r.json())
     .then(data => {
@@ -1003,6 +1028,7 @@ function seedPriorityTasksFromStatus() {
         expanded: true,
         selected: false
       }));
+      localStorage.setItem(PRIORITY_SEED_FLAG, '1');
       saveTasks();
     });
 }
@@ -1018,6 +1044,15 @@ function mapOwnerToEmail(owner) {
   if (normalized.startsWith('shelly')) return 'shelly@austinvisuals.com';
   if (normalized.startsWith('david')) return 'david@austinvisuals.com';
   return '';
+}
+
+function updatePriorityButtonVisibility() {
+  if (!priorityImportBtn || !currentUser) return;
+  if (currentUser.email.toLowerCase() === 'matt@austinvisuals.com' && (!tasks || tasks.length === 0)) {
+    priorityImportBtn.classList.remove('hidden');
+  } else {
+    priorityImportBtn.classList.add('hidden');
+  }
 }
 
 function renderSectionPreview() {
