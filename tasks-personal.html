@@ -942,10 +942,20 @@ function enterWorkspace(profile, token) {
   document.getElementById('signin-card').classList.add('hidden');
   document.getElementById('workspace').classList.remove('hidden');
   tasks = loadTasks(currentUser.email);
-  if (previewMode === 'sections') {
-    renderSectionPreview();
+  const finishRender = () => {
+    if (previewMode === 'sections') {
+      renderSectionPreview();
+    } else {
+      renderTasks();
+    }
+  };
+  if (shouldSeedPriorityTasks()) {
+    seedPriorityTasksFromStatus().then(finishRender).catch(err => {
+      console.warn('Priority seed failed', err);
+      finishRender();
+    });
   } else {
-    renderTasks();
+    finishRender();
   }
   saveSession();
 }
@@ -965,6 +975,49 @@ function loadTasks(email) {
     console.warn('Unable to load tasks', err);
     return [];
   }
+}
+
+function shouldSeedPriorityTasks() {
+  if (!currentUser || !currentUser.email) return false;
+  return currentUser.email.toLowerCase() === 'matt@austinvisuals.com' && (!tasks || tasks.length === 0);
+}
+
+function seedPriorityTasksFromStatus() {
+  return fetch('status.json?v=' + Date.now())
+    .then(r => r.json())
+    .then(data => {
+      const stack = Array.isArray(data.priority_stack) ? data.priority_stack : [];
+      if (!stack.length) return;
+      const now = new Date().toISOString();
+      tasks = stack.map(item => ({
+        id: generateId(),
+        title: item.title || 'Untitled task',
+        notes: item.notes || '',
+        createdAt: now,
+        completed: false,
+        children: [],
+        dueAt: item.due || null,
+        assignee: mapOwnerToEmail(item.owner),
+        isSection: false,
+        sequence: getNextSequence(),
+        expanded: true,
+        selected: false
+      }));
+      saveTasks();
+    });
+}
+
+function mapOwnerToEmail(owner) {
+  if (!owner) return '';
+  const normalized = owner.trim().toLowerCase();
+  if (normalized.startsWith('matt')) return 'matt@austinvisuals.com';
+  if (normalized.startsWith('nancy')) return 'nancyschirm@austinvisuals.com';
+  if (normalized.startsWith('peter')) return 'peter@austinvisuals.com';
+  if (normalized.startsWith('tom')) return 'tom@austinvisuals.com';
+  if (normalized.startsWith('adam')) return 'adam@austinvisuals.com';
+  if (normalized.startsWith('shelly')) return 'shelly@austinvisuals.com';
+  if (normalized.startsWith('david')) return 'david@austinvisuals.com';
+  return '';
 }
 
 function renderSectionPreview() {
