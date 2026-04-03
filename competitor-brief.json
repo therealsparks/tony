@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-02 04:58 UTC",
+  "updated": "2026-04-03 04:58 UTC",
   "competitors": [
     {
       "name": "Explainify",
@@ -142,8 +142,27 @@
     {
       "name": "Ydraw",
       "website": "ydraw.com",
-      "posts": [],
-      "error": "<urlopen error [Errno 11001] getaddrinfo failed>"
+      "posts": [
+        {
+          "title": "How to Create a Brand Story that Resonates with Your Audience",
+          "link": "https://ydraw.com/video/how-to-create-a-brand-story-that-resonates-with-your-audience/",
+          "desc": "Every business has a story to tell, but not every story resonates with their audience. In order to create a brand story that will resonate with your target audience, you need to understand what they care about and what motivates them. Once you know this, you can craft a story that speaks to their ne",
+          "date": "Sun, 11 Dec 2022"
+        },
+        {
+          "title": "How to Create a Brand Story that Resonates with Your Audience",
+          "link": "https://ydraw.com/branding/story/",
+          "desc": "Every business needs a strong brand to stand out in the competitive marketplace. A brand is more than just a logo or a tagline &#8211; it&#8217;s the story behind your business and what sets you apart from your competitors. In this article, we&#8217;ll explore the concept of a &#8220;story brand&#82",
+          "date": "Sun, 11 Dec 2022"
+        },
+        {
+          "title": "Six Tips For Success In A New Career",
+          "link": "https://ydraw.com/ydraw/six-tips-for-success-in-a-new-career/",
+          "desc": "I landed my first \u201cbig girl job\u201d way too late in life. This meant that I started my new position with a host of insecurities and misunderstandings. The beautiful thing about this was that it gave me the opportunity to learn some simple truths. Since there are a lot of people who might find themselve",
+          "date": "Thu, 11 Nov 2021"
+        }
+      ],
+      "error": null
     }
   ]
 }
