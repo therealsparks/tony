@@ -28,6 +28,12 @@
       "notes": "Answer his email about the separate project and confirm next steps."
     },
     {
+      "title": "Send NDA to Stuart Dunlop",
+      "type": "Client",
+      "owner": "Matt",
+      "notes": "Prep the NDA, send it to Stuart, and confirm he received and signed it."
+    },
+    {
       "title": "Edit Nancy's proposal → send to Randy (Low Road Films)",
       "type": "Proposal",
       "owner": "Matt",
