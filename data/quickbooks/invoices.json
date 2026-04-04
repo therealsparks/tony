@@ -1,7 +1,27 @@
 {
-  "fetched_at": "2026-04-01T19:00:06.721860+00:00",
+  "fetched_at": "2026-04-04T15:26:51.849127+00:00",
   "count": 100,
   "invoices": [
+    {
+      "id": "36672",
+      "doc_number": "5197",
+      "txn_date": "2026-04-01",
+      "due_date": "2026-04-01",
+      "balance": 750.0,
+      "total": 750.0,
+      "currency": "USD",
+      "customer": "Low Road Films",
+      "email_status": "NotSet",
+      "private_note": "50% Start Work",
+      "meta": {
+        "CreateTime": "2026-04-01T17:34:36-07:00",
+        "LastModifiedByRef": {
+          "value": "9341454108065967"
+        },
+        "LastUpdatedTime": "2026-04-01T17:34:36-07:00"
+      },
+      "terms": null
+    },
     {
       "id": "36423",
       "doc_number": "5190",
@@ -1981,26 +2001,6 @@
         "LastUpdatedTime": "2025-05-30T07:52:33-07:00"
       },
       "terms": null
-    },
-    {
-      "id": "33990",
-      "doc_number": "5086",
-      "txn_date": "2025-05-02",
-      "due_date": "2025-06-01",
-      "balance": 0,
-      "total": 4250.0,
-      "currency": "USD",
-      "customer": "Major Creative Marketing",
-      "email_status": "EmailSent",
-      "private_note": null,
-      "meta": {
-        "CreateTime": "2025-05-02T12:03:49-07:00",
-        "LastModifiedByRef": {
-          "value": "9341453885633394"
-        },
-        "LastUpdatedTime": "2025-05-28T11:20:56-07:00"
-      },
-      "terms": "interim 25%"
     }
   ]
 }
