@@ -229,6 +229,7 @@ const SUBSCRIPTION_VENDOR_DENYLIST = new Set([
   'batsu',
   'flexspace'
 ]);
+const SUBSCRIPTION_VENDOR_ALLOWLIST = new Set([]);
 const SUBSCRIPTION_MIN_OCCURRENCES = 2;
 const SUBSCRIPTION_MIN_CADENCE_DAYS = 25;
 const SUBSCRIPTION_MAX_CADENCE_DAYS = 35;
@@ -341,6 +342,7 @@ function prepareSubscriptions(entries) {
     if (!vendorName) return;
     const normalizedVendor = vendorName.toLowerCase();
     if (SUBSCRIPTION_VENDOR_DENYLIST.has(normalizedVendor)) return;
+    if (!SUBSCRIPTION_VENDOR_ALLOWLIST.has(normalizedVendor)) return;
     const accountName = item.accountName || '';
     if (!allowAccounts.has(accountName)) return;
     if (!item.total || item.total > MAX_SUBSCRIPTION_AMOUNT) return;
