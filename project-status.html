@@ -171,7 +171,7 @@
     <button class="filter-btn" data-filter="not_started" onclick="filter('not_started', this)">Not Started</button>
     <button class="filter-btn" data-filter="hold" onclick="filter('hold', this)">Hold</button>
     <button class="filter-btn" data-filter="prospect" onclick="filter('prospect', this)">Prospects</button>
-    <button class="filter-btn" data-filter="stale" onclick="filter('stale', this)">Stale (7d+)</button>
+    <button class="filter-btn" data-filter="stale" onclick="filter('stale', this)">Needs Update (7d+)</button>
     <button class="filter-btn" data-filter="collect" onclick="filter('collect', this)">Collect / Archive</button>
     <select id="artist-filter" onchange="filterByArtist(this.value)" style="padding:6px 12px;border-radius:99px;font-size:12px;font-weight:600;border:none;background:#fff;color:#6e6e73;box-shadow:0 1px 3px rgba(0,0,0,0.08);cursor:pointer;">
       <option value="">👤 All Artists</option>
@@ -310,7 +310,7 @@ function statusBadge(status) {
   };
   const labels = {
     active:'Active', not_started:'Not Started', hold:'Hold',
-    prospect:'Prospect', stale:'Stale', collect:'Collect / Archive'
+    prospect:'Prospect', stale:'Needs Update', collect:'Collect / Archive'
   };
   return `<span class="badge ${map[status]||'badge-pending'}">${labels[status]||status}</span>`;
 }
