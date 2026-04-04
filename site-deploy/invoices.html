@@ -83,6 +83,8 @@
   .subscription-note { margin-top:10px; font-size:12px; color:#6e6e73; background:#f7f8fa; border-radius:8px; padding:8px 10px; }
   .subscription-list { display:flex; flex-direction:column; gap:12px; }
   .subscription-empty { font-size:13px; color:#6e6e73; padding:14px; background:#fff; border-radius:12px; border:1px dashed #d7dae2; text-align:center; }
+  .subscription-lock-card { background:#fff; border-radius:16px; padding:18px 20px; box-shadow:0 1px 3px rgba(0,0,0,0.06); border:1px solid #ebecef; }
+  .subscription-pass-error { font-size:12px; color:#ff3b30; margin-top:10px; display:none; }
   .log-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #aeaeb2; margin-bottom: 8px; }
   .log-entry { display: flex; gap: 10px; align-items: baseline; padding: 5px 0; border-bottom: 1px solid #eeeff2; font-size: 12px; }
   .log-entry:last-child { border-bottom: none; }
@@ -191,7 +193,8 @@ const state = {
   subscriptions: [],
   subscriptionsLoaded: false,
   subscriptionsLoading: false,
-  subscriptionsError: ''
+  subscriptionsError: '',
+  subscriptionUnlocked: false
 };
 
 const SUBSCRIPTION_ACCOUNTS = ['Chase Business Checking 5152', 'Capital One - Spark'];
@@ -204,6 +207,12 @@ const SUBSCRIPTION_VENDOR_DENYLIST = new Set([
   'sơn hà thanh',
   'son ha thanh'
 ]);
+const SUBSCRIPTION_PASSCODE = '123098';
+const SUBSCRIPTION_STORAGE_KEY = 'avSubscriptionUnlock';
+
+if (localStorage.getItem(SUBSCRIPTION_STORAGE_KEY) === SUBSCRIPTION_PASSCODE) {
+  state.subscriptionUnlocked = true;
+}
 
 function showInvoices() {
   invoiceContent.classList.remove('locked');
@@ -359,10 +368,50 @@ function describeCadence(item) {
   return 'Occasional';
 }
 
+function renderSubscriptionLock() {
+  subscriptionList.innerHTML = `
+    <div class="subscription-lock-card">
+      <div class="lock-heading">Enter subscription passcode</div>
+      <div class="lock-desc">Restricted view — enter the 6-digit code for subscriptions.</div>
+      <div class="lock-form">
+        <input type="password" id="subscription-pass" placeholder="Passcode" autocomplete="off">
+        <button type="button" id="subscription-pass-btn">Unlock</button>
+      </div>
+      <div id="subscription-pass-error" class="subscription-pass-error">Incorrect code. Try again.</div>
+    </div>
+  `;
+  const input = document.getElementById('subscription-pass');
+  const button = document.getElementById('subscription-pass-btn');
+  const error = document.getElementById('subscription-pass-error');
+  const submit = () => {
+    if ((input.value || '').trim() === SUBSCRIPTION_PASSCODE) {
+      error.style.display = 'none';
+      state.subscriptionUnlocked = true;
+      localStorage.setItem(SUBSCRIPTION_STORAGE_KEY, SUBSCRIPTION_PASSCODE);
+      renderSubscriptions();
+    } else {
+      error.style.display = 'block';
+      input.value = '';
+      input.focus();
+    }
+  };
+  button.addEventListener('click', submit);
+  input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      submit();
+    }
+  });
+  input.focus();
+}
+
 function renderSubscriptions() {
   if (state.filter !== 'subscriptions') return;
   subscriptionList.style.display = 'block';
   invoiceList.style.display = 'none';
+  if (!state.subscriptionUnlocked) {
+    renderSubscriptionLock();
+    return;
+  }
   if (state.subscriptionsLoading && !state.subscriptionsLoaded) {
     subscriptionList.innerHTML = '<div class="notice" style="background:#eef0f5;color:#3a3a3c;">Loading subscription charges…</div>';
     return;
