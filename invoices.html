@@ -70,6 +70,19 @@
 
   .milestone-log { display: none; background: #f7f8fa; border-radius: 10px; margin: 10px 0 4px 0; padding: 12px 14px; }
   .milestone.open .milestone-log { display: block; }
+  .subscription-card { background:#fff; border-radius:16px; padding:18px 20px; box-shadow:0 1px 3px rgba(0,0,0,0.06); border:1px solid #ebecef; }
+  .subscription-header { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+  .subscription-title { font-size:15px; font-weight:700; color:#1d1d1f; }
+  .subscription-account { font-size:12px; color:#6e6e73; margin-top:2px; }
+  .subscription-amount { font-size:18px; font-weight:800; color:#1d1d1f; text-align:right; }
+  .subscription-meta { font-size:12px; color:#6e6e73; }
+  .subscription-stats { font-size:12px; color:#4a4a4a; margin-top:10px; }
+  .subscription-history { margin-top:12px; border-top:1px solid #f2f2f7; padding-top:12px; display:flex; flex-direction:column; gap:6px; }
+  .subscription-history-row { display:flex; justify-content:space-between; font-size:12px; color:#1d1d1f; }
+  .subscription-history-row span:last-child { font-weight:600; font-family:monospace; }
+  .subscription-note { margin-top:10px; font-size:12px; color:#6e6e73; background:#f7f8fa; border-radius:8px; padding:8px 10px; }
+  .subscription-list { display:flex; flex-direction:column; gap:12px; }
+  .subscription-empty { font-size:13px; color:#6e6e73; padding:14px; background:#fff; border-radius:12px; border:1px dashed #d7dae2; text-align:center; }
   .log-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #aeaeb2; margin-bottom: 8px; }
   .log-entry { display: flex; gap: 10px; align-items: baseline; padding: 5px 0; border-bottom: 1px solid #eeeff2; font-size: 12px; }
   .log-entry:last-child { border-bottom: none; }
@@ -136,11 +149,13 @@
       <button class="filter-btn" data-filter="outstanding">Outstanding</button>
       <button class="filter-btn" data-filter="overdue">Overdue</button>
       <button class="filter-btn" data-filter="paid">Paid</button>
+      <button class="filter-btn" data-filter="subscriptions">Subscriptions</button>
     </div>
 
     <div id="last-refresh" class="sub" style="margin-bottom:12px;">Pulling QuickBooks data…</div>
     <div id="invoice-loading" class="notice" style="display:none; background:#eef0f5; color:#3a3a3c;">Loading QuickBooks invoices…</div>
     <div id="invoice-list"></div>
+    <div id="subscription-list" style="display:none;"></div>
 
 
     <div class="footer">
@@ -158,6 +173,7 @@ const passError = document.getElementById('pass-error');
 const invoiceContent = document.getElementById('invoice-content');
 const accessCard = document.getElementById('access-card');
 const invoiceList = document.getElementById('invoice-list');
+const subscriptionList = document.getElementById('subscription-list');
 const invoiceLoading = document.getElementById('invoice-loading');
 const lastRefreshEl = document.getElementById('last-refresh');
 const summaryEls = {
@@ -171,14 +187,22 @@ const summaryEls = {
 const state = {
   invoices: [],
   filter: 'all',
-  loaded: false
+  loaded: false,
+  subscriptions: [],
+  subscriptionsLoaded: false,
+  subscriptionsLoading: false,
+  subscriptionsError: ''
 };
+
+const SUBSCRIPTION_ACCOUNTS = ['Chase Business Checking 5152', 'Capital One - Spark'];
+const MAX_SUBSCRIPTION_AMOUNT = 600;
 
 function showInvoices() {
   invoiceContent.classList.remove('locked');
   accessCard.style.display = 'none';
   if (!state.loaded) {
     loadInvoiceData();
+    loadSubscriptionData();
     state.loaded = true;
   }
 }
@@ -233,6 +257,146 @@ async function loadInvoiceData() {
   }
 }
 
+async function loadSubscriptionData() {
+  if (state.subscriptionsLoaded || state.subscriptionsLoading) return;
+  state.subscriptionsLoading = true;
+  try {
+    const response = await fetch('data/quickbooks/purchases.json?cb=' + Date.now());
+    if (!response.ok) throw new Error('HTTP ' + response.status);
+    const data = await response.json();
+    const enhanced = (data.purchases || []).map(enhancePurchase);
+    state.subscriptions = prepareSubscriptions(enhanced);
+    state.subscriptionsLoaded = true;
+    state.subscriptionsError = '';
+  } catch (error) {
+    console.error('Subscription fetch failed', error);
+    state.subscriptionsError = 'Unable to load subscription data.';
+  } finally {
+    state.subscriptionsLoading = false;
+    if (state.filter === 'subscriptions') {
+      renderSubscriptions();
+    }
+  }
+}
+
+function enhancePurchase(entry) {
+  const txnDate = entry.txn_date ? new Date(entry.txn_date + 'T00:00:00') : null;
+  return {
+    ...entry,
+    total: Number(entry.total || 0),
+    accountName: (entry.account && entry.account.name) || '',
+    txnDate,
+  };
+}
+
+function prepareSubscriptions(entries) {
+  const allowAccounts = new Set(SUBSCRIPTION_ACCOUNTS);
+  const groups = new Map();
+  entries.forEach(item => {
+    if (!item.txnDate) return;
+    if (!item.vendor) return;
+    if (!allowAccounts.has(item.accountName)) return;
+    if (!item.total || item.total > MAX_SUBSCRIPTION_AMOUNT) return;
+    const key = `${item.vendor}__${item.accountName}`;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(item);
+  });
+  const results = [];
+  groups.forEach(items => {
+    items.sort((a, b) => (b.txnDate?.getTime() || 0) - (a.txnDate?.getTime() || 0));
+    const occurrences = items.length;
+    const last = items[0];
+    const first = items[items.length - 1];
+    let cadenceDays = null;
+    if (occurrences > 1 && last.txnDate && first.txnDate) {
+      const spanDays = Math.max(1, (last.txnDate - first.txnDate) / 86400000);
+      cadenceDays = spanDays / (occurrences - 1);
+    }
+    const history = items.slice(0, 5).map(entry => ({
+      date: entry.txnDate,
+      amount: entry.total,
+      memo: entry.memo || ''
+    }));
+    const totalAmount = items.reduce((sum, entry) => sum + (entry.total || 0), 0);
+    results.push({
+      vendor: last.vendor,
+      account: last.accountName || '—',
+      occurrences,
+      lastTxnDate: last.txnDate,
+      lastAmount: last.total || 0,
+      avgAmount: totalAmount / occurrences,
+      cadenceDays,
+      memo: (last.memo || items.find(entry => entry.memo)?.memo) || '',
+      history
+    });
+  });
+  return results.sort((a, b) => (b.lastTxnDate?.getTime() || 0) - (a.lastTxnDate?.getTime() || 0));
+}
+
+function describeCadence(item) {
+  if (!item.cadenceDays || item.occurrences <= 1) {
+    return 'Single charge (may be annual)';
+  }
+  if (item.cadenceDays < 10) return 'Roughly weekly';
+  if (item.cadenceDays < 20) return 'Every 2 weeks';
+  if (item.cadenceDays < 40) return 'Monthly cadence';
+  if (item.cadenceDays < 80) return 'Bi-monthly cadence';
+  if (item.cadenceDays < 150) return 'Quarterly cadence';
+  return 'Occasional';
+}
+
+function renderSubscriptions() {
+  if (state.filter !== 'subscriptions') return;
+  subscriptionList.style.display = 'block';
+  invoiceList.style.display = 'none';
+  if (state.subscriptionsLoading && !state.subscriptionsLoaded) {
+    subscriptionList.innerHTML = '<div class="notice" style="background:#eef0f5;color:#3a3a3c;">Loading subscription charges…</div>';
+    return;
+  }
+  if (state.subscriptionsError) {
+    subscriptionList.innerHTML = `<div class="notice" style="background:#ffeeed;color:#b91c1c;">${state.subscriptionsError}</div>`;
+    return;
+  }
+  if (!state.subscriptions.length) {
+    subscriptionList.innerHTML = '<div class="subscription-empty">No recurring charges under $600 found for Chase Business Checking or Capital One.</div>';
+    return;
+  }
+  const cards = state.subscriptions.map(renderSubscriptionCard).join('');
+  subscriptionList.innerHTML = `<div class="subscription-list">${cards}</div>`;
+}
+
+function renderSubscriptionCard(item) {
+  const historyRows = item.history.map(entry => `
+    <div class="subscription-history-row">
+      <span>${formatDate(entry.date)}</span>
+      <span>${formatCurrency(entry.amount)}</span>
+    </div>
+  `).join('');
+  const cadence = describeCadence(item);
+  const memoBlock = item.memo ? `<div class="subscription-note">${item.memo}</div>` : '';
+  return `
+    <div class="subscription-card">
+      <div class="subscription-header">
+        <div>
+          <div class="subscription-title">${item.vendor}</div>
+          <div class="subscription-account">${item.account}</div>
+        </div>
+        <div>
+          <div class="subscription-amount">${formatCurrency(item.lastAmount)}</div>
+          <div class="subscription-meta">Last charge ${item.lastTxnDate ? formatDate(item.lastTxnDate) : '—'}</div>
+        </div>
+      </div>
+      <div class="subscription-stats">
+        ${item.occurrences} charge${item.occurrences === 1 ? '' : 's'} · Avg ${formatCurrency(item.avgAmount)} · ${cadence}
+      </div>
+      <div class="subscription-history">
+        ${historyRows}
+      </div>
+      ${memoBlock}
+    </div>
+  `;
+}
+
 function enhanceInvoice(inv) {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
@@ -252,6 +416,7 @@ function enhanceInvoice(inv) {
 }
 
 function renderInvoices() {
+  if (state.filter === 'subscriptions') return;
   const filtered = state.invoices.filter(inv => {
     if (state.filter === 'all') return true;
     if (state.filter === 'outstanding') return inv.status !== 'paid';
@@ -426,7 +591,13 @@ filterButtons.forEach(btn => {
     filterButtons.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     state.filter = btn.dataset.filter || 'all';
-    renderInvoices();
+    if (state.filter === 'subscriptions') {
+      renderSubscriptions();
+    } else {
+      subscriptionList.style.display = 'none';
+      invoiceList.style.display = 'block';
+      renderInvoices();
+    }
   });
 });
 
