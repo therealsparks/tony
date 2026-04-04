@@ -207,8 +207,13 @@ const SUBSCRIPTION_VENDOR_DENYLIST = new Set([
   'sơn hà thanh',
   'son ha thanh',
   'buc-ee\'s',
-  'shell'
+  'shell',
+  'melissa evans'
 ]);
+const SUBSCRIPTION_MIN_OCCURRENCES = 2;
+const SUBSCRIPTION_MIN_CADENCE_DAYS = 25;
+const SUBSCRIPTION_MAX_CADENCE_DAYS = 35;
+const SUBSCRIPTION_AMOUNT_TOLERANCE = 5;
 const SUBSCRIPTION_PASSCODE = '123098';
 const SUBSCRIPTION_STORAGE_KEY = 'avSubscriptionUnlock';
 
@@ -329,20 +334,40 @@ function prepareSubscriptions(entries) {
   const results = [];
   groups.forEach(items => {
     items.sort((a, b) => (b.txnDate?.getTime() || 0) - (a.txnDate?.getTime() || 0));
-    const occurrences = items.length;
-    const last = items[0];
-    const first = items[items.length - 1];
+    const amountCounts = {};
+    items.forEach(entry => {
+      const key = (entry.total || 0).toFixed(2);
+      amountCounts[key] = (amountCounts[key] || 0) + 1;
+    });
+    const topEntry = Object.entries(amountCounts).sort((a, b) => b[1] - a[1])[0];
+    if (!topEntry) return;
+    const targetAmount = parseFloat(topEntry[0]);
+    const stableEntries = items.filter(entry => Math.abs((entry.total || 0) - targetAmount) <= SUBSCRIPTION_AMOUNT_TOLERANCE);
+    if (stableEntries.length < SUBSCRIPTION_MIN_OCCURRENCES) return;
+    let monthlyPair = false;
+    for (let i = 0; i < stableEntries.length - 1; i++) {
+      if (!stableEntries[i].txnDate || !stableEntries[i + 1].txnDate) continue;
+      const diffDays = Math.abs(stableEntries[i].txnDate - stableEntries[i + 1].txnDate) / 86400000;
+      if (diffDays >= SUBSCRIPTION_MIN_CADENCE_DAYS && diffDays <= SUBSCRIPTION_MAX_CADENCE_DAYS) {
+        monthlyPair = true;
+        break;
+      }
+    }
+    if (!monthlyPair) return;
+    const occurrences = stableEntries.length;
+    const last = stableEntries[0];
+    const first = stableEntries[occurrences - 1];
     let cadenceDays = null;
     if (occurrences > 1 && last.txnDate && first.txnDate) {
       const spanDays = Math.max(1, (last.txnDate - first.txnDate) / 86400000);
       cadenceDays = spanDays / (occurrences - 1);
     }
-    const history = items.slice(0, 5).map(entry => ({
+    const history = stableEntries.slice(0, 5).map(entry => ({
       date: entry.txnDate,
       amount: entry.total,
       memo: entry.memo || ''
     }));
-    const totalAmount = items.reduce((sum, entry) => sum + (entry.total || 0), 0);
+    const totalAmount = stableEntries.reduce((sum, entry) => sum + (entry.total || 0), 0);
     results.push({
       vendor: last.vendorDisplay || last.vendor || '—',
       account: last.accountDisplay || last.accountName || '—',
@@ -351,7 +376,7 @@ function prepareSubscriptions(entries) {
       lastAmount: last.total || 0,
       avgAmount: totalAmount / occurrences,
       cadenceDays,
-      memo: (last.memo || items.find(entry => entry.memo)?.memo) || '',
+      memo: (last.memo || stableEntries.find(entry => entry.memo)?.memo) || '',
       history
     });
   });
