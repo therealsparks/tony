@@ -196,6 +196,14 @@ const state = {
 
 const SUBSCRIPTION_ACCOUNTS = ['Chase Business Checking 5152', 'Capital One - Spark'];
 const MAX_SUBSCRIPTION_AMOUNT = 600;
+const SUBSCRIPTION_VENDOR_DENYLIST = new Set([
+  'nancy schirm',
+  'adam dalip',
+  'apple.com',
+  'costco gas',
+  'sơn hà thanh',
+  'son ha thanh'
+]);
 
 function showInvoices() {
   invoiceContent.classList.remove('locked');
@@ -294,10 +302,16 @@ function prepareSubscriptions(entries) {
   const groups = new Map();
   entries.forEach(item => {
     if (!item.txnDate) return;
-    if (!item.vendor) return;
-    if (!allowAccounts.has(item.accountName)) return;
+    const vendorName = (item.vendor || '').trim();
+    if (!vendorName) return;
+    const normalizedVendor = vendorName.toLowerCase();
+    if (SUBSCRIPTION_VENDOR_DENYLIST.has(normalizedVendor)) return;
+    const accountName = item.accountName || '';
+    if (!allowAccounts.has(accountName)) return;
     if (!item.total || item.total > MAX_SUBSCRIPTION_AMOUNT) return;
-    const key = `${item.vendor}__${item.accountName}`;
+    item.vendorDisplay = vendorName;
+    item.accountDisplay = accountName;
+    const key = `${normalizedVendor}__${accountName}`;
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key).push(item);
   });
@@ -319,8 +333,8 @@ function prepareSubscriptions(entries) {
     }));
     const totalAmount = items.reduce((sum, entry) => sum + (entry.total || 0), 0);
     results.push({
-      vendor: last.vendor,
-      account: last.accountName || '—',
+      vendor: last.vendorDisplay || last.vendor || '—',
+      account: last.accountDisplay || last.accountName || '—',
       occurrences,
       lastTxnDate: last.txnDate,
       lastAmount: last.total || 0,
