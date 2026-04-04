@@ -1,6 +1,6 @@
 {
   "status": "online",
-  "last_seen": "2026-04-02T13:05:00Z",
+  "last_seen": "2026-04-04T15:27:40Z",
   "message": "All systems running normally.",
   "checks": {
     "email_handler": "ok",
@@ -8,69 +8,6 @@
     "analytics": "ok",
     "competitor_brief": "ok"
   },
-  "up_next": [
-    {
-      "title": "Send BioSqueeze render proposal to Hayden",
-      "datetime": "2026-04-03T09:00:00-05:00",
-      "description": "Friday morning deliverable: email Hayden the PDF proposal with timeline + pricing for the three BioSqueeze renderings."
-    },
-    {
-      "title": "Copper wiring intro call",
-      "datetime": "2026-04-03T14:00:00-05:00",
-      "description": "Discovery call with the copper wiring company. Confirm agenda and bring the latest ops deck."
-    }
-  ],
-  "priority_stack": [
-    {
-      "title": "Reply to John Fedor",
-      "type": "Client",
-      "owner": "Matt",
-      "notes": "Answer his email about the separate project and confirm next steps."
-    },
-    {
-      "title": "Send NDA to Stuart Dunlop",
-      "type": "Client",
-      "owner": "Matt",
-      "notes": "Prep the NDA, send it to Stuart, and confirm he received and signed it."
-    },
-    {
-      "title": "Edit Nancy's proposal → send to Randy (Low Road Films)",
-      "type": "Proposal",
-      "owner": "Matt",
-      "notes": "Two quick projects. Clean up Nancy's doc, then email Randy with revised numbers."
-    },
-    {
-      "title": "Prep for Friday 2 PM copper wiring call",
-      "type": "Meeting",
-      "owner": "Matt",
-      "due": "2026-04-03T14:00:00-05:00",
-      "notes": "Line up questions + invite Nancy if needed before migration."
-    },
-    {
-      "title": "Coordinate interns/contractors on AI SOP playbook",
-      "type": "Ops",
-      "owner": "Matt",
-      "notes": "Keep the SOP/documentation push moving so the AI has better context."
-    },
-    {
-      "title": "Scope chef pitch video (AI 5-min concept)",
-      "type": "Proposal",
-      "owner": "Matt",
-      "notes": "Outline concept + budget before writing proposal."
-    },
-    {
-      "title": "Send closure update to Stephen / 1915 Films",
-      "type": "Client",
-      "owner": "Matt",
-      "notes": "Let him know we're moving on from the VFX project."
-    },
-    {
-      "title": "Inbox sweep / triage Nancy's latest notes",
-      "type": "Ops",
-      "owner": "Matt",
-      "notes": "Quick pass through email so nothing slips." 
-    }
-  ],
   "known_issues": [
     {
       "id": "landon-alerts",
