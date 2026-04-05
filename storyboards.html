@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tony — Storyboard Builder (MVP)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+    background: linear-gradient(180deg, #f7f8fb 0%, #eef2ff 60%, #ffffff 100%);
+    color: #1d1d1f;
+    min-height: 100vh;
+    padding: 40px 18px 80px;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; }
+  .back { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#2563eb; text-decoration:none; margin-bottom:16px; }
+  h1 { font-size: 34px; font-weight: 800; letter-spacing: -0.6px; margin: 0 0 8px; }
+  p.lede { font-size: 15px; color:#4b5563; margin: 0 0 24px; }
+  .panel {
+    background:#fff;
+    border-radius: 20px;
+    border: 1px solid rgba(15,23,42,0.08);
+    box-shadow: 0 20px 45px rgba(15,23,42,0.08);
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  .hidden { display: none !important; }
+  label { font-size: 13px; font-weight: 600; color:#4b5563; display:block; margin-bottom:6px; }
+  textarea, input, select {
+    width: 100%;
+    font-family: inherit;
+    font-size: 14px;
+    border-radius: 14px;
+    border: 1px solid #d4d8e3;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    resize: vertical;
+  }
+  textarea { min-height: 180px; }
+  button.primary {
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg,#2563eb,#7c3aed);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 24px;
+    cursor: pointer;
+    box-shadow: 0 12px 24px rgba(124,58,237,0.28);
+  }
+  button.primary:hover { opacity: 0.92; }
+  .status-steps { list-style:none; padding:0; margin:0; }
+  .status-steps li { font-size:13px; display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+  .status-dot {
+    width:10px; height:10px; border-radius:50%;
+    background:#cbd5f5;
+  }
+  .status-dot.active { background:#2563eb; box-shadow:0 0 6px rgba(37,99,235,0.6); }
+  .style-columns { display:flex; flex-direction:column; gap:24px; }
+  @media(min-width:900px) {
+    .style-columns { flex-direction:row; }
+  }
+  .style-column {
+    flex:1;
+    background:rgba(255,255,255,0.9);
+    border:1px solid rgba(148,163,184,0.3);
+    border-radius:18px;
+    padding:20px;
+  }
+  .style-column h3 { margin-top:0; font-size:16px; }
+  .frame-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; }
+  .frame-card {
+    border-radius:16px;
+    border:1px solid rgba(203,213,225,0.6);
+    padding:12px;
+    background:#f8fafc;
+  }
+  .frame-art {
+    height:140px;
+    border-radius:12px;
+    background:linear-gradient(135deg,#dbeafe,#fbcfe8);
+    margin-bottom:10px;
+    position:relative;
+    overflow:hidden;
+  }
+  .frame-art span {
+    position:absolute;
+    bottom:10px;
+    right:12px;
+    font-size:11px;
+    font-weight:700;
+    color:#1f2937;
+    background:rgba(255,255,255,0.8);
+    padding:4px 8px;
+    border-radius:999px;
+  }
+  .frame-title { font-size:13px; font-weight:700; margin-bottom:4px; color:#1f2937; }
+  .frame-body { font-size:12px; color:#475569; }
+  .badge { display:inline-flex; align-items:center; gap:4px; font-size:11px; border-radius:999px; padding:4px 10px; background:#eef2ff; color:#312e81; margin-bottom:10px; }
+  .login-hint { font-size:13px; color:#475569; margin-top:10px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← Back to Tony</a>
+  <h1>Storyboard Builder (Preview)</h1>
+  <p class="lede">Paste a script, pick an art style, and preview a beat-by-beat storyboard instantly. This MVP runs entirely in-browser so we can review layout and flow before wiring the heavy automation.</p>
+
+  <div class="panel" id="login-card">
+    <label for="login-email">Enter your email to continue</label>
+    <input type="email" id="login-email" placeholder="you@company.com">
+    <button class="primary" id="login-btn">Unlock</button>
+    <div class="login-hint">Access is limited to the whitelist right now (add new emails in the next release).</div>
+  </div>
+
+  <div id="app" class="hidden">
+    <div class="panel">
+      <label for="project-name">Project name</label>
+      <input type="text" id="project-name" placeholder="e.g., Nova XR Launch Video">
+
+      <label for="script-input">Script</label>
+      <textarea id="script-input" placeholder="Paste 30-60 seconds of script here..."></textarea>
+
+      <label for="style-input">Describe the art style</label>
+      <input type="text" id="style-input" placeholder="e.g., Clean pencil sketch with bold silhouettes">
+
+      <label for="style-options">Or pick up to 3 presets</label>
+      <select id="style-options" multiple>
+        <option value="Pro storyboard">Pro storyboard (default)</option>
+        <option value="Pencil sketch noir">Pencil sketch noir</option>
+        <option value="Comic ink with halftone">Comic ink with halftone</option>
+        <option value="Anime cel shading">Anime cel shading</option>
+        <option value="Watercolor concept">Watercolor concept</option>
+      </select>
+
+      <button class="primary" id="generate-btn">Generate storyboard preview</button>
+    </div>
+
+    <div class="panel" id="status-panel">
+      <div class="badge">Live status</div>
+      <ul class="status-steps" id="status-steps"></ul>
+    </div>
+
+    <div id="output" class="hidden"></div>
+  </div>
+</div>
+
+<script>
+const WHITELIST = ['matt@austinvisuals.com', 'tony@austinvisuals.com'];
+const loginCard = document.getElementById('login-card');
+const app = document.getElementById('app');
+const loginBtn = document.getElementById('login-btn');
+loginBtn.addEventListener('click', () => {
+  const email = document.getElementById('login-email').value.trim().toLowerCase();
+  if (!email) return alert('Enter your email first.');
+  if (!WHITELIST.includes(email)) return alert('This preview is limited to the internal whitelist.');
+  loginCard.classList.add('hidden');
+  app.classList.remove('hidden');
+});
+
+const statusStepsEl = document.getElementById('status-steps');
+const statusPhases = [
+  'Queued for breakdown',
+  'Analyzing script beats',
+  'Rendering reference frames',
+  'Formatting storyboard preview'
+];
+
+function updateStatus(activeIndex) {
+  statusStepsEl.innerHTML = '';
+  statusPhases.forEach((phase, idx) => {
+    const li = document.createElement('li');
+    const dot = document.createElement('span');
+    dot.className = 'status-dot' + (idx <= activeIndex ? ' active' : '');
+    li.appendChild(dot);
+    li.appendChild(document.createTextNode(phase));
+    statusStepsEl.appendChild(li);
+  });
+}
+
+updateStatus(-1);
+
+function buildPanels(scriptText) {
+  let panels = scriptText.split(/\n{2,}/).map(p => p.trim()).filter(Boolean);
+  if (panels.length === 0) {
+    panels = [scriptText.trim()];
+  }
+  if (panels.length < 3) {
+    const sentences = scriptText.match(/[^.!?]+[.!?]?/g) || [];
+    panels = [];
+    let bucket = [];
+    sentences.forEach((sentence, idx) => {
+      if (!sentence.trim()) return;
+      bucket.push(sentence.trim());
+      if (bucket.length === 2 || idx === sentences.length - 1) {
+        panels.push(bucket.join(' '));
+        bucket = [];
+      }
+    });
+  }
+  return panels.slice(0, 12);
+}
+
+function pseudoGradient(seed) {
+  const hues = [208, 280, 330, 190, 22];
+  const h1 = hues[seed % hues.length];
+  const h2 = hues[(seed + 2) % hues.length];
+  return `linear-gradient(135deg, hsl(${h1},80%,92%), hsl(${h2},85%,88%))`;
+}
+
+function renderStoryboard(panels, styles) {
+  const output = document.getElementById('output');
+  output.innerHTML = '';
+  output.classList.remove('hidden');
+  const columns = document.createElement('div');
+  columns.className = 'style-columns';
+  styles.forEach(style => {
+    const col = document.createElement('div');
+    col.className = 'style-column';
+    const heading = document.createElement('h3');
+    heading.textContent = `Style: ${style}`;
+    col.appendChild(heading);
+    const grid = document.createElement('div');
+    grid.className = 'frame-grid';
+    panels.forEach((panel, idx) => {
+      const card = document.createElement('div');
+      card.className = 'frame-card';
+      const art = document.createElement('div');
+      art.className = 'frame-art';
+      art.style.background = pseudoGradient(idx + styles.indexOf(style));
+      const artTag = document.createElement('span');
+      artTag.textContent = `Panel ${idx + 1}`;
+      art.appendChild(artTag);
+      const title = document.createElement('div');
+      title.className = 'frame-title';
+      title.textContent = truncateText(panel, 70);
+      const body = document.createElement('div');
+      body.className = 'frame-body';
+      body.textContent = `Style cue: ${style}`;
+      card.appendChild(art);
+      card.appendChild(title);
+      card.appendChild(body);
+      grid.appendChild(card);
+    });
+    col.appendChild(grid);
+    columns.appendChild(col);
+  });
+  output.appendChild(columns);
+}
+
+function truncateText(text, max) {
+  if (text.length <= max) return text;
+  return text.slice(0, max - 1) + '…';
+}
+
+const generateBtn = document.getElementById('generate-btn');
+generateBtn.addEventListener('click', () => {
+  const script = document.getElementById('script-input').value.trim();
+  if (!script) return alert('Paste a script first.');
+  const typedStyle = document.getElementById('style-input').value.trim();
+  const presetSelect = document.getElementById('style-options');
+  const selected = Array.from(presetSelect.selectedOptions).map(opt => opt.value);
+  const styles = (selected.length ? selected : [typedStyle || 'Pro storyboard']).slice(0, 3);
+  updateStatus(0);
+  const panels = buildPanels(script);
+  const steps = [0,1,2,3];
+  let idx = 0;
+  const interval = setInterval(() => {
+    idx++;
+    if (idx >= steps.length) {
+      clearInterval(interval);
+      updateStatus(steps.length - 1);
+      renderStoryboard(panels, styles);
+    } else {
+      updateStatus(steps[idx]);
+    }
+  }, 800);
+});
+</script>
+</body>
+</html>
