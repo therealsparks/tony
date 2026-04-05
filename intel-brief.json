@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-03 04:58 UTC",
+  "updated": "2026-04-05 03:00 UTC",
   "sections": [
     {
       "id": "gov",
@@ -7,11 +7,18 @@
       "icon": "\ud83c\udfdb\ufe0f",
       "items": [
         {
-          "title": "Energy Department speeds up nuclear regulatory process with AI",
-          "link": "https://fedscoop.com/energy-department-national-labs-ai-nuclear-regulatory-experiment/",
-          "desc": "The agency called the experiment, which was conducted in collaboration with two national labs, two vendors and the Nuclear Regulatory Commission, a \u201cmilestone test case.\u201d The post Energy Department speeds up nuclear regulatory process with AI appeare",
-          "date": "Mon, 30 Mar 2026",
-          "source": "FedScoop"
+          "title": "This state agency was created to investigate Texas universities. How that works is a mystery.",
+          "link": "https://feeds.texastribune.org/link/16799/17312954/texas-ombudsman-investigate-university-complaints",
+          "desc": "Office of the Ombudsman has no written policies on how to investigate allegations that education laws are being broken, even though it\u2019s been accepting complaints for three months.",
+          "date": "Fri, 03 Apr 2026",
+          "source": "Texas Tribune"
+        },
+        {
+          "title": "South Texas officials dismissed from woman\u2019s wrongful arrest lawsuit in controversial abortion case",
+          "link": "https://feeds.texastribune.org/link/16799/17312036/abortion-south-texas-starr-county-lizelle-gonzalez",
+          "desc": "Starr County remains the sole defendant in a suit seeking $1 million in damages filed by Lizelle Gonzalez, who accused local officials of malicious prosecution and conspiracy.",
+          "date": "Thu, 02 Apr 2026",
+          "source": "Texas Tribune"
         },
         {
           "title": "Texas attorney general\u2019s office under scrutiny for letting donors use hotel room bookings",
@@ -28,23 +35,9 @@
           "source": "Texas Tribune"
         },
         {
-          "title": "Tyler embraces a families-first approach as it grows faster than any other East Texas city",
+          "title": "This East Texas city is intentionally attracting people with kids amid growth boom",
           "link": "https://feeds.texastribune.org/link/16799/17312544/tyler-texas-families-growth-economic-development-support",
           "desc": "Tyler has spent the last decade remaking its parks and sidewalks to allure families. At the same time, a constellation of groups are helping parents take care of their families.",
-          "date": "Thu, 02 Apr 2026",
-          "source": "Texas Tribune"
-        },
-        {
-          "title": "Judge will allow Attorney General Ken Paxton to withdraw from representing comptroller\u2019s office in voucher case",
-          "link": "https://feeds.texastribune.org/link/16799/17312503/texas-attorney-general-paxton-withdraw-voucher-lawsuit-comptroller-hancock",
-          "desc": "The Houston federal judge said Paxton\u2019s office can pull out of the case as soon as acting Comptroller Kelly Hancock finds new lawyers. The unusual request comes amid a bubbling feud between the two Republicans.",
-          "date": "Thu, 02 Apr 2026",
-          "source": "Texas Tribune"
-        },
-        {
-          "title": "Hands-on telehealth helps reach rural Texas communities",
-          "link": "https://feeds.texastribune.org/link/16799/17312219/telehealth-rural-texas-fort-davis",
-          "desc": "A new approach aims to tailor telehealth to the realities of an older, rural population by offering a physical place with reliable connectivity and an on-site nurse.",
           "date": "Thu, 02 Apr 2026",
           "source": "Texas Tribune"
         }
@@ -56,31 +49,38 @@
       "icon": "\u26a1",
       "items": [
         {
-          "title": "Oil Surges on Fears of Prolonged War",
-          "link": "https://www.rigzone.com/news/wire/oil_surges_on_fears_of_prolonged_war-02-apr-2026-183362-article/?rss=true",
-          "desc": "U.S. President Donald Trump is coming under increasing international pressure after he pledged in a primetime speech to continue the war on Iran, sparking further turmoil in energy markets.",
-          "date": "Thu, 02 Apr 2026",
+          "title": "Turkey Weighs Raising Energy Prices",
+          "link": "https://www.rigzone.com/news/wire/turkey_weighs_raising_energy_prices-04-apr-2026-183374-article/?rss=true",
+          "desc": "Turkey is weighing whether to raise electricity and natural gas prices, according to people familiar with the matter.",
+          "date": "Sat, 04 Apr 2026",
           "source": "Rigzone"
         },
         {
-          "title": "Baker Hughes, Naftogaz to Explore Energy Cooperation",
-          "link": "https://www.rigzone.com/news/baker_hughes_naftogaz_to_explore_energy_cooperation-02-apr-2026-183361-article/?rss=true",
-          "desc": "'The memorandum facilitates joint work on the assessment and preparation of potential projects in exploration and production, oil and gas transportation and storage, refining, petrochemicals and power generation'.",
-          "date": "Thu, 02 Apr 2026",
+          "title": "DOI Says USA Energy Production Hit Record Levels in 2025",
+          "link": "https://www.rigzone.com/news/doi_says_usa_energy_production_hit_record_levels_in_2025-03-apr-2026-183372-article/?rss=true",
+          "desc": "'American energy leadership is a cornerstone of our economic strength and national security', Secretary of the Interior Doug Burgum said.",
+          "date": "Fri, 03 Apr 2026",
           "source": "Rigzone"
         },
         {
-          "title": "StanChart Warns OPEC+ Could Abandon Cuts at Next Meeting",
-          "link": "https://www.rigzone.com/news/stanchart_warns_opec_could_abandon_cuts_at_next_meeting-02-apr-2026-183359-article/?rss=true",
-          "desc": "Standard Chartered Bank Energy Research Head Emily Ashford warned that the next OPEC+ meeting on April 5 'could result in abandonment of voluntary output cuts and compensation cuts'.",
-          "date": "Thu, 02 Apr 2026",
+          "title": "TotalEnergies, Masdar Form $2.2B Renewables JV in Asia",
+          "link": "https://www.rigzone.com/news/totalenergies_masdar_form_22b_renewables_jv_in_asia-03-apr-2026-183368-article/?rss=true",
+          "desc": "Masdar and TotalEnergies announced an agreement to create a 50-50 joint venture to consolidate their onshore renewable energy portfolio in nine Asian countries.",
+          "date": "Fri, 03 Apr 2026",
           "source": "Rigzone"
         },
         {
-          "title": "Missile Hits Oil Tanker Leased to QatarEnergy",
-          "link": "https://www.rigzone.com/news/missile_hits_oil_tanker_leased_to_qatarenergy-02-apr-2026-183355-article/?rss=true",
-          "desc": "'None of the crew members on board were injured, and there is no impact on the environment as a result of this incident'.",
-          "date": "Thu, 02 Apr 2026",
+          "title": "Why Has the WTI Oil Price Surpassed Brent?",
+          "link": "https://www.rigzone.com/news/why_has_the_wti_oil_price_surpassed_brent-03-apr-2026-183367-article/?rss=true",
+          "desc": "Why has the West Texas Intermediate (WTI) oil price surpassed Brent?",
+          "date": "Fri, 03 Apr 2026",
+          "source": "Rigzone"
+        },
+        {
+          "title": "Manila Says Iran Assured Passage for Ships Carrying Energy for Philippines",
+          "link": "https://www.rigzone.com/news/manila_says_iran_assured_passage_for_ships_carrying_energy_for_philippines-03-apr-2026-183366-article/?rss=true",
+          "desc": "'Iran will allow the safe, unhindered and expeditious passage through the Strait of Hormuz of Philippine-flagged vessels, energy sources and all Filipino seafarers', the Philippine Foreign Affairs Department said.",
+          "date": "Fri, 03 Apr 2026",
           "source": "Rigzone"
         },
         {
@@ -103,13 +103,6 @@
           "desc": "TotalEnergies has sold a 50% stake in an 800-MW portfolio of battery energy storage projects in Germany to Allianz Global Investors, a Germany-based group that has nearly $640 billion of assets under management. The post Investment Group Acquires Sta",
           "date": "Thu, 02 Apr 2026",
           "source": "Power Magazine"
-        },
-        {
-          "title": "FlexGen Acquires BESS Provider Clean Energy Services",
-          "link": "https://www.powermag.com/flexgen-acquires-bess-provider-clean-energy-services/",
-          "desc": "FlexGen Power Systems, which provides battery energy storage software and services, said it has acquired Clean Energy Services (CES). The companies on April 2 said the acquisition \"will create an integrated model that accelerates FlexGen\u2019s project de",
-          "date": "Thu, 02 Apr 2026",
-          "source": "Power Magazine"
         }
       ]
     },
@@ -117,21 +110,21 @@
       "id": "medical",
       "title": "Medical & Science",
       "icon": "\ud83d\udd2c",
-      "items": []
+      "items": [
+        {
+          "title": "Scientists urge EPA not to weaken ethylene oxide emissions standards",
+          "link": "https://www.medtechdive.com/news/scientists-urge-epa-not-to-weaken-ethylene-oxide-emissions-standards/816609/",
+          "desc": "Scientists, clinicians and residents of communities near medical device sterilization plants called for the EPA not to weaken its oversight of ethylene oxide in a public hearing.",
+          "date": "Fri, 03 Apr 2026",
+          "source": "MedTech Dive"
+        }
+      ]
     },
     {
       "id": "legal_tech",
       "title": "Legal & Courts",
       "icon": "\u2696\ufe0f",
-      "items": [
-        {
-          "title": "Energy Department speeds up nuclear regulatory process with AI",
-          "link": "https://fedscoop.com/energy-department-national-labs-ai-nuclear-regulatory-experiment/",
-          "desc": "The agency called the experiment, which was conducted in collaboration with two national labs, two vendors and the Nuclear Regulatory Commission, a \u201cmilestone test case.\u201d The post Energy Department speeds up nuclear regulatory process with AI appeare",
-          "date": "Mon, 30 Mar 2026",
-          "source": "FedScoop"
-        }
-      ]
+      "items": []
     },
     {
       "id": "animation",
@@ -139,59 +132,59 @@
       "icon": "\ud83c\udfac",
       "items": [
         {
-          "title": "Underneath the Umbrella Productions Launches with 'Wizard of Id,' 'B.C.' Adaptations",
-          "link": "https://www.awn.com/news/underneath-umbrella-productions-launches-wizard-id-bc-adaptations",
-          "desc": "Goodman Pictures and \u2018Antz\u2019 director Tim Johnson\u2019s new company secures rights to classic comic strips and 'The Book of the Dun Cow,' with Johnson set to direct an animated 'Wizard of Id' feature as its first project.",
-          "date": "Thu, 02 Apr 2026",
+          "title": "Adult Swim SMALLS Debuts 'Bad Luck Buck: Pop Up' Short from Todd Redner",
+          "link": "https://www.awn.com/news/adult-swim-smalls-debuts-bad-luck-buck-pop-short-todd-redner",
+          "desc": "A new installment just dropped in the 'Bad Luck Buck' series following on the heels of the recent release of 'Bad Luck Buck: Unfriended.'",
+          "date": "Fri, 03 Apr 2026",
           "source": "Animation World Net"
         },
         {
-          "title": "DNEG Gets All Broken Up Over \u2018The Wrecking Crew\u2019 High-Speed Chase VFX",
-          "link": "https://www.awn.com/vfxworld/dneg-gets-all-broken-over-wrecking-crew-high-speed-chase-vfx",
-          "desc": "VFX supervisors Xavier Bernasconi and Simon Maddison talk muzzle flashes, face replacements, and a cacophony of van, motorcycle and helicopter crashes on the Amazon MGM Studios action-adventure thriller, starring Jason Momoa and Dave Bautista, now st",
-          "date": "Thu, 02 Apr 2026",
+          "title": "We\u2019re Off to See the VFX: Pablo Helman Talks \u2018Wicked: For Good\u2019",
+          "link": "https://www.awn.com/vfxworld/were-see-vfx-pablo-helman-talks-wicked-good",
+          "desc": "The four-time Oscar-nominated visual effects supervisor discusses his work on Jon M. Chu\u2019s tour de force 2-part adaptation of the 2003 hit Broadway musical, touching on previs, capturing action in-camera, new AI production tools, and how no matter wh",
+          "date": "Fri, 03 Apr 2026",
           "source": "Animation World Net"
         },
         {
-          "title": "2026 Crunchyroll Anime Awards Nominees, Presenters Announced",
-          "link": "https://www.awn.com/news/2026-crunchyroll-anime-awards-nominees-presenters-announced",
-          "desc": "\u2018DAN DA DAN,\u2019 \u2018Gachiakuta,\u2019 \u2018My Hero Academia,\u2019 \u2018Takopi's Original Sin,\u2019 \u2018The Apothecary Diaries,\u2019 and \u2018The Summer Hikaru Died\u2019 will vie for Anime of the Year; live Tokyo ceremony set for May 23.",
-          "date": "Thu, 02 Apr 2026",
+          "title": "Crystal City, Rakia Media and Nate Hopper to Develop 'Tiny T. Rex' Animated Series",
+          "link": "https://www.awn.com/news/crystal-city-rakia-media-and-nate-hopper-develop-tiny-t-rex-animated-series",
+          "desc": "The bestselling children\u2019s book franchise is being adapted into preschool animation and other IP projects.",
+          "date": "Fri, 03 Apr 2026",
           "source": "Animation World Net"
         },
         {
-          "title": "Bong Joon-Ho Reveals First Look at Debut Animated Feature 'Ally'",
-          "link": "https://www.awn.com/news/bong-joon-ho-reveals-first-look-debut-animated-feature-ally",
-          "desc": "The Oscar-winning filmmaker unveils his first venture into animation, set for a 2027 theatrical release, backed by CJ ENM, Penture Invest, and Path\u00e9, with DNEG involved in the 3DCG work.",
-          "date": "Thu, 02 Apr 2026",
+          "title": "Hasbro Appoints Adam Redfern as 'Peppa Pig' Showrunner",
+          "link": "https://www.awn.com/news/hasbro-appoints-adam-redfern-peppa-pig-showrunner",
+          "desc": "The Emmy and BAFTA-winning writer and producer will oversee creative direction on the hit show as the company positions the long-running preschool series for the next phase of its storytelling evolution.",
+          "date": "Fri, 03 Apr 2026",
           "source": "Animation World Net"
         },
         {
-          "title": "Animation Y\u2019all Expo Returns to Nashville with Expanded 2026 Program",
-          "link": "https://www.awn.com/news/animation-yall-expo-returns-nashville-expanded-2026-program",
-          "desc": "The second annual event is set for April 10\u201312 at Lipscomb University, featuring a large lineup of activities, major industry guests, and the official declaration of Tennessee\u2019s first \u2018Animation Day.\u2019",
-          "date": "Thu, 02 Apr 2026",
+          "title": "MeTV Toons Sets \u2018Easter Eggstravaganza\u2019 Programming Block for April 5",
+          "link": "https://www.awn.com/news/metv-toons-sets-easter-eggstravaganza-programming-block-april-5",
+          "desc": "The network will air a full day of classic animated holiday specials featuring Bugs Bunny, Yogi Bear, and the Smurfs, among others.",
+          "date": "Fri, 03 Apr 2026",
           "source": "Animation World Net"
+        },
+        {
+          "title": "Lux Aeterna appoints Alex Dilworth as Design Creative Director",
+          "link": "https://motionographer.com/news/lux-aeterna-appoints-alex-dilworth-as-design-creative-director/",
+          "desc": "Lux Aeterna, the multi-award-winning independent VFX and creative studio, has appointed Alex Dilworth as Design Creative Director, strengthening the studio\u2019s creative leadership as it continues to expand its work across film, high-end television, doc",
+          "date": "Fri, 03 Apr 2026",
+          "source": "Motionographer"
+        },
+        {
+          "title": "Ray-Ban Meta Smart Glasses | Gismo.tv",
+          "link": "https://motionographer.com/quickie/ray-ban-meta-smart-glasses-gismo-tv/",
+          "desc": "",
+          "date": "Fri, 03 Apr 2026",
+          "source": "Motionographer"
         },
         {
           "title": "Le Chant des Orages | Caroline Attia Larivi\u00e8re / Sacrebleu Production",
           "link": "https://motionographer.com/quickie/le-chant-des-orages-caroline-attia-lariviere-sacrebleu-production/",
           "desc": "",
           "date": "Thu, 02 Apr 2026",
-          "source": "Motionographer"
-        },
-        {
-          "title": "In Death We\u2019ve Just Begun ft. Poppy and Son Lux (Official Music Video) | Marathon Launch Cinematic",
-          "link": "https://motionographer.com/news/in-death-weve-just-begun-ft-poppy-and-son-lux-official-music-video-marathon-launch-cinematic/",
-          "desc": "Directors Harmony Korine and Sam Goldwater continues their expansion into game culture with a new trailer for Marathon, the upcoming title from Bungie. Created through Korine\u2019s experimental studio EDGLRD, the trailer leans into abstraction, atmospher",
-          "date": "Wed, 01 Apr 2026",
-          "source": "Motionographer"
-        },
-        {
-          "title": "Field Generals: History of the Black Quarterback \u2013 Main Title Design | Simonian",
-          "link": "https://motionographer.com/quickie/field-generals-history-of-the-black-quarterback-main-title-design-simonian/",
-          "desc": "",
-          "date": "Wed, 01 Apr 2026",
           "source": "Motionographer"
         }
       ]
@@ -209,6 +202,20 @@
           "source": "Texas CEO Magazine"
         },
         {
+          "title": "This state agency was created to investigate Texas universities. How that works is a mystery.",
+          "link": "https://feeds.texastribune.org/link/16799/17312954/texas-ombudsman-investigate-university-complaints",
+          "desc": "Office of the Ombudsman has no written policies on how to investigate allegations that education laws are being broken, even though it\u2019s been accepting complaints for three months.",
+          "date": "Fri, 03 Apr 2026",
+          "source": "Texas Tribune"
+        },
+        {
+          "title": "South Texas officials dismissed from woman\u2019s wrongful arrest lawsuit in controversial abortion case",
+          "link": "https://feeds.texastribune.org/link/16799/17312036/abortion-south-texas-starr-county-lizelle-gonzalez",
+          "desc": "Starr County remains the sole defendant in a suit seeking $1 million in damages filed by Lizelle Gonzalez, who accused local officials of malicious prosecution and conspiracy.",
+          "date": "Thu, 02 Apr 2026",
+          "source": "Texas Tribune"
+        },
+        {
           "title": "Texas attorney general\u2019s office under scrutiny for letting donors use hotel room bookings",
           "link": "https://feeds.texastribune.org/link/16799/17312704/texas-attorney-general-ken-paxton-hotel-rooms-donors-audit",
           "desc": "The attorney general\u2019s office reallocated taxpayer-funded rooms to donors and other private citizens, some of whom initially failed to cover the cost of the stay.",
@@ -223,38 +230,24 @@
           "source": "Texas Tribune"
         },
         {
-          "title": "Tyler embraces a families-first approach as it grows faster than any other East Texas city",
+          "title": "This East Texas city is intentionally attracting people with kids amid growth boom",
           "link": "https://feeds.texastribune.org/link/16799/17312544/tyler-texas-families-growth-economic-development-support",
           "desc": "Tyler has spent the last decade remaking its parks and sidewalks to allure families. At the same time, a constellation of groups are helping parents take care of their families.",
           "date": "Thu, 02 Apr 2026",
           "source": "Texas Tribune"
         },
         {
-          "title": "Judge will allow Attorney General Ken Paxton to withdraw from representing comptroller\u2019s office in voucher case",
-          "link": "https://feeds.texastribune.org/link/16799/17312503/texas-attorney-general-paxton-withdraw-voucher-lawsuit-comptroller-hancock",
-          "desc": "The Houston federal judge said Paxton\u2019s office can pull out of the case as soon as acting Comptroller Kelly Hancock finds new lawyers. The unusual request comes amid a bubbling feud between the two Republicans.",
-          "date": "Thu, 02 Apr 2026",
-          "source": "Texas Tribune"
-        },
-        {
-          "title": "Hands-on telehealth helps reach rural Texas communities",
-          "link": "https://feeds.texastribune.org/link/16799/17312219/telehealth-rural-texas-fort-davis",
-          "desc": "A new approach aims to tailor telehealth to the realities of an older, rural population by offering a physical place with reliable connectivity and an on-site nurse.",
-          "date": "Thu, 02 Apr 2026",
-          "source": "Texas Tribune"
-        },
-        {
-          "title": "Sociable: Meta outlines AI benefits for US construction industry",
-          "link": "https://www.constructiondive.com/news/sociable-meta-outlines-ai-benefits-for-us-construction-industry/816445/",
-          "desc": "The company discussed how its AI approach to cement and concrete development can help producers compete on cost and build supply chain resilience.",
-          "date": "Thu, 02 Apr 2026",
+          "title": "Researchers turn sawdust into fire-resistant building panels",
+          "link": "https://www.constructiondive.com/news/research-sawdust-fire-resistant-building-material/816589/",
+          "desc": "If commercialized, the panels could turn waste products from timber and water treatment into a sustainable construction material.",
+          "date": "Fri, 03 Apr 2026",
           "source": "Construction Dive"
         },
         {
-          "title": "Construction hiring data indicates a cooling labor market",
-          "link": "https://www.constructiondive.com/news/construction-slow-labor-market-february-2026/816383/",
-          "desc": "Slow hiring and few job separations in February led to the lowest construction labor turnover rate since 2000, according to Anirban Basu, chief economist at ABC.",
-          "date": "Wed, 01 Apr 2026",
+          "title": "Autodesk acquires Rhumbix in construction data push",
+          "link": "https://www.constructiondive.com/news/autodesk-acquires-rhumbix-construction-data/816526/",
+          "desc": "The startup, which aims to provide builders with better data visibility, counts Turner Construction, Suffolk Construction and DPR Construction among its customers.",
+          "date": "Fri, 03 Apr 2026",
           "source": "Construction Dive"
         }
       ]
