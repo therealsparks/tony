@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-03 04:58 UTC",
+  "updated": "2026-04-05 03:00 UTC",
   "competitors": [
     {
       "name": "Explainify",
@@ -119,6 +119,12 @@
       "website": "lemonlight.com",
       "posts": [
         {
+          "title": "AI Video Myths, Debunked #1: \u201cAI Video Is Only for Low-Budget Projects\u201d",
+          "link": "https://www.lemonlight.com/blog/ai-video-myth-low-budget-projects/",
+          "desc": "Key Takeaways There&#8217;s a version of AI video that earned this myth: shaky avatar presentations, robotic voiceovers, stock footage stitched together with an obvious lack of creative direction. Those videos exist, and yes, they tend to show up in &#8220;low-budget&#8221; contexts. But treating th",
+          "date": "Fri, 03 Apr 2026"
+        },
+        {
           "title": "Lemonlight\u2019s AI Video Production Workflow: From Brief to Final Cut",
           "link": "https://www.lemonlight.com/blog/ai-video-production-workflow/",
           "desc": "Key Takeaways When brands ask about AI video production, they usually start with the same question: what actually happens once we say yes? Capability claims are everywhere right now. What&#8217;s harder to find is a straight answer about the work itself. This post walks through our process from firs",
@@ -128,12 +134,6 @@
           "title": "Creative Ideas for Short Videos (50 Examples for Brands)",
           "link": "https://www.lemonlight.com/blog/creative-ideas-for-short-videos/",
           "desc": "Key Takeaways E-commerce &#38; Direct-to-Consumer (DTC) E-commerce brands thrive on short-form video because the format mirrors how people already shop online: quick, visual, and decision-driven. These concepts reduce purchase hesitation and build confidence by showing products in context rather tha",
-          "date": "Wed, 01 Apr 2026"
-        },
-        {
-          "title": "AI Video vs. Traditional Video Production: An Honest Comparison",
-          "link": "https://www.lemonlight.com/blog/ai-video-vs-traditional-video-production-an-honest-comparison/",
-          "desc": "Key Takeaways Why This Comparison Actually Matters There&#8217;s no shortage of hot takes on AI video production. Some people are convinced it will replace traditional production entirely. Others treat it as a gimmick not worth serious consideration. Both perspectives miss the point. For brand marke",
           "date": "Wed, 01 Apr 2026"
         }
       ],
