@@ -102,6 +102,50 @@
   }
   .frame-title { font-size:13px; font-weight:700; margin-bottom:4px; color:#1f2937; }
   .frame-body { font-size:12px; color:#475569; }
+  .edit-btn {
+    margin-top:10px;
+    background:transparent;
+    border:1px solid #cbd5f5;
+    color:#2563eb;
+    font-size:12px;
+    font-weight:600;
+    border-radius:999px;
+    padding:6px 12px;
+    cursor:pointer;
+  }
+  .edit-btn:hover { border-color:#2563eb; }
+  .edit-form {
+    margin-top:10px;
+    padding-top:10px;
+    border-top:1px dashed rgba(148,163,184,0.6);
+  }
+  .edit-form textarea {
+    width:100%;
+    border-radius:10px;
+    border:1px solid #d4d8e3;
+    padding:8px 10px;
+    font-size:12px;
+    min-height:60px;
+    margin-bottom:10px;
+  }
+  .edit-actions { display:flex; gap:8px; }
+  .ghost-btn, .secondary-btn {
+    border-radius:999px;
+    font-size:12px;
+    font-weight:600;
+    padding:6px 12px;
+    cursor:pointer;
+  }
+  .ghost-btn {
+    border:1px solid #94a3b8;
+    background:transparent;
+    color:#0f172a;
+  }
+  .secondary-btn {
+    border:none;
+    background:#2563eb;
+    color:#fff;
+  }
   .badge { display:inline-flex; align-items:center; gap:4px; font-size:11px; border-radius:999px; padding:4px 10px; background:#eef2ff; color:#312e81; margin-bottom:10px; }
   .login-hint { font-size:13px; color:#475569; margin-top:10px; }
 </style>
@@ -137,6 +181,11 @@
         <option value="Comic ink with halftone">Comic ink with halftone</option>
         <option value="Anime cel shading">Anime cel shading</option>
         <option value="Watercolor concept">Watercolor concept</option>
+        <option value="Minimalist vector shapes">Minimalist vector shapes</option>
+        <option value="Blueprint schematic">Blueprint schematic</option>
+        <option value="Clay render lighting">Clay render lighting</option>
+        <option value="Oil-painted fantasy">Oil-painted fantasy</option>
+        <option value="Retro pixel art">Retro pixel art</option>
       </select>
 
       <button class="primary" id="generate-btn">Generate storyboard preview</button>
@@ -187,24 +236,42 @@ function updateStatus(activeIndex) {
 updateStatus(-1);
 
 function buildPanels(scriptText) {
-  let panels = scriptText.split(/\n{2,}/).map(p => p.trim()).filter(Boolean);
-  if (panels.length === 0) {
-    panels = [scriptText.trim()];
-  }
-  if (panels.length < 3) {
-    const sentences = scriptText.match(/[^.!?]+[.!?]?/g) || [];
-    panels = [];
-    let bucket = [];
-    sentences.forEach((sentence, idx) => {
-      if (!sentence.trim()) return;
-      bucket.push(sentence.trim());
-      if (bucket.length === 2 || idx === sentences.length - 1) {
-        panels.push(bucket.join(' '));
-        bucket = [];
-      }
+  const scenes = scriptText.split(/\n{2,}/).map(p => p.trim()).filter(Boolean);
+  const sourceScenes = scenes.length ? scenes : [scriptText.trim()];
+  const results = [];
+  sourceScenes.forEach((sceneText, sceneIdx) => {
+    const chunks = chunkScene(sceneText);
+    chunks.forEach((chunk, partIdx) => {
+      const label = partIdx === 0 ? `${sceneIdx + 1}` : `${sceneIdx + 1}${String.fromCharCode(64 + partIdx)}`;
+      results.push({
+        scene: sceneIdx + 1,
+        part: partIdx,
+        label,
+        text: chunk || sceneText
+      });
     });
-  }
-  return panels.slice(0, 12);
+  });
+  return results.slice(0, 15);
+}
+
+function chunkScene(sceneText) {
+  const sentences = sceneText.match(/[^.!?]+[.!?]?/g) || [sceneText];
+  const chunks = [];
+  let bucket = [];
+  sentences.forEach((sentence, idx) => {
+    const trimmed = sentence.trim();
+    if (!trimmed) return;
+    bucket.push(trimmed);
+    const combined = bucket.join(' ');
+    if (combined.length >= 140 || bucket.length === 2) {
+      chunks.push(combined);
+      bucket = [];
+    } else if (idx === sentences.length - 1) {
+      chunks.push(combined);
+    }
+  });
+  if (chunks.length === 0) chunks.push(sceneText);
+  return chunks;
 }
 
 function pseudoGradient(seed) {
@@ -235,17 +302,56 @@ function renderStoryboard(panels, styles) {
       art.className = 'frame-art';
       art.style.background = pseudoGradient(idx + styles.indexOf(style));
       const artTag = document.createElement('span');
-      artTag.textContent = `Panel ${idx + 1}`;
+      artTag.textContent = panel.label;
       art.appendChild(artTag);
       const title = document.createElement('div');
       title.className = 'frame-title';
-      title.textContent = truncateText(panel, 70);
+      title.textContent = truncateText(panel.text, 80);
       const body = document.createElement('div');
       body.className = 'frame-body';
       body.textContent = `Style cue: ${style}`;
+      const editBtn = document.createElement('button');
+      editBtn.className = 'edit-btn';
+      editBtn.textContent = 'Edit panel';
+      const editForm = document.createElement('div');
+      editForm.className = 'edit-form hidden';
+      const editInput = document.createElement('textarea');
+      editInput.placeholder = 'Describe the change you want (e.g., keep actor pose, add rain).';
+      const actions = document.createElement('div');
+      actions.className = 'edit-actions';
+      const retryBtn = document.createElement('button');
+      retryBtn.type = 'button';
+      retryBtn.className = 'ghost-btn';
+      retryBtn.textContent = 'Retry prompt';
+      const saveBtn = document.createElement('button');
+      saveBtn.type = 'button';
+      saveBtn.className = 'secondary-btn';
+      saveBtn.textContent = 'Save note';
+      actions.appendChild(retryBtn);
+      actions.appendChild(saveBtn);
+      editForm.appendChild(editInput);
+      editForm.appendChild(actions);
+
+      editBtn.addEventListener('click', () => {
+        editForm.classList.toggle('hidden');
+      });
+      saveBtn.addEventListener('click', () => {
+        const note = editInput.value.trim();
+        if (!note) return;
+        body.textContent = `Client note: ${note}`;
+        editInput.value = '';
+        editForm.classList.add('hidden');
+      });
+      retryBtn.addEventListener('click', () => {
+        body.textContent = `Retry requested for ${panel.label} (${style}).`;
+        editForm.classList.add('hidden');
+      });
+
       card.appendChild(art);
       card.appendChild(title);
       card.appendChild(body);
+      card.appendChild(editBtn);
+      card.appendChild(editForm);
       grid.appendChild(card);
     });
     col.appendChild(grid);
